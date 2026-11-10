@@ -33,6 +33,12 @@ class OverallStatus(StrEnum):
     UNKNOWN = "UNKNOWN"
 
 
+class StudyType(StrEnum):
+    INTERVENTIONAL = "INTERVENTIONAL"
+    OBSERVATIONAL = "OBSERVATIONAL"
+    EXPANDED_ACCESS = "EXPANDED_ACCESS"
+
+
 class VizType(StrEnum):
     BAR_CHART = "bar_chart"
     GROUPED_BAR_CHART = "grouped_bar_chart"

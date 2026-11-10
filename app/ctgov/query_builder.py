@@ -64,6 +64,8 @@ def build_params(filters: PlanFilters, extra_advanced: list[str] | None = None) 
     advanced = list(extra_advanced or [])
     if filters.phase:
         advanced.append(phase_expr(filters.phase))
+    if filters.study_type:
+        advanced.append(f"AREA[StudyType]{filters.study_type.value}")
     if filters.start_year or filters.end_year:
         advanced.append(start_year_expr(filters.start_year, filters.end_year))
     if advanced:

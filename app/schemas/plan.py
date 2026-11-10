@@ -13,7 +13,7 @@ from __future__ import annotations
 
 from pydantic import BaseModel, ConfigDict, Field
 
-from app.schemas.enums import AnswerMode, DimensionName, Intent, OverallStatus, Phase, VizType
+from app.schemas.enums import AnswerMode, DimensionName, Intent, OverallStatus, Phase, StudyType, VizType
 
 
 class _Strict(BaseModel):
@@ -29,6 +29,7 @@ class PlanFilters(_Strict):
     country: str | None = Field(description="Country of trial sites.")
     status: list[OverallStatus] | None = Field(description="Overall recruitment status filter.")
     phase: list[Phase] | None = Field(description="Phase filter.")
+    study_type: StudyType | None = Field(description="Interventional / observational / expanded access.")
     start_year: int | None = Field(description="Trials starting in or after this year.")
     end_year: int | None = Field(description="Trials starting in or before this year.")
 

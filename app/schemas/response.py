@@ -215,7 +215,9 @@ class RecordCounts(BaseModel):
     total_matching: int = Field(ge=0, description="totalCount reported by the API for the filters.")
     fetched: int = Field(ge=0, description="Studies actually downloaded and aggregated.")
     truncated: bool = Field(description="True if fetched < total_matching, i.e. values are based on a sample.")
-    count_method: Literal["full_scan", "bucket_count"]
+    count_method: Literal["full_scan", "bucket_count", "api_total"] = Field(
+        description="full_scan: counted over fetched records; api_total: the API's exact totalCount (metric)."
+    )
 
 
 class SourceInfo(BaseModel):

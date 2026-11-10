@@ -39,7 +39,8 @@ def execute_plan(plan: QueryPlan, client: CtgovClient) -> VisualizeResponse:
     cohorts = _fetch_cohorts(plan, client)
     built = _build(plan, cohorts)
 
-    notes = [*plan.notes, *built.notes, *_cohort_notes(cohorts)]
+    is_metric = plan.viz_type is VizType.METRIC
+    notes = [*plan.notes, *built.notes, *([] if is_metric else _cohort_notes(cohorts))]
     version = client.version()
     return VisualizeResponse(
         visualization=built.visualization,
@@ -55,8 +56,8 @@ def execute_plan(plan: QueryPlan, client: CtgovClient) -> VisualizeResponse:
             record_counts=RecordCounts(
                 total_matching=sum(c.fetch.total for c in cohorts),
                 fetched=sum(len(c.fetch.studies) for c in cohorts),
-                truncated=any(c.fetch.truncated for c in cohorts),
-                count_method="full_scan",
+                truncated=False if is_metric else any(c.fetch.truncated for c in cohorts),
+                count_method="api_total" if is_metric else "full_scan",
             ),
             notes=notes,
             source=SourceInfo(
@@ -71,21 +72,29 @@ def execute_plan(plan: QueryPlan, client: CtgovClient) -> VisualizeResponse:
 # --- steps -------------------------------------------------------------------
 
 
+METRIC_SAMPLE = 5
+
+
 def _fetch_cohorts(plan: QueryPlan, client: CtgovClient) -> list[CohortData]:
     dims = [d for d in (plan.group_by, plan.split_by) if d is not None]
     fields = api_fields(dims)
+    # A metric only needs the API's totalCount plus a few example records for citations.
+    max_records = METRIC_SAMPLE if plan.viz_type is VizType.METRIC else plan.max_records
     cohorts = plan.cohorts or [Cohort(label=ALL_TRIALS, filters=empty_filters())]
     out = []
     for cohort in cohorts:
         filters = merge_filters(plan.shared_filters, cohort.filters)
         params = build_params(filters)
-        out.append(CohortData(cohort.label, filters, params, client.fetch_studies(params, fields, plan.max_records)))
+        out.append(CohortData(cohort.label, filters, params, client.fetch_studies(params, fields, max_records)))
     return out
 
 
 def _build(plan: QueryPlan, cohorts: list[CohortData]) -> builder.Built:
     title = _title(plan, cohorts)
     match plan.viz_type:
+        case VizType.METRIC:
+            c = cohorts[0]
+            return builder.metric(c.fetch.total, c.fetch.studies, title, plan.interpretation)
         case VizType.TIME_SERIES:
             f = cohorts[0].filters
             result = group_by(cohorts[0].fetch.studies, plan.group_by)
@@ -103,6 +112,9 @@ def _build(plan: QueryPlan, cohorts: list[CohortData]) -> builder.Built:
 
 def _title(plan: QueryPlan, cohorts: list[CohortData]) -> str:
     what = DIMENSIONS[plan.group_by].label.lower() if plan.group_by else "trials"
+    if plan.viz_type is VizType.METRIC:
+        f = cohorts[0].filters
+        return "Matching trials: " + (" · ".join(x for x in (f.intervention, f.condition, f.sponsor, f.country) if x) or ALL_TRIALS)
     if len(cohorts) > 1:
         scope = " vs ".join(c.label for c in cohorts)
     else:

@@ -8,7 +8,8 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from app.aggregate.engine import GroupResult
+from app.aggregate.engine import MAX_CITATIONS, GroupResult, make_citation
+from app.data.dimensions import P, Extracted, brief_title, nct_id
 from app.data.normalize import UNKNOWN, phase_sort_key
 from app.schemas.enums import DimensionName
 from app.schemas.response import (
@@ -17,6 +18,9 @@ from app.schemas.response import (
     Channel,
     GroupedBarChart,
     Grouping,
+    Metric,
+    MetricDatum,
+    MetricEncoding,
     SeriesDatum,
     SeriesEncoding,
     SortSpec,
@@ -26,12 +30,13 @@ from app.schemas.response import (
 )
 
 TRIALS = Channel(field="trial_count", type="quantitative", label="Trials")
+IDENTIFICATION = f"{P}.identificationModule"
 ORDINAL_DIMENSIONS = {DimensionName.PHASE}
 
 
 @dataclass
 class Built:
-    visualization: BarChart | GroupedBarChart | TimeSeries
+    visualization: BarChart | GroupedBarChart | TimeSeries | Metric
     sort: SortSpec | None = None
     grouping: Grouping | None = None
     time_granularity: str | None = None
@@ -137,6 +142,21 @@ def grouped_bar_chart(
         sort=SortSpec(field="category", order="asc") if ordinal else SortSpec(field="trial_count", order="desc"),
         grouping=Grouping(group_by=first.dimension.name, split_by=split_by, multi_valued=first.dimension.multi_valued),
         notes=notes + _multi_valued_note(first),
+    )
+
+
+def metric(total: int, studies: list[dict], title: str, label: str) -> Built:
+    citations = [
+        make_citation(s, Extracted(nct_id(s), nct_id(s), brief_title(s) or nct_id(s), f"{IDENTIFICATION}.briefTitle"))
+        for s in studies[:MAX_CITATIONS]
+    ]
+    return Built(
+        visualization=Metric(
+            title=title,
+            encoding=MetricEncoding(value=Channel(field="value", type="quantitative", label="Trials")),
+            data=[MetricDatum(value=total, label=label, citation_count=total, citations=citations)],
+        ),
+        notes=["Exact count reported by ClinicalTrials.gov for these filters; citations show example matching trials."],
     )
 
 
