@@ -355,7 +355,7 @@ take_home2/
   - `full_scan`（默认）：先 `countTotal`，总数 ≤ `max_records` 就全量翻页拉取（每页 1000 条）
   - `bucket_count`：总数超上限且维度是低基数的（phase / status / year / study_type / sponsor_class），每个桶单独发 `countTotal=true&pageSize=5` 请求拿精确数（pageSize=0 会被当成默认 10），这 5 条正好用作 citations
   - 高基数维度（country / sponsor / drug / network）超上限时只用前 `max_records` 条，`truncated = true`，notes 写明“排名基于样本”
-- 健壮性：超时、429/5xx 指数退避重试（最多 3 次）；速率限制文档没写明（待确认），客户端用信号量限制并发（≤ 3）
+- 健壮性：超时、429/5xx 指数退避重试（最多 3 次）；速率限制文档没写明，但实测约 10 个请求 / 5 秒就会返回 429 → 客户端串行请求 + 全局限速（约 1 req/s）+ 遵守 `Retry-After`。这也意味着 bucket_count 每个桶一个请求很贵，只用在桶数 ≤ 15 的维度上，缓存必须开
 
 开工第一步：`scripts/record_fixtures.py` 拉 3–4 个真实请求存进 `tests/fixtures/`（含一个招募中、多站点的试验，确认 `locations[].status` 和 `overallOfficials`）。
 
@@ -374,7 +374,8 @@ take_home2/
   - 只保留 `interventions[].type ∈ {DRUG, BIOLOGICAL}` 的试验对应的 MeSH 词，再用小黑名单去掉非药物词（Radiotherapy、Specimen Handling、Drug Therapy 等）
   - MeSH 为空的试验退回 `interventions[].name`：小写、去括号内容和剂量、过滤 placebo / standard of care
   - citation 的 excerpt 同时给 MeSH 词和原始干预名，两者都是 API 原文
-- **国家**：用 API 的 country 字段；同一 trial 多站点同国家去重。“招募中”问题优先用站点级 `locations[].status = RECRUITING` 的国家；字段不存在时退回试验级 `overallStatus`，notes 写明口径
+- **国家**：用 API 的 country 字段；同一 trial 多站点同国家去重。“招募中”问题优先用站点级 `locations[].status = RECRUITING` 的国家；字段不存在时退回试验级 `overallStatus`，notes 写明口径（实测：招募中试验 100% 有站点状态，已结束的试验大多没有，所以这个退回逻辑只在少数情况触发）
+- **字段覆盖率实测**（每个 fixture 前 100 条）：phase 为空 6–24%（多为观察性研究）；干预 MeSH 在按药查询时约 90%，按疾病查询时只有 50–67% → 原始药名退回逻辑是必需的，不是可选的；overallOfficials 60–78%
 - **Sponsor**：保留原名，不做模糊合并（写进 limitations）
 - **对比查询的重叠**：同时用 Drug A 和 Drug B 的 trial 在两个 cohort 里各算一次，重叠数写进 notes
 - **缺失值**：一律进 “Unknown”，在 data 里保留，前端可以选择隐藏

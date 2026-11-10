@@ -1,0 +1,13 @@
+{
+ "request": {
+  "path": "/version",
+  "params": {}
+ },
+ "retrieved_at": "2026-11-09T23:45:35.284263+00:00",
+ "pages": [
+  {
+   "apiVersion": "2.0.5",
+   "dataTimestamp": "2026-11-09T10:00:05"
+  }
+ ]
+}

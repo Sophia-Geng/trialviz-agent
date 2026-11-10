@@ -1,0 +1,217 @@
+{
+ "request": {
+  "path": "/studies",
+  "params": {
+   "query.cond": "lung cancer",
+   "filter.overallStatus": "RECRUITING",
+   "fields": "NCTId|BriefTitle|Phase",
+   "pageSize": 5,
+   "countTotal": "true"
+  }
+ },
+ "retrieved_at": "2026-11-09T23:45:57.430886+00:00",
+ "pages": [
+  {
+   "totalCount": 2318,
+   "studies": [
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT06859684",
+       "briefTitle": "Hepatic Arterial Infusion Chemotherapy (HAIC) Combined With Durvalumab and Lenvatinib in Patients With Locally Advanced or Metastatic Intrahepatic Cholangiocarcinoma: a Phase 2 Study(HAIC-quad Trial)"
+      },
+      "designModule": {
+       "phases": [
+        "PHASE2"
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04389632",
+       "briefTitle": "A Study of Sigvotatug Vedotin in Advanced Solid Tumors"
+      },
+      "designModule": {
+       "phases": [
+        "PHASE1"
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT06995898",
+       "briefTitle": "The Vanguard Study: Testing a New Way to Screen for Cancer"
+      },
+      "designModule": {
+       "phases": [
+        "NA"
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT06480864",
+       "briefTitle": "Adebrelimab Plus Apatinib for Maintenance Therapy of Extensive Stage Small Cell Lung Cancer"
+      },
+      "designModule": {
+       "phases": [
+        "NA"
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT07296887",
+       "briefTitle": "CARE Tool Study Aim 3"
+      },
+      "designModule": {
+       "phases": [
+        "NA"
+       ]
+      }
+     }
+    }
+   ],
+   "nextPageToken": "ZVNj7o2Elu8o3lpyBYqp6rLumpOQJJxuYPSj2fg"
+  },
+  {
+   "studies": [
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT07381829",
+       "briefTitle": "A Phase Ib Clinical Study on the Safety and Efficacy of HC010 Combined With Chemotherapy in Lung Cancer"
+      },
+      "designModule": {
+       "phases": [
+        "PHASE1"
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT05755672",
+       "briefTitle": "On-treatment Biomarkers in Metastatic Colorectal Cancer for Life"
+      },
+      "designModule": {}
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT05751798",
+       "briefTitle": "Dose-finding and Dose Expansion Study of OSE-279 in Subjects With Advanced Solid Tumors or Lymphomas"
+      },
+      "designModule": {
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT07705334",
+       "briefTitle": "A Study of SHY-ONC6, a Novel Proteasome Inhibitor, in Adults With Advanced or Metastatic Solid Tumors"
+      },
+      "designModule": {
+       "phases": [
+        "PHASE1"
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT06616584",
+       "briefTitle": "Adding the Immunotherapy Drug Cemiplimab to Usual Treatment for People With Advanced Non-Small Cell Lung Cancer Who Had Previous Treatment With Platinum Chemotherapy and Immunotherapy (An Expanded Lung-MAP Treatment Trial)"
+      },
+      "designModule": {
+       "phases": [
+        "PHASE2",
+        "PHASE3"
+       ]
+      }
+     }
+    }
+   ],
+   "nextPageToken": "ZVNj7o2Elu8o3lpyBYqp6rLumpOQJJxtbPKj2_g"
+  },
+  {
+   "studies": [
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT05098132",
+       "briefTitle": "Study of STK-012 Alone and With Other Treatments in Patients With Advanced Lung Cancer and Other Cancers"
+      },
+      "designModule": {
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT06959173",
+       "briefTitle": "Organoid-guided Personalized Treatment of Pleural Effusion"
+      },
+      "designModule": {}
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT05705492",
+       "briefTitle": "Olanzapine for the Management of Cancer Associated Appetite Loss in Patients With Advanced Esophagogastric, Hepatopancreaticobiliary, Colorectal or Lung Cancer"
+      },
+      "designModule": {
+       "phases": [
+        "PHASE2"
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT07295821",
+       "briefTitle": "Osimertinib Induction and Maintenance for Chemo-ineligible Stage III Unresectable EGFR+ NSCLC: Single-arm Study"
+      },
+      "designModule": {
+       "phases": [
+        "PHASE2"
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04926584",
+       "briefTitle": "Prospective Trial of Induction Immunotherapy in Locally Advanced or Oligometastatic NSCLC Without a Primary Curative Option"
+      },
+      "designModule": {}
+     }
+    }
+   ],
+   "nextPageToken": "ZVNj7o2Elu8o3lpyBYqp6rLumpOQJJxrZfGn1fg"
+  }
+ ]
+}

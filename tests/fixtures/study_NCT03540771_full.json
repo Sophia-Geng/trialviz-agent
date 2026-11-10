@@ -1,0 +1,2009 @@
+{
+ "request": {
+  "path": "/studies/NCT03540771",
+  "params": {}
+ },
+ "retrieved_at": "2026-11-09T23:45:35.866931+00:00",
+ "pages": [
+  {
+   "protocolSection": {
+    "identificationModule": {
+     "nctId": "NCT03540771",
+     "orgStudyIdInfo": {
+      "id": "Pro00092149"
+     },
+     "organization": {
+      "fullName": "Albert Einstein Healthcare Network",
+      "class": "OTHER"
+     },
+     "briefTitle": "Introducing Palliative Care (PC) Within the Treatment of End Stage Liver Disease (ESLD)",
+     "officialTitle": "Introducing Palliative Care (PC) Within the Treatment of End Stage Liver Disease (ESLD): A Cluster Randomized Controlled Trial",
+     "acronym": "PAL-LIVER"
+    },
+    "statusModule": {
+     "statusVerifiedDate": "2025-11",
+     "overallStatus": "COMPLETED",
+     "expandedAccessInfo": {
+      "hasExpandedAccess": false
+     },
+     "startDateStruct": {
+      "date": "2019-01-30",
+      "type": "ACTUAL"
+     },
+     "primaryCompletionDateStruct": {
+      "date": "2025-06-30",
+      "type": "ACTUAL"
+     },
+     "completionDateStruct": {
+      "date": "2025-08-30",
+      "type": "ACTUAL"
+     },
+     "studyFirstSubmitDate": "2018-05-17",
+     "studyFirstSubmitQcDate": "2018-05-17",
+     "studyFirstPostDateStruct": {
+      "date": "2018-05-30",
+      "type": "ACTUAL"
+     },
+     "resultsFirstSubmitDate": "2025-07-29",
+     "resultsFirstSubmitQcDate": "2025-10-10",
+     "resultsFirstPostDateStruct": {
+      "date": "2025-10-27",
+      "type": "ACTUAL"
+     },
+     "lastUpdateSubmitDate": "2025-11-18",
+     "lastUpdatePostDateStruct": {
+      "date": "2025-12-02",
+      "type": "ACTUAL"
+     }
+    },
+    "sponsorCollaboratorsModule": {
+     "responsibleParty": {
+      "type": "PRINCIPAL_INVESTIGATOR",
+      "investigatorFullName": "Manisha Verma",
+      "investigatorTitle": "Director, Research, Department of Medicine",
+      "investigatorAffiliation": "Albert Einstein Healthcare Network"
+     },
+     "leadSponsor": {
+      "name": "Albert Einstein Healthcare Network",
+      "class": "OTHER"
+     },
+     "collaborators": [
+      {
+       "name": "Patient-Centered Outcomes Research Institute",
+       "class": "OTHER"
+      }
+     ]
+    },
+    "oversightModule": {
+     "oversightHasDmc": true,
+     "isFdaRegulatedDrug": false,
+     "isFdaRegulatedDevice": false
+    },
+    "descriptionModule": {
+     "briefSummary": "This is a comparative effectiveness study of two pragmatic models aiming to introduce palliative care for end stage liver disease patients. The 2 comparators are:\n\nModel 1: Consultative Palliative Care (i.e. direct access to Palliative Care provider), Model 2: Trained Hepatologist- led PC intervention (i.e. a hepatologist will receive formal training to deliver Palliative Care services)\n\nPrimary Outcome: The change in quality of life from baseline to 3 months post enrollment as assessed by FACT-Hep (Functional Assessment of Cancer Therapy- Hepatobiliary).\n\nPrimary Hypothesis: Compared to consultative PC, the trained hepatologist-led PC for ESLD patients will show superior primary outcome. In the event of nonsignificant superiority, the trained hepatologist-led PC led will show non-inferiority (NI) by ruling out a 4-point reduction (NI margin) in mean of the primary outcome as compared to the consultative PC.\n\nPower: The study has 83.2% power to detect minimal clinically important difference (MCID) of 9 points in mean of the primary outcome between the two randomized arms. We have 79.2% power for the noninferiority hypothesis, under assumption that the trained hepatologist-led PC arm performs better than the consultative PC arm by half of the above MCID.\n\nSetting: 19 Clinical Centers across US are recruited to participate in this study.\n\nQualitative nested study will interview patients, caregivers and providers to assess their experiences with participating in the palliative care trial.",
+     "detailedDescription": "This is a two armed comparative effectiveness cluster randomized controlled trial (RCT), to assess the effectiveness of two pragmatic PC models for patients with ESLD (Consultative PC vs. Trained hepatologist led PC). To prevent bias at the level of providers, randomization will take place at the level of clinical centers; however patients will be the unit of inference. There is no standard of care arm.\n\nEmbedded within this cluster-RCT is a qualitative study will be undertaken to evaluate the patient/caregiver experiences in the two PC models, using semi structured interviews.\n\nTo execute this project, we have identified 19 clinical centers to participate; 8 Veterans Health Administration (VHA) systems and 11 non-VHA, Academic Medical Centers.\n\nComparative Approaches:\n\n1. Consultative PC led approach (Model 1): The PC model will include: 1) routine PC consults, using a standardized checklist , 2) in-person or telehealth visits at initial, 1, 2 and 3 months. .\n2. Trained hepatologist led PC (Model 2): The Hepatologist Led PC model will comprise: 1) Hepatologist training (through E Learning modules), and 2) in person or telehealth visits utilizing the same PC checklist as utilized in Model 1. The study visits will occur at initial, 1, 2 and 3 months i.e. similar to Model 1 and follow the same visit specified agenda.\n\nStudy visits in both models could occur in-person or telehealth based, especially during in-person visit restrictions due to COVID pandemic.\n\nAdult patients with end stage liver disease and their caregivers 18 years of age or older will be enrolled.\n\nPrimary Outcome: The change in quality of life from baseline to 3 months post enrollment as assessed by FACT-Hep (Functional Assessment of Cancer Therapy- Hepatobiliary).\n\nPrimary Hypothesis: Compared to consultative PC, the trained hepatologist-led PC for ESLD patients will show superior primary outcome. In the event of nonsignificant superiority, the trained hepatologist-led PC led will show non-inferiority (NI) by ruling out a 4-point reduction (NI margin) in mean of the primary outcome as compared to the consultative PC.\n\nPower: The study has 83.2% power to detect clinically important difference (MCID) of 9 points in mean of the primary outcome between the two randomized arms. We have 79.2% power for the noninferiority hypothesis, under assumption that the trained hepatologist-led PC arm performs better than the consultative PC arm by half of the above MCID."
+    },
+    "conditionsModule": {
+     "conditions": [
+      "End Stage Liver Disease",
+      "Decompensated Cirrhosis of Liver"
+     ],
+     "keywords": [
+      "palliative care",
+      "hepatology",
+      "decompensated cirrhosis"
+     ]
+    },
+    "designModule": {
+     "studyType": "INTERVENTIONAL",
+     "phases": [
+      "NA"
+     ],
+     "designInfo": {
+      "allocation": "RANDOMIZED",
+      "interventionModel": "PARALLEL",
+      "interventionModelDescription": "Model 1: Consultative Palliative Care (i.e. direct access to Palliative Care provider), versus Model 2: Trained Hepatologist- led PC intervention (i.e. a hepatologist will receive formal training to deliver Palliative Care services)",
+      "primaryPurpose": "SUPPORTIVE_CARE",
+      "maskingInfo": {
+       "masking": "NONE",
+       "maskingDescription": "The study investigators were masked to comparative outcomes measures until the study was completed and database was locked."
+      }
+     },
+     "enrollmentInfo": {
+      "count": 1494,
+      "type": "ACTUAL"
+     }
+    },
+    "armsInterventionsModule": {
+     "armGroups": [
+      {
+       "label": "Model 1: Consultative Palliative Care",
+       "type": "ACTIVE_COMPARATOR",
+       "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.",
+       "interventionNames": [
+        "Other: Palliative Care"
+       ]
+      },
+      {
+       "label": "Model 2: Trained Hepatologist- led PC",
+       "type": "ACTIVE_COMPARATOR",
+       "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1",
+       "interventionNames": [
+        "Other: Palliative Care"
+       ]
+      }
+     ],
+     "interventions": [
+      {
+       "type": "OTHER",
+       "name": "Palliative Care",
+       "description": "The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives",
+       "armGroupLabels": [
+        "Model 1: Consultative Palliative Care",
+        "Model 2: Trained Hepatologist- led PC"
+       ]
+      }
+     ]
+    },
+    "outcomesModule": {
+     "primaryOutcomes": [
+      {
+       "measure": "Quality of Life (QOL)",
+       "description": "FACT-Hep (Functional Assessment of Cancer Therapy- Hepatobiliary) will be used to assess QOL. This is a 45 item self-reported instrument. FACT-Hep total score is the primary outcome. The scores range from 0 to 180. Higher scores reflect better QOL.\n\nThis measure is for patients only.",
+       "timeFrame": "Mean change in FACT-Hep total score from baseline to 3 months"
+      }
+     ],
+     "secondaryOutcomes": [
+      {
+       "measure": "Patient's Symptom Burden",
+       "description": "Modified Edmonton Symptom Assessment Scale (ESAS) evaluated 13 symptoms (tiredness, nausea, depression, anxiety, drowsiness, appetite, well-being, shortness of breath, muscle cramps, sexual function, sleep, itch, pain) on a 10-point scale, where 0 is no symptom and 10 is the maximum severity of symptom. The total score ranges from 0-130. Higher scores reflect higher symptom burden.\n\nThis measure is for patients only.",
+       "timeFrame": "Change in ESAS total score from baseline to 3 months"
+      },
+      {
+       "measure": "Patient's Depression Severity",
+       "description": "PHQ-9 (Personal Health Questionnaire) is one of the very commonly used tools to assess severity of depression in different settings, and has 9 questions. Each question is rated on a 4 point scale, with total score ranging from 0 to 27. Higher scores reflects greater severity of depression. Scores from 0-4 equates to no depression, 5-9 mild, 10-14 moderate, 15-19 mod severe and \\>20 reflects severe depression.\n\nThis measure is for patients only.",
+       "timeFrame": "Change in PHQ-9 scores from baseline to 3 months"
+      },
+      {
+       "measure": "Patient Satisfaction",
+       "description": "FAMCARE-P13 (Family Satisfaction with Cancer Care- Patient scale) is a brief validated instrument used to assess patient satisfaction with outpatient palliative care interventions. It consists of 13 questions, with Likert scale response options. Higher scores imply better satisfaction from the care received.\n\nThis measure is for patients only.",
+       "timeFrame": "Change in FAMCARE-P scores from baseline to 3 months."
+      },
+      {
+       "measure": "Distress",
+       "description": "Distress thermometer (DT) ranks level of distress from 0- 10, Higher scores reflect higher distress.\n\nThis is for patients only.",
+       "timeFrame": "Change in Distress from baseline to 3 months"
+      },
+      {
+       "measure": "Goal Concordant Care Questionnaire/ GCC (Patients)",
+       "description": "There are two subscales which assess Goal Concordant Care (GCC):\n\n1. Goals of Care Conversations (GoC) (7 items scale), assessing the perceived extent to which providers have engaged the patient in the process of advance care planning (score range 0-10) and\n2. Care Concordant with Preferences (CCP) (4 items scale), measuring the perceived alignment of delivered care with patient preferences (score range 0-2).\n\nHigher values represent a better outcome. There is no total score for this measure, only subscale scores apply.",
+       "timeFrame": "Change in GCC scales from baseline to 3 months"
+      },
+      {
+       "measure": "Caregiver Burden (Completed by the Caregivers of Patients Who Were Enrolled as a Dyad). Caregivers Were Consented Separately.",
+       "description": "Zarit Burden Interview-12 (ZBI-12) a short, validated instrument is extensively used for palliative care research in diverse populations. It has high internal consistency, reliability and convergent validity to assess caregiver burden. Higher score reflects higher caregiver burden. The score ranges from 0- 48.\n\nThis measure is for caregivers only.",
+       "timeFrame": "Change in ZBI-12 scores from baseline to 3 months"
+      },
+      {
+       "measure": "Caregiver Quality of Life",
+       "description": "PROMIS- 29 (Patient Reported Outcomes Measurement Information System) assess overall quality of life and is summarized as : Physical and Mental health summary scores. Range 0-100 for both. Higher scores reflect higher physical function but worse mental health (as higher scores reflect higher domain assessed).\n\nHere we report for caregivers only.",
+       "timeFrame": "Change in caregiver QoL from baseline to 3 months"
+      },
+      {
+       "measure": "Goal Concordant Care/ GCC (Caregivers)",
+       "description": "There are two subscales which assess Goal Concordant Care (GCC):\n\n1. Goals of Care Conversations (GoC) (7 items scale), assessing the perceived extent to which providers have engaged the patient in the process of advance care planning (score range 0-10) and\n2. Care Concordant with Preferences (CCP) (4 items scale), measuring the perceived alignment of delivered care with patient preferences (score range 0-2).\n\nHigher values represent a better outcome. There is no total score for this measure, only subscale scores apply.\n\nHere we report for caregivers.",
+       "timeFrame": "Change in GCC from baseline to 3 months"
+      },
+      {
+       "measure": "Mortality Over 12 Months.",
+       "description": "Number of Patients that Died from Baseline to 12 Month.",
+       "timeFrame": "Survival over 12 months"
+      }
+     ]
+    },
+    "eligibilityModule": {
+     "eligibilityCriteria": "Inclusion Criteria:\n\nEligible patients were adults (≥18 years) with:\n\n1. cirrhosis and a decompensation event indicative of ESLD (such as ascites, variceal bleeding or hepatic encephalopathy) within the prior 6 months, or\n2. hepatocellular cancer (HCC) except Barcelona Stage D, or multifocal HCC (as defined by standard guidelines and confirmed by treating hepatologist).\n\nAdditional inclusion criteria included English literacy and the capacity to complete study assessments.\n\nExclusion criteria were hepatologist assessed life expectancy \\<6 months, prior liver transplantation, anticipated liver transplantation within 3 months, inability to consent, or receipt of PC within the previous three months.",
+     "healthyVolunteers": false,
+     "sex": "ALL",
+     "minimumAge": "18 Years",
+     "maximumAge": "120 Years",
+     "stdAges": [
+      "ADULT",
+      "OLDER_ADULT"
+     ]
+    },
+    "contactsLocationsModule": {
+     "overallOfficials": [
+      {
+       "name": "Manisha Verma, MD, MPH",
+       "affiliation": "Albert Einstein Healthcare Network",
+       "role": "PRINCIPAL_INVESTIGATOR"
+      },
+      {
+       "name": "Victor Navarro, MD",
+       "affiliation": "Albert Einstein Healthcare Network",
+       "role": "PRINCIPAL_INVESTIGATOR"
+      }
+     ],
+     "locations": [
+      {
+       "facility": "University of Alabama",
+       "city": "Birmingham",
+       "state": "Alabama",
+       "zip": "35233",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 33.52066,
+        "lon": -86.80249
+       }
+      },
+      {
+       "facility": "Banner Health- University Medical Center",
+       "city": "Phoenix",
+       "state": "Arizona",
+       "zip": "85006",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 33.44838,
+        "lon": -112.07404
+       }
+      },
+      {
+       "facility": "UCSF Fresno",
+       "city": "Fresno",
+       "state": "California",
+       "zip": "93701",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 36.74773,
+        "lon": -119.77237
+       }
+      },
+      {
+       "facility": "Loma Linda Unversity Health",
+       "city": "Loma Linda",
+       "state": "California",
+       "zip": "92354",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 34.04835,
+        "lon": -117.26115
+       }
+      },
+      {
+       "facility": "VA West Haven",
+       "city": "West Haven",
+       "state": "Connecticut",
+       "zip": "06516",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 41.27065,
+        "lon": -72.94705
+       }
+      },
+      {
+       "facility": "University of Florida",
+       "city": "Gainesville",
+       "state": "Florida",
+       "zip": "32611",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 29.65163,
+        "lon": -82.32483
+       }
+      },
+      {
+       "facility": "Miami VA Medical Center",
+       "city": "Miami",
+       "state": "Florida",
+       "zip": "33125",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 25.77427,
+        "lon": -80.19366
+       }
+      },
+      {
+       "facility": "Indiana University",
+       "city": "Indianapolis",
+       "state": "Indiana",
+       "zip": "46202",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 39.76838,
+        "lon": -86.15804
+       }
+      },
+      {
+       "facility": "VA Boston",
+       "city": "Boston",
+       "state": "Massachusetts",
+       "zip": "02130",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 42.35843,
+        "lon": -71.05977
+       }
+      },
+      {
+       "facility": "University of Michigan Medical Center",
+       "city": "Ann Arbor",
+       "state": "Michigan",
+       "zip": "48109",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 42.27756,
+        "lon": -83.74088
+       }
+      },
+      {
+       "facility": "Kansas City VA Medical Center",
+       "city": "Kansas City",
+       "state": "Missouri",
+       "zip": "64128",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 39.09973,
+        "lon": -94.57857
+       }
+      },
+      {
+       "facility": "VA New York Harbor",
+       "city": "Brooklyn",
+       "state": "New York",
+       "zip": "11209",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 40.6501,
+        "lon": -73.94958
+       }
+      },
+      {
+       "facility": "VA Bronx",
+       "city": "The Bronx",
+       "state": "New York",
+       "zip": "10468",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 40.84985,
+        "lon": -73.86641
+       }
+      },
+      {
+       "facility": "UNC Liver Center",
+       "city": "Chapel Hill",
+       "state": "North Carolina",
+       "zip": "27599",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 35.9132,
+        "lon": -79.05584
+       }
+      },
+      {
+       "facility": "Durham V.A. Medical Center",
+       "city": "Durham",
+       "state": "North Carolina",
+       "zip": "27705",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 35.99403,
+        "lon": -78.89862
+       }
+      },
+      {
+       "facility": "Corporal Michael J. Crescenz VA Medical Center",
+       "city": "Philadelphia",
+       "state": "Pennsylvania",
+       "zip": "19104",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 39.95238,
+        "lon": -75.16362
+       }
+      },
+      {
+       "facility": "Albert Einstein Medical Center",
+       "city": "Philadelphia",
+       "state": "Pennsylvania",
+       "zip": "19141",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 39.95238,
+        "lon": -75.16362
+       }
+      },
+      {
+       "facility": "Medical University of South Carolina",
+       "city": "Charleston",
+       "state": "South Carolina",
+       "zip": "29425",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 32.77632,
+        "lon": -79.93275
+       }
+      },
+      {
+       "facility": "Baylor College of Medicine",
+       "city": "Houston",
+       "state": "Texas",
+       "zip": "77030",
+       "country": "United States",
+       "geoPoint": {
+        "lat": 29.76328,
+        "lon": -95.36327
+       }
+      }
+     ]
+    },
+    "referencesModule": {
+     "references": [
+      {
+       "pmid": "32167615",
+       "type": "BACKGROUND",
+       "citation": "Verma M, Tapper EB, Singal AG, Navarro V. Nonhospice Palliative Care Within the Treatment of End-Stage Liver Disease. Hepatology. 2020 Jun;71(6):2149-2159. doi: 10.1002/hep.31226."
+      },
+      {
+       "pmid": "34719137",
+       "type": "BACKGROUND",
+       "citation": "DeNofrio JC, Verma M, Kosinski AS, Navarro V, Taddei TH, Volk ML, Bakitas M, Ramchandran K. Palliative Care Always: Hepatology-Virtual Primary Palliative Care Training for Hepatologists. Hepatol Commun. 2022 Apr;6(4):920-930. doi: 10.1002/hep4.1849. Epub 2021 Oct 31."
+      },
+      {
+       "pmid": "33868897",
+       "type": "BACKGROUND",
+       "citation": "Verma M, Bakitas MA. Creating Effective Models for Delivering Palliative Care in Advanced Liver Disease. Curr Hepatol Rep. 2021;20(2):43-52. doi: 10.1007/s11901-021-00562-0. Epub 2021 Apr 10."
+      },
+      {
+       "pmid": "41973444",
+       "type": "DERIVED",
+       "citation": "Verma M, Navarro V, Kosinski A, Taddei T, Kalman R, Barritt Iv AS, Jakab S, Serper M, Orman E, Balakrishnan M, Rakoski M, Rockey D, Hunt K, Cabrera R, Aytaman A, John B, Baffy G, Nathan R, Tapper E, Roytman M, McGuire B, Hoppmann N, Woodrell C, Bakitas M, Yue Y, Reeve B, Lin L, Tantala R, Volk M. Palliative Care Intervention for Patients With End-Stage Liver Disease: A Cluster Randomized Clinical Trial. JAMA Intern Med. 2026 Jun 1;186(6):677-686. doi: 10.1001/jamainternmed.2026.0571."
+      },
+      {
+       "pmid": "41072740",
+       "type": "DERIVED",
+       "citation": "Hoppmann N, Bakitas M, Stockdill M, DeNofrio J, Navarro V, Verma M. Palliative Care for Advanced Liver Disease: Hepatology and Palliative Care Specialists Experiences. J Pain Symptom Manage. 2026 Jan;71(1):157-167. doi: 10.1016/j.jpainsymman.2025.09.028. Epub 2025 Oct 8."
+      },
+      {
+       "pmid": "31486722",
+       "type": "DERIVED",
+       "citation": "Verma M, Kosinski AS, Volk ML, Taddei T, Ramchandran K, Bakitas M, Green K, Green L, Navarro V. Introducing Palliative Care within the Treatment of End-Stage Liver Disease: The Study Protocol of a Cluster Randomized Controlled Trial. J Palliat Med. 2019 Sep;22(S1):34-43. doi: 10.1089/jpm.2019.0121."
+      }
+     ],
+     "seeAlsoLinks": [
+      {
+       "label": "PCORI web release",
+       "url": "https://www.pcori.org/research-results/2017/comparing-two-ways-offer-palliative-care-improve-quality-life-patients-end-stage-liver-disease"
+      }
+     ]
+    },
+    "ipdSharingStatementModule": {
+     "ipdSharing": "NO"
+    }
+   },
+   "resultsSection": {
+    "participantFlowModule": {
+     "preAssignmentDetails": "This study consented and enrolled patients and caregivers separately. 935 Patients ( 516 in Model 1 and 419 in Model 2) and 559 caregivers (310 in Model 1 and 249 in Model 2) were enrolled.",
+     "recruitmentDetails": "This study enrolled patients and caregivers separately. 935 Patients ( 516 in Model 1 and 419 in Model 2) and 559 caregivers (310 in Model 1 and 249 in Model 2) were enrolled. Recruitment occured from January 2019 to March 2025, with completion of data collection and database lock by June 30, 2025. Each row represents the patient and caregiver characteristics based on the actual enrollment numbers.",
+     "typeUnitsAnalyzed": "Clinical Centers",
+     "groups": [
+      {
+       "id": "FG000",
+       "title": "Model 1: Consultative Palliative Care",
+       "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+      },
+      {
+       "id": "FG001",
+       "title": "Model 2: Trained Hepatologist- Led PC",
+       "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+      }
+     ],
+     "periods": [
+      {
+       "title": "Overall Study",
+       "milestones": [
+        {
+         "type": "STARTED",
+         "achievements": [
+          {
+           "groupId": "FG000",
+           "comment": "Eight Clinical Centers were assigned to Model 1 (Consultative PC). Number of Patients enrolled= 516; Number of Caregivers enrolled=310. Total number of participants= 826",
+           "numSubjects": "826",
+           "numUnits": "8"
+          },
+          {
+           "groupId": "FG001",
+           "comment": "Eleven Clinical Centers were assigned to Model 2 (Trained Hepatologist led PC). Number of Patients enrolled= 419;Number of Caregivers enrolled in Model 2=249 Total number of participants= 668",
+           "numSubjects": "668",
+           "numUnits": "11"
+          }
+         ]
+        },
+        {
+         "type": "COMPLETED",
+         "achievements": [
+          {
+           "groupId": "FG000",
+           "comment": "All centers completed the study for their enrolled participants. Number of Patients completed study intervention (3 months)=368; Number of Caregivers completed study intervention (3 months) =190 Total participants completed= 558",
+           "numSubjects": "558",
+           "numUnits": "8"
+          },
+          {
+           "groupId": "FG001",
+           "comment": "All centers completed the study for their enrolled participants Number of Patients completed study intervention (3 months)=299; Number of Caregivers completed study intervention (3 months) =157 Total participants completed= 456",
+           "numSubjects": "456",
+           "numUnits": "11"
+          }
+         ]
+        },
+        {
+         "type": "NOT COMPLETED",
+         "achievements": [
+          {
+           "groupId": "FG000",
+           "numSubjects": "268",
+           "numUnits": "0"
+          },
+          {
+           "groupId": "FG001",
+           "numSubjects": "212",
+           "numUnits": "0"
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    "baselineCharacteristicsModule": {
+     "populationDescription": "The total study participants (1494) includes 935 patients (516 in Consultative PC and 419 in Trained Hepatologist led PC) and 559 caregivers (310 in Consultative PC and 249 in Trained Hepatologist led PC)",
+     "groups": [
+      {
+       "id": "BG000",
+       "title": "Model 1: Consultative Palliative Care",
+       "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+      },
+      {
+       "id": "BG001",
+       "title": "Model 2: Trained Hepatologist- Led PC",
+       "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+      },
+      {
+       "id": "BG002",
+       "title": "Total",
+       "description": "Total of all reporting groups"
+      }
+     ],
+     "denoms": [
+      {
+       "units": "Participants",
+       "counts": [
+        {
+         "groupId": "BG000",
+         "value": "826"
+        },
+        {
+         "groupId": "BG001",
+         "value": "668"
+        },
+        {
+         "groupId": "BG002",
+         "value": "1494"
+        }
+       ]
+      }
+     ],
+     "measures": [
+      {
+       "title": "Age, Continuous",
+       "populationDescription": "This study enrolled patients and caregivers separately. Each row represents the patient and caregiver characteristics based on the actual enrollment numbers. Hence the number analyzed differes in each row and the overall represents- patients only (as patient outcomes are the primary outcomes for this trial)",
+       "paramType": "MEAN",
+       "dispersionType": "STANDARD_DEVIATION",
+       "unitOfMeasure": "years",
+       "classes": [
+        {
+         "title": "Patients",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "BG000",
+             "value": "516"
+            },
+            {
+             "groupId": "BG001",
+             "value": "419"
+            },
+            {
+             "groupId": "BG002",
+             "value": "935"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "64",
+             "spread": "10"
+            },
+            {
+             "groupId": "BG001",
+             "value": "62",
+             "spread": "10.4"
+            },
+            {
+             "groupId": "BG002",
+             "value": "63",
+             "spread": "10.3"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Caregivers",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "BG000",
+             "value": "310"
+            },
+            {
+             "groupId": "BG001",
+             "value": "249"
+            },
+            {
+             "groupId": "BG002",
+             "value": "559"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "58",
+             "spread": "14.2"
+            },
+            {
+             "groupId": "BG001",
+             "value": "58",
+             "spread": "14.2"
+            },
+            {
+             "groupId": "BG002",
+             "value": "58",
+             "spread": "14.2"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "title": "Sex: Female, Male",
+       "populationDescription": "This study enrolled patients and caregivers separately. Each row represents the patient and caregiver characteristics based on the actual enrollment numbers. Hence the number analyzed differes in each row and the overall represents- patients only (as patient outcomes are the primary outcomes for this trial)",
+       "paramType": "COUNT_OF_PARTICIPANTS",
+       "unitOfMeasure": "Participants",
+       "classes": [
+        {
+         "title": "Patients",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "BG000",
+             "value": "516"
+            },
+            {
+             "groupId": "BG001",
+             "value": "419"
+            },
+            {
+             "groupId": "BG002",
+             "value": "935"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "title": "Female",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "123"
+            },
+            {
+             "groupId": "BG001",
+             "value": "152"
+            },
+            {
+             "groupId": "BG002",
+             "value": "275"
+            }
+           ]
+          },
+          {
+           "title": "Male",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "393"
+            },
+            {
+             "groupId": "BG001",
+             "value": "267"
+            },
+            {
+             "groupId": "BG002",
+             "value": "660"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Caregivers (separate from patients)",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "BG000",
+             "value": "310"
+            },
+            {
+             "groupId": "BG001",
+             "value": "249"
+            },
+            {
+             "groupId": "BG002",
+             "value": "559"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "title": "Female",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "244"
+            },
+            {
+             "groupId": "BG001",
+             "value": "186"
+            },
+            {
+             "groupId": "BG002",
+             "value": "430"
+            }
+           ]
+          },
+          {
+           "title": "Male",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "66"
+            },
+            {
+             "groupId": "BG001",
+             "value": "63"
+            },
+            {
+             "groupId": "BG002",
+             "value": "129"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "title": "Race (NIH/OMB)",
+       "description": "We report the baseline measures for patients and caregivers separately.",
+       "populationDescription": "Patients and caregiver race data are reported separately. Thank you.",
+       "paramType": "COUNT_OF_PARTICIPANTS",
+       "unitOfMeasure": "Participants",
+       "classes": [
+        {
+         "title": "Patient participants",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "BG000",
+             "value": "516"
+            },
+            {
+             "groupId": "BG001",
+             "value": "419"
+            },
+            {
+             "groupId": "BG002",
+             "value": "935"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "title": "American Indian or Alaska Native",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "7"
+            },
+            {
+             "groupId": "BG001",
+             "value": "4"
+            },
+            {
+             "groupId": "BG002",
+             "value": "11"
+            }
+           ]
+          },
+          {
+           "title": "Asian",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "7"
+            },
+            {
+             "groupId": "BG001",
+             "value": "4"
+            },
+            {
+             "groupId": "BG002",
+             "value": "11"
+            }
+           ]
+          },
+          {
+           "title": "Native Hawaiian or Other Pacific Islander",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "0"
+            },
+            {
+             "groupId": "BG001",
+             "value": "1"
+            },
+            {
+             "groupId": "BG002",
+             "value": "1"
+            }
+           ]
+          },
+          {
+           "title": "Black or African American",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "87"
+            },
+            {
+             "groupId": "BG001",
+             "value": "60"
+            },
+            {
+             "groupId": "BG002",
+             "value": "147"
+            }
+           ]
+          },
+          {
+           "title": "White",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "409"
+            },
+            {
+             "groupId": "BG001",
+             "value": "332"
+            },
+            {
+             "groupId": "BG002",
+             "value": "741"
+            }
+           ]
+          },
+          {
+           "title": "More than one race",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "0"
+            },
+            {
+             "groupId": "BG001",
+             "value": "0"
+            },
+            {
+             "groupId": "BG002",
+             "value": "0"
+            }
+           ]
+          },
+          {
+           "title": "Unknown or Not Reported",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "6"
+            },
+            {
+             "groupId": "BG001",
+             "value": "18"
+            },
+            {
+             "groupId": "BG002",
+             "value": "24"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Caregiver participants",
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "BG000",
+             "value": "310"
+            },
+            {
+             "groupId": "BG001",
+             "value": "249"
+            },
+            {
+             "groupId": "BG002",
+             "value": "559"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "title": "American Indian or Alaska Native",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "2"
+            },
+            {
+             "groupId": "BG001",
+             "value": "2"
+            },
+            {
+             "groupId": "BG002",
+             "value": "4"
+            }
+           ]
+          },
+          {
+           "title": "Asian",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "7"
+            },
+            {
+             "groupId": "BG001",
+             "value": "3"
+            },
+            {
+             "groupId": "BG002",
+             "value": "10"
+            }
+           ]
+          },
+          {
+           "title": "Native Hawaiian or Other Pacific Islander",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "3"
+            },
+            {
+             "groupId": "BG001",
+             "value": "0"
+            },
+            {
+             "groupId": "BG002",
+             "value": "3"
+            }
+           ]
+          },
+          {
+           "title": "Black or African American",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "50"
+            },
+            {
+             "groupId": "BG001",
+             "value": "30"
+            },
+            {
+             "groupId": "BG002",
+             "value": "80"
+            }
+           ]
+          },
+          {
+           "title": "White",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "248"
+            },
+            {
+             "groupId": "BG001",
+             "value": "198"
+            },
+            {
+             "groupId": "BG002",
+             "value": "446"
+            }
+           ]
+          },
+          {
+           "title": "More than one race",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "0"
+            },
+            {
+             "groupId": "BG001",
+             "value": "0"
+            },
+            {
+             "groupId": "BG002",
+             "value": "0"
+            }
+           ]
+          },
+          {
+           "title": "Unknown or Not Reported",
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "0"
+            },
+            {
+             "groupId": "BG001",
+             "value": "16"
+            },
+            {
+             "groupId": "BG002",
+             "value": "16"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "title": "FACT-Hep total score",
+       "description": "FACT-Hep total score ranges from 0-180. Higher scores reflect better quality of life.",
+       "populationDescription": "This questionnaire is completed by patient participants only. This is a disease specific quality of life instrument which applies to patients only.",
+       "paramType": "MEAN",
+       "dispersionType": "STANDARD_DEVIATION",
+       "unitOfMeasure": "units on a scale",
+       "classes": [
+        {
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "BG000",
+             "value": "516"
+            },
+            {
+             "groupId": "BG001",
+             "value": "419"
+            },
+            {
+             "groupId": "BG002",
+             "value": "935"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "118.2",
+             "spread": "28.0"
+            },
+            {
+             "groupId": "BG001",
+             "value": "113.4",
+             "spread": "28.1"
+            },
+            {
+             "groupId": "BG002",
+             "value": "116.1",
+             "spread": "28.2"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "title": "Zarit Burden Interview- 12",
+       "description": "This is a short, validated instrument to measure caregiver burden. Higher scores reflect higher burden. Range 0-48.",
+       "populationDescription": "This questionnaire is completed by caregiver participants only.",
+       "paramType": "MEAN",
+       "dispersionType": "STANDARD_DEVIATION",
+       "unitOfMeasure": "units on a scale",
+       "classes": [
+        {
+         "denoms": [
+          {
+           "units": "Participants",
+           "counts": [
+            {
+             "groupId": "BG000",
+             "value": "310"
+            },
+            {
+             "groupId": "BG001",
+             "value": "249"
+            },
+            {
+             "groupId": "BG002",
+             "value": "559"
+            }
+           ]
+          }
+         ],
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "BG000",
+             "value": "8.7",
+             "spread": "8.2"
+            },
+            {
+             "groupId": "BG001",
+             "value": "10.0",
+             "spread": "8.2"
+            },
+            {
+             "groupId": "BG002",
+             "value": "9.2",
+             "spread": "8.2"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    "outcomeMeasuresModule": {
+     "outcomeMeasures": [
+      {
+       "type": "PRIMARY",
+       "title": "Quality of Life (QOL)",
+       "description": "FACT-Hep (Functional Assessment of Cancer Therapy- Hepatobiliary) will be used to assess QOL. This is a 45 item self-reported instrument. FACT-Hep total score is the primary outcome. The scores range from 0 to 180. Higher scores reflect better QOL.\n\nThis measure is for patients only.",
+       "populationDescription": "Modified Intention to treatment population excludes patients who got a liver transplant or were transferred to Hospice within 3 months of enrollment (i.e. before completion of intervention).",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "score on a scale",
+       "timeFrame": "Mean change in FACT-Hep total score from baseline to 3 months",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Model 1: Consultative Palliative Care",
+         "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        },
+        {
+         "id": "OG001",
+         "title": "Model 2: Trained Hepatologist- Led PC",
+         "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "499"
+          },
+          {
+           "groupId": "OG001",
+           "value": "410"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "7.02",
+             "lowerLimit": "4.34",
+             "upperLimit": "9.71"
+            },
+            {
+             "groupId": "OG001",
+             "value": "8.01",
+             "lowerLimit": "5.38",
+             "upperLimit": "10.65"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Patient's Symptom Burden",
+       "description": "Modified Edmonton Symptom Assessment Scale (ESAS) evaluated 13 symptoms (tiredness, nausea, depression, anxiety, drowsiness, appetite, well-being, shortness of breath, muscle cramps, sexual function, sleep, itch, pain) on a 10-point scale, where 0 is no symptom and 10 is the maximum severity of symptom. The total score ranges from 0-130. Higher scores reflect higher symptom burden.\n\nThis measure is for patients only.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "score on a scale",
+       "timeFrame": "Change in ESAS total score from baseline to 3 months",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Model 1: Consultative Palliative Care",
+         "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        },
+        {
+         "id": "OG001",
+         "title": "Model 2: Trained Hepatologist- Led PC",
+         "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "499"
+          },
+          {
+           "groupId": "OG001",
+           "value": "410"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "-5.31",
+             "lowerLimit": "-7.59",
+             "upperLimit": "-3.02"
+            },
+            {
+             "groupId": "OG001",
+             "value": "-7.52",
+             "lowerLimit": "-9.89",
+             "upperLimit": "-5.15"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Patient's Depression Severity",
+       "description": "PHQ-9 (Personal Health Questionnaire) is one of the very commonly used tools to assess severity of depression in different settings, and has 9 questions. Each question is rated on a 4 point scale, with total score ranging from 0 to 27. Higher scores reflects greater severity of depression. Scores from 0-4 equates to no depression, 5-9 mild, 10-14 moderate, 15-19 mod severe and \\>20 reflects severe depression.\n\nThis measure is for patients only.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "score on a scale",
+       "timeFrame": "Change in PHQ-9 scores from baseline to 3 months",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Model 1: Consultative Palliative Care",
+         "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        },
+        {
+         "id": "OG001",
+         "title": "Model 2: Trained Hepatologist- Led PC",
+         "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "499"
+          },
+          {
+           "groupId": "OG001",
+           "value": "410"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "-0.90",
+             "lowerLimit": "-1.49",
+             "upperLimit": "-0.31"
+            },
+            {
+             "groupId": "OG001",
+             "value": "-1.18",
+             "lowerLimit": "-1.78",
+             "upperLimit": "-0.57"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Patient Satisfaction",
+       "description": "FAMCARE-P13 (Family Satisfaction with Cancer Care- Patient scale) is a brief validated instrument used to assess patient satisfaction with outpatient palliative care interventions. It consists of 13 questions, with Likert scale response options. Higher scores imply better satisfaction from the care received.\n\nThis measure is for patients only.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "score on a scale",
+       "timeFrame": "Change in FAMCARE-P scores from baseline to 3 months.",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Model 1: Consultative Palliative Care",
+         "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        },
+        {
+         "id": "OG001",
+         "title": "Model 2: Trained Hepatologist- Led PC",
+         "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "499"
+          },
+          {
+           "groupId": "OG001",
+           "value": "410"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "0.91",
+             "lowerLimit": "-0.15",
+             "upperLimit": "1.96"
+            },
+            {
+             "groupId": "OG001",
+             "value": "3.37",
+             "lowerLimit": "2.24",
+             "upperLimit": "4.49"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Distress",
+       "description": "Distress thermometer (DT) ranks level of distress from 0- 10, Higher scores reflect higher distress.\n\nThis is for patients only.",
+       "populationDescription": "Modified Intention to treatment population excludes patients who got a liver transplant or were transferred to Hospice within 3 months of enrollment (i.e. before completion of intervention).",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "score on a scale",
+       "timeFrame": "Change in Distress from baseline to 3 months",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Model 1: Consultative Palliative Care",
+         "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        },
+        {
+         "id": "OG001",
+         "title": "Model 2: Trained Hepatologist- Led PC",
+         "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "499"
+          },
+          {
+           "groupId": "OG001",
+           "value": "410"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "-0.34",
+             "lowerLimit": "-0.63",
+             "upperLimit": "-0.06"
+            },
+            {
+             "groupId": "OG001",
+             "value": "-0.27",
+             "lowerLimit": "-0.58",
+             "upperLimit": "0.03"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Goal Concordant Care Questionnaire/ GCC (Patients)",
+       "description": "There are two subscales which assess Goal Concordant Care (GCC):\n\n1. Goals of Care Conversations (GoC) (7 items scale), assessing the perceived extent to which providers have engaged the patient in the process of advance care planning (score range 0-10) and\n2. Care Concordant with Preferences (CCP) (4 items scale), measuring the perceived alignment of delivered care with patient preferences (score range 0-2).\n\nHigher values represent a better outcome. There is no total score for this measure, only subscale scores apply.",
+       "populationDescription": "Modified Intention to treatment population excludes patients who got a liver transplant or were transferred to Hospice within 3 months of enrollment (i.e. before completion of intervention).",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "score on a scale",
+       "timeFrame": "Change in GCC scales from baseline to 3 months",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Model 1: Consultative Palliative Care",
+         "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        },
+        {
+         "id": "OG001",
+         "title": "Model 2: Trained Hepatologist- Led PC",
+         "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "499"
+          },
+          {
+           "groupId": "OG001",
+           "value": "410"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Goals of Care Conversations (GoC) scale",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "0.17",
+             "lowerLimit": "0.08",
+             "upperLimit": "0.26"
+            },
+            {
+             "groupId": "OG001",
+             "value": "0.35",
+             "lowerLimit": "0.27",
+             "upperLimit": "0.44"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Care Concordant with Preferences (CCP) scale",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "0.53",
+             "lowerLimit": "0.35",
+             "upperLimit": "0.70"
+            },
+            {
+             "groupId": "OG001",
+             "value": "0.71",
+             "lowerLimit": "0.52",
+             "upperLimit": "0.89"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Caregiver Burden (Completed by the Caregivers of Patients Who Were Enrolled as a Dyad). Caregivers Were Consented Separately.",
+       "description": "Zarit Burden Interview-12 (ZBI-12) a short, validated instrument is extensively used for palliative care research in diverse populations. It has high internal consistency, reliability and convergent validity to assess caregiver burden. Higher score reflects higher caregiver burden. The score ranges from 0- 48.\n\nThis measure is for caregivers only.",
+       "populationDescription": "Caregivers were enrolled separately. The study enrolled patients with caregivers or patients alone.",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "score on a scale",
+       "timeFrame": "Change in ZBI-12 scores from baseline to 3 months",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Model 1: Consultative Palliative Care",
+         "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        },
+        {
+         "id": "OG001",
+         "title": "Model 2: Trained Hepatologist- Led PC",
+         "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "296"
+          },
+          {
+           "groupId": "OG001",
+           "value": "240"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "-0.69",
+             "lowerLimit": "-1.72",
+             "upperLimit": "0.33"
+            },
+            {
+             "groupId": "OG001",
+             "value": "0.73",
+             "lowerLimit": "-0.34",
+             "upperLimit": "1.79"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Caregiver Quality of Life",
+       "description": "PROMIS- 29 (Patient Reported Outcomes Measurement Information System) assess overall quality of life and is summarized as : Physical and Mental health summary scores. Range 0-100 for both. Higher scores reflect higher physical function but worse mental health (as higher scores reflect higher domain assessed).\n\nHere we report for caregivers only.",
+       "populationDescription": "Modified Intention to treatment population excludes caregivers whose patients who got a liver transplant or were transferred to Hospice within 3 months of enrollment (i.e. before completion of intervention).",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "score on a scale",
+       "timeFrame": "Change in caregiver QoL from baseline to 3 months",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Model 1: Consultative Palliative Care",
+         "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        },
+        {
+         "id": "OG001",
+         "title": "Model 2: Trained Hepatologist- Led PC",
+         "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "296"
+          },
+          {
+           "groupId": "OG001",
+           "value": "240"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Physical Health Summary Score",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "0.19",
+             "lowerLimit": "-0.43",
+             "upperLimit": "0.82"
+            },
+            {
+             "groupId": "OG001",
+             "value": "0.18",
+             "lowerLimit": "-0.47",
+             "upperLimit": "0.84"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Mental Health Summary Score",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "-0.10",
+             "lowerLimit": "-1.14",
+             "upperLimit": "0.94"
+            },
+            {
+             "groupId": "OG001",
+             "value": "-0.49",
+             "lowerLimit": "-1.59",
+             "upperLimit": "0.62"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Goal Concordant Care/ GCC (Caregivers)",
+       "description": "There are two subscales which assess Goal Concordant Care (GCC):\n\n1. Goals of Care Conversations (GoC) (7 items scale), assessing the perceived extent to which providers have engaged the patient in the process of advance care planning (score range 0-10) and\n2. Care Concordant with Preferences (CCP) (4 items scale), measuring the perceived alignment of delivered care with patient preferences (score range 0-2).\n\nHigher values represent a better outcome. There is no total score for this measure, only subscale scores apply.\n\nHere we report for caregivers.",
+       "populationDescription": "Modified Intention to treatment population excludes caregivers of patients who got a liver transplant or were transferred to Hospice within 3 months of enrollment (i.e. before completion of intervention).",
+       "reportingStatus": "POSTED",
+       "paramType": "MEAN",
+       "dispersionType": "95% Confidence Interval",
+       "unitOfMeasure": "score on a scale",
+       "timeFrame": "Change in GCC from baseline to 3 months",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Model 1: Consultative Palliative Care",
+         "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        },
+        {
+         "id": "OG001",
+         "title": "Model 2: Trained Hepatologist- Led PC",
+         "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "296"
+          },
+          {
+           "groupId": "OG001",
+           "value": "240"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "title": "Goals of Care Conversations (GoC) scale",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "0.21",
+             "lowerLimit": "0.09",
+             "upperLimit": "0.32"
+            },
+            {
+             "groupId": "OG001",
+             "value": "0.45",
+             "lowerLimit": "0.33",
+             "upperLimit": "0.57"
+            }
+           ]
+          }
+         ]
+        },
+        {
+         "title": "Care Concordant with Preferences (CCP) scale",
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "0.32",
+             "lowerLimit": "0.06",
+             "upperLimit": "0.58"
+            },
+            {
+             "groupId": "OG001",
+             "value": "0.87",
+             "lowerLimit": "0.61",
+             "upperLimit": "1.14"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "type": "SECONDARY",
+       "title": "Mortality Over 12 Months.",
+       "description": "Number of Patients that Died from Baseline to 12 Month.",
+       "populationDescription": "All enrolled patients are included in this analysis. We report the number of patients who died within 12 months from enrollment (as count of participants).",
+       "reportingStatus": "POSTED",
+       "paramType": "COUNT_OF_PARTICIPANTS",
+       "unitOfMeasure": "Participants",
+       "timeFrame": "Survival over 12 months",
+       "groups": [
+        {
+         "id": "OG000",
+         "title": "Model 1: Consultative Palliative Care",
+         "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        },
+        {
+         "id": "OG001",
+         "title": "Model 2: Trained Hepatologist- Led PC",
+         "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives"
+        }
+       ],
+       "denoms": [
+        {
+         "units": "Participants",
+         "counts": [
+          {
+           "groupId": "OG000",
+           "value": "516"
+          },
+          {
+           "groupId": "OG001",
+           "value": "419"
+          }
+         ]
+        }
+       ],
+       "classes": [
+        {
+         "categories": [
+          {
+           "measurements": [
+            {
+             "groupId": "OG000",
+             "value": "84"
+            },
+            {
+             "groupId": "OG001",
+             "value": "81"
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    "adverseEventsModule": {
+     "frequencyThreshold": "0",
+     "timeFrame": "All patients were followed for 1 year from enrollment. All-Cause Mortality, Serious Adverse Events and Other Adverse Events data were monitored for patients only.",
+     "description": "There were no adverse events related to study intervention (i.e. receiving palliative care from palliative care specialists or hepatologists) reported for patients enrolled in the trial.\n\nMortality data was collected for patients only. Mortality was unrelated to the study participation or study intervention in all cases.",
+     "eventGroups": [
+      {
+       "id": "EG000",
+       "title": "Model 1: Consultative Palliative Care",
+       "description": "Direct access to Palliative Care provider, who will offer palliative care to patients and caregivers, as guided by a standard PC (palliative care) checklist.\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives",
+       "deathsNumAffected": 84,
+       "deathsNumAtRisk": 516,
+       "seriousNumAffected": 0,
+       "seriousNumAtRisk": 516,
+       "otherNumAffected": 0,
+       "otherNumAtRisk": 516
+      },
+      {
+       "id": "EG001",
+       "title": "Model 2: Trained Hepatologist- Led PC",
+       "description": "A hepatologist will receive formal training to deliver Palliative Care (PC) services, and will offer palliative care to patients and caregivers following the same PC checklist as in Model 1\n\nPalliative Care: The intervention will comprise an approach to render palliative care, as taught to hepatologists through an on-line learning platform, and as delivered by PC providers as routine care. The elements of the intervention, which will be guided by a checklist and implemented over the course of interactions with the patient and caregivers at the initial, 1, 2, and 3 month visits, to include:\n\n1. Patient/caregiver understanding of diagnosis, illness and prognosis\n2. Symptom assessment and management\n3. Psychosocial assessment and management\n4. Distress screening and management\n5. Discussion of goals of care\n6. Advanced directives",
+       "deathsNumAffected": 81,
+       "deathsNumAtRisk": 419,
+       "seriousNumAffected": 0,
+       "seriousNumAtRisk": 419,
+       "otherNumAffected": 0,
+       "otherNumAtRisk": 419
+      }
+     ]
+    },
+    "moreInfoModule": {
+     "certainAgreement": {
+      "piSponsorEmployee": false,
+      "restrictiveAgreement": false
+     },
+     "pointOfContact": {
+      "title": "Manisha Verma, MD, MPH. Director, Research",
+      "organization": "Albert Einstein Healthcare Network",
+      "email": "Manisha.Verma@jefferson.edu",
+      "phone": "2154561026"
+     }
+    }
+   },
+   "documentSection": {
+    "largeDocumentModule": {
+     "largeDocs": [
+      {
+       "typeAbbrev": "Prot_SAP",
+       "hasProtocol": true,
+       "hasSap": true,
+       "hasIcf": false,
+       "label": "Study Protocol and Statistical Analysis Plan: Study Protocol with detailed outcomes and procedures",
+       "date": "2024-12-10",
+       "uploadDate": "2025-05-17T15:19",
+       "filename": "Prot_SAP_000.pdf",
+       "size": 809137
+      },
+      {
+       "typeAbbrev": "SAP",
+       "hasProtocol": false,
+       "hasSap": true,
+       "hasIcf": false,
+       "label": "Statistical Analysis Plan: Detailed Statistical Analysis Plan",
+       "date": "2025-04-03",
+       "uploadDate": "2025-11-02T08:23",
+       "filename": "SAP_001.pdf",
+       "size": 371913
+      }
+     ]
+    }
+   },
+   "derivedSection": {
+    "miscInfoModule": {
+     "versionHolder": "2026-11-09"
+    },
+    "conditionBrowseModule": {
+     "meshes": [
+      {
+       "id": "D058625",
+       "term": "End Stage Liver Disease"
+      }
+     ],
+     "ancestors": [
+      {
+       "id": "D017093",
+       "term": "Liver Failure"
+      },
+      {
+       "id": "D048550",
+       "term": "Hepatic Insufficiency"
+      },
+      {
+       "id": "D008107",
+       "term": "Liver Diseases"
+      },
+      {
+       "id": "D004066",
+       "term": "Digestive System Diseases"
+      }
+     ]
+    },
+    "interventionBrowseModule": {
+     "meshes": [
+      {
+       "id": "D010166",
+       "term": "Palliative Care"
+      }
+     ],
+     "ancestors": [
+      {
+       "id": "D005791",
+       "term": "Patient Care"
+      },
+      {
+       "id": "D013812",
+       "term": "Therapeutics"
+      },
+      {
+       "id": "D006296",
+       "term": "Health Services"
+      },
+      {
+       "id": "D005159",
+       "term": "Health Care Facilities Workforce and Services"
+      }
+     ]
+    }
+   },
+   "hasResults": true
+  }
+ ]
+}
