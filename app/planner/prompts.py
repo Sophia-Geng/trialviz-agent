@@ -83,6 +83,12 @@ FEW_SHOTS: list[tuple[str, QueryPlanLLM]] = [
               interpretation="Histogram of enrollment counts for phase 3 asthma trials."),
     ),
     (
+        "Is there a relationship between enrollment and trial duration for psoriasis trials?",
+        _plan(intent="correlation", viz_type="scatter_plot", measure=MeasureSpec(x="enrollment", y="duration_months"),
+              shared_filters=_f(condition="psoriasis"),
+              interpretation="One point per psoriasis trial: enrollment vs months from start to completion."),
+    ),
+    (
         "How many trials are currently recruiting for ALS?",
         _plan(answer_mode="single_value", intent="count", viz_type="metric",
               shared_filters=_f(condition="amyotrophic lateral sclerosis", status=["RECRUITING"]),

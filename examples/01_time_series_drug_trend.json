@@ -6,7 +6,7 @@
   "status_code": 200,
   "response": {
     "visualization": {
-      "title": "Trials per start year: Pembrolizumab",
+      "title": "Trials per start year: Pembrolizumab · 2015+",
       "type": "time_series",
       "encoding": {
         "x": {

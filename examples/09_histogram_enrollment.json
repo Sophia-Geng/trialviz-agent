@@ -1,0 +1,736 @@
+{
+  "request": {
+    "query": "What is the distribution of enrollment sizes in phase 3 breast cancer trials?"
+  },
+  "status_code": 200,
+  "response": {
+    "visualization": {
+      "title": "Distribution of enrollment (participants): breast cancer · Phase 3",
+      "type": "histogram",
+      "encoding": {
+        "x": {
+          "field": "bin_start",
+          "type": "quantitative",
+          "label": "Enrollment (participants)"
+        },
+        "y": {
+          "field": "trial_count",
+          "type": "quantitative",
+          "label": "Trials"
+        },
+        "x2": {
+          "field": "bin_end",
+          "type": "quantitative",
+          "label": "Enrollment (participants)"
+        }
+      },
+      "data": [
+        {
+          "citation_count": 28,
+          "citations": [
+            {
+              "nct_id": "NCT07092475",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "0",
+              "title": "The Impact of Intraoperative Methadone on Postoperative Opioid Use",
+              "url": "https://clinicaltrials.gov/study/NCT07092475"
+            },
+            {
+              "nct_id": "NCT03658213",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "0",
+              "title": "To Compare ZOLADEX 10.8 mg With ZOLADEX 3.6mg in Chinese Pre-menopausal ER+ HER2- Early Breast Cancer.",
+              "url": "https://clinicaltrials.gov/study/NCT03658213"
+            },
+            {
+              "nct_id": "NCT02768714",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "0",
+              "title": "Trial to Compare the Efficacy and Safety of Pegfilgrastim Biosimilar in Subjects With High Risk Stage Breast Cancer Receiving Chemotherapy",
+              "url": "https://clinicaltrials.gov/study/NCT02768714"
+            },
+            {
+              "nct_id": "NCT00301886",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "0",
+              "title": "S0308 Zoledronate or Ibandronate in Preventing Bone Problems in Women With Stage IV Breast Cancer That Has Spread to the Bone",
+              "url": "https://clinicaltrials.gov/study/NCT00301886"
+            },
+            {
+              "nct_id": "NCT00403182",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "0",
+              "title": "Chemotherapy and Hormone Therapy as First-Line Therapy in Treating Postmenopausal Women With Metastatic or Locally Advanced Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00403182"
+            }
+          ],
+          "bin_start": 0.0,
+          "bin_end": 1.0,
+          "trial_count": 28
+        },
+        {
+          "citation_count": 3,
+          "citations": [
+            {
+              "nct_id": "NCT05134194",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "1",
+              "title": "A Study of Camrelizumab in Combination With Chemotherapy Regimen Comparative Chemotherapy Regimen for Metastatic Triple-negative Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT05134194"
+            },
+            {
+              "nct_id": "NCT00998738",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "1",
+              "title": "Calcium and Magnesium in Preventing Peripheral Neuropathy Caused by Ixabepilone in Patients With Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00998738"
+            },
+            {
+              "nct_id": "NCT00429403",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "1",
+              "title": "Goserelin Acetate Study for Ovarian Function in Patients With Primary Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00429403"
+            }
+          ],
+          "bin_start": 1.0,
+          "bin_end": 2.0,
+          "trial_count": 3
+        },
+        {
+          "citation_count": 4,
+          "citations": [
+            {
+              "nct_id": "NCT01917578",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "4",
+              "title": "Study of Breast Cancer Shrinkage Modes After Neoadjuvant Chemotherapy With Whole-mount Serial Sections and Three-dimensional Pathological and MRI Reconstruction",
+              "url": "https://clinicaltrials.gov/study/NCT01917578"
+            },
+            {
+              "nct_id": "NCT01259284",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "2",
+              "title": "Fish Oil Versus Statins Versus Placebos in Reducing Atrial Fibrillation in Patients Undergoing Thoracic Surgery for Lung Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT01259284"
+            },
+            {
+              "nct_id": "NCT01773460",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "3",
+              "title": "Everolimus Beyond Progress for Patients Who Had Progress Under Everolimus and Exemestane",
+              "url": "https://clinicaltrials.gov/study/NCT01773460"
+            },
+            {
+              "nct_id": "NCT05128773",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "3",
+              "title": "Study of Amcenestrant (SAR439859) Versus Tamoxifen for Patients With Hormone Receptor-positive (HR+) Early Breast Cancer, Who Have Discontinued Adjuvant Aromatase Inhibitor Therapy Due to Treatment-related Toxicity",
+              "url": "https://clinicaltrials.gov/study/NCT05128773"
+            }
+          ],
+          "bin_start": 2.0,
+          "bin_end": 5.0,
+          "trial_count": 4
+        },
+        {
+          "citation_count": 7,
+          "citations": [
+            {
+              "nct_id": "NCT00301080",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "7",
+              "title": "D-cycloserine in the Management of Chemotherapy-Induced Peripheral Neuropathic Pain",
+              "url": "https://clinicaltrials.gov/study/NCT00301080"
+            },
+            {
+              "nct_id": "NCT01942980",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "8",
+              "title": "Evaluation of the Efficacy of Hippocampal Avoidance on the Cognitive Toxicity of Whole-Brain Radiation Therapy After Surgical Resection of Single Brain Metastasis of Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT01942980"
+            },
+            {
+              "nct_id": "NCT01568346",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "9",
+              "title": "Breast MRI for Newly Diagnosed Breast Cancer:Impact on Re-excision Lumpectomy",
+              "url": "https://clinicaltrials.gov/study/NCT01568346"
+            },
+            {
+              "nct_id": "NCT05065411",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "5",
+              "title": "Efficacy & Safety Evaluation of Enobosarm in Combo With Abemaciclib in Treatment of ER+HER2- Metastatic Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT05065411"
+            },
+            {
+              "nct_id": "NCT03050398",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "8",
+              "title": "A Companion Sample Collection Protocol to Support the Discovery of Breast Cancer Aberrations With Treatment of CDK4/6 Therapy/LEE011/Ribociclib",
+              "url": "https://clinicaltrials.gov/study/NCT03050398"
+            }
+          ],
+          "bin_start": 5.0,
+          "bin_end": 10.0,
+          "trial_count": 7
+        },
+        {
+          "citation_count": 18,
+          "citations": [
+            {
+              "nct_id": "NCT01392586",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "10",
+              "title": "Systemic Therapy With or Without Upfront Surgery in Metastatic Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT01392586"
+            },
+            {
+              "nct_id": "NCT05503108",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "10",
+              "title": "Fasting Mimicking Diet Program to ImpRovE ChemoTherapy in Hormone Receptor Postive (HR+), HER2- Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT05503108"
+            },
+            {
+              "nct_id": "NCT01613482",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "13",
+              "title": "TraStuzumAb-Radiotherapy : Impact on the Cerebral Prevention",
+              "url": "https://clinicaltrials.gov/study/NCT01613482"
+            },
+            {
+              "nct_id": "NCT03202446",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "18",
+              "title": "Randomized Clinical Trial Evaluating the Use of the Laser-Assisted Immunotherapy (LIT/inCVAX) in Advanced Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT03202446"
+            },
+            {
+              "nct_id": "NCT01902823",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "16",
+              "title": "Effect of Cancer Nurse Navigators on Patient Outcomes",
+              "url": "https://clinicaltrials.gov/study/NCT01902823"
+            }
+          ],
+          "bin_start": 10.0,
+          "bin_end": 20.0,
+          "trial_count": 18
+        },
+        {
+          "citation_count": 67,
+          "citations": [
+            {
+              "nct_id": "NCT03997188",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "40",
+              "title": "Zinc-L-Carnosine Prevents Dysphagia in Breast Cancer Patients Undergoing Adjuvant Radiotherapy",
+              "url": "https://clinicaltrials.gov/study/NCT03997188"
+            },
+            {
+              "nct_id": "NCT00049660",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "47",
+              "title": "Capecitabine Compared With Vinorelbine in Treating Women With Metastatic Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00049660"
+            },
+            {
+              "nct_id": "NCT00859703",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "20",
+              "title": "Study to Assess Efficacy of Risedronate in Preventing Bone Loss in Postmenopausal Women Treated for Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00859703"
+            },
+            {
+              "nct_id": "NCT01276938",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "40",
+              "title": "Exclusive Intraoperative Radiation Therapy for Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT01276938"
+            },
+            {
+              "nct_id": "NCT07166042",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "34",
+              "title": "Guided Meditation During Radiation Therapy for Breast and Gynecological Malignancies",
+              "url": "https://clinicaltrials.gov/study/NCT07166042"
+            }
+          ],
+          "bin_start": 20.0,
+          "bin_end": 50.0,
+          "trial_count": 67
+        },
+        {
+          "citation_count": 130,
+          "citations": [
+            {
+              "nct_id": "NCT02548338",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "60",
+              "title": "Argon Plasma Coagulation Scalpel on Surgical Treatment of Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT02548338"
+            },
+            {
+              "nct_id": "NCT05889390",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "71",
+              "title": "Neoadjuvant Concomitant Modulated Electro-hyperthermia in HER2-negative Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT05889390"
+            },
+            {
+              "nct_id": "NCT06306274",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "80",
+              "title": "Topical Tacrolimus for Breast Cancer-related Lymphedema",
+              "url": "https://clinicaltrials.gov/study/NCT06306274"
+            },
+            {
+              "nct_id": "NCT02194166",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "90",
+              "title": "A Study to Investigate the Tolerability of Subcutaneous (SC) Trastuzumab Administration in Participants With Human Epidermal Growth Factor Receptor 2 (HER2) Positive Early Breast Cancer (eBC) Using Either a Single-Use Injection Device or Manual Administration",
+              "url": "https://clinicaltrials.gov/study/NCT02194166"
+            },
+            {
+              "nct_id": "NCT01526369",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "75",
+              "title": "A Randomized Study of TH Versus THL in First Line Treatment of HER2-positive Metastatic Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT01526369"
+            }
+          ],
+          "bin_start": 50.0,
+          "bin_end": 100.0,
+          "trial_count": 130
+        },
+        {
+          "citation_count": 195,
+          "citations": [
+            {
+              "nct_id": "NCT04752332",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "111",
+              "title": "A Study of Abemaciclib (LY2835219) Plus Hormone Therapy in Participants With Early Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT04752332"
+            },
+            {
+              "nct_id": "NCT02324088",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "174",
+              "title": "Interest of Maintenance Chemotherapy After Induction Treatment for Inflammatory Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT02324088"
+            },
+            {
+              "nct_id": "NCT03240224",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "120",
+              "title": "Bioinformation Therapy for Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT03240224"
+            },
+            {
+              "nct_id": "NCT00981305",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "136",
+              "title": "Impact of Lactate-Containing Vaginal Lubricant on Sexual Dysfunction in Young Breast Cancer Survivors",
+              "url": "https://clinicaltrials.gov/study/NCT00981305"
+            },
+            {
+              "nct_id": "NCT00949598",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "177",
+              "title": "Letrozole or Tamoxifen Citrate in Treating Older Postmenopausal Women Undergoing Surgery for Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00949598"
+            }
+          ],
+          "bin_start": 100.0,
+          "bin_end": 200.0,
+          "trial_count": 195
+        },
+        {
+          "citation_count": 501,
+          "citations": [
+            {
+              "nct_id": "NCT04239560",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "257",
+              "title": "Preventive Effect of Boron-based Gel on Radiation Dermatitis",
+              "url": "https://clinicaltrials.gov/study/NCT04239560"
+            },
+            {
+              "nct_id": "NCT02445391",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "415",
+              "title": "Platinum in Treating Patients With Residual Triple-Negative Breast Cancer Following Neoadjuvant Chemotherapy",
+              "url": "https://clinicaltrials.gov/study/NCT02445391"
+            },
+            {
+              "nct_id": "NCT00003680",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "300",
+              "title": "Standard Chemotherapy Compared With High-Dose Chemotherapy Plus Peripheral Stem Cell Transplant in Treating Women With Advanced or Inflammatory Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00003680"
+            },
+            {
+              "nct_id": "NCT06313086",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "442",
+              "title": "DP303c Versus Trastuzumab Emtansine in in Patients With HER2-positive Advanced Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06313086"
+            },
+            {
+              "nct_id": "NCT01250379",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "494",
+              "title": "A Study of Avastin (Bevacizumab) in Combination With Chemotherapy in Patients With Breast Cancer Progressing After First-Line Therapy With Avastin and Chemotherapy (TANIA)",
+              "url": "https://clinicaltrials.gov/study/NCT01250379"
+            }
+          ],
+          "bin_start": 200.0,
+          "bin_end": 500.0,
+          "trial_count": 501
+        },
+        {
+          "citation_count": 286,
+          "citations": [
+            {
+              "nct_id": "NCT03315364",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "549",
+              "title": "Oral Paclitaxel Trial In Recurrent and Metastatic Breast Cancer As 1st Line Therapy",
+              "url": "https://clinicaltrials.gov/study/NCT03315364"
+            },
+            {
+              "nct_id": "NCT07879911",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "550",
+              "title": "A Study of SYS6043 Versus Investigator's Choice Chemotherapy as First-Line Treatment in Patients With Unresectable Locally Recurrent or Metastatic Triple-Negative Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT07879911"
+            },
+            {
+              "nct_id": "NCT02641847",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "503",
+              "title": "TA(E)C-GP Versus A(E)C-T for the High Risk TNBC Patients and Validation of the mRNA-lncRNA Signature",
+              "url": "https://clinicaltrials.gov/study/NCT02641847"
+            },
+            {
+              "nct_id": "NCT00938652",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "519",
+              "title": "A Phase 3, Multi-Center Study of Gemcitabine/Carboplatin, With or Without BSI-201, in Patients With ER-, PR-, and Her2-Negative Metastatic Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00938652"
+            },
+            {
+              "nct_id": "NCT01095003",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "770",
+              "title": "Trial of Vinflunine Plus Capecitabine in Advanced Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT01095003"
+            }
+          ],
+          "bin_start": 500.0,
+          "bin_end": 1000.0,
+          "trial_count": 286
+        },
+        {
+          "citation_count": 138,
+          "citations": [
+            {
+              "nct_id": "NCT05993559",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "1314",
+              "title": "Necessity of Post-mastectomy Radiotherapy After Neoadjuvant Chemotherapy and Mastectomy",
+              "url": "https://clinicaltrials.gov/study/NCT05993559"
+            },
+            {
+              "nct_id": "NCT00408408",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "1206",
+              "title": "Chemotherapy With or Without Bevacizumab in Treating Women With Stage I, Stage II, or Stage IIIA Breast Cancer That Can Be Removed By Surgery",
+              "url": "https://clinicaltrials.gov/study/NCT00408408"
+            },
+            {
+              "nct_id": "NCT04873362",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "1188",
+              "title": "A Study Evaluating the Efficacy and Safety of Adjuvant Atezolizumab or Placebo and Trastuzumab Emtansine for Participants With HER2-Positive Breast Cancer at High Risk of Recurrence Following Preoperative Therapy",
+              "url": "https://clinicaltrials.gov/study/NCT04873362"
+            },
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "1000",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT01785420",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "1100",
+              "title": "Pre Operative Trastuzumab in Operable Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT01785420"
+            }
+          ],
+          "bin_start": 1000.0,
+          "bin_end": 2000.0,
+          "trial_count": 138
+        },
+        {
+          "citation_count": 122,
+          "citations": [
+            {
+              "nct_id": "NCT02338310",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "4486",
+              "title": "Trial of Perioperative Endocrine Therapy - Individualising Care",
+              "url": "https://clinicaltrials.gov/study/NCT02338310"
+            },
+            {
+              "nct_id": "NCT00002707",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "2411",
+              "title": "Chemotherapy in Treating Women With Breast Cancer That Can Be Surgically Removed",
+              "url": "https://clinicaltrials.gov/study/NCT00002707"
+            },
+            {
+              "nct_id": "NCT00032136",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "4400",
+              "title": "Exemestane Compared With Tamoxifen in Treating Postmenopausal Women With Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00032136"
+            },
+            {
+              "nct_id": "NCT06492616",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "4556",
+              "title": "A Study of Elacestrant Versus Standard Endocrine Therapy in Women and Men With ER+,HER2-, Early Breast Cancer With High Risk of Recurrence",
+              "url": "https://clinicaltrials.gov/study/NCT06492616"
+            },
+            {
+              "nct_id": "NCT00054587",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "3010",
+              "title": "Combination Chemotherapy With or Without Trastuzumab in Treating Women With Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00054587"
+            }
+          ],
+          "bin_start": 2000.0,
+          "bin_end": 5000.0,
+          "trial_count": 122
+        },
+        {
+          "citation_count": 26,
+          "citations": [
+            {
+              "nct_id": "NCT00004205",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "8028",
+              "title": "Letrozole or Tamoxifen in Treating Postmenopausal Women With Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00004205"
+            },
+            {
+              "nct_id": "NCT00066573",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "7576",
+              "title": "Exemestane or Anastrozole in Treating Postmenopausal Women Who Have Undergone Surgery for Primary Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00066573"
+            },
+            {
+              "nct_id": "NCT01272037",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "5018",
+              "title": "Tamoxifen Citrate, Letrozole, Anastrozole, or Exemestane With or Without Chemotherapy in Treating Patients With Invasive RxPONDER Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT01272037"
+            },
+            {
+              "nct_id": "NCT04842617",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "5274",
+              "title": "Phase III Study ：SHR6390/Placebo Combined With Endocrine Therapy for the Adjuvant Treatment of Hormone Receptor Positive,Human Epidermal Receptor 2 Negative",
+              "url": "https://clinicaltrials.gov/study/NCT04842617"
+            },
+            {
+              "nct_id": "NCT00003782",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "5351",
+              "title": "Combination Chemotherapy in Treating Women With Stage I, Stage II, or Stage IIIA (cT1-3, N0-1, M0) Breast Cancer and Positive Axillary Lymph Nodes",
+              "url": "https://clinicaltrials.gov/study/NCT00003782"
+            }
+          ],
+          "bin_start": 5000.0,
+          "bin_end": 10000.0,
+          "trial_count": 26
+        },
+        {
+          "citation_count": 4,
+          "citations": [
+            {
+              "nct_id": "NCT02804815",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "11000",
+              "title": "Add-Aspirin: A Trial Assessing the Effects of Aspirin on Disease Recurrence and Survival After Primary Therapy in Common Non Metastatic Solid Tumours",
+              "url": "https://clinicaltrials.gov/study/NCT02804815"
+            },
+            {
+              "nct_id": "NCT00003906",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "19747",
+              "title": "Study of Tamoxifen and Raloxifene (STAR) for the Prevention of Breast Cancer in Postmenopausal Women",
+              "url": "https://clinicaltrials.gov/study/NCT00003906"
+            },
+            {
+              "nct_id": "NCT00310180",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "10273",
+              "title": "Hormone Therapy With or Without Combination Chemotherapy in Treating Women Who Have Undergone Surgery for Node-Negative Breast Cancer (The TAILORx Trial)",
+              "url": "https://clinicaltrials.gov/study/NCT00310180"
+            },
+            {
+              "nct_id": "NCT00190593",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "10000",
+              "title": "Raloxifene Use for The Heart",
+              "url": "https://clinicaltrials.gov/study/NCT00190593"
+            }
+          ],
+          "bin_start": 10000.0,
+          "bin_end": 20000.0,
+          "trial_count": 4
+        },
+        {
+          "citation_count": 2,
+          "citations": [
+            {
+              "nct_id": "NCT00003016",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "20000",
+              "title": "Prolonged Tamoxifen Compared With Shorter Tamoxifen in Treating Patients Who Have Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00003016"
+            },
+            {
+              "nct_id": "NCT00003678",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "20000",
+              "title": "Tamoxifen in Treating Women With Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT00003678"
+            }
+          ],
+          "bin_start": 20000.0,
+          "bin_end": 50000.0,
+          "trial_count": 2
+        },
+        {
+          "citation_count": 1,
+          "citations": [
+            {
+              "nct_id": "NCT06270355",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "70000",
+              "title": "Stockholm Mammography Risk Stratified Trial",
+              "url": "https://clinicaltrials.gov/study/NCT06270355"
+            }
+          ],
+          "bin_start": 50000.0,
+          "bin_end": 100000.0,
+          "trial_count": 1
+        },
+        {
+          "citation_count": 1,
+          "citations": [
+            {
+              "nct_id": "NCT03233191",
+              "field": "protocolSection.designModule.enrollmentInfo.count",
+              "excerpt": "108508",
+              "title": "Digital Tomosynthesis Mammography and Digital Mammography in Screening Patients for Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT03233191"
+            }
+          ],
+          "bin_start": 100000.0,
+          "bin_end": 200000.0,
+          "trial_count": 1
+        }
+      ]
+    },
+    "meta": {
+      "answer_mode": "visualization",
+      "query_interpretation": "Histogram of enrollment counts for phase 3 breast cancer trials.",
+      "filters_applied": {
+        "filters": {
+          "condition": "breast cancer",
+          "phase": [
+            "PHASE3"
+          ]
+        },
+        "api_params": {
+          "query.cond": "breast cancer",
+          "filter.advanced": "(AREA[Phase]PHASE3)"
+        }
+      },
+      "plan": {
+        "answer_mode": "visualization",
+        "unsupported_reason": null,
+        "intent": "distribution",
+        "cohorts": [],
+        "shared_filters": {
+          "intervention": null,
+          "condition": "breast cancer",
+          "sponsor": null,
+          "country": null,
+          "status": null,
+          "phase": [
+            "PHASE3"
+          ],
+          "study_type": null,
+          "start_year": null,
+          "end_year": null
+        },
+        "group_by": null,
+        "split_by": null,
+        "measure": {
+          "x": "enrollment",
+          "y": null
+        },
+        "network": null,
+        "viz_type": "histogram",
+        "top_n": 15,
+        "interpretation": "Histogram of enrollment counts for phase 3 breast cancer trials.",
+        "max_records": 10000,
+        "notes": []
+      },
+      "units": {
+        "x": "enrollment (participants)",
+        "y": "trials"
+      },
+      "sort": {
+        "field": "bin_start",
+        "order": "asc"
+      },
+      "time_granularity": null,
+      "grouping": null,
+      "binning": {
+        "method": "log",
+        "bin_count": 17
+      },
+      "geo_hint": null,
+      "record_counts": {
+        "total_matching": 1566,
+        "fetched": 1566,
+        "truncated": false,
+        "count_method": "full_scan"
+      },
+      "notes": [
+        "33 trials without a value for enrollment (participants) are not shown.",
+        "Bins grow on a 1-2-5 scale (0, 1, 2, 5, 10, 20, ...) because the values are long-tailed."
+      ],
+      "source": {
+        "name": "clinicaltrials.gov",
+        "api": "https://clinicaltrials.gov/api/v2",
+        "api_version": "2.0.5",
+        "data_timestamp": "2026-11-10T10:00:05",
+        "retrieved_at": "2026-11-10T16:17:38.861604Z"
+      }
+    }
+  }
+}

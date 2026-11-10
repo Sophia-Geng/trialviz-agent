@@ -6,18 +6,25 @@ in `meta`, so the pipeline only has to assemble them.
 
 from __future__ import annotations
 
+import math
 from dataclasses import dataclass, field
 
-from app.aggregate.engine import MAX_CITATIONS, CoOccurrence, GroupResult, make_citation
-from app.data.dimensions import P, Extracted, brief_title, nct_id
+from app.aggregate.engine import MAX_CITATIONS, CoOccurrence, GroupResult, extract_batch, make_citation
+from app.data.dimensions import DIMENSIONS, P, Extracted, brief_title, nct_id
 from app.data.normalize import UNKNOWN, phase_sort_key
 from app.schemas.enums import DimensionName
 from app.schemas.response import (
     BarChart,
+    BinDatum,
+    Binning,
     CategoryDatum,
     Channel,
     GroupedBarChart,
     Grouping,
+    Histogram,
+    HistogramEncoding,
+    PointDatum,
+    ScatterPlot,
     Metric,
     MetricDatum,
     MetricEncoding,
@@ -36,13 +43,18 @@ from app.schemas.response import (
 TRIALS = Channel(field="trial_count", type="quantitative", label="Trials")
 IDENTIFICATION = f"{P}.identificationModule"
 ORDINAL_DIMENSIONS = {DimensionName.PHASE}
+# Long-tailed counts: 1-2-5 log bins (0, 1, 2, 5, 10, 20, 50, ...) instead of equal widths.
+LOG_BINNED = {DimensionName.ENROLLMENT, DimensionName.SITE_COUNT}
+LINEAR_TARGET_BINS = 15
+MAX_SCATTER_POINTS = 2000
 
 
 @dataclass
 class Built:
-    visualization: BarChart | GroupedBarChart | TimeSeries | Metric | NetworkGraph
+    visualization: BarChart | GroupedBarChart | TimeSeries | Metric | NetworkGraph | Histogram | ScatterPlot
     sort: SortSpec | None = None
     grouping: Grouping | None = None
+    binning: Binning | None = None
     time_granularity: str | None = None
     units: dict[str, str] = field(default_factory=lambda: {"y": "trials"})
     notes: list[str] = field(default_factory=list)
@@ -202,6 +214,112 @@ def network_graph(graph: CoOccurrence, title: str, max_nodes: int, min_weight: i
         visualization=NetworkGraph(title=title, data=NetworkData(nodes=nodes, edges=edge_rows)),
         units={"node_size": "trials", "edge_weight": "shared trials"},
         sort=SortSpec(field="weight", order="desc"),
+        notes=notes,
+    )
+
+
+def log_edges(max_value: float) -> list[float]:
+    """0, 1, 2, 5, 10, 20, 50, ... up to the first edge above max_value."""
+    edges = [0.0, 1.0]
+    while edges[-1] <= max_value:
+        last = edges[-1]
+        mag = 10 ** math.floor(math.log10(last))
+        step = last / mag
+        edges.append((2 if step == 1 else 5 if step == 2 else 10) * mag)
+    return edges
+
+
+def linear_edges(lo: float, hi: float, target_bins: int = LINEAR_TARGET_BINS) -> list[float]:
+    """Equal-width bins with a 'nice' width (1, 2 or 5 x 10^k)."""
+    raw = max((hi - lo) / target_bins, 1e-9)
+    mag = 10 ** math.floor(math.log10(raw))
+    width = next(m * mag for m in (1, 2, 5, 10) if m * mag >= raw)
+    start = math.floor(lo / width) * width
+    edges = [start]
+    while edges[-1] <= hi:
+        edges.append(round(edges[-1] + width, 10))
+    return edges
+
+
+def histogram(studies: list[dict], dim_name: DimensionName, title: str) -> Built:
+    dim = DIMENSIONS[dim_name]
+    pairs = [(s, vals[0]) for s, vals in zip(studies, extract_batch(studies, dim_name), strict=True) if vals]
+    notes: list[str] = []
+    if len(pairs) < len(studies):
+        notes.append(f"{len(studies) - len(pairs)} trials without a value for {dim.label.lower()} are not shown.")
+    values = [float(v.key) for _, v in pairs]
+
+    log = dim_name in LOG_BINNED
+    edges = (log_edges(max(values)) if log else linear_edges(min(values), max(values))) if values else []
+    rows: list[BinDatum] = []
+    for lo, hi in zip(edges, edges[1:]):
+        members = [(s, v) for s, v in pairs if lo <= float(v.key) < hi]
+        rows.append(
+            BinDatum(
+                bin_start=lo,
+                bin_end=hi,
+                trial_count=len(members),
+                citation_count=len(members),
+                citations=[make_citation(s, v) for s, v in members[:MAX_CITATIONS]],
+            )
+        )
+    if log:
+        notes.append("Bins grow on a 1-2-5 scale (0, 1, 2, 5, 10, 20, ...) because the values are long-tailed.")
+    estimated = sum(v.estimated for _, v in pairs)
+    if estimated:
+        notes.append(f"{estimated} values are based on ESTIMATED dates (trials not yet completed).")
+    return Built(
+        visualization=Histogram(
+            title=title,
+            encoding=HistogramEncoding(
+                x=Channel(field="bin_start", type="quantitative", label=dim.label),
+                x2=Channel(field="bin_end", type="quantitative", label=dim.label),
+                y=TRIALS,
+            ),
+            data=rows,
+        ),
+        sort=SortSpec(field="bin_start", order="asc"),
+        binning=Binning(method="log" if log else "linear", bin_count=len(rows)),
+        units={"x": dim.label.lower(), "y": "trials"},
+        notes=notes,
+    )
+
+
+def scatter_plot(studies: list[dict], x_dim: DimensionName, y_dim: DimensionName, title: str) -> Built:
+    xs = extract_batch(studies, x_dim)
+    ys = extract_batch(studies, y_dim)
+    points = []
+    for study, xv, yv in zip(studies, xs, ys, strict=True):
+        if xv and yv:
+            points.append(
+                PointDatum(
+                    nct_id=nct_id(study),
+                    x=float(xv[0].key),
+                    y=float(yv[0].key),
+                    label=brief_title(study) or nct_id(study),
+                    citations=[make_citation(study, xv[0]), make_citation(study, yv[0])],
+                )
+            )
+    notes = []
+    if len(points) < len(studies):
+        notes.append(f"{len(studies) - len(points)} trials missing either value are not shown.")
+    if len(points) > MAX_SCATTER_POINTS:
+        notes.append(f"Showing the first {MAX_SCATTER_POINTS} of {len(points)} trials (API order).")
+        points = points[:MAX_SCATTER_POINTS]
+    x_label, y_label = DIMENSIONS[x_dim].label, DIMENSIONS[y_dim].label
+    if {x_dim, y_dim} & LOG_BINNED:
+        notes.append("Values are long-tailed; a log scale is recommended for " +
+                     " and ".join(DIMENSIONS[d].label.lower() for d in (x_dim, y_dim) if d in LOG_BINNED) + ".")
+    return Built(
+        visualization=ScatterPlot(
+            title=title,
+            encoding=XYEncoding(
+                x=Channel(field="x", type="quantitative", label=x_label),
+                y=Channel(field="y", type="quantitative", label=y_label),
+            ),
+            data=points,
+        ),
+        units={"x": x_label.lower(), "y": y_label.lower()},
         notes=notes,
     )
 

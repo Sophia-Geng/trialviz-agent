@@ -5,7 +5,7 @@
   "status_code": 200,
   "response": {
     "visualization": {
-      "title": "Trials by country (recruiting sites): breast cancer",
+      "title": "Trials by country (recruiting sites): breast cancer · Recruiting",
       "type": "bar_chart",
       "encoding": {
         "x": {

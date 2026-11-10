@@ -131,6 +131,46 @@ def test_network_pruning():
     assert any("fewer than 2" in n for n in built.notes)
 
 
+def test_log_and_linear_edges():
+    assert builder.log_edges(120) == [0, 1, 2, 5, 10, 20, 50, 100, 200]
+    assert builder.log_edges(0) == [0, 1]
+    assert builder.linear_edges(3, 47, target_bins=5) == [0, 10, 20, 30, 40, 50]
+
+
+def _enrolled(nid, count, start="2020-01", end="2022-01"):
+    return {
+        "protocolSection": {
+            "identificationModule": {"nctId": nid, "briefTitle": nid},
+            "designModule": {"enrollmentInfo": {"count": count}} if count is not None else {},
+            "statusModule": {"startDateStruct": {"date": start, "type": "ACTUAL"},
+                             "completionDateStruct": {"date": end, "type": "ACTUAL"}},
+        }
+    }
+
+
+ENROLLED = [_enrolled("NCT1", 0), _enrolled("NCT2", 1), _enrolled("NCT3", 4), _enrolled("NCT4", 40),
+            _enrolled("NCT5", 50), _enrolled("NCT6", None)]
+
+
+def test_histogram_log_bins_count_by_hand():
+    built = builder.histogram(ENROLLED, D.ENROLLMENT, "t")
+    rows = [(d.bin_start, d.bin_end, d.trial_count) for d in built.visualization.data]
+    assert rows == [(0, 1, 1), (1, 2, 1), (2, 5, 1), (5, 10, 0), (10, 20, 0), (20, 50, 1), (50, 100, 1)]
+    assert sum(r[2] for r in rows) == 5  # NCT6 has no enrollment
+    assert built.binning.method == "log" and built.visualization.encoding.x2.field == "bin_end"
+    assert built.visualization.data[-1].citations[0].excerpt == "50"
+    assert any("1 trials without" in n for n in built.notes)
+
+
+def test_scatter_one_point_per_trial_with_two_citations():
+    built = builder.scatter_plot(ENROLLED, D.ENROLLMENT, D.DURATION_MONTHS, "t")
+    points = built.visualization.data
+    assert [p.nct_id for p in points] == ["NCT1", "NCT2", "NCT3", "NCT4", "NCT5"]
+    assert points[3].x == 40 and points[3].y == 24.0
+    assert [c.field.split(".")[-1] for c in points[0].citations] == ["count", "date"]
+    assert any("log scale" in n for n in built.notes)
+
+
 def test_partition_by_split_dimension():
     parts = dict(partition(MINI, D.COUNTRY))
     assert [s["protocolSection"]["identificationModule"]["nctId"] for s in parts["France"]] == ["NCT1", "NCT2"]

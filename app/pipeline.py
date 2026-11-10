@@ -12,6 +12,7 @@ from app.aggregate.engine import co_occurrence, group_by, partition
 from app.ctgov.client import CtgovClient, FetchResult
 from app.ctgov.query_builder import build_params, merge_filters
 from app.data.dimensions import DIMENSIONS, api_fields
+from app.data.normalize import humanize_enum, normalize_phase
 from app.schemas.enums import AnswerMode, DimensionName, VizType
 from app.schemas.plan import Cohort, PlanFilters, QueryPlan
 from app.schemas.response import Meta, RecordCounts, SourceInfo, VisualizeResponse
@@ -53,6 +54,7 @@ def execute_plan(plan: QueryPlan, client: CtgovClient) -> VisualizeResponse:
             sort=built.sort,
             time_granularity=built.time_granularity,
             grouping=built.grouping,
+            binning=built.binning,
             record_counts=RecordCounts(
                 total_matching=sum(c.fetch.total for c in cohorts),
                 fetched=sum(len(c.fetch.studies) for c in cohorts),
@@ -78,7 +80,8 @@ NETWORK_NODES_PER_TOP_N = 2  # default top_n=15 -> up to 30 nodes
 
 def _fetch_cohorts(plan: QueryPlan, client: CtgovClient) -> list[CohortData]:
     network = [plan.network.source_dim, plan.network.target_dim] if plan.network else []
-    dims = [d for d in (plan.group_by, plan.split_by, *network) if d is not None]
+    measure = [plan.measure.x, plan.measure.y] if plan.measure else []
+    dims = [d for d in (plan.group_by, plan.split_by, *network, *measure) if d is not None]
     fields = api_fields(dims)
     # A metric only needs the API's totalCount plus a few example records for citations.
     max_records = METRIC_SAMPLE if plan.viz_type is VizType.METRIC else plan.max_records
@@ -100,6 +103,10 @@ def _build(plan: QueryPlan, cohorts: list[CohortData]) -> builder.Built:
         case VizType.METRIC:
             c = cohorts[0]
             return builder.metric(c.fetch.total, c.fetch.studies, title, plan.interpretation)
+        case VizType.HISTOGRAM:
+            return builder.histogram(cohorts[0].fetch.studies, plan.measure.x, title)
+        case VizType.SCATTER_PLOT:
+            return builder.scatter_plot(cohorts[0].fetch.studies, plan.measure.x, plan.measure.y, title)
         case VizType.TIME_SERIES:
             f = cohorts[0].filters
             result = group_by(cohorts[0].fetch.studies, plan.group_by)
@@ -115,23 +122,40 @@ def _build(plan: QueryPlan, cohorts: list[CohortData]) -> builder.Built:
     raise NotImplementedError(f"viz_type {plan.viz_type} is not implemented yet")
 
 
+def _scope(f: PlanFilters, entities: bool = True) -> str:
+    """Human-readable filter summary for titles, e.g. 'breast cancer · Phase 3 · Recruiting · 2015+'."""
+    parts = [x for x in (f.intervention, f.condition, f.sponsor, f.country) if x] if entities else []
+    if f.phase:
+        parts.append("/".join(normalize_phase([p.value]) for p in f.phase))
+    if f.status:
+        parts.append("/".join(humanize_enum(s.value) for s in f.status))
+    if f.study_type:
+        parts.append(humanize_enum(f.study_type.value))
+    if f.start_year or f.end_year:
+        parts.append(f"{f.start_year or ''}–{f.end_year or ''}" if f.end_year else f"{f.start_year}+")
+    return " · ".join(parts)
+
+
 def _title(plan: QueryPlan, cohorts: list[CohortData]) -> str:
-    what = DIMENSIONS[plan.group_by].label.lower() if plan.group_by else "trials"
-    if plan.viz_type is VizType.NETWORK_GRAPH:
-        f = cohorts[0].filters
-        scope = " · ".join(x for x in (f.intervention, f.condition, f.sponsor, f.country) if x) or ALL_TRIALS
-        a, b = DIMENSIONS[plan.network.source_dim].label, DIMENSIONS[plan.network.target_dim].label
-        return f"{a} ↔ {b} network: {scope}" if a != b else f"{a} co-occurrence network: {scope}"
-    if plan.viz_type is VizType.METRIC:
-        f = cohorts[0].filters
-        return "Matching trials: " + (" · ".join(x for x in (f.intervention, f.condition, f.sponsor, f.country) if x) or ALL_TRIALS)
     if len(cohorts) > 1:
-        scope = " vs ".join(c.label for c in cohorts)
+        shared = _scope(plan.shared_filters)
+        scope = " vs ".join(c.label for c in cohorts) + (f" · {shared}" if shared else "")
     else:
-        f = cohorts[0].filters
-        scope = " · ".join(x for x in (f.intervention, f.condition, f.sponsor, f.country) if x) or ALL_TRIALS
-    prefix = "Trials per start year" if plan.group_by is DimensionName.START_YEAR else f"Trials by {what}"
-    return f"{prefix}: {scope}"
+        scope = _scope(cohorts[0].filters) or ALL_TRIALS
+
+    match plan.viz_type:
+        case VizType.NETWORK_GRAPH:
+            a, b = DIMENSIONS[plan.network.source_dim].label, DIMENSIONS[plan.network.target_dim].label
+            return f"{a} ↔ {b} network: {scope}" if a != b else f"{a} co-occurrence network: {scope}"
+        case VizType.HISTOGRAM:
+            return f"Distribution of {DIMENSIONS[plan.measure.x].label.lower()}: {scope}"
+        case VizType.SCATTER_PLOT:
+            return f"{DIMENSIONS[plan.measure.x].label} vs {DIMENSIONS[plan.measure.y].label.lower()}: {scope}"
+        case VizType.METRIC:
+            return f"Matching trials: {scope}"
+        case VizType.TIME_SERIES:
+            return f"Trials per start year: {scope}"
+    return f"Trials by {DIMENSIONS[plan.group_by].label.lower()}: {scope}"
 
 
 def _filters_applied(cohorts: list[CohortData]) -> dict:

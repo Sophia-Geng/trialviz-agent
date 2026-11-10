@@ -90,7 +90,7 @@ Without `OPENAI_API_KEY` the service still runs. It uses the keyword fallback pl
 
 | Command | Purpose |
 |---|---|
-| `pytest` | Run the test suite (181 tests, offline, uses recorded real API responses) |
+| `pytest` | Run the test suite (185 tests, offline, uses recorded real API responses) |
 | `python scripts/run_examples.py` | Regenerate `examples/` through the HTTP API (needs the API key) |
 | `python scripts/run_plan_demo.py` | Run hand-written QueryPlans against the live API without the LLM |
 | `python scripts/record_fixtures.py` | Re-record `tests/fixtures/` from the live API |
@@ -149,8 +149,8 @@ Data rows always use the same keys (`category`, `series`, `trial_count`, `year`,
 | `time_series` | `x` (year, temporal), `y` | `[{year, trial_count, estimated_count, citation_count, citations}]`, ascending, gaps filled with 0. `estimated_count` = trials whose start date is ESTIMATED (draw those years dashed) |
 | `network_graph` | `nodes: {id, label, group: "type", size: "trial_count"}`, `edges: {source, target, weight, directed: false}` | `{nodes: [{id, label, type, trial_count, degree, citation_count, citations}], edges: [{source, target, weight, citation_count, citations}]}` |
 | `metric` | `value` | `[{value, label, citation_count, citations}]`, exactly one row |
-| `histogram` | `x` (bin_start), `x2` (bin_end), `y` | `[{bin_start, bin_end, trial_count, ...}]`, bins `[x, x2)`. **Schema only, see §10** |
-| `scatter_plot` | `x`, `y` | `[{nct_id, x, y, label, citations}]`. **Schema only, see §10** |
+| `histogram` | `x` (bin_start), `x2` (bin_end), `y` | `[{bin_start, bin_end, trial_count, citation_count, citations}]`, bins `[x, x2)`, ascending, empty bins included. `meta.binning.method` is `log` (1-2-5 edges: 0, 1, 2, 5, 10, 20, ... for long-tailed enrollment / site counts) or `linear` (nice equal widths) |
+| `scatter_plot` | `x`, `y` | `[{nct_id, x, y, label, citations}]`, one point per trial (up to 2000). `citations` holds the two raw values behind x and y |
 
 Ordinal categories (phase) come in their natural order: Early Phase 1 → Phase 1 → Phase 1/2 → Phase 2 → Phase 2/3 → Phase 3 → Phase 4 → Not Applicable → Unknown. Nominal categories are sorted by `trial_count` descending and cut to `top_n`. `meta.sort` always says which order applies.
 
@@ -233,7 +233,6 @@ Every error has the same shape: `{"error": {"code": ..., "message": ..., "detail
 |---|---|---|
 | 422 | `VALIDATION_ERROR` | Request body invalid (`details` lists each field) |
 | 422 | `PLAN_ERROR` | Explicit fields make the plan impossible, e.g. `viz_type: "time_series"` for a phase question |
-| 501 | `PLAN_ERROR` | `histogram` / `scatter_plot` requested (not implemented yet) |
 | 502 | `UPSTREAM_ERROR` | ClinicalTrials.gov unreachable after retries |
 
 ## 5. Supported questions and visualizations
@@ -251,6 +250,8 @@ Every question type runs through the same pipeline. A question type is just a co
 | Which countries have the most recruiting trials for *[condition]*? | `group_by=recruiting_country` | `bar_chart` |
 | Show a network of sponsors ↔ drugs for *[condition]* trials | `network=(lead_sponsor, drug)` | `network_graph` |
 | Which drugs frequently co-occur in combination studies? | `network=(drug, drug)` | `network_graph` |
+| What is the distribution of enrollment sizes in *[condition]* trials? | `measure.x=enrollment` | `histogram` |
+| Is there a relationship between enrollment and duration? | `measure=(enrollment, duration_months)` | `scatter_plot` |
 | How many trials are recruiting for *X*? | `answer_mode=single_value` | `metric` |
 | Is *X* safe / better than *Y*? (not in the registry) | `answer_mode=unsupported` | `visualization: null` + reason and an answerable rephrasing |
 
@@ -305,7 +306,7 @@ All of these come from inspecting recorded real responses (`tests/fixtures/`):
 
 ## 8. Testing and validation
 
-**Automated tests** (`pytest`, 181 tests, fully offline):
+**Automated tests** (`pytest`, 185 tests, fully offline):
 
 - **Hand-countable aggregation**: small synthetic datasets where the expected counts can be worked out by hand (phase buckets sum to the total, multi-valued dedupe, citations point to raw values, time-series gap filling, top-N truncation, grouped-bar zero fill, network weights and pruning).
 - **Real-data extraction**: every dimension runs on 500 recorded real studies (5 queries). Checks: no crashes, one count per distinct value, every value has an excerpt and a field path. Drug synonyms never form their own node, and ≥ 95% of trials matched by the strict drug search map to that drug.
@@ -341,10 +342,11 @@ All files in [`examples/`](examples/) are real outputs from `scripts/run_example
 | [`06_network_drug_combinations`](examples/06_network_drug_combinations.json) | "Which drugs frequently co-occur with nivolumab in combination studies?" | `network_graph`, nivolumab–ipilimumab 555 trials |
 | [`07_metric_single_value`](examples/07_metric_single_value.json) | "How many trials are currently recruiting for ALS?" | `metric`: 173 recruiting trials (the API's exact `totalCount`), 5 example citations |
 | [`08_unsupported_question`](examples/08_unsupported_question.json) | "Is pembrolizumab safe for pregnant women?" | `visualization: null`, reason plus an answerable rephrasing |
+| [`09_histogram_enrollment`](examples/09_histogram_enrollment.json) | "What is the distribution of enrollment sizes in phase 3 breast cancer trials?" | `histogram`, 1566 trials, log bins, mode at 200–500 participants (501 trials) |
+| [`10_scatter_enrollment_duration`](examples/10_scatter_enrollment_duration.json) | "Is there a relationship between enrollment and trial duration for completed melanoma trials?" | `scatter_plot`, 1610 points (143 trials lack a value) |
 
 ## 10. Limitations and future work
 
-- **`histogram` and `scatter_plot` are specified but not executed.** The schemas, plan rules and numeric dimensions (`enrollment`, `duration_months`, `site_count`) exist. The pipeline returns 501 for these two types. Next steps: log-scale binning for enrollment, and one point per trial for scatter.
 - **Large result sets.** Above `max_records`, values come from the first N records in API order. Planned improvement: per-bucket `countTotal` requests for low-cardinality dimensions (phase, status, year), which give exact counts at one request per bucket. In the longer run, a nightly bulk download indexed locally.
 - **Entity resolution.** Sponsors are not merged across spellings ("Merck Sharp & Dohme LLC" vs "Merck KGaA" are, correctly, different, but subsidiaries are not grouped). MeSH can list a drug class and a specific drug side by side (e.g. "interleukin-2" and "aldesleukin").
 - **`drug` misses about 1–3% of trials in our samples.** This happens when MeSH is present but incomplete (NCT04507906, "Nivolumab Combined with Anlotinib", is tagged only with anlotinib). Merging raw names with MeSH would bring synonym duplicates back. The fix is to map raw names onto MeSH through its synonym table. Cohort counts are not affected: they come from the API search itself.

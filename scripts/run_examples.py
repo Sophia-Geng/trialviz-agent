@@ -48,6 +48,12 @@ EXAMPLES: dict[str, dict] = {
     "08_unsupported_question": {
         "query": "Is pembrolizumab safe for pregnant women?",
     },
+    "09_histogram_enrollment": {
+        "query": "What is the distribution of enrollment sizes in phase 3 breast cancer trials?",
+    },
+    "10_scatter_enrollment_duration": {
+        "query": "Is there a relationship between enrollment and trial duration for completed melanoma trials?",
+    },
 }
 
 

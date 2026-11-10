@@ -12359,7 +12359,7 @@
     },
     "meta": {
       "answer_mode": "visualization",
-      "query_interpretation": "Drug co-occurrence network in trials involving nivolumab.",
+      "query_interpretation": "Drug co-occurrence network in trials involving nivolumab, showing frequently combined drugs.",
       "filters_applied": {
         "filters": {
           "intervention": "nivolumab"
@@ -12393,7 +12393,7 @@
         },
         "viz_type": "network_graph",
         "top_n": 15,
-        "interpretation": "Drug co-occurrence network in trials involving nivolumab.",
+        "interpretation": "Drug co-occurrence network in trials involving nivolumab, showing frequently combined drugs.",
         "max_records": 10000,
         "notes": []
       },
