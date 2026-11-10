@@ -1,4 +1,4 @@
-"""Dimension registry: the single extension point of the system (PLAN.md §6).
+"""Dimension registry: the single extension point of the system (README §6.2).
 
 A dimension knows which API fields it needs and how to turn one study into
 zero or more `Extracted` values. Each value carries both the normalized key

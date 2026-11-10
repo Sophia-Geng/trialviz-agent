@@ -21,7 +21,7 @@ import httpx
 BASE_URL = "https://clinicaltrials.gov/api/v2"
 FIXTURE_DIR = Path(__file__).resolve().parent.parent / "tests" / "fixtures"
 
-# Piece names covering every dimension in PLAN.md §6 (verified against the live API).
+# Piece names covering every dimension in app/data/dimensions.py (verified against the live API).
 FIELDS = "|".join(
     [
         "NCTId",
@@ -50,11 +50,11 @@ FIELDS = "|".join(
 )
 
 def drug_query(name: str) -> str:
-    """Strict drug match; plain query.intr applies concept expansion and over-matches (PLAN.md §10)."""
+    """Strict drug match; plain query.intr applies concept expansion and over-matches (README §6.3)."""
     return f"AREA[InterventionName]{name} OR AREA[InterventionMeshTerm]{name}"
 
 
-# name -> (path, params, pages). One fixture per example query in PLAN.md §13,
+# name -> (path, params, pages). One fixture per example query in README §9,
 # plus metadata endpoints, a full single record and a multi-page sample.
 FIXTURES: dict[str, tuple[str, dict[str, str | int], int]] = {
     "enums": ("/studies/enums", {}, 1),

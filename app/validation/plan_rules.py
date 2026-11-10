@@ -1,4 +1,4 @@
-"""Business rules for QueryPlans (PLAN.md §5) and merging of explicit request fields.
+"""Business rules for QueryPlans (README §6.1) and merging of explicit request fields.
 
 `check()` returns human-readable violations; the planner feeds them back to the
 LLM for one retry. `apply_request()` enforces "explicit request fields win" and

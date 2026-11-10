@@ -1,4 +1,4 @@
-"""Aggregation results -> visualization specs (PLAN.md §8).
+"""Aggregation results -> visualization specs (README §4).
 
 Builders return the visualization plus the render hints and notes that belong
 in `meta`, so the pipeline only has to assemble them.

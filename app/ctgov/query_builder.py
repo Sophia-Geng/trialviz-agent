@@ -1,6 +1,6 @@
 """PlanFilters -> ClinicalTrials.gov /studies query parameters.
 
-Syntax verified against the live API (PLAN.md §9):
+Syntax verified against the live API (README §6.3):
 - drugs: AREA[InterventionName]"x" OR AREA[InterventionMeshTerm]"x". Plain query.intr applies
   concept expansion and over-matches ~12%; InterventionName already matches registered synonyms.
 - multi-word values must be quoted, otherwise only the first word is bound to the AREA.
@@ -74,5 +74,5 @@ def build_params(filters: PlanFilters, extra_advanced: list[str] | None = None) 
 
 
 def has_entity_filter(filters: PlanFilters) -> bool:
-    """True if the search is scoped by a drug, condition, sponsor or country (PLAN.md §5 scope guard)."""
+    """True if the search is scoped by a drug, condition, sponsor or country (README §6.10 scope guard)."""
     return any([filters.intervention, filters.condition, filters.sponsor, filters.country])

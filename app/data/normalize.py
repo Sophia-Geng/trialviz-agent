@@ -1,4 +1,4 @@
-"""Normalization of raw ClinicalTrials.gov values (PLAN.md §10).
+"""Normalization of raw ClinicalTrials.gov values (README §7).
 
 Pure functions only; the raw value is always kept separately for citations.
 """
