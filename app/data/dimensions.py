@@ -166,7 +166,7 @@ def _name_parts(ivs: list[tuple[int, dict]], tentative: bool) -> list[Extracted]
         if not raw:
             continue
         for part in n.split_combination(raw):
-            cleaned = n.clean_drug_name(part)
+            cleaned = n.drug_key(n.clean_drug_name(part))
             if cleaned and not n.is_non_drug(cleaned):
                 out.append(Extracted(cleaned, cleaned, raw, f"{INTERVENTIONS}[{i}].name", tentative=tentative))
     return out
@@ -186,8 +186,8 @@ def _drug(study: dict) -> list[Extracted]:
     if drug_ivs:
         for i, mesh in enumerate(get(study, INTERVENTION_MESH) or []):
             term = mesh.get("term")
-            if term and n.text_key(term) not in n.MESH_NON_DRUG:
-                key = n.text_key(term)
+            if term and not n.is_mesh_non_drug(term):
+                key = n.drug_key(term)
                 confirmed.append(Extracted(key, key, term, f"{INTERVENTION_MESH}[{i}].term"))
         if not confirmed:
             confirmed = _name_parts(drug_ivs, tentative=False)

@@ -8,7 +8,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from datetime import datetime
 
-from app.aggregate.engine import group_by, partition
+from app.aggregate.engine import co_occurrence, group_by, partition
 from app.ctgov.client import CtgovClient, FetchResult
 from app.ctgov.query_builder import build_params, merge_filters
 from app.data.dimensions import DIMENSIONS, api_fields
@@ -73,10 +73,12 @@ def execute_plan(plan: QueryPlan, client: CtgovClient) -> VisualizeResponse:
 
 
 METRIC_SAMPLE = 5
+NETWORK_NODES_PER_TOP_N = 2  # default top_n=15 -> up to 30 nodes
 
 
 def _fetch_cohorts(plan: QueryPlan, client: CtgovClient) -> list[CohortData]:
-    dims = [d for d in (plan.group_by, plan.split_by) if d is not None]
+    network = [plan.network.source_dim, plan.network.target_dim] if plan.network else []
+    dims = [d for d in (plan.group_by, plan.split_by, *network) if d is not None]
     fields = api_fields(dims)
     # A metric only needs the API's totalCount plus a few example records for citations.
     max_records = METRIC_SAMPLE if plan.viz_type is VizType.METRIC else plan.max_records
@@ -92,6 +94,9 @@ def _fetch_cohorts(plan: QueryPlan, client: CtgovClient) -> list[CohortData]:
 def _build(plan: QueryPlan, cohorts: list[CohortData]) -> builder.Built:
     title = _title(plan, cohorts)
     match plan.viz_type:
+        case VizType.NETWORK_GRAPH:
+            graph = co_occurrence(cohorts[0].fetch.studies, plan.network.source_dim, plan.network.target_dim)
+            return builder.network_graph(graph, title, max_nodes=plan.top_n * NETWORK_NODES_PER_TOP_N)
         case VizType.METRIC:
             c = cohorts[0]
             return builder.metric(c.fetch.total, c.fetch.studies, title, plan.interpretation)
@@ -112,6 +117,11 @@ def _build(plan: QueryPlan, cohorts: list[CohortData]) -> builder.Built:
 
 def _title(plan: QueryPlan, cohorts: list[CohortData]) -> str:
     what = DIMENSIONS[plan.group_by].label.lower() if plan.group_by else "trials"
+    if plan.viz_type is VizType.NETWORK_GRAPH:
+        f = cohorts[0].filters
+        scope = " · ".join(x for x in (f.intervention, f.condition, f.sponsor, f.country) if x) or ALL_TRIALS
+        a, b = DIMENSIONS[plan.network.source_dim].label, DIMENSIONS[plan.network.target_dim].label
+        return f"{a} ↔ {b} network: {scope}" if a != b else f"{a} co-occurrence network: {scope}"
     if plan.viz_type is VizType.METRIC:
         f = cohorts[0].filters
         return "Matching trials: " + (" · ".join(x for x in (f.intervention, f.condition, f.sponsor, f.country) if x) or ALL_TRIALS)

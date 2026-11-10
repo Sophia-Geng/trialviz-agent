@@ -127,5 +127,28 @@ def test_is_placeholder_official(name, expected):
     assert n.is_placeholder_official(name) is expected
 
 
+@pytest.mark.parametrize(
+    ("name", "expected"),
+    [
+        ("Fludarabine Phosphate", "fludarabine"),
+        ("Erlotinib Hydrochloride", "erlotinib"),
+        ("Gemcitabine Hydrochloride", "gemcitabine"),
+        ("Pemetrexed Disodium", "pemetrexed"),
+        ("sodium chloride", "sodium"),  # degenerate, but only reachable via non-drug-filtered names
+        ("Pembrolizumab", "pembrolizumab"),
+    ],
+)
+def test_drug_key_merges_salt_forms(name, expected):
+    assert n.drug_key(name) == expected
+
+
+@pytest.mark.parametrize(
+    ("term", "expected"),
+    [("CTLA-4 Antigen", True), ("Receptors, Chimeric Antigen", False), ("Radiotherapy", True), ("Nivolumab", False)],
+)
+def test_is_mesh_non_drug(term, expected):
+    assert n.is_mesh_non_drug(term) is expected
+
+
 def test_text_key_merges_case_and_whitespace():
     assert n.text_key("  Breast   Cancer ") == n.text_key("breast cancer")

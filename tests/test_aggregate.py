@@ -1,6 +1,6 @@
 from datetime import datetime, timezone
 
-from app.aggregate.engine import MAX_CITATIONS, group_by, partition
+from app.aggregate.engine import MAX_CITATIONS, co_occurrence, group_by, partition
 from app.ctgov.client import FetchResult
 from app.pipeline import execute_plan
 from app.schemas.enums import DimensionName as D
@@ -84,6 +84,51 @@ def test_grouped_bar_fills_missing_categories_with_zero():
     built = builder.grouped_bar_chart([("A", a), ("B", b)], "t", top_n=15)
     rows = {(d.series, d.category): d.trial_count for d in built.visualization.data}
     assert rows[("B", "Phase 1/2")] == 0 and rows[("A", "Phase 2")] == 1 and rows[("B", "Unknown")] == 1
+
+
+def _trial(nid, sponsor, drugs):
+    return {
+        "protocolSection": {
+            "identificationModule": {"nctId": nid, "briefTitle": nid},
+            "sponsorCollaboratorsModule": {"leadSponsor": {"name": sponsor}},
+            "armsInterventionsModule": {"interventions": [{"type": "DRUG", "name": d} for d in drugs]},
+        }
+    }
+
+
+NET = [
+    _trial("NCT1", "Merck", ["Pembrolizumab", "Placebo"]),
+    _trial("NCT2", "Merck", ["Pembrolizumab", "Lenvatinib"]),
+    _trial("NCT3", "BMS", ["Nivolumab", "Ipilimumab"]),
+    _trial("NCT4", "BMS", ["Nivolumab", "Ipilimumab", "Pembrolizumab"]),
+]
+
+
+def test_co_occurrence_bipartite_weights():
+    g = co_occurrence(NET, D.LEAD_SPONSOR, D.DRUG)
+    weights = {(e.source, e.target): e.weight for e in g.edges.values()}
+    assert weights[("lead_sponsor:merck", "drug:pembrolizumab")] == 2
+    assert weights[("lead_sponsor:bms", "drug:ipilimumab")] == 2
+    assert ("lead_sponsor:merck", "drug:placebo") not in weights
+    edge = g.edges[("lead_sponsor:merck", "drug:lenvatinib")]
+    assert edge.citations[0].excerpt == "Merck | Lenvatinib"  # both raw values
+
+
+def test_co_occurrence_same_dimension_is_undirected():
+    g = co_occurrence(NET, D.DRUG, D.DRUG)
+    assert g.edges[("drug:ipilimumab", "drug:nivolumab")].weight == 2
+    assert all(e.source < e.target for e in g.edges.values())
+    assert g.studies_with_edges == 3  # NCT1 has a single drug once placebo is removed
+
+
+def test_network_pruning():
+    g = co_occurrence(NET, D.DRUG, D.DRUG)
+    built = builder.network_graph(g, "t", max_nodes=2, min_weight=2)
+    data = built.visualization.data
+    assert [n.id for n in data.nodes] == ["drug:ipilimumab", "drug:nivolumab"]
+    assert [(e.source, e.target, e.weight) for e in data.edges] == [("drug:ipilimumab", "drug:nivolumab", 2)]
+    assert data.nodes[0].degree == 1 and data.nodes[0].trial_count == 2
+    assert any("fewer than 2" in n for n in built.notes)
 
 
 def test_partition_by_split_dimension():

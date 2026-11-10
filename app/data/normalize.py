@@ -137,6 +137,28 @@ MESH_NON_DRUG = {
 }
 
 
+_SALT_SUFFIX = re.compile(
+    r"\s+(hydrochloride|hcl|phosphate|sodium|potassium|citrate|mesylate|acetate|sulfate|tartrate|maleate"
+    r"|succinate|fumarate|besylate|tosylate|disodium|dihydrochloride|monohydrate|bromide|chloride)$"
+)
+# MeSH annotates targets and classes next to the drug (e.g. 'CTLA-4 Antigen' for ipilimumab).
+_MESH_TARGET = re.compile(r"\b(antigen|antigens|receptor|receptors|protein|proteins)$")
+
+
+def drug_key(name: str) -> str:
+    """Grouping key for a drug: merges salt forms ('fludarabine phosphate' -> 'fludarabine')."""
+    key = text_key(name)
+    while (stripped := _SALT_SUFFIX.sub("", key)) != key and stripped:
+        key = stripped
+    return key
+
+
+def is_mesh_non_drug(term: str) -> bool:
+    key = text_key(term)
+    # Inverted headings ('Receptors, Chimeric Antigen' = CAR therapy) are therapies, not targets.
+    return key in MESH_NON_DRUG or ("," not in key and bool(_MESH_TARGET.search(key)))
+
+
 def clean_drug_name(raw: str) -> str:
     """'Pembrolizumab 200 mg IV (MK-3475)' -> 'pembrolizumab'. Returns '' if nothing is left."""
     s = _TRADEMARK.sub("", raw)

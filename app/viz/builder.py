@@ -8,7 +8,7 @@ from __future__ import annotations
 
 from dataclasses import dataclass, field
 
-from app.aggregate.engine import MAX_CITATIONS, GroupResult, make_citation
+from app.aggregate.engine import MAX_CITATIONS, CoOccurrence, GroupResult, make_citation
 from app.data.dimensions import P, Extracted, brief_title, nct_id
 from app.data.normalize import UNKNOWN, phase_sort_key
 from app.schemas.enums import DimensionName
@@ -21,6 +21,10 @@ from app.schemas.response import (
     Metric,
     MetricDatum,
     MetricEncoding,
+    NetworkData,
+    NetworkEdge,
+    NetworkGraph,
+    NetworkNode,
     SeriesDatum,
     SeriesEncoding,
     SortSpec,
@@ -36,7 +40,7 @@ ORDINAL_DIMENSIONS = {DimensionName.PHASE}
 
 @dataclass
 class Built:
-    visualization: BarChart | GroupedBarChart | TimeSeries | Metric
+    visualization: BarChart | GroupedBarChart | TimeSeries | Metric | NetworkGraph
     sort: SortSpec | None = None
     grouping: Grouping | None = None
     time_granularity: str | None = None
@@ -142,6 +146,63 @@ def grouped_bar_chart(
         sort=SortSpec(field="category", order="asc") if ordinal else SortSpec(field="trial_count", order="desc"),
         grouping=Grouping(group_by=first.dimension.name, split_by=split_by, multi_valued=first.dimension.multi_valued),
         notes=notes + _multi_valued_note(first),
+    )
+
+
+def network_graph(graph: CoOccurrence, title: str, max_nodes: int, min_weight: int = 2) -> Built:
+    """Prune to edges with weight >= min_weight, then keep the max_nodes nodes with the highest
+    weighted degree (and the edges among them). Falls back to min_weight=1 for sparse graphs."""
+    notes: list[str] = []
+    edges = [e for e in graph.edges.values() if e.weight >= min_weight]
+    if not edges and min_weight > 1 and graph.edges:
+        edges = list(graph.edges.values())
+        notes.append("Few shared trials: edges with weight 1 are included.")
+        min_weight = 1
+    dropped_weak = len(graph.edges) - len(edges)
+
+    strength: dict[str, int] = {}
+    for e in edges:
+        strength[e.source] = strength.get(e.source, 0) + e.weight
+        strength[e.target] = strength.get(e.target, 0) + e.weight
+    ranked = sorted(strength, key=lambda nid: (-strength[nid], graph.nodes[nid].label))
+    kept = set(ranked[:max_nodes])
+    edges = [e for e in edges if e.source in kept and e.target in kept]
+    degree: dict[str, int] = {}
+    for e in edges:
+        degree[e.source] = degree.get(e.source, 0) + 1
+        degree[e.target] = degree.get(e.target, 0) + 1
+    node_ids = [nid for nid in ranked if nid in degree]
+
+    if dropped_weak:
+        notes.append(f"{dropped_weak} edges supported by fewer than {min_weight} trials were removed.")
+    if len(strength) > len(node_ids):
+        notes.append(f"Showing the {len(node_ids)} most connected of {len(strength)} entities.")
+    notes.append(
+        f"Edge weight = number of distinct trials in which both entities appear "
+        f"({graph.studies_with_edges} trials contributed at least one edge)."
+    )
+
+    nodes = [
+        NetworkNode(
+            id=nid,
+            label=graph.nodes[nid].label,
+            type=graph.nodes[nid].dimension,
+            trial_count=len(graph.nodes[nid].nct_ids),
+            degree=degree[nid],
+            citation_count=len(graph.nodes[nid].nct_ids),
+            citations=graph.nodes[nid].citations,
+        )
+        for nid in node_ids
+    ]
+    edge_rows = [
+        NetworkEdge(source=e.source, target=e.target, weight=e.weight, citation_count=e.weight, citations=e.citations)
+        for e in sorted(edges, key=lambda e: -e.weight)
+    ]
+    return Built(
+        visualization=NetworkGraph(title=title, data=NetworkData(nodes=nodes, edges=edge_rows)),
+        units={"node_size": "trials", "edge_weight": "shared trials"},
+        sort=SortSpec(field="weight", order="desc"),
+        notes=notes,
     )
 
 

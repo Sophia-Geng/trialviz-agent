@@ -10,6 +10,7 @@ from dataclasses import dataclass, field, replace
 from typing import Any
 
 from app.data.dimensions import DIMENSIONS, Dimension, Extracted, brief_title, nct_id
+from app.data.normalize import UNKNOWN
 from app.schemas.enums import DimensionName
 from app.schemas.response import Citation
 
@@ -114,6 +115,92 @@ def group_by(studies: list[dict], dim_name: DimensionName, max_citations: int = 
                 bucket = buckets[v.key] = Bucket(v.key, v.label)
             bucket.add(study, v, max_citations)
     return GroupResult(dim, buckets, len(studies), missing)
+
+
+@dataclass
+class Edge:
+    source: str  # node id
+    target: str
+    nct_ids: list[str] = field(default_factory=list)
+    citations: list[Citation] = field(default_factory=list)
+
+    @property
+    def weight(self) -> int:
+        return len(self.nct_ids)
+
+
+@dataclass
+class Node:
+    id: str
+    label: str
+    dimension: DimensionName
+    nct_ids: set[str] = field(default_factory=set)
+    citations: list[Citation] = field(default_factory=list)
+
+
+@dataclass
+class CoOccurrence:
+    nodes: dict[str, Node]
+    edges: dict[tuple[str, str], Edge]
+    studies_with_edges: int
+
+
+def node_id(dim: DimensionName, key: str | float) -> str:
+    return f"{dim.value}:{key}"
+
+
+def co_occurrence(
+    studies: list[dict], source: DimensionName, target: DimensionName, max_citations: int = MAX_CITATIONS
+) -> CoOccurrence:
+    """Undirected edges between values that appear in the same trial; weight = number of distinct trials.
+
+    source == target gives a co-occurrence network (e.g. drugs combined in one trial).
+    Unknown values are not nodes.
+    """
+    sources = extract_batch(studies, source)
+    targets = sources if target == source else extract_batch(studies, target)
+    nodes: dict[str, Node] = {}
+    edges: dict[tuple[str, str], Edge] = {}
+    with_edges = 0
+
+    def node(dim: DimensionName, v: Extracted, study: dict) -> str:
+        nid = node_id(dim, v.key)
+        n = nodes.get(nid) or nodes.setdefault(nid, Node(nid, v.label, dim))
+        if nct_id(study) not in n.nct_ids:
+            n.nct_ids.add(nct_id(study))
+            if len(n.citations) < max_citations:
+                n.citations.append(make_citation(study, v))
+        return nid
+
+    for study, src_vals, tgt_vals in zip(studies, sources, targets, strict=True):
+        src_vals = [v for v in src_vals if v.key != UNKNOWN]
+        tgt_vals = [v for v in tgt_vals if v.key != UNKNOWN]
+        if source == target:
+            pairs = [(a, b) for i, a in enumerate(src_vals) for b in src_vals[i + 1 :]]
+        else:
+            pairs = [(a, b) for a in src_vals for b in tgt_vals]
+        if not pairs:
+            continue
+        with_edges += 1
+        nid = nct_id(study)
+        for a, b in pairs:
+            ida, idb = node(source, a, study), node(target, b, study)
+            key = (ida, idb) if source != target else tuple(sorted((ida, idb)))
+            edge = edges.get(key) or edges.setdefault(key, Edge(*key))
+            if nid in edge.nct_ids:
+                continue
+            edge.nct_ids.append(nid)
+            if len(edge.citations) < max_citations:
+                edge.citations.append(
+                    Citation(
+                        nct_id=nid,
+                        field=f"{a.field_path} | {b.field_path}",
+                        excerpt=f"{a.excerpt} | {b.excerpt}",
+                        title=brief_title(study),
+                        url=STUDY_URL.format(nid),
+                    )
+                )
+    return CoOccurrence(nodes, edges, with_edges)
 
 
 def partition(studies: list[dict], dim_name: DimensionName) -> list[tuple[str, list[dict]]]:

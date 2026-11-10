@@ -14,7 +14,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from app.ctgov.client import CtgovClient  # noqa: E402
 from app.pipeline import empty_filters, execute_plan  # noqa: E402
-from app.schemas.plan import Cohort, PlanFilters, QueryPlan  # noqa: E402
+from app.schemas.plan import Cohort, NetworkSpec, PlanFilters, QueryPlan  # noqa: E402
 
 
 def filters(**kw) -> PlanFilters:
@@ -62,6 +62,18 @@ PLANS = {
         shared_filters=filters(start_year=2020),
         interpretation="Lead sponsor categories of melanoma vs pancreatic cancer trials since 2020.",
     ),
+    "network": plan(
+        intent="network", viz_type="network_graph",
+        network=NetworkSpec(source_dim="lead_sponsor", target_dim="drug"),
+        shared_filters=filters(condition="melanoma"),
+        interpretation="Lead sponsors linked to the drugs they test in melanoma trials.",
+    ),
+    "combos": plan(
+        intent="network", viz_type="network_graph",
+        network=NetworkSpec(source_dim="drug", target_dim="drug"),
+        shared_filters=filters(intervention="nivolumab"),
+        interpretation="Drugs combined with nivolumab in the same trial.",
+    ),
 }
 
 
@@ -72,6 +84,14 @@ def main(names: list[str], verbose: bool) -> None:
         viz, meta = resp.visualization, resp.meta
         print(f"\n=== {name}: {viz.type} — {viz.title}")
         print(f"records: {meta.record_counts.model_dump()}")
+        if viz.type == "network_graph":
+            labels = {n.id: n.label for n in viz.data.nodes}
+            print(f"  {len(viz.data.nodes)} nodes, {len(viz.data.edges)} edges")
+            for e in viz.data.edges[:12]:
+                print(f"  {labels[e.source]:<40} — {labels[e.target]:<25} {e.weight:>4}")
+            for note in meta.notes:
+                print(f"  note: {note}")
+            continue
         for row in viz.data[:20]:
             series = f"{row.series:>18} | " if hasattr(row, "series") else ""
             label = getattr(row, "category", None) or getattr(row, "year", None)
