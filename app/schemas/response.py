@@ -242,7 +242,9 @@ class Meta(BaseModel):
     time_granularity: Literal["year"] | None = None
     grouping: Grouping | None = None
     binning: Binning | None = None
-    geo_hint: Literal["country"] | None = Field(default=None, description="Categories are countries; a map is possible.")
+    geo_hint: Literal["country"] | None = Field(
+        default=None, description="Categories are countries; a map is possible."
+    )
     record_counts: RecordCounts | None = None
     notes: list[str] = Field(default_factory=list)
     source: SourceInfo

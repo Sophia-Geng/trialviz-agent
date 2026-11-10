@@ -57,7 +57,7 @@ Request ─► [1] Pydantic request validation
 | Module | Responsibility |
 |---|---|
 | `app/schemas/` | Request, QueryPlan and response models (Pydantic v2). The response is a discriminated union on `visualization.type` |
-| `app/planner/` | Prompt (generated from the dimension registry), OpenAI adapter, retry and keyword fallback |
+| `app/planner/` | Prompt (generated from the dimension registry), OpenAI adapter, rule retry, search-term grounding against the API, keyword fallback |
 | `app/validation/plan_rules.py` | Business rules, merging of explicit request fields, scope guard |
 | `app/ctgov/` | API client and query-parameter builder |
 | `app/data/dimensions.py` | **Dimension registry, the single extension point** (17 dimensions) |
@@ -96,6 +96,7 @@ Without `OPENAI_API_KEY` the service still runs. It uses the keyword fallback pl
 | Command | Purpose |
 |---|---|
 | `pytest` | Run the test suite (260 tests, offline, uses recorded real API responses) |
+| `ruff check . && ruff format --check .` | Lint and format check, config in `pyproject.toml` (`pip install -r requirements-dev.txt`) |
 | `python scripts/run_examples.py` | Regenerate `examples/` through the HTTP API (needs the API key) |
 | `python scripts/eval_planner.py [models...]` | Planner evaluation over 25 labeled questions, writes `docs/planner_eval.md` (needs the API key) |
 | `python scripts/run_plan_demo.py` | Run hand-written QueryPlans against the live API without the LLM |
@@ -194,7 +195,7 @@ Network example (`examples/05_network_sponsor_drug.json`, one node and one edge)
 ```json
 {
   "nodes": [{"id": "lead_sponsor:national cancer institute (nci)", "label": "National Cancer Institute (NCI)",
-             "type": "lead_sponsor", "trial_count": 204, "degree": 16, "citation_count": 204, "citations": ["..."]}],
+             "type": "lead_sponsor", "trial_count": 197, "degree": 13, "citation_count": 197, "citations": ["..."]}],
   "edges": [{"source": "lead_sponsor:national cancer institute (nci)", "target": "drug:aldesleukin", "weight": 54,
              "citation_count": 54,
              "citations": [{"nct_id": "NCT00513604",
@@ -289,7 +290,7 @@ An audit of the 10000-trial unscoped sample (example 11) shows the effect. Disti
 
 **6. Multi-valued dimensions count each trial once per value.** A trial with 40 US sites counts once for the United States. Bars can then sum to more than the trial count, and the response says so (`meta.grouping.multi_valued` plus a note).
 
-**7. Accuracy over latency: full scans.** The API has no aggregation endpoint: `/stats/field/values` covers the whole registry and cannot be filtered. All counts are therefore computed client-side over **every** matching record (default cap 10000 per cohort, 1000 per page, only the needed `fields`). Examples 01–10 are full scans with `truncated: false`. Example 11 is an unscoped question over 180k trials and shows the truncated case. If the cap is hit, `record_counts.truncated` is true and a note says the values come from the first N records in API order (not a random sample). Metric answers use the API's exact `totalCount` instead.
+**7. Accuracy over latency: full scans.** The API has no aggregation endpoint: `/stats/field/values` covers the whole registry and cannot be filtered. All counts are therefore computed client-side over **every** matching record (default cap 10000 per cohort, 1000 per page, only the needed `fields`). Every example except 11 is a full scan with `truncated: false`. Example 11 is an unscoped question over 180k trials and shows the truncated case. If the cap is hit, `record_counts.truncated` is true and a note says the values come from the first N records in API order (not a random sample). Metric answers use the API's exact `totalCount` instead.
 
 **8. Rate limiting and caching.** The rate limit is undocumented, but about 10 requests in 5 seconds return 429. The client therefore serializes requests (1 req/s), honors `Retry-After`, retries 429/5xx with backoff, and does not retry 4xx. API and LLM responses are cached on disk by request hash. That keeps development off the API and makes example runs reproducible.
 
@@ -328,7 +329,7 @@ All of these come from inspecting recorded real responses (`tests/fixtures/`):
 - **Hand-countable aggregation**: small synthetic datasets where the expected counts can be worked out by hand (phase buckets sum to the total, multi-valued dedupe, citations point to raw values, time-series gap filling, top-N truncation, grouped-bar zero fill, network weights and pruning).
 - **Real-data extraction**: every dimension runs on 500 recorded real studies (5 queries). Checks: no crashes, one count per distinct value, every value has an excerpt and a field path. Drug synonyms never form their own node, and ≥ 95% of trials matched by the strict drug search map to that drug.
 - **Schemas**: request validation edge cases. The local `Phase` / `OverallStatus` enums equal the API's `/studies/enums`. The plan schema passes the OpenAI SDK's strict-schema conversion. The response union round-trips.
-- **Planner**: the few-shot plans pass the rules. A scripted fake LLM covers valid plans, a corrective retry (violations are fed back), fallback after two invalid plans, fallback on LLM errors, and rejection of an impossible explicit `viz_type`.
+- **Planner**: the few-shot plans pass the rules. A scripted fake LLM covers valid plans, a corrective retry (violations are fed back), fallback after two invalid plans, fallback on LLM errors, and rejection of an impossible explicit `viz_type`. A fake API counter covers grounding: a zero-hit term is corrected, a correction the API does not confirm is rejected, and terms with hits trigger no extra LLM call.
 - **Client**: an `httpx.MockTransport` covers page tokens (and that later pages drop `countTotal`), `max_records` truncation, 429 retry, no retry on 4xx, giving up after the maximum attempts, and the cache.
 - **HTTP**: `TestClient` end to end with a fake API client over fixtures, covering error shapes and `/schema`.
 
@@ -348,7 +349,7 @@ All of these come from inspecting recorded real responses (`tests/fixtures/`):
 | Cluster in the graph | Known regimen |
 |---|---|
 | cyclophosphamide – fludarabine (27, the strongest edge) | lymphodepletion before CAR-T therapy |
-| fluorouracil – oxaliplatin (17), fluorouracil – leucovorin (14), irinotecan, capecitabine | FOLFOX / FOLFIRI (colorectal cancer) |
+| fluorouracil – oxaliplatin (17), fluorouracil – leucovorin (13), irinotecan, capecitabine | FOLFOX / FOLFIRI (colorectal cancer) |
 | rituximab, cyclophosphamide, doxorubicin, vincristine, prednisone | R-CHOP (lymphoma) |
 | carboplatin – paclitaxel (24), carboplatin – pembrolizumab (14), pemetrexed, bevacizumab | platinum chemotherapy ± immunotherapy (lung cancer) |
 | azacitidine – venetoclax (14), cytarabine | acute myeloid leukemia |
@@ -402,5 +403,5 @@ All files in [`examples/`](examples/) are real outputs from `scripts/run_example
 - **Tools**: Claude Code (Anthropic Claude) was used as a pair-programming assistant for planning, API exploration, implementation, tests and this README. The runtime planner uses OpenAI `gpt-4.1` through the company-provided key.
 - **Designed and directed by the author**: scope and priorities, review of the plan against the assignment, the decision to drop the default drug search after reviewing the evidence, and the decision to recover drugs registered under non-drug intervention types.
 - **Cross-checking correctness from several angles (author)**: AI explanations were not accepted at face value. Asking where the data behind a claim actually was led to re-checking full API records. That showed the first explanation of the drug-search mismatch was wrong: the cause was concept expansion in the search, not trials mentioning the drug only in their descriptions. Asking "is this certain?" about the missed-drug cases led to inspecting each record, which found three distinct causes instead of the one first assumed (§10). The author also ran every manual check against the public website (§8), including a count that first did not match and was then reproduced exactly.
-- **Generated with AI and then iterated**: most code and tests. Several design changes came from inspecting real data rather than from the first draft. Examples: the strict drug search (concept expansion over-matched about 13%); MeSH-based drug identity; tentative drug names resolved at batch level; salt-form and MeSH-target filtering found in the first network output; the rule that unsupported-question rephrasings must be answerable, after the model suggested an eligibility question.
+- **Generated with AI and then iterated**: most code and tests. Several design changes came from inspecting real data rather than from the first draft. Examples: the strict drug search (concept expansion over-matched about 13%); MeSH-based drug identity; tentative drug names resolved at batch level; salt-form and MeSH-target filtering found in the first network output; the rule that unsupported-question rephrasings must be answerable, after the model suggested an eligibility question. Later changes came from systematic checks rather than single observations. Auditing the top values of every dimension over 10000 trials led to evidence-based drug identity, MeSH conditions and the "Agnosia" correction. Re-running the planner evaluation with a check that plans actually find trials led to API grounding of search terms and the English-names rule.
 - **How correctness was validated**: hand-countable unit tests, tests over recorded real API responses, enum parity with the live API, a manual comparison with the public website (all checks matched), and inspection of the real example outputs.

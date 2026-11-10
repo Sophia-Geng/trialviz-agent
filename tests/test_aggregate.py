@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 from app.aggregate.engine import MAX_CITATIONS, co_occurrence, group_by, partition
 from app.ctgov.client import FetchResult
@@ -70,7 +70,9 @@ def test_time_series_marks_current_and_future_years_incomplete():
 
     built = builder.time_series(group_by(MINI, D.START_YEAR), "t", today=date(2017, 6, 1))
     assert [(d.year, d.incomplete) for d in built.visualization.data] == [
-        (2016, False), (2017, True), (2018, True),
+        (2016, False),
+        (2017, True),
+        (2018, True),
     ]
     assert any("2017–2018" in n and "not a real decline" in n for n in built.notes)
 
@@ -153,14 +155,22 @@ def _enrolled(nid, count, start="2020-01", end="2022-01"):
         "protocolSection": {
             "identificationModule": {"nctId": nid, "briefTitle": nid},
             "designModule": {"enrollmentInfo": {"count": count}} if count is not None else {},
-            "statusModule": {"startDateStruct": {"date": start, "type": "ACTUAL"},
-                             "completionDateStruct": {"date": end, "type": "ACTUAL"}},
+            "statusModule": {
+                "startDateStruct": {"date": start, "type": "ACTUAL"},
+                "completionDateStruct": {"date": end, "type": "ACTUAL"},
+            },
         }
     }
 
 
-ENROLLED = [_enrolled("NCT1", 0), _enrolled("NCT2", 1), _enrolled("NCT3", 4), _enrolled("NCT4", 40),
-            _enrolled("NCT5", 50), _enrolled("NCT6", None)]
+ENROLLED = [
+    _enrolled("NCT1", 0),
+    _enrolled("NCT2", 1),
+    _enrolled("NCT3", 4),
+    _enrolled("NCT4", 40),
+    _enrolled("NCT5", 50),
+    _enrolled("NCT6", None),
+]
 
 
 def test_histogram_log_bins_count_by_hand():
@@ -206,7 +216,7 @@ class FakeClient:
         name = next(v for k, v in self.fixtures.items() if k in str(params))
         studies = load_studies(name)
         total = load_fixture(name)["pages"][0]["totalCount"]
-        return FetchResult(studies[:max_records], total, datetime.now(timezone.utc), 1)
+        return FetchResult(studies[:max_records], total, datetime.now(UTC), 1)
 
     def version(self):
         return load_fixture("version")["pages"][0]
@@ -230,13 +240,18 @@ def test_pipeline_comparison_end_to_end():
 def test_pipeline_unknown_entity_gives_empty_chart_and_hint():
     class Empty(FakeClient):
         def fetch_studies(self, params, fields, max_records):
-            return FetchResult([], 0, datetime.now(timezone.utc), 1)
+            return FetchResult([], 0, datetime.now(UTC), 1)
 
     from scripts.run_plan_demo import plan
 
     resp = execute_plan(
-        plan(intent="distribution", viz_type="bar_chart", group_by="phase",
-             shared_filters=f(intervention="notarealdrugxyz"), interpretation="x"),
+        plan(
+            intent="distribution",
+            viz_type="bar_chart",
+            group_by="phase",
+            shared_filters=f(intervention="notarealdrugxyz"),
+            interpretation="x",
+        ),
         Empty({}),
     )
     assert resp.visualization.data == []

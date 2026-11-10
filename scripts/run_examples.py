@@ -74,12 +74,15 @@ def main(name_filter: str | None) -> None:
         elapsed = time.time() - start
         body = resp.json()
         (OUT_DIR / f"{name}.json").write_text(
-            json.dumps({"request": request, "status_code": resp.status_code, "response": body}, ensure_ascii=False, indent=2),
+            json.dumps(
+                {"request": request, "status_code": resp.status_code, "response": body}, ensure_ascii=False, indent=2
+            ),
             encoding="utf-8",
         )
         viz = body.get("visualization") or {}
         meta = body.get("meta", {})
-        print(f"{name:34s} {resp.status_code} {viz.get('type', '-'):18s} {elapsed:5.1f}s  {viz.get('title', body.get('error', ''))}")
+        title = viz.get("title", body.get("error", ""))
+        print(f"{name:34s} {resp.status_code} {viz.get('type', '-'):18s} {elapsed:5.1f}s  {title}")
         for note in meta.get("notes", []):
             print(f"{'':36s}note: {note}")
 

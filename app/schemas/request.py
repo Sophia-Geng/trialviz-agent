@@ -72,8 +72,10 @@ class VisualizeRequest(BaseModel):
     def _check_cross_fields(self) -> VisualizeRequest:
         if self.start_year and self.end_year and self.end_year < self.start_year:
             raise ValueError("end_year must be >= start_year")
-        if isinstance(self.drug_name, list) and isinstance(self.condition, list) and (
-            len(self.drug_name) > 1 and len(self.condition) > 1
+        if (
+            isinstance(self.drug_name, list)
+            and isinstance(self.condition, list)
+            and (len(self.drug_name) > 1 and len(self.condition) > 1)
         ):
             raise ValueError("compare either drugs or conditions, not both")
         return self

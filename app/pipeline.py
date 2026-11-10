@@ -13,7 +13,7 @@ from app.ctgov.client import CtgovClient, FetchResult
 from app.ctgov.query_builder import build_params, merge_filters
 from app.data.dimensions import DIMENSIONS, api_fields
 from app.data.normalize import humanize_enum, normalize_phase
-from app.schemas.enums import AnswerMode, DimensionName, VizType
+from app.schemas.enums import AnswerMode, VizType
 from app.schemas.plan import Cohort, PlanFilters, QueryPlan
 from app.schemas.response import Meta, RecordCounts, SourceInfo, VisualizeResponse
 from app.viz import builder
@@ -117,7 +117,10 @@ def _build(plan: QueryPlan, cohorts: list[CohortData]) -> builder.Built:
             series = [(c.label, group_by(c.fetch.studies, plan.group_by)) for c in cohorts]
             return builder.grouped_bar_chart(series, title, plan.top_n)
         case VizType.GROUPED_BAR_CHART if plan.split_by is not None:
-            series = [(label, group_by(part, plan.group_by)) for label, part in partition(cohorts[0].fetch.studies, plan.split_by)]
+            series = [
+                (label, group_by(part, plan.group_by))
+                for label, part in partition(cohorts[0].fetch.studies, plan.split_by)
+            ]
             return builder.grouped_bar_chart(series, title, plan.top_n, split_by=plan.split_by)
     raise NotImplementedError(f"viz_type {plan.viz_type} is not implemented yet")
 
@@ -195,7 +198,10 @@ def _unsupported(plan: QueryPlan, client: CtgovClient) -> VisualizeResponse:
             query_interpretation=plan.interpretation,
             filters_applied={},
             plan=plan.model_dump(mode="json"),
-            notes=[plan.unsupported_reason or "This question cannot be answered from ClinicalTrials.gov data.", *plan.notes],
+            notes=[
+                plan.unsupported_reason or "This question cannot be answered from ClinicalTrials.gov data.",
+                *plan.notes,
+            ],
             source=SourceInfo(
                 api_version=version.get("apiVersion"),
                 data_timestamp=version.get("dataTimestamp"),

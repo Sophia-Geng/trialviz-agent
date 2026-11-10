@@ -1,4 +1,4 @@
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 
 import pytest
 from openai.lib._pydantic import to_strict_json_schema  # same conversion the SDK applies in .parse()
@@ -78,7 +78,7 @@ _META = {
     "answer_mode": "visualization",
     "query_interpretation": "Trials per phase",
     "filters_applied": {"condition": "melanoma"},
-    "source": {"retrieved_at": datetime.now(timezone.utc).isoformat()},
+    "source": {"retrieved_at": datetime.now(UTC).isoformat()},
 }
 
 
@@ -108,8 +108,15 @@ def test_network_response_and_unsupported():
                 "title": "Sponsors and drugs",
                 "data": {
                     "nodes": [
-                        {"id": "drug:pembrolizumab", "label": "pembrolizumab", "type": "drug", "trial_count": 3,
-                         "degree": 1, "citation_count": 3, "citations": []},
+                        {
+                            "id": "drug:pembrolizumab",
+                            "label": "pembrolizumab",
+                            "type": "drug",
+                            "trial_count": 3,
+                            "degree": 1,
+                            "citation_count": 3,
+                            "citations": [],
+                        },
                     ],
                     "edges": [],
                 },
@@ -118,7 +125,9 @@ def test_network_response_and_unsupported():
         }
     )
     assert net.visualization.encoding.edges.directed is False
-    unsupported = VisualizeResponse.model_validate({"visualization": None, "meta": {**_META, "answer_mode": "unsupported"}})
+    unsupported = VisualizeResponse.model_validate(
+        {"visualization": None, "meta": {**_META, "answer_mode": "unsupported"}}
+    )
     assert unsupported.visualization is None
 
 

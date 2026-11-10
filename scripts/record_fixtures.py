@@ -13,7 +13,7 @@ from __future__ import annotations
 import json
 import sys
 import time
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 import httpx
@@ -51,6 +51,7 @@ FIELDS = "|".join(
         "EnrollmentCount",
     ]
 )
+
 
 def drug_query(name: str) -> str:
     """Strict drug match; plain query.intr applies concept expansion and over-matches (README §6.3)."""
@@ -157,7 +158,7 @@ def main(name_filter: str | None) -> None:
             responses = fetch(client, path, params, pages)
             fixture = {
                 "request": {"path": path, "params": params},
-                "retrieved_at": datetime.now(timezone.utc).isoformat(),
+                "retrieved_at": datetime.now(UTC).isoformat(),
                 "pages": responses,
             }
             out = FIXTURE_DIR / f"{name}.json"

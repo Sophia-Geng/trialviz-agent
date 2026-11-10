@@ -66,13 +66,19 @@ class Planner:
                 log.info("plan rejected, retrying: %s", errors)
                 messages += [
                     {"role": "assistant", "content": plan.model_dump_json()},
-                    {"role": "user", "content": "That plan violates these rules: " + "; ".join(errors)
-                     + ". Return a corrected plan for the same question."},
+                    {
+                        "role": "user",
+                        "content": "That plan violates these rules: "
+                        + "; ".join(errors)
+                        + ". Return a corrected plan for the same question.",
+                    },
                 ]
                 plan = self._llm.generate_plan(messages)
                 errors = plan_rules.check(plan)
                 if errors:
-                    return None, [f"Planner output failed validation twice ({'; '.join(errors)}); used keyword fallback."]
+                    return None, [
+                        f"Planner output failed validation twice ({'; '.join(errors)}); used keyword fallback."
+                    ]
                 notes.append("Planner output was corrected after one validation retry.")
             plan, grounding_notes = self._ground_entities(plan, messages)
             return plan, notes + grounding_notes
@@ -100,13 +106,18 @@ class Planner:
             return plan, []
         terms = ", ".join(f"{field} '{value}'" for field, value in missing)
         log.info("zero-hit search terms, asking for correction: %s", terms)
-        fixed = self._llm.generate_plan([
-            *messages,
-            {"role": "assistant", "content": plan.model_dump_json()},
-            {"role": "user", "content": f"On ClinicalTrials.gov these search terms match no trials: {terms}. "
-             "They may be misspelled or not in English. Return the same plan with only these terms replaced by the "
-             "standard English name used in trial registries; change nothing else."},
-        ])
+        fixed = self._llm.generate_plan(
+            [
+                *messages,
+                {"role": "assistant", "content": plan.model_dump_json()},
+                {
+                    "role": "user",
+                    "content": f"On ClinicalTrials.gov these search terms match no trials: {terms}. "
+                    "They may be misspelled or not in English. Return the same plan with only these terms "
+                    "replaced by the standard English name used in trial registries; change nothing else.",
+                },
+            ]
+        )
         still_missing = self._zero_hit_terms(fixed) if not plan_rules.check(fixed) else missing
         if len(still_missing) >= len(missing):
             return plan, [f"Search terms that match no trials on ClinicalTrials.gov: {terms}. Check the spelling."]
@@ -115,8 +126,10 @@ class Planner:
             for (field, value), new in zip(missing, (_find(fixed, f) for f, _ in missing), strict=True)
             if (field, value) not in still_missing
         ]
-        return fixed, [f"Search terms matched no trials and were corrected by the planner, verified against the "
-                       f"API: {', '.join(corrected)}."]
+        return fixed, [
+            f"Search terms matched no trials and were corrected by the planner, verified against the "
+            f"API: {', '.join(corrected)}."
+        ]
 
 
 def _only(field: str, value: str) -> PlanFilters:

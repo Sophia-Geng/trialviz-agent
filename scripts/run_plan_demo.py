@@ -23,25 +23,38 @@ def filters(**kw) -> PlanFilters:
 
 def plan(**kw) -> QueryPlan:
     base = dict(
-        answer_mode="visualization", unsupported_reason=None, cohorts=[], shared_filters=empty_filters(),
-        group_by=None, split_by=None, measure=None, network=None, top_n=15,
+        answer_mode="visualization",
+        unsupported_reason=None,
+        cohorts=[],
+        shared_filters=empty_filters(),
+        group_by=None,
+        split_by=None,
+        measure=None,
+        network=None,
+        top_n=15,
     )
     return QueryPlan(**{**base, **kw})
 
 
 PLANS = {
     "trend": plan(
-        intent="trend", viz_type="time_series", group_by="start_year",
+        intent="trend",
+        viz_type="time_series",
+        group_by="start_year",
         shared_filters=filters(intervention="pembrolizumab", start_year=2015),
         interpretation="Number of trials per start year involving pembrolizumab, since 2015.",
     ),
     "phases": plan(
-        intent="distribution", viz_type="bar_chart", group_by="phase",
+        intent="distribution",
+        viz_type="bar_chart",
+        group_by="phase",
         shared_filters=filters(condition="Alzheimer's disease"),
         interpretation="Alzheimer's disease trials by phase.",
     ),
     "compare": plan(
-        intent="comparison", viz_type="grouped_bar_chart", group_by="phase",
+        intent="comparison",
+        viz_type="grouped_bar_chart",
+        group_by="phase",
         cohorts=[
             Cohort(label="Pembrolizumab", filters=filters(intervention="pembrolizumab")),
             Cohort(label="Nivolumab", filters=filters(intervention="nivolumab")),
@@ -49,12 +62,16 @@ PLANS = {
         interpretation="Phase distribution of pembrolizumab vs nivolumab trials.",
     ),
     "countries": plan(
-        intent="geographic", viz_type="bar_chart", group_by="recruiting_country",
+        intent="geographic",
+        viz_type="bar_chart",
+        group_by="recruiting_country",
         shared_filters=filters(condition="breast cancer", status=["RECRUITING"]),
         interpretation="Countries with the most recruiting breast cancer trials.",
     ),
     "sponsor_class": plan(
-        intent="comparison", viz_type="grouped_bar_chart", group_by="sponsor_class",
+        intent="comparison",
+        viz_type="grouped_bar_chart",
+        group_by="sponsor_class",
         cohorts=[
             Cohort(label="Melanoma", filters=filters(condition="melanoma")),
             Cohort(label="Pancreatic cancer", filters=filters(condition="pancreatic cancer")),
@@ -63,13 +80,15 @@ PLANS = {
         interpretation="Lead sponsor categories of melanoma vs pancreatic cancer trials since 2020.",
     ),
     "network": plan(
-        intent="network", viz_type="network_graph",
+        intent="network",
+        viz_type="network_graph",
         network=NetworkSpec(source_dim="lead_sponsor", target_dim="drug"),
         shared_filters=filters(condition="melanoma"),
         interpretation="Lead sponsors linked to the drugs they test in melanoma trials.",
     ),
     "combos": plan(
-        intent="network", viz_type="network_graph",
+        intent="network",
+        viz_type="network_graph",
         network=NetworkSpec(source_dim="drug", target_dim="drug"),
         shared_filters=filters(intervention="nivolumab"),
         interpretation="Drugs combined with nivolumab in the same trial.",
@@ -95,7 +114,8 @@ def main(names: list[str], verbose: bool) -> None:
         for row in viz.data[:20]:
             series = f"{row.series:>18} | " if hasattr(row, "series") else ""
             label = getattr(row, "category", None) or getattr(row, "year", None)
-            print(f"  {series}{label!s:<28} {row.trial_count:>5}   e.g. {row.citations[0].nct_id if row.citations else '-'}")
+            example = row.citations[0].nct_id if row.citations else "-"
+            print(f"  {series}{label!s:<28} {row.trial_count:>5}   e.g. {example}")
         for note in meta.notes:
             print(f"  note: {note}")
         if verbose:

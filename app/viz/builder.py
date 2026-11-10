@@ -9,9 +9,10 @@ from __future__ import annotations
 import math
 from dataclasses import dataclass, field
 from datetime import date
+from itertools import pairwise
 
 from app.aggregate.engine import MAX_CITATIONS, CoOccurrence, GroupResult, extract_batch, make_citation
-from app.data.dimensions import DIMENSIONS, P, Extracted, brief_title, nct_id
+from app.data.dimensions import DIMENSIONS, Extracted, P, brief_title, nct_id
 from app.data.normalize import UNKNOWN, phase_sort_key
 from app.schemas.enums import DimensionName
 from app.schemas.response import (
@@ -24,8 +25,6 @@ from app.schemas.response import (
     Grouping,
     Histogram,
     HistogramEncoding,
-    PointDatum,
-    ScatterPlot,
     Metric,
     MetricDatum,
     MetricEncoding,
@@ -33,6 +32,8 @@ from app.schemas.response import (
     NetworkEdge,
     NetworkGraph,
     NetworkNode,
+    PointDatum,
+    ScatterPlot,
     SeriesDatum,
     SeriesEncoding,
     SortSpec,
@@ -277,7 +278,7 @@ def histogram(studies: list[dict], dim_name: DimensionName, title: str) -> Built
     log = dim_name in LOG_BINNED
     edges = (log_edges(max(values)) if log else linear_edges(min(values), max(values))) if values else []
     rows: list[BinDatum] = []
-    for lo, hi in zip(edges, edges[1:]):
+    for lo, hi in pairwise(edges):
         members = [(s, v) for s, v in pairs if lo <= float(v.key) < hi]
         rows.append(
             BinDatum(
@@ -340,8 +341,11 @@ def scatter_plot(studies: list[dict], x_dim: DimensionName, y_dim: DimensionName
         points = points[:MAX_SCATTER_POINTS]
     x_label, y_label = DIMENSIONS[x_dim].label, DIMENSIONS[y_dim].label
     if {x_dim, y_dim} & LOG_BINNED:
-        notes.append("Values are long-tailed; a log scale is recommended for " +
-                     " and ".join(DIMENSIONS[d].label.lower() for d in (x_dim, y_dim) if d in LOG_BINNED) + ".")
+        notes.append(
+            "Values are long-tailed; a log scale is recommended for "
+            + " and ".join(DIMENSIONS[d].label.lower() for d in (x_dim, y_dim) if d in LOG_BINNED)
+            + "."
+        )
     return Built(
         visualization=ScatterPlot(
             title=title,

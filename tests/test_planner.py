@@ -9,10 +9,20 @@ from app.schemas.request import VisualizeRequest
 from app.validation import plan_rules
 from app.validation.plan_rules import PlanRejected
 
-GOOD = _plan(intent="distribution", viz_type="bar_chart", group_by="phase",
-             shared_filters=_f(condition="melanoma"), interpretation="Melanoma trials by phase.")
-BAD = _plan(intent="trend", viz_type="time_series", group_by="phase",
-            shared_filters=_f(condition="melanoma"), interpretation="x")
+GOOD = _plan(
+    intent="distribution",
+    viz_type="bar_chart",
+    group_by="phase",
+    shared_filters=_f(condition="melanoma"),
+    interpretation="Melanoma trials by phase.",
+)
+BAD = _plan(
+    intent="trend",
+    viz_type="time_series",
+    group_by="phase",
+    shared_filters=_f(condition="melanoma"),
+    interpretation="x",
+)
 
 
 class ScriptedLLM:
@@ -53,7 +63,9 @@ def test_twice_invalid_falls_back():
 
 
 def test_llm_error_falls_back():
-    plan = Planner(ScriptedLLM(PlannerError("timeout"))).plan(VisualizeRequest(query="which countries", condition="asthma"))
+    plan = Planner(ScriptedLLM(PlannerError("timeout"))).plan(
+        VisualizeRequest(query="which countries", condition="asthma")
+    )
     assert plan.group_by is DimensionName.COUNTRY
     assert any("unavailable" in n for n in plan.notes)
 
@@ -65,10 +77,20 @@ def test_no_llm_configured_uses_fallback_and_scope_guard():
     assert any("limited to" in n for n in plan.notes)
 
 
-TYPO = _plan(intent="trend", viz_type="time_series", group_by="start_year",
-             shared_filters=_f(intervention="pembrolizmab"), interpretation="x")
-FIXED = _plan(intent="trend", viz_type="time_series", group_by="start_year",
-              shared_filters=_f(intervention="pembrolizumab"), interpretation="x")
+TYPO = _plan(
+    intent="trend",
+    viz_type="time_series",
+    group_by="start_year",
+    shared_filters=_f(intervention="pembrolizmab"),
+    interpretation="x",
+)
+FIXED = _plan(
+    intent="trend",
+    viz_type="time_series",
+    group_by="start_year",
+    shared_filters=_f(intervention="pembrolizumab"),
+    interpretation="x",
+)
 
 
 def _counter(hits: dict[str, int]):
@@ -92,8 +114,13 @@ def test_zero_hit_term_is_corrected_and_verified():
 
 
 def test_correction_rejected_when_api_does_not_confirm_it():
-    still_wrong = _plan(intent="trend", viz_type="time_series", group_by="start_year",
-                        shared_filters=_f(intervention="pembrolizumabb"), interpretation="x")
+    still_wrong = _plan(
+        intent="trend",
+        viz_type="time_series",
+        group_by="start_year",
+        shared_filters=_f(intervention="pembrolizumabb"),
+        interpretation="x",
+    )
     plan = Planner(ScriptedLLM(TYPO, still_wrong), _counter({})).plan(VisualizeRequest(query="q"))
     assert plan.shared_filters.intervention == "pembrolizmab"  # original kept, user told to check spelling
     assert any("match no trials" in n and "Check the spelling" in n for n in plan.notes)

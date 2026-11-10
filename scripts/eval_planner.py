@@ -20,10 +20,13 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 from app.ctgov.client import CtgovClient  # noqa: E402
-from app.planner.llm_client import OpenAIPlanner  # noqa: E402
-from app.planner.llm_planner import ENTITY_FIELDS, _only  # noqa: E402
 from app.ctgov.query_builder import build_params  # noqa: E402
-from app.planner.llm_planner import Planner  # noqa: E402
+from app.planner.llm_client import OpenAIPlanner  # noqa: E402
+from app.planner.llm_planner import (  # noqa: E402
+    ENTITY_FIELDS,
+    Planner,  # noqa: E402
+    _only,
+)
 from app.schemas.plan import QueryPlan  # noqa: E402
 from app.schemas.request import VisualizeRequest  # noqa: E402
 from app.validation.plan_rules import PlanRejected  # noqa: E402
@@ -35,61 +38,195 @@ DEFAULT_MODELS = ["gpt-4.1", "gpt-4.1-mini", "gpt-5.4-mini"]
 # measure (x, y), entity {field: substring}, status / phase (sets), start_year, top_n, cohorts (count)
 CASES: list[dict] = [
     # --- assignment appendix ---------------------------------------------------------------------
-    {"id": "trend-drug", "tag": "appendix", "query": "How has the number of trials for pembrolizumab changed per year since 2015?",
-     "expect": {"viz_type": "time_series", "group_by": "start_year", "entity": {"intervention": "pembrolizumab"}, "start_year": 2015}},
-    {"id": "trend-condition", "tag": "appendix", "query": "How many trials started each year for type 2 diabetes?",
-     "expect": {"viz_type": "time_series", "group_by": "start_year", "entity": {"condition": "diabetes"}}},
-    {"id": "phase-distribution", "tag": "appendix", "query": "How are Alzheimer's disease trials distributed across phases?",
-     "expect": {"viz_type": "bar_chart", "group_by": "phase", "entity": {"condition": "alzheimer"}}},
-    {"id": "intervention-types", "tag": "appendix", "query": "What are the most common intervention types for Parkinson's disease trials?",
-     "expect": {"viz_type": "bar_chart", "group_by": "intervention_type", "entity": {"condition": "parkinson"}}},
-    {"id": "compare-drugs", "tag": "appendix", "query": "Compare phases for trials involving atezolizumab vs durvalumab.",
-     "expect": {"viz_type": "grouped_bar_chart", "group_by": "phase", "cohorts": 2}},
-    {"id": "compare-sponsor-class", "tag": "appendix", "query": "Compare sponsor categories across lung cancer and colorectal cancer trials.",
-     "expect": {"viz_type": "grouped_bar_chart", "group_by": "sponsor_class", "cohorts": 2}},
-    {"id": "recruiting-countries", "tag": "appendix", "query": "Which countries have the most recruiting trials for asthma?",
-     "expect": {"viz_type": "bar_chart", "group_by": "recruiting_country", "entity": {"condition": "asthma"}, "status": {"RECRUITING"}}},
-    {"id": "network-sponsor-drug", "tag": "appendix", "query": "Show a network of sponsors and drugs for glioblastoma trials.",
-     "expect": {"viz_type": "network_graph", "network": ("lead_sponsor", "drug"), "entity": {"condition": "glioblastoma"}}},
-    {"id": "network-drug-drug", "tag": "appendix", "query": "Which drugs frequently co-occur in combination studies for multiple myeloma?",
-     "expect": {"viz_type": "network_graph", "network": ("drug", "drug"), "entity": {"condition": "myeloma"}}},
+    {
+        "id": "trend-drug",
+        "tag": "appendix",
+        "query": "How has the number of trials for pembrolizumab changed per year since 2015?",
+        "expect": {
+            "viz_type": "time_series",
+            "group_by": "start_year",
+            "entity": {"intervention": "pembrolizumab"},
+            "start_year": 2015,
+        },
+    },
+    {
+        "id": "trend-condition",
+        "tag": "appendix",
+        "query": "How many trials started each year for type 2 diabetes?",
+        "expect": {"viz_type": "time_series", "group_by": "start_year", "entity": {"condition": "diabetes"}},
+    },
+    {
+        "id": "phase-distribution",
+        "tag": "appendix",
+        "query": "How are Alzheimer's disease trials distributed across phases?",
+        "expect": {"viz_type": "bar_chart", "group_by": "phase", "entity": {"condition": "alzheimer"}},
+    },
+    {
+        "id": "intervention-types",
+        "tag": "appendix",
+        "query": "What are the most common intervention types for Parkinson's disease trials?",
+        "expect": {"viz_type": "bar_chart", "group_by": "intervention_type", "entity": {"condition": "parkinson"}},
+    },
+    {
+        "id": "compare-drugs",
+        "tag": "appendix",
+        "query": "Compare phases for trials involving atezolizumab vs durvalumab.",
+        "expect": {"viz_type": "grouped_bar_chart", "group_by": "phase", "cohorts": 2},
+    },
+    {
+        "id": "compare-sponsor-class",
+        "tag": "appendix",
+        "query": "Compare sponsor categories across lung cancer and colorectal cancer trials.",
+        "expect": {"viz_type": "grouped_bar_chart", "group_by": "sponsor_class", "cohorts": 2},
+    },
+    {
+        "id": "recruiting-countries",
+        "tag": "appendix",
+        "query": "Which countries have the most recruiting trials for asthma?",
+        "expect": {
+            "viz_type": "bar_chart",
+            "group_by": "recruiting_country",
+            "entity": {"condition": "asthma"},
+            "status": {"RECRUITING"},
+        },
+    },
+    {
+        "id": "network-sponsor-drug",
+        "tag": "appendix",
+        "query": "Show a network of sponsors and drugs for glioblastoma trials.",
+        "expect": {
+            "viz_type": "network_graph",
+            "network": ("lead_sponsor", "drug"),
+            "entity": {"condition": "glioblastoma"},
+        },
+    },
+    {
+        "id": "network-drug-drug",
+        "tag": "appendix",
+        "query": "Which drugs frequently co-occur in combination studies for multiple myeloma?",
+        "expect": {"viz_type": "network_graph", "network": ("drug", "drug"), "entity": {"condition": "myeloma"}},
+    },
     # --- other chart types -----------------------------------------------------------------------
-    {"id": "histogram", "tag": "chart types", "query": "What is the distribution of enrollment sizes in phase 2 psoriasis trials?",
-     "expect": {"viz_type": "histogram", "measure": ("enrollment", None), "phase": {"PHASE2"}, "entity": {"condition": "psoriasis"}}},
-    {"id": "scatter", "tag": "chart types", "query": "Plot enrollment against trial duration for completed asthma trials.",
-     "expect": {"viz_type": "scatter_plot", "measure": ("enrollment", "duration_months"), "status": {"COMPLETED"}}},
-    {"id": "split-by", "tag": "chart types", "query": "For melanoma trials, break down each phase by recruitment status.",
-     "expect": {"viz_type": "grouped_bar_chart", "group_by": {"phase", "overall_status"}, "split_by": {"phase", "overall_status"}}},
-    {"id": "network-condition-drug", "tag": "chart types", "query": "Show a network of conditions and drugs for trials sponsored by Pfizer since 2020.",
-     "expect": {"viz_type": "network_graph", "network": ("condition", "drug"), "entity": {"sponsor": "pfizer"}, "start_year": 2020}},
-    {"id": "network-investigator", "tag": "chart types", "query": "Which investigators work with which sponsors in ALS research?",
-     "expect": {"viz_type": "network_graph", "network": ("investigator", "lead_sponsor")}},
+    {
+        "id": "histogram",
+        "tag": "chart types",
+        "query": "What is the distribution of enrollment sizes in phase 2 psoriasis trials?",
+        "expect": {
+            "viz_type": "histogram",
+            "measure": ("enrollment", None),
+            "phase": {"PHASE2"},
+            "entity": {"condition": "psoriasis"},
+        },
+    },
+    {
+        "id": "scatter",
+        "tag": "chart types",
+        "query": "Plot enrollment against trial duration for completed asthma trials.",
+        "expect": {"viz_type": "scatter_plot", "measure": ("enrollment", "duration_months"), "status": {"COMPLETED"}},
+    },
+    {
+        "id": "split-by",
+        "tag": "chart types",
+        "query": "For melanoma trials, break down each phase by recruitment status.",
+        "expect": {
+            "viz_type": "grouped_bar_chart",
+            "group_by": {"phase", "overall_status"},
+            "split_by": {"phase", "overall_status"},
+        },
+    },
+    {
+        "id": "network-condition-drug",
+        "tag": "chart types",
+        "query": "Show a network of conditions and drugs for trials sponsored by Pfizer since 2020.",
+        "expect": {
+            "viz_type": "network_graph",
+            "network": ("condition", "drug"),
+            "entity": {"sponsor": "pfizer"},
+            "start_year": 2020,
+        },
+    },
+    {
+        "id": "network-investigator",
+        "tag": "chart types",
+        "query": "Which investigators work with which sponsors in ALS research?",
+        "expect": {"viz_type": "network_graph", "network": ("investigator", "lead_sponsor")},
+    },
     # --- answer modes ------------------------------------------------------------------------------
-    {"id": "metric", "tag": "answer mode", "query": "How many phase 3 Alzheimer's trials have been terminated?",
-     "expect": {"answer_mode": "single_value", "viz_type": "metric", "status": {"TERMINATED"}, "phase": {"PHASE3"}}},
-    {"id": "unsupported-efficacy", "tag": "answer mode", "query": "Does metformin reduce cancer risk?",
-     "expect": {"answer_mode": "unsupported"}},
-    {"id": "unsupported-offtopic", "tag": "answer mode", "query": "What's the weather in Boston tomorrow?",
-     "expect": {"answer_mode": "unsupported"}},
-    {"id": "unsupported-safety", "tag": "answer mode", "query": "What are the side effects of semaglutide?",
-     "expect": {"answer_mode": "unsupported"}},
+    {
+        "id": "metric",
+        "tag": "answer mode",
+        "query": "How many phase 3 Alzheimer's trials have been terminated?",
+        "expect": {"answer_mode": "single_value", "viz_type": "metric", "status": {"TERMINATED"}, "phase": {"PHASE3"}},
+    },
+    {
+        "id": "unsupported-efficacy",
+        "tag": "answer mode",
+        "query": "Does metformin reduce cancer risk?",
+        "expect": {"answer_mode": "unsupported"},
+    },
+    {
+        "id": "unsupported-offtopic",
+        "tag": "answer mode",
+        "query": "What's the weather in Boston tomorrow?",
+        "expect": {"answer_mode": "unsupported"},
+    },
+    {
+        "id": "unsupported-safety",
+        "tag": "answer mode",
+        "query": "What are the side effects of semaglutide?",
+        "expect": {"answer_mode": "unsupported"},
+    },
     # --- tricky phrasing ---------------------------------------------------------------------------
-    {"id": "brand-names", "tag": "tricky", "query": "Keytruda vs Opdivo, how do their trials break down by phase?",
-     "expect": {"viz_type": "grouped_bar_chart", "group_by": "phase", "cohorts": 2}},
-    {"id": "top-n-sponsors", "tag": "tricky", "query": "top 5 sponsors running phase 3 obesity studies",
-     "expect": {"viz_type": "bar_chart", "group_by": "lead_sponsor", "top_n": 5, "phase": {"PHASE3"}, "entity": {"condition": "obes"}}},
-    {"id": "implicit-recruiting", "tag": "tricky", "query": "Where in the world is semaglutide being tested right now?",
-     "expect": {"group_by": {"recruiting_country", "country"}, "entity": {"intervention": "semaglutide"}}},
-    {"id": "typo", "tag": "tricky", "query": "pembrolizmab trails per year",
-     "expect": {"viz_type": "time_series", "group_by": "start_year", "entity": {"intervention": "pembrolizumab"}}},
-    {"id": "chinese", "tag": "tricky", "query": "乳腺癌试验在各个阶段是怎么分布的？",
-     "expect": {"viz_type": "bar_chart", "group_by": "phase", "entity": {"condition": "breast"}}},
-    {"id": "vague-trend", "tag": "tricky", "query": "trends in hepatitis B research",
-     "expect": {"viz_type": "time_series", "group_by": "start_year", "entity": {"condition": "hepatitis b"}}},
+    {
+        "id": "brand-names",
+        "tag": "tricky",
+        "query": "Keytruda vs Opdivo, how do their trials break down by phase?",
+        "expect": {"viz_type": "grouped_bar_chart", "group_by": "phase", "cohorts": 2},
+    },
+    {
+        "id": "top-n-sponsors",
+        "tag": "tricky",
+        "query": "top 5 sponsors running phase 3 obesity studies",
+        "expect": {
+            "viz_type": "bar_chart",
+            "group_by": "lead_sponsor",
+            "top_n": 5,
+            "phase": {"PHASE3"},
+            "entity": {"condition": "obes"},
+        },
+    },
+    {
+        "id": "implicit-recruiting",
+        "tag": "tricky",
+        "query": "Where in the world is semaglutide being tested right now?",
+        "expect": {"group_by": {"recruiting_country", "country"}, "entity": {"intervention": "semaglutide"}},
+    },
+    {
+        "id": "typo",
+        "tag": "tricky",
+        "query": "pembrolizmab trails per year",
+        "expect": {"viz_type": "time_series", "group_by": "start_year", "entity": {"intervention": "pembrolizumab"}},
+    },
+    {
+        "id": "chinese",
+        "tag": "tricky",
+        "query": "乳腺癌试验在各个阶段是怎么分布的？",
+        "expect": {"viz_type": "bar_chart", "group_by": "phase", "entity": {"condition": "breast"}},
+    },
+    {
+        "id": "vague-trend",
+        "tag": "tricky",
+        "query": "trends in hepatitis B research",
+        "expect": {"viz_type": "time_series", "group_by": "start_year", "entity": {"condition": "hepatitis b"}},
+    },
     # --- structured fields override ------------------------------------------------------------------
-    {"id": "structured-compare", "tag": "structured", "query": "Compare these drugs by phase.",
-     "fields": {"drug_name": ["semaglutide", "tirzepatide"]},
-     "expect": {"viz_type": "grouped_bar_chart", "group_by": "phase", "cohorts": 2}},
+    {
+        "id": "structured-compare",
+        "tag": "structured",
+        "query": "Compare these drugs by phase.",
+        "fields": {"drug_name": ["semaglutide", "tirzepatide"]},
+        "expect": {"viz_type": "grouped_bar_chart", "group_by": "phase", "cohorts": 2},
+    },
 ]
 
 
@@ -127,10 +264,17 @@ def check(plan: QueryPlan, expect: dict) -> list[str]:
         want(f"{field}~{substring}", any(substring in v for v in _filters(plan, field)))
     for field in ("status", "phase"):
         if field in expect:
-            got = {s.value for f in [plan.shared_filters, *(c.filters for c in plan.cohorts)] for s in (getattr(f, field) or [])}
+            got = {
+                s.value
+                for f in [plan.shared_filters, *(c.filters for c in plan.cohorts)]
+                for s in (getattr(f, field) or [])
+            }
             want(field, got == expect[field])
     if "start_year" in expect:
-        want("start_year", expect["start_year"] in [plan.shared_filters.start_year, *(c.filters.start_year for c in plan.cohorts)])
+        want(
+            "start_year",
+            expect["start_year"] in [plan.shared_filters.start_year, *(c.filters.start_year for c in plan.cohorts)],
+        )
     if "top_n" in expect:
         want("top_n", plan.top_n == expect["top_n"])
     if "cohorts" in expect:
@@ -168,12 +312,20 @@ def run(model: str) -> list[dict]:
             plan_json = plan.model_dump(mode="json", exclude={"notes", "max_records"})
         except PlanRejected as exc:
             failed, notes, plan_json = [f"rejected: {exc}"], [], None
-        results.append({
-            "id": case["id"], "tag": case["tag"], "query": case["query"], "passed": not failed, "failed": failed,
-            "retried": any("validation retry" in n for n in notes), "fallback": any("fallback" in n for n in notes),
-            "grounded": any("verified against the API" in n for n in notes),
-            "seconds": round(time.time() - start, 2), "plan": plan_json,
-        })
+        results.append(
+            {
+                "id": case["id"],
+                "tag": case["tag"],
+                "query": case["query"],
+                "passed": not failed,
+                "failed": failed,
+                "retried": any("validation retry" in n for n in notes),
+                "fallback": any("fallback" in n for n in notes),
+                "grounded": any("verified against the API" in n for n in notes),
+                "seconds": round(time.time() - start, 2),
+                "plan": plan_json,
+            }
+        )
         print(f"  {model:14s} {case['id']:24s} {'PASS' if not failed else 'FAIL ' + ', '.join(failed)}")
     return results
 
@@ -181,11 +333,13 @@ def run(model: str) -> list[dict]:
 def write_report(all_results: dict[str, list[dict]]) -> None:
     models = list(all_results)
     lines = [
-        "# Planner evaluation", "",
+        "# Planner evaluation",
+        "",
         f"{len(CASES)} labeled questions, each run through the full planner (LLM structured output, plan rules, "
         "one corrective retry, keyword fallback, search-term grounding against the live API). A case passes only "
         "if every expected field matches AND every search term in the final plan matches at least one trial. "
-        "Generated by `scripts/eval_planner.py`; raw plans in `planner_eval.json`.", "",
+        "Generated by `scripts/eval_planner.py`; raw plans in `planner_eval.json`.",
+        "",
         "| Model | Passed | Accuracy | Rule retry | Search-term correction | Keyword fallback | Median latency |",
         "|---|---|---|---|---|---|---|",
     ]
@@ -198,8 +352,11 @@ def write_report(all_results: dict[str, list[dict]]) -> None:
             f"{sum(r['grounded'] for r in rs)} | "
             f"{sum(r['fallback'] for r in rs)} | {secs[len(secs) // 2]:.1f} s |"
         )
-    lines += ["", "| Case | Tag | Question | " + " | ".join(f"`{m}`" for m in models) + " |",
-              "|---|---|---|" + "---|" * len(models)]
+    lines += [
+        "",
+        "| Case | Tag | Question | " + " | ".join(f"`{m}`" for m in models) + " |",
+        "|---|---|---|" + "---|" * len(models),
+    ]
     for i, case in enumerate(CASES):
         cells = []
         for m in models:

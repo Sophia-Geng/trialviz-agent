@@ -114,7 +114,9 @@ def apply_request(plan: QueryPlan, request: VisualizeRequest) -> QueryPlan:
             return
         current = shared.get(field)
         if current is not None and _fmt(current).casefold() != _fmt(value).casefold():
-            notes.append(f"Using {label} '{_fmt(value)}' from the request instead of '{_fmt(current)}' read from the query.")
+            notes.append(
+                f"Using {label} '{_fmt(value)}' from the request instead of '{_fmt(current)}' read from the query."
+            )
         shared[field] = value
 
     for field, values in (("intervention", request.drug_names), ("condition", request.conditions)):

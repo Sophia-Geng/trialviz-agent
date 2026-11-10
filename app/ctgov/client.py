@@ -13,7 +13,7 @@ import json
 import threading
 import time
 from dataclasses import dataclass, field
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
@@ -115,10 +115,12 @@ class CtgovClient:
             return entry["body"], datetime.fromisoformat(entry["retrieved_at"])
 
         body = self._request(path, params)
-        retrieved_at = datetime.now(timezone.utc)
+        retrieved_at = datetime.now(UTC)
         if cache_file:
             cache_file.parent.mkdir(parents=True, exist_ok=True)
-            cache_file.write_text(json.dumps({"retrieved_at": retrieved_at.isoformat(), "body": body}), encoding="utf-8")
+            cache_file.write_text(
+                json.dumps({"retrieved_at": retrieved_at.isoformat(), "body": body}), encoding="utf-8"
+            )
         return body, retrieved_at
 
     def _request(self, path: str, params: dict[str, str]) -> dict:

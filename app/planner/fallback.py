@@ -14,21 +14,38 @@ from app.schemas.enums import VizType
 from app.schemas.plan import MeasureSpec, NetworkSpec, PlanFilters, QueryPlanLLM
 
 _RULES: list[tuple[re.Pattern, dict]] = [
-    (re.compile(r"network|co-?occur|combin|↔|<->|relationship", re.I),
-     {"intent": "network", "viz_type": VizType.NETWORK_GRAPH,
-      "network": NetworkSpec(source_dim=D.LEAD_SPONSOR, target_dim=D.DRUG)}),
-    (re.compile(r"per year|each year|over time|trend|since \d{4}|by year|timeline", re.I),
-     {"intent": "trend", "viz_type": VizType.TIME_SERIES, "group_by": D.START_YEAR}),
-    (re.compile(r"countr|where|geograph|location", re.I),
-     {"intent": "geographic", "viz_type": VizType.BAR_CHART, "group_by": D.COUNTRY}),
-    (re.compile(r"enrol|participants|sample size", re.I),
-     {"intent": "distribution", "viz_type": VizType.HISTOGRAM, "measure": MeasureSpec(x=D.ENROLLMENT, y=None)}),
-    (re.compile(r"sponsor", re.I),
-     {"intent": "distribution", "viz_type": VizType.BAR_CHART, "group_by": D.SPONSOR_CLASS}),
-    (re.compile(r"intervention type|type of intervention", re.I),
-     {"intent": "distribution", "viz_type": VizType.BAR_CHART, "group_by": D.INTERVENTION_TYPE}),
-    (re.compile(r"status", re.I),
-     {"intent": "distribution", "viz_type": VizType.BAR_CHART, "group_by": D.OVERALL_STATUS}),
+    (
+        re.compile(r"network|co-?occur|combin|↔|<->|relationship", re.I),
+        {
+            "intent": "network",
+            "viz_type": VizType.NETWORK_GRAPH,
+            "network": NetworkSpec(source_dim=D.LEAD_SPONSOR, target_dim=D.DRUG),
+        },
+    ),
+    (
+        re.compile(r"per year|each year|over time|trend|since \d{4}|by year|timeline", re.I),
+        {"intent": "trend", "viz_type": VizType.TIME_SERIES, "group_by": D.START_YEAR},
+    ),
+    (
+        re.compile(r"countr|where|geograph|location", re.I),
+        {"intent": "geographic", "viz_type": VizType.BAR_CHART, "group_by": D.COUNTRY},
+    ),
+    (
+        re.compile(r"enrol|participants|sample size", re.I),
+        {"intent": "distribution", "viz_type": VizType.HISTOGRAM, "measure": MeasureSpec(x=D.ENROLLMENT, y=None)},
+    ),
+    (
+        re.compile(r"sponsor", re.I),
+        {"intent": "distribution", "viz_type": VizType.BAR_CHART, "group_by": D.SPONSOR_CLASS},
+    ),
+    (
+        re.compile(r"intervention type|type of intervention", re.I),
+        {"intent": "distribution", "viz_type": VizType.BAR_CHART, "group_by": D.INTERVENTION_TYPE},
+    ),
+    (
+        re.compile(r"status", re.I),
+        {"intent": "distribution", "viz_type": VizType.BAR_CHART, "group_by": D.OVERALL_STATUS},
+    ),
 ]
 
 _DEFAULT = {"intent": "distribution", "viz_type": VizType.BAR_CHART, "group_by": D.PHASE}
@@ -36,7 +53,11 @@ _DEFAULT = {"intent": "distribution", "viz_type": VizType.BAR_CHART, "group_by":
 
 def fallback_plan(query: str) -> QueryPlanLLM:
     chosen = next((spec for pattern, spec in _RULES if pattern.search(query)), _DEFAULT)
-    if chosen["viz_type"] is VizType.BAR_CHART and chosen.get("group_by") is D.COUNTRY and re.search(r"recruit", query, re.I):
+    if (
+        chosen["viz_type"] is VizType.BAR_CHART
+        and chosen.get("group_by") is D.COUNTRY
+        and re.search(r"recruit", query, re.I)
+    ):
         chosen = {**chosen, "group_by": D.RECRUITING_COUNTRY}
     empty = PlanFilters(**{name: None for name in PlanFilters.model_fields})
     return QueryPlanLLM(

@@ -103,7 +103,9 @@ def test_non_drug_type_regimen_resolved_against_batch():
         trial("NCT3", [{"type": "OTHER", "name": "Morning pembrolizumab infusions"}]),
         trial("NCT4", [{"type": "DEVICE", "name": "Insulin pump"}]),
     ]
-    resolved = [[(v.key, v.excerpt, v.tentative) for v in values] for values in extract_batch(batch, DimensionName.DRUG)]
+    resolved = [
+        [(v.key, v.excerpt, v.tentative) for v in values] for values in extract_batch(batch, DimensionName.DRUG)
+    ]
     assert resolved[1] == [("pembrolizumab", "Cyberknife plus Pembrolizumab and Trametinib", False)]
     assert resolved[2] == [("pembrolizumab", "Morning pembrolizumab infusions", False)]
     assert resolved[3] == []  # 'insulin pump' matches no confirmed drug, 'cyberknife'/'trametinib' never confirmed
@@ -130,7 +132,9 @@ def test_drug_falls_back_to_cleaned_name_without_mesh():
     }
     ((v,),) = extract_batch([study], DimensionName.DRUG)  # the DEVICE 'Pump' matches no drug
     assert (v.key, v.excerpt, v.field_path) == (
-        "foo-123", "Foo-123 10 mg", "protocolSection.armsInterventionsModule.interventions[0].name",
+        "foo-123",
+        "Foo-123 10 mg",
+        "protocolSection.armsInterventionsModule.interventions[0].name",
     )
 
 
@@ -148,14 +152,22 @@ def test_condition_prefers_mesh_and_merges_spellings():
         trial(["Healthy Adult Participants"]),
     ]
     keys = [[v.key for v in vs] for vs in extract_batch(batch, DimensionName.CONDITION)]
-    assert keys == [["diabetes mellitus, type 2"], ["diabetes mellitus, type 2", "obesity"],
-                    ["healthy volunteers"], ["healthy volunteers"]]
+    assert keys == [
+        ["diabetes mellitus, type 2"],
+        ["diabetes mellitus, type 2", "obesity"],
+        ["healthy volunteers"],
+        ["healthy volunteers"],
+    ]
 
 
 @pytest.mark.parametrize(
     ("fixture", "mesh_term", "spellings"),
     [
-        ("alzheimer", "alzheimer disease", {"alzheimer's disease", "alzheimer disease", "alzheimers disease", "alzheimer's"}),
+        (
+            "alzheimer",
+            "alzheimer disease",
+            {"alzheimer's disease", "alzheimer disease", "alzheimers disease", "alzheimer's"},
+        ),
         ("melanoma", "melanoma", {"melanoma", "malignant melanoma", "metastatic melanoma"}),
     ],
 )
@@ -173,11 +185,17 @@ def test_condition_known_mesh_mismap_falls_back_to_free_text():
     """ClinicalTrials.gov maps 'Analgesia' to MeSH 'Agnosia' (a perception disorder)."""
     study = {
         "protocolSection": {"conditionsModule": {"conditions": ["Analgesia", "Postoperative Pain"]}},
-        "derivedSection": {"conditionBrowseModule": {"meshes": [
-            {"id": "D000377", "term": "Agnosia"}, {"id": "D010149", "term": "Pain, Postoperative"}]}},
+        "derivedSection": {
+            "conditionBrowseModule": {
+                "meshes": [{"id": "D000377", "term": "Agnosia"}, {"id": "D010149", "term": "Pain, Postoperative"}]
+            }
+        },
     }
     ((*values,),) = extract_batch([study], DimensionName.CONDITION)
-    assert [(v.key, v.excerpt) for v in values] == [("pain, postoperative", "Pain, Postoperative"), ("analgesia", "Analgesia")]
+    assert [(v.key, v.excerpt) for v in values] == [
+        ("pain, postoperative", "Pain, Postoperative"),
+        ("analgesia", "Analgesia"),
+    ]
 
 
 def test_drug_fallback_drops_fragments_and_controls():
@@ -218,11 +236,15 @@ def test_mesh_terms_need_evidence_in_mixed_trials():
                 ]
             }
         },
-        "derivedSection": {"interventionBrowseModule": {"meshes": [
-            {"id": "C582435", "term": "pembrolizumab"},   # chemical concept id
-            {"id": "D016190", "term": "Carboplatin"},     # matches a drug intervention name
-            {"id": "D000075702", "term": "Mindfulness"},  # descriptor from the behavioral arm
-        ]}},
+        "derivedSection": {
+            "interventionBrowseModule": {
+                "meshes": [
+                    {"id": "C582435", "term": "pembrolizumab"},  # chemical concept id
+                    {"id": "D016190", "term": "Carboplatin"},  # matches a drug intervention name
+                    {"id": "D000075702", "term": "Mindfulness"},  # descriptor from the behavioral arm
+                ]
+            }
+        },
     }
     ((*values,),) = extract_batch([study], DimensionName.DRUG)
     assert [v.key for v in values] == ["pembrolizumab", "carboplatin"]
@@ -230,8 +252,17 @@ def test_mesh_terms_need_evidence_in_mixed_trials():
 
 @pytest.mark.parametrize(
     ("name", "expected"),
-    [("pembrolizumab", True), ("hmpl-013", True), ("cba-1535", True), ("trastuzumab deruxtecan", True),
-     ("metformin", True), ("app", False), ("test", False), ("exercise", False), ("mindfulness", False)],
+    [
+        ("pembrolizumab", True),
+        ("hmpl-013", True),
+        ("cba-1535", True),
+        ("trastuzumab deruxtecan", True),
+        ("metformin", True),
+        ("app", False),
+        ("test", False),
+        ("exercise", False),
+        ("mindfulness", False),
+    ],
 )
 def test_looks_like_drug(name, expected):
     from app.data.normalize import looks_like_drug
@@ -243,7 +274,10 @@ def test_drug_fallback_splits_combinations():
     study = {
         "protocolSection": {
             "armsInterventionsModule": {
-                "interventions": [{"type": "DRUG", "name": "CBA-1535"}, {"type": "DRUG", "name": "CBA-1535+Pembrolizumab"}]
+                "interventions": [
+                    {"type": "DRUG", "name": "CBA-1535"},
+                    {"type": "DRUG", "name": "CBA-1535+Pembrolizumab"},
+                ]
             }
         }
     }

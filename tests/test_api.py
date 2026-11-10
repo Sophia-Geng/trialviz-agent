@@ -8,8 +8,13 @@ from app.planner.prompts import _f, _plan
 from tests.test_aggregate import FakeClient
 from tests.test_planner import ScriptedLLM
 
-PHASES = _plan(intent="distribution", viz_type="bar_chart", group_by="phase",
-               shared_filters=_f(condition="melanoma"), interpretation="Melanoma trials by phase.")
+PHASES = _plan(
+    intent="distribution",
+    viz_type="bar_chart",
+    group_by="phase",
+    shared_filters=_f(condition="melanoma"),
+    interpretation="Melanoma trials by phase.",
+)
 
 
 @pytest.fixture
@@ -57,7 +62,10 @@ def test_demo_serves_page_and_examples(client):
     assert "TrialViz Viewer" in client.get("/demo").text
     names = client.get("/demo/examples").json()
     assert "02_bar_phase_distribution" in names
-    assert client.get("/demo/examples/02_bar_phase_distribution").json()["response"]["visualization"]["type"] == "bar_chart"
+    assert (
+        client.get("/demo/examples/02_bar_phase_distribution").json()["response"]["visualization"]["type"]
+        == "bar_chart"
+    )
     assert client.get("/demo/examples/..%2F.env").status_code == 404
 
 

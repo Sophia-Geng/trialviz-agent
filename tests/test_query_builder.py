@@ -19,8 +19,16 @@ def test_sanitize_strips_essie_syntax():
 
 def test_build_params_full():
     params = build_params(
-        f(intervention="pembrolizumab", condition="melanoma", sponsor="Merck", country="France",
-          status=["RECRUITING", "COMPLETED"], phase=["PHASE2", "PHASE3"], start_year=2015, end_year=2020)
+        f(
+            intervention="pembrolizumab",
+            condition="melanoma",
+            sponsor="Merck",
+            country="France",
+            status=["RECRUITING", "COMPLETED"],
+            phase=["PHASE2", "PHASE3"],
+            start_year=2015,
+            end_year=2020,
+        )
     )
     assert params == {
         "query.intr": '(AREA[InterventionName]"pembrolizumab" OR AREA[InterventionMeshTerm]"pembrolizumab")',
