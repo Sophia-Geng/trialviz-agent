@@ -53,6 +53,14 @@ def test_upstream_failure_is_502(client):
     assert resp.status_code == 502 and resp.json()["error"]["code"] == "UPSTREAM_ERROR"
 
 
+def test_demo_serves_page_and_examples(client):
+    assert "TrialViz Viewer" in client.get("/demo").text
+    names = client.get("/demo/examples").json()
+    assert "02_bar_phase_distribution" in names
+    assert client.get("/demo/examples/02_bar_phase_distribution").json()["response"]["visualization"]["type"] == "bar_chart"
+    assert client.get("/demo/examples/..%2F.env").status_code == 404
+
+
 def test_schema_endpoint(client):
     body = client.get("/schema").json()
     assert set(body) == {"request", "response", "error"}

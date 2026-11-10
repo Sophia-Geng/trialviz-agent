@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import math
 from dataclasses import dataclass, field
+from datetime import date
 
 from app.aggregate.engine import MAX_CITATIONS, CoOccurrence, GroupResult, extract_batch, make_citation
 from app.data.dimensions import DIMENSIONS, P, Extracted, brief_title, nct_id
@@ -47,6 +48,7 @@ ORDINAL_DIMENSIONS = {DimensionName.PHASE}
 LOG_BINNED = {DimensionName.ENROLLMENT, DimensionName.SITE_COUNT}
 LINEAR_TARGET_BINS = 15
 MAX_SCATTER_POINTS = 2000
+EDGES_PER_NODE = 3
 
 
 @dataclass
@@ -161,9 +163,15 @@ def grouped_bar_chart(
     )
 
 
-def network_graph(graph: CoOccurrence, title: str, max_nodes: int, min_weight: int = 2) -> Built:
-    """Prune to edges with weight >= min_weight, then keep the max_nodes nodes with the highest
-    weighted degree (and the edges among them). Falls back to min_weight=1 for sparse graphs."""
+def network_graph(
+    graph: CoOccurrence, title: str, max_nodes: int, min_weight: int = 2, edges_per_node: int = EDGES_PER_NODE
+) -> Built:
+    """Readable network in three steps:
+    1. drop edges with weight < min_weight (falls back to 1 for sparse graphs);
+    2. keep the max_nodes nodes with the highest weighted degree;
+    3. backbone: keep each kept node's `edges_per_node` strongest edges (union), so dense
+       clusters do not turn into a hairball while every node still shows its main links.
+    Node trial_count / degree describe the full data; only the drawn edges are pruned."""
     notes: list[str] = []
     edges = [e for e in graph.edges.values() if e.weight >= min_weight]
     if not edges and min_weight > 1 and graph.edges:
@@ -179,6 +187,23 @@ def network_graph(graph: CoOccurrence, title: str, max_nodes: int, min_weight: i
     ranked = sorted(strength, key=lambda nid: (-strength[nid], graph.nodes[nid].label))
     kept = set(ranked[:max_nodes])
     edges = [e for e in edges if e.source in kept and e.target in kept]
+
+    candidate_count = len(edges)
+    by_node: dict[str, list] = {}
+    for e in edges:
+        by_node.setdefault(e.source, []).append(e)
+        by_node.setdefault(e.target, []).append(e)
+    backbone = {
+        (e.source, e.target)
+        for node_edges in by_node.values()
+        for e in sorted(node_edges, key=lambda e: -e.weight)[:edges_per_node]
+    }
+    edges = [e for e in edges if (e.source, e.target) in backbone]
+    if len(edges) < candidate_count:
+        notes.append(
+            f"For readability each entity keeps its {edges_per_node} strongest links "
+            f"({len(edges)} of {candidate_count} links among the shown entities)."
+        )
     degree: dict[str, int] = {}
     for e in edges:
         degree[e.source] = degree.get(e.source, 0) + 1
@@ -267,7 +292,14 @@ def histogram(studies: list[dict], dim_name: DimensionName, title: str) -> Built
         notes.append("Bins grow on a 1-2-5 scale (0, 1, 2, 5, 10, 20, ...) because the values are long-tailed.")
     estimated = sum(v.estimated for _, v in pairs)
     if estimated:
-        notes.append(f"{estimated} values are based on ESTIMATED dates (trials not yet completed).")
+        what = "planned enrollment" if dim_name is DimensionName.ENROLLMENT else "ESTIMATED dates"
+        notes.append(
+            f"{estimated} of {len(pairs)} values ({estimated / len(pairs):.0%}) are {what} reported by trials "
+            "that are not yet completed, not actual figures."
+        )
+    zero = sum(1 for _, v in pairs if float(v.key) == 0)
+    if zero and dim_name is DimensionName.ENROLLMENT:
+        notes.append(f"{zero} trials report 0 participants (typically withdrawn before enrolling).")
     return Built(
         visualization=Histogram(
             title=title,
@@ -339,7 +371,14 @@ def metric(total: int, studies: list[dict], title: str, label: str) -> Built:
     )
 
 
-def time_series(result: GroupResult, title: str, start_year: int | None = None, end_year: int | None = None) -> Built:
+def time_series(
+    result: GroupResult,
+    title: str,
+    start_year: int | None = None,
+    end_year: int | None = None,
+    today: date | None = None,
+) -> Built:
+    current_year = (today or date.today()).year
     years = {int(k): b for k, b in result.buckets.items()}
     notes: list[str] = []
     if not years:
@@ -356,6 +395,7 @@ def time_series(result: GroupResult, title: str, start_year: int | None = None, 
                     year=year,
                     trial_count=b.count if b else 0,
                     estimated_count=b.estimated if b else 0,
+                    incomplete=year >= current_year,
                     citation_count=b.count if b else 0,
                     citations=b.citations if b else [],
                 )
@@ -363,7 +403,14 @@ def time_series(result: GroupResult, title: str, start_year: int | None = None, 
     if result.missing:
         notes.append(f"{result.missing} trials without a parseable start date are not shown.")
     if any(d.estimated_count for d in data):
-        notes.append("Recent and future years include trials with ESTIMATED start dates (see estimated_count).")
+        notes.append("Some trials have ESTIMATED (planned) start dates, see estimated_count per year.")
+    incomplete = [d.year for d in data if d.incomplete]
+    if incomplete:
+        span = str(incomplete[0]) if len(incomplete) == 1 else f"{incomplete[0]}–{incomplete[-1]}"
+        notes.append(
+            f"{span}: the current year is not over and later years only contain trials that have already "
+            f"registered a planned start, so a drop there is not a real decline (marked incomplete)."
+        )
     return Built(
         visualization=TimeSeries(
             title=title,

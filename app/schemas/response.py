@@ -96,6 +96,10 @@ class TimeDatum(_Cited):
     year: int
     trial_count: int = Field(ge=0)
     estimated_count: int = Field(ge=0, description="Trials in this bucket whose start date is ESTIMATED.")
+    incomplete: bool = Field(
+        default=False,
+        description="Current or future year: counts will still grow, so a drop here is not a trend (draw dashed).",
+    )
 
 
 class BinDatum(_Cited):

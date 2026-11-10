@@ -11,7 +11,7 @@
       "filters_applied": {},
       "plan": {
         "answer_mode": "unsupported",
-        "unsupported_reason": "ClinicalTrials.gov does not provide safety or outcome data, nor does it specify eligibility for pregnancy in a way that can be queried. Try: 'How many pembrolizumab trials are currently recruiting?' or 'Show pembrolizumab trials by phase.'",
+        "unsupported_reason": "ClinicalTrials.gov does not provide safety, efficacy, or pregnancy-specific outcome data. Try: 'How many trials of pembrolizumab are currently recruiting?' or 'Show pembrolizumab trials by phase.'",
         "intent": "count",
         "cohorts": [],
         "shared_filters": {
@@ -43,14 +43,14 @@
       "geo_hint": null,
       "record_counts": null,
       "notes": [
-        "ClinicalTrials.gov does not provide safety or outcome data, nor does it specify eligibility for pregnancy in a way that can be queried. Try: 'How many pembrolizumab trials are currently recruiting?' or 'Show pembrolizumab trials by phase.'"
+        "ClinicalTrials.gov does not provide safety, efficacy, or pregnancy-specific outcome data. Try: 'How many trials of pembrolizumab are currently recruiting?' or 'Show pembrolizumab trials by phase.'"
       ],
       "source": {
         "name": "clinicaltrials.gov",
         "api": "https://clinicaltrials.gov/api/v2",
         "api_version": "2.0.5",
         "data_timestamp": "2026-11-10T10:00:05",
-        "retrieved_at": "2026-11-10T11:18:25.592544-05:00"
+        "retrieved_at": "2026-11-10T11:57:16.180955-05:00"
       }
     }
   }

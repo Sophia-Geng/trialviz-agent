@@ -134,6 +134,94 @@ def test_drug_falls_back_to_cleaned_name_without_mesh():
     )
 
 
+def test_condition_prefers_mesh_and_merges_spellings():
+    def trial(conditions, mesh=()):
+        return {
+            "protocolSection": {"conditionsModule": {"conditions": conditions}},
+            "derivedSection": {"conditionBrowseModule": {"meshes": [{"id": "D", "term": t} for t in mesh]}},
+        }
+
+    batch = [
+        trial(["Type 2 Diabetes"], mesh=["Diabetes Mellitus, Type 2"]),
+        trial(["T2DM", "Obesity"], mesh=["Diabetes Mellitus, Type 2", "Obesity"]),
+        trial(["Healthy Volunteers"]),
+        trial(["Healthy Adult Participants"]),
+    ]
+    keys = [[v.key for v in vs] for vs in extract_batch(batch, DimensionName.CONDITION)]
+    assert keys == [["diabetes mellitus, type 2"], ["diabetes mellitus, type 2", "obesity"],
+                    ["healthy volunteers"], ["healthy volunteers"]]
+
+
+def test_condition_known_mesh_mismap_falls_back_to_free_text():
+    """ClinicalTrials.gov maps 'Analgesia' to MeSH 'Agnosia' (a perception disorder)."""
+    study = {
+        "protocolSection": {"conditionsModule": {"conditions": ["Analgesia", "Postoperative Pain"]}},
+        "derivedSection": {"conditionBrowseModule": {"meshes": [
+            {"id": "D000377", "term": "Agnosia"}, {"id": "D010149", "term": "Pain, Postoperative"}]}},
+    }
+    ((*values,),) = extract_batch([study], DimensionName.CONDITION)
+    assert [(v.key, v.excerpt) for v in values] == [("pain, postoperative", "Pain, Postoperative"), ("analgesia", "Analgesia")]
+
+
+def test_drug_fallback_drops_fragments_and_controls():
+    study = {
+        "protocolSection": {
+            "armsInterventionsModule": {
+                "interventions": [
+                    {"type": "DRUG", "name": "Drug 1 and Drug 2"},
+                    {"type": "DRUG", "name": "Control Group"},
+                    {"type": "DRUG", "name": "Sodium Chloride 0.9%"},
+                    {"type": "DRUG", "name": "Aspirin with the Clopidogrel"},
+                ]
+            }
+        }
+    }
+    ((*values,),) = extract_batch([study], DimensionName.DRUG)
+    # 'clopidogrel' has an INN stem (-grel); 'aspirin' has none, so on its own it stays unconfirmed
+    assert [v.key for v in values] == ["clopidogrel"]
+
+    # ... and is kept as soon as another trial in the batch confirms it through MeSH
+    confirming = {
+        "protocolSection": {"armsInterventionsModule": {"interventions": [{"type": "DRUG", "name": "ASA"}]}},
+        "derivedSection": {"interventionBrowseModule": {"meshes": [{"id": "D001241", "term": "Aspirin"}]}},
+    }
+    values = extract_batch([study, confirming], DimensionName.DRUG)[0]
+    assert {v.key for v in values} == {"clopidogrel", "aspirin"}
+
+
+def test_mesh_terms_need_evidence_in_mixed_trials():
+    """MeSH terms belong to the whole trial; a behavioral arm must not turn 'Mindfulness' into a drug."""
+    study = {
+        "protocolSection": {
+            "armsInterventionsModule": {
+                "interventions": [
+                    {"type": "DRUG", "name": "MK-3475", "otherNames": ["pembrolizumab", "Keytruda"]},
+                    {"type": "DRUG", "name": "Carboplatin AUC 5"},
+                    {"type": "BEHAVIORAL", "name": "Mindfulness program"},
+                ]
+            }
+        },
+        "derivedSection": {"interventionBrowseModule": {"meshes": [
+            {"id": "C582435", "term": "pembrolizumab"},   # chemical concept id
+            {"id": "D016190", "term": "Carboplatin"},     # matches a drug intervention name
+            {"id": "D000075702", "term": "Mindfulness"},  # descriptor from the behavioral arm
+        ]}},
+    }
+    ((*values,),) = extract_batch([study], DimensionName.DRUG)
+    assert [v.key for v in values] == ["pembrolizumab", "carboplatin"]
+
+
+@pytest.mark.parametrize(
+    ("name", "expected"),
+    [("pembrolizumab", True), ("hmpl-013", True), ("cba-1535", True), ("trastuzumab deruxtecan", True),
+     ("metformin", True), ("app", False), ("test", False), ("exercise", False), ("mindfulness", False)],
+)
+def test_looks_like_drug(name, expected):
+    from app.data.normalize import looks_like_drug
+
+    assert looks_like_drug(name) is expected
+
+
 def test_drug_fallback_splits_combinations():
     study = {
         "protocolSection": {
@@ -189,7 +277,7 @@ def test_site_and_investigator_drop_placeholders():
         }
     }
     assert [v.label for v in DIMENSIONS[DimensionName.SITE].extract(study)] == ["Mayo Clinic"]
-    assert [v.label for v in DIMENSIONS[DimensionName.INVESTIGATOR].extract(study)] == ["Jane Doe, MD (Mayo Clinic)"]
+    assert [v.label for v in DIMENSIONS[DimensionName.INVESTIGATOR].extract(study)] == ["Jane Doe (Mayo Clinic)"]
 
 
 def test_api_fields_dedupes_and_includes_base():

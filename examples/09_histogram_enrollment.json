@@ -722,14 +722,16 @@
       },
       "notes": [
         "33 trials without a value for enrollment (participants) are not shown.",
-        "Bins grow on a 1-2-5 scale (0, 1, 2, 5, 10, 20, ...) because the values are long-tailed."
+        "Bins grow on a 1-2-5 scale (0, 1, 2, 5, 10, 20, ...) because the values are long-tailed.",
+        "599 of 1533 values (39%) are planned enrollment reported by trials that are not yet completed, not actual figures.",
+        "28 trials report 0 participants (typically withdrawn before enrolling)."
       ],
       "source": {
         "name": "clinicaltrials.gov",
         "api": "https://clinicaltrials.gov/api/v2",
         "api_version": "2.0.5",
         "data_timestamp": "2026-11-10T10:00:05",
-        "retrieved_at": "2026-11-10T16:17:38.861604Z"
+        "retrieved_at": "2026-11-10T16:47:28.262998Z"
       }
     }
   }

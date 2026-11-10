@@ -54,6 +54,9 @@ EXAMPLES: dict[str, dict] = {
     "10_scatter_enrollment_duration": {
         "query": "Is there a relationship between enrollment and trial duration for completed melanoma trials?",
     },
+    "11_network_combinations_unscoped": {
+        "query": "Which drugs are most often combined in combination studies?",
+    },
 }
 
 

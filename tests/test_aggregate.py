@@ -62,6 +62,17 @@ def test_time_series_fills_gaps_and_respects_bounds():
     rows = [(d.year, d.trial_count, d.estimated_count) for d in built.visualization.data]
     assert rows == [(2015, 0, 0), (2016, 2, 0), (2017, 0, 0), (2018, 1, 1)]
     assert any("start date" in n for n in built.notes)
+    assert not any(d.incomplete for d in built.visualization.data)
+
+
+def test_time_series_marks_current_and_future_years_incomplete():
+    from datetime import date
+
+    built = builder.time_series(group_by(MINI, D.START_YEAR), "t", today=date(2017, 6, 1))
+    assert [(d.year, d.incomplete) for d in built.visualization.data] == [
+        (2016, False), (2017, True), (2018, True),
+    ]
+    assert any("2017–2018" in n and "not a real decline" in n for n in built.notes)
 
 
 def test_bar_chart_phase_keeps_natural_order_and_unknown():
@@ -160,6 +171,14 @@ def test_histogram_log_bins_count_by_hand():
     assert built.binning.method == "log" and built.visualization.encoding.x2.field == "bin_end"
     assert built.visualization.data[-1].citations[0].excerpt == "50"
     assert any("1 trials without" in n for n in built.notes)
+    assert any("1 trials report 0 participants" in n for n in built.notes)
+
+
+def test_histogram_reports_planned_enrollment():
+    studies = [_enrolled("NCT1", 100), _enrolled("NCT2", 300)]
+    studies[1]["protocolSection"]["designModule"]["enrollmentInfo"]["type"] = "ESTIMATED"
+    built = builder.histogram(studies, D.ENROLLMENT, "t")
+    assert any("1 of 2 values (50%) are planned enrollment" in n for n in built.notes)
 
 
 def test_scatter_one_point_per_trial_with_two_citations():

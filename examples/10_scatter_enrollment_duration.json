@@ -35444,7 +35444,7 @@
     },
     "meta": {
       "answer_mode": "visualization",
-      "query_interpretation": "One point per completed melanoma trial: enrollment vs months from start to completion.",
+      "query_interpretation": "One point per completed melanoma trial: enrollment vs trial duration in months.",
       "filters_applied": {
         "filters": {
           "condition": "melanoma",
@@ -35484,7 +35484,7 @@
         "network": null,
         "viz_type": "scatter_plot",
         "top_n": 15,
-        "interpretation": "One point per completed melanoma trial: enrollment vs months from start to completion.",
+        "interpretation": "One point per completed melanoma trial: enrollment vs trial duration in months.",
         "max_records": 10000,
         "notes": []
       },
@@ -35512,7 +35512,7 @@
         "api": "https://clinicaltrials.gov/api/v2",
         "api_version": "2.0.5",
         "data_timestamp": "2026-11-10T10:00:05",
-        "retrieved_at": "2026-11-10T16:17:41.707350Z"
+        "retrieved_at": "2026-11-10T16:47:32.608887Z"
       }
     }
   }

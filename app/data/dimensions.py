@@ -12,6 +12,7 @@ dimensions yield nothing (the aggregator reports how many were skipped).
 from __future__ import annotations
 
 import json
+import re
 from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any
@@ -27,6 +28,7 @@ INTERVENTIONS = f"{P}.armsInterventionsModule.interventions"
 LOCATIONS = f"{P}.contactsLocationsModule.locations"
 OFFICIALS = f"{P}.contactsLocationsModule.overallOfficials"
 INTERVENTION_MESH = "derivedSection.interventionBrowseModule.meshes"
+CONDITION_MESH = "derivedSection.conditionBrowseModule.meshes"
 
 MISSING_EXCERPT = "(field not present in API response)"
 BASE_FIELDS = ("NCTId", "BriefTitle")
@@ -158,22 +160,43 @@ def _intervention_name(study: dict) -> list[Extracted]:
     return _dedupe(out) or _unknown(INTERVENTIONS)
 
 
-def _name_parts(ivs: list[tuple[int, dict]], tentative: bool) -> list[Extracted]:
-    """Registered intervention names, split on combinations like 'A+B' and cleaned."""
+def _name_parts(ivs: list[tuple[int, dict]], from_drug_type: bool) -> list[Extracted]:
+    """Registered intervention names, split on combinations like 'A+B' and cleaned.
+
+    A name is confirmed only if it comes from a drug-type intervention AND looks like a drug
+    (INN stem such as -mab / -nib / -platin, or a development code such as HMPL-013). Everything
+    else is tentative: kept only if it contains a drug confirmed elsewhere in the batch. This keeps
+    mis-registered entries ('App', 'Test', 'Exercise' typed as DRUG) out of the drug dimension.
+    """
     out = []
     for i, iv in ivs:
         raw = iv.get("name")
         if not raw:
             continue
         for part in n.split_combination(raw):
+            if n.is_non_drug(part):  # before key normalization: 'sodium chloride' must not become 'sodium'
+                continue
             cleaned = n.drug_key(n.clean_drug_name(part))
-            if cleaned and not n.is_non_drug(cleaned):
-                out.append(Extracted(cleaned, cleaned, raw, f"{INTERVENTIONS}[{i}].name", tentative=tentative))
+            if not cleaned or n.is_generic_fragment(cleaned):
+                continue
+            confirmed = from_drug_type and n.looks_like_drug(cleaned) and not n.is_mesh_non_drug(cleaned)
+            out.append(Extracted(cleaned, cleaned, raw, f"{INTERVENTIONS}[{i}].name", tentative=not confirmed))
     return out
+
+
+def _mentions(names: list[str], key: str) -> bool:
+    """True if a MeSH key and a registered name (or other name) refer to each other as whole words."""
+    pattern = re.compile(rf"(?<!\w){re.escape(key)}(?!\w)")
+    return any(pattern.search(name) or re.search(rf"(?<!\w){re.escape(name)}(?!\w)", key) for name in names if name)
 
 
 def _drug(study: dict) -> list[Extracted]:
     """Drugs via MeSH terms (merges synonyms like MK-3475 / Keytruda), falling back to cleaned names.
+
+    MeSH terms are attached to the whole trial, not to one intervention, so a behavioral arm adds
+    terms like 'Mindfulness' next to the drugs. A MeSH term counts as a drug only with evidence:
+    a supplementary chemical concept (id 'C...'), a trial whose interventions are all drugs, or a
+    drug-type intervention whose name / other names mention the term.
 
     Drug regimens registered under a non-drug type (e.g. DEVICE 'Cyberknife plus Pembrolizumab')
     yield tentative values, kept only if they name a drug confirmed elsewhere in the batch.
@@ -181,26 +204,52 @@ def _drug(study: dict) -> list[Extracted]:
     interventions = get(study, INTERVENTIONS) or []
     drug_ivs = [(i, iv) for i, iv in enumerate(interventions) if iv.get("type") in DRUG_INTERVENTION_TYPES]
     other_ivs = [(i, iv) for i, iv in enumerate(interventions) if iv.get("type") not in DRUG_INTERVENTION_TYPES]
+    # Placebo / control arms registered as OTHER do not make a trial "mixed".
+    only_drugs = all(n.is_non_drug(iv.get("name") or "") for _, iv in other_ivs)
+    drug_names = [
+        n.text_key(name)
+        for _, iv in drug_ivs
+        for name in [iv.get("name") or "", *(iv.get("otherNames") or [])]
+    ]
 
     confirmed = []
     if drug_ivs:
         for i, mesh in enumerate(get(study, INTERVENTION_MESH) or []):
             term = mesh.get("term")
-            if term and not n.is_mesh_non_drug(term):
-                key = n.drug_key(term)
+            if not term or n.is_mesh_non_drug(term):
+                continue
+            key = n.drug_key(term)
+            if only_drugs or str(mesh.get("id", "")).startswith("C") or _mentions(drug_names, key):
                 confirmed.append(Extracted(key, key, term, f"{INTERVENTION_MESH}[{i}].term"))
         if not confirmed:
-            confirmed = _name_parts(drug_ivs, tentative=False)
-    return _dedupe(confirmed + _name_parts(other_ivs, tentative=True))
+            confirmed = _name_parts(drug_ivs, from_drug_type=True)
+    return _dedupe(confirmed + _name_parts(other_ivs, from_drug_type=False))
 
 
 def _condition(study: dict) -> list[Extracted]:
+    """Conditions via the API's condition MeSH terms ('Type 2 Diabetes' and 'Diabetes Mellitus, Type 2'
+    are one value), falling back to the free-text conditions when a trial has no MeSH mapping
+    (mostly healthy-volunteer studies, whose many spellings are merged). Known wrong MeSH mappings
+    (normalize.KNOWN_CONDITION_MISMAPS) are dropped in favor of the free text."""
     path = f"{P}.conditionsModule.conditions"
+    raw_conditions = [c for c in get(study, path) or [] if c and c.strip()]
+    meshes = [(i, m.get("term")) for i, m in enumerate(get(study, CONDITION_MESH) or []) if m.get("term")]
+    dropped = [term for _, term in meshes if n.is_condition_mismap(term, raw_conditions)]
     out = [
-        Extracted(n.text_key(raw), n.clean_label(raw), raw, f"{path}[{i}]")
-        for i, raw in enumerate(get(study, path) or [])
-        if raw and raw.strip()
+        Extracted(n.text_key(term), term, term, f"{CONDITION_MESH}[{i}].term")
+        for i, term in meshes
+        if term not in dropped
     ]
+    if out and not dropped:
+        return _dedupe(out)
+    for i, raw in enumerate(get(study, path) or []):
+        if not raw or not raw.strip():
+            continue
+        # after a dropped mis-mapping, restore only the free text it came from ('Analgesia')
+        if out and not any(n.restores_mismap(term, raw) for term in dropped):
+            continue
+        key, label = (n.HEALTHY_KEY, n.HEALTHY_LABEL) if n.is_healthy(raw) else (n.text_key(raw), n.clean_label(raw))
+        out.append(Extracted(key, label, raw, f"{path}[{i}]"))
     return _dedupe(out) or _unknown(path)
 
 
@@ -240,9 +289,11 @@ def _investigator(study: dict) -> list[Extracted]:
         raw = off.get("name")
         if not raw or off.get("role") not in n.INVESTIGATOR_ROLES or n.is_placeholder_official(raw):
             continue
+        # 'Sean van Diepen, MD' and 'Sean van Diepen, MD, MSc' are one person: group on the name only.
+        name = n.person_name(raw)
         affiliation = off.get("affiliation")
-        label = f"{n.clean_label(raw)} ({affiliation})" if affiliation else n.clean_label(raw)
-        out.append(Extracted(n.text_key(raw), label, raw, f"{OFFICIALS}[{i}].name"))
+        label = f"{name} ({affiliation})" if affiliation else name
+        out.append(Extracted(n.text_key(name), label, raw, f"{OFFICIALS}[{i}].name"))
     return _dedupe(out)
 
 
@@ -251,7 +302,9 @@ def _enrollment(study: dict) -> list[Extracted]:
     raw = get(study, path)
     if not isinstance(raw, int | float):
         return []
-    return [Extracted(float(raw), str(raw), str(raw), path)]
+    # Ongoing trials report a planned (ESTIMATED) enrollment, completed ones the ACTUAL number.
+    estimated = get(study, f"{DESIGN}.enrollmentInfo.type") == "ESTIMATED"
+    return [Extracted(float(raw), str(raw), str(raw), path, estimated)]
 
 
 def _duration_months(study: dict) -> list[Extracted]:
@@ -305,9 +358,10 @@ DIMENSIONS: dict[DimensionName, Dimension] = {
                   ("InterventionName",), True, _intervention_name),
         Dimension(D.DRUG, K.CATEGORICAL, "Drug",
                   "Drugs/biologics, synonyms merged via MeSH. Prefer this for drug networks and drug rankings.",
-                  ("InterventionType", "InterventionName", "InterventionMeshTerm"), True, _drug),
+                  ("InterventionType", "InterventionName", "InterventionOtherName", "InterventionMeshTerm", "InterventionMeshId"),
+                  True, _drug),
         Dimension(D.CONDITION, K.CATEGORICAL, "Condition", "Conditions / diseases studied.",
-                  ("Condition",), True, _condition),
+                  ("Condition", "ConditionMeshTerm"), True, _condition),
         Dimension(D.COUNTRY, K.CATEGORICAL, "Country", "Countries with at least one trial site.",
                   ("LocationCountry",), True, lambda s: _countries(s, recruiting_only=False)),
         Dimension(D.RECRUITING_COUNTRY, K.CATEGORICAL, "Country (recruiting sites)",
@@ -319,8 +373,9 @@ DIMENSIONS: dict[DimensionName, Dimension] = {
         Dimension(D.INVESTIGATOR, K.CATEGORICAL, "Investigator",
                   "Principal investigators / study chairs (sponsor placeholders removed).",
                   ("OverallOfficialName", "OverallOfficialRole", "OverallOfficialAffiliation"), True, _investigator),
-        Dimension(D.ENROLLMENT, K.NUMERIC, "Enrollment (participants)", "Number of participants enrolled.",
-                  ("EnrollmentCount",), False, _enrollment),
+        Dimension(D.ENROLLMENT, K.NUMERIC, "Enrollment (participants)",
+                  "Number of participants (actual for completed trials, planned for ongoing ones).",
+                  ("EnrollmentCount", "EnrollmentType"), False, _enrollment),
         Dimension(D.DURATION_MONTHS, K.NUMERIC, "Duration (months)", "Months from start date to completion date.",
                   ("StartDate", "StartDateType", "CompletionDate", "CompletionDateType"), False, _duration_months),
         Dimension(D.SITE_COUNT, K.NUMERIC, "Number of sites", "Number of listed trial sites.",

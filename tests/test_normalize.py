@@ -134,8 +134,9 @@ def test_is_placeholder_official(name, expected):
         ("Erlotinib Hydrochloride", "erlotinib"),
         ("Gemcitabine Hydrochloride", "gemcitabine"),
         ("Pemetrexed Disodium", "pemetrexed"),
-        ("sodium chloride", "sodium"),  # degenerate, but only reachable via non-drug-filtered names
+        ("sodium chloride", "sodium chloride"),  # never reduced to a bare salt word
         ("Pembrolizumab", "pembrolizumab"),
+        ("130-nm albumin-bound paclitaxel", "albumin-bound paclitaxel"),
     ],
 )
 def test_drug_key_merges_salt_forms(name, expected):
@@ -144,10 +145,53 @@ def test_drug_key_merges_salt_forms(name, expected):
 
 @pytest.mark.parametrize(
     ("term", "expected"),
-    [("CTLA-4 Antigen", True), ("Receptors, Chimeric Antigen", False), ("Radiotherapy", True), ("Nivolumab", False)],
+    [
+        ("CTLA-4 Antigen", True), ("Receptors, Chimeric Antigen", False), ("Radiotherapy", True),
+        ("Biopsy", True), ("Magnetic Resonance Imaging", True), ("Positron-Emission Tomography", True),
+        ("Nivolumab", False), ("130-nm albumin-bound paclitaxel", False), ("Cyclophosphamide", False),
+    ],
 )
 def test_is_mesh_non_drug(term, expected):
     assert n.is_mesh_non_drug(term) is expected
+
+
+@pytest.mark.parametrize(
+    ("name", "expected"),
+    [("the", True), ("1", True), ("2b", True), ("arm", True), ("part a", True), ("ii", True), ("5", True),
+     ("ab", True), ("aspirin", False), ("5-fluorouracil", False), ("abc-123", False)],
+)
+def test_is_generic_fragment(name, expected):
+    assert n.is_generic_fragment(name) is expected
+
+
+@pytest.mark.parametrize(
+    ("term", "expected"),
+    [("Control Group", True), ("Saline Solution", True), ("Sodium Chloride", True), ("Exercise", True),
+     ("Injections", True), ("Surgery", True), ("Venetoclax", False), ("Azacitidine", False),
+     ("Blood Specimen Collection", True), ("Electroacupuncture", True), ("Transcranial Magnetic Stimulation", True),
+     ("Tablets", True), ("CD19", True), ("Quality of Life", True),
+     ("Oral Glucose", False), ("Botulinum Toxins, Type A", False), ("Oxygen", False), ("Probiotics", False)],
+)
+def test_mesh_controls_and_saline_are_not_drugs(term, expected):
+    assert n.is_mesh_non_drug(term) is expected
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [("Sean van Diepen, MD", "Sean van Diepen"), ("Sean van Diepen, MD, MSc", "Sean van Diepen"),
+     ("Ali MA Ismail, lecturer", "Ali MA Ismail"), ("Prof. Helen McShane", "Helen McShane"), ("Lin Shen", "Lin Shen")],
+)
+def test_person_name_drops_degrees_and_titles(raw, expected):
+    assert n.person_name(raw) == expected
+
+
+@pytest.mark.parametrize(
+    ("raw", "expected"),
+    [("Healthy", True), ("Healthy Volunteers", True), ("healthy participants", True), ("Healthy Adult Subjects", True),
+     ("Healthy Aging", False), ("Healthy Lifestyle", False), ("Breast Cancer", False)],
+)
+def test_is_healthy(raw, expected):
+    assert n.is_healthy(raw) is expected
 
 
 def test_text_key_merges_case_and_whitespace():

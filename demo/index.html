@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrialViz Viewer</title>
+<script src="https://cdn.jsdelivr.net/npm/vega@5.30.0/build/vega.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-lite@5.21.0/build/vega-lite.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vega-embed@6.26.0/build/vega-embed.min.js"></script>
+<script src="https://unpkg.com/vis-network@9.1.9/standalone/umd/vis-network.min.js"></script>
+<style>
+  :root {
+    --bg: #f7f7f5; --panel: #ffffff; --text: #1f2328; --muted: #6a737d; --border: #e1e4e8;
+    --accent: #2f6fde; --accent-soft: #e8f0fd; --warn: #8a5a00; --warn-soft: #fff6e0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #15171a; --panel: #1d2024; --text: #e6e6e6; --muted: #9aa4ae; --border: #30353b;
+      --accent: #6ea2ff; --accent-soft: #1f2b40; --warn: #f0c46b; --warn-soft: #33290f;
+    }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 14px/1.5 system-ui, -apple-system, "Segoe UI", sans-serif; background: var(--bg); color: var(--text); }
+  header { padding: 14px 20px; border-bottom: 1px solid var(--border); background: var(--panel); }
+  header h1 { margin: 0; font-size: 17px; }
+  header p { margin: 2px 0 0; color: var(--muted); font-size: 13px; }
+  .layout { display: grid; grid-template-columns: 280px 1fr; gap: 16px; padding: 16px; }
+  @media (max-width: 860px) { .layout { grid-template-columns: 1fr; } }
+  .panel { background: var(--panel); border: 1px solid var(--border); border-radius: 8px; padding: 14px; min-width: 0; }
+  .side h2, .panel h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .04em; color: var(--muted); margin: 0 0 8px; }
+  .examples button { display: block; width: 100%; text-align: left; border: 0; background: none; color: var(--text);
+    padding: 6px 8px; border-radius: 6px; cursor: pointer; font: inherit; }
+  .examples button:hover { background: var(--accent-soft); }
+  .examples button.active { background: var(--accent-soft); color: var(--accent); font-weight: 600; }
+  textarea { width: 100%; min-height: 70px; resize: vertical; font: inherit; padding: 8px; border-radius: 6px;
+    border: 1px solid var(--border); background: var(--bg); color: var(--text); }
+  .ask button { margin-top: 6px; padding: 6px 12px; border: 0; border-radius: 6px; background: var(--accent); color: #fff; cursor: pointer; font: inherit; }
+  .ask button:disabled { opacity: .6; cursor: wait; }
+  .main { display: grid; gap: 16px; min-width: 0; }
+  .question { color: var(--muted); margin: 0 0 4px; }
+  .title { font-size: 18px; font-weight: 600; margin: 0 0 10px; }
+  #chart { width: 100%; min-height: 420px; }
+  #network { width: 100%; height: 560px; border: 1px solid var(--border); border-radius: 6px; }
+  .metric { font-size: 56px; font-weight: 700; color: var(--accent); }
+  .notes li { margin: 2px 0; }
+  .notice { background: var(--warn-soft); color: var(--warn); padding: 10px 12px; border-radius: 6px; }
+  .kv { display: grid; grid-template-columns: max-content 1fr; gap: 4px 12px; font-size: 13px; }
+  .kv dt { color: var(--muted); } .kv dd { margin: 0; overflow-wrap: anywhere; }
+  .citations table { width: 100%; border-collapse: collapse; font-size: 13px; }
+  .citations th, .citations td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); vertical-align: top; }
+  .citations code { font-size: 12px; overflow-wrap: anywhere; }
+  .hint { color: var(--muted); font-size: 13px; }
+  a { color: var(--accent); }
+  details summary { cursor: pointer; color: var(--muted); }
+  pre { overflow: auto; max-height: 360px; font-size: 12px; background: var(--bg); padding: 10px; border-radius: 6px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>TrialViz Viewer</h1>
+  <p>Renders the visualization specs returned by <code>POST /visualize</code>. Click a bar, point or node to see its citations.</p>
+</header>
+<div class="layout">
+  <aside class="panel side">
+    <h2>Examples</h2>
+    <div class="examples" id="examples"></div>
+    <h2 style="margin-top:16px">Ask a question</h2>
+    <div class="ask">
+      <textarea id="query" placeholder="e.g. Which countries have the most recruiting trials for asthma?"></textarea>
+      <button id="ask">Visualize</button>
+    </div>
+  </aside>
+  <section class="main">
+    <div class="panel">
+      <p class="question" id="question"></p>
+      <p class="title" id="title">Pick an example or ask a question.</p>
+      <div id="chart"></div>
+    </div>
+    <div class="panel citations">
+      <h2>Citations</h2>
+      <div id="citations" class="hint">Click a data point to list the trial records behind it.</div>
+    </div>
+    <div class="panel">
+      <h2>Meta</h2>
+      <div id="meta"></div>
+      <details style="margin-top:10px"><summary>Raw response JSON</summary><pre id="raw"></pre></details>
+    </div>
+  </section>
+</div>
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? "").replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+const dark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+const css = (name) => getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+
+async function loadExamples() {
+  const names = await (await fetch("/demo/examples")).json();
+  $("examples").innerHTML = names.map((n) => `<button data-name="${esc(n)}">${esc(n.replace(/^\d+_/, "").replaceAll("_", " "))}</button>`).join("");
+  $("examples").onclick = async (e) => {
+    const name = e.target.dataset.name;
+    if (!name) return;
+    document.querySelectorAll(".examples button").forEach((b) => b.classList.toggle("active", b === e.target));
+    const file = await (await fetch(`/demo/examples/${name}`)).json();
+    show(file.request, file.response);
+  };
+}
+
+$("ask").onclick = async () => {
+  const query = $("query").value.trim();
+  if (!query) return;
+  $("ask").disabled = true; $("ask").textContent = "Working…";
+  try {
+    const resp = await fetch("/visualize", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ query }) });
+    document.querySelectorAll(".examples button").forEach((b) => b.classList.remove("active"));
+    show({ query }, await resp.json());
+  } finally {
+    $("ask").disabled = false; $("ask").textContent = "Visualize";
+  }
+};
+
+function show(request, response) {
+  $("question").textContent = request.query + (request.drug_name ? `  (drug_name: ${request.drug_name})` : "");
+  $("raw").textContent = JSON.stringify(response, null, 2);
+  $("citations").innerHTML = '<span class="hint">Click a data point to list the trial records behind it.</span>';
+  $("chart").innerHTML = "";
+  if (response.error) {
+    $("title").textContent = `Error: ${response.error.code}`;
+    $("chart").innerHTML = `<div class="notice">${esc(response.error.message)}<br>${esc(JSON.stringify(response.error.details))}</div>`;
+    $("meta").innerHTML = "";
+    return;
+  }
+  const viz = response.visualization, meta = response.meta;
+  renderMeta(meta);
+  if (!viz) {
+    $("title").textContent = "No visualization";
+    $("chart").innerHTML = `<div class="notice">${(meta.notes || []).map(esc).join("<br>")}</div>`;
+    return;
+  }
+  $("title").textContent = viz.title;
+  if (viz.type === "network_graph") return renderNetwork(viz);
+  if (viz.type === "metric") return renderMetric(viz);
+  renderVega(viz, meta);
+}
+
+function renderMeta(meta) {
+  const rc = meta.record_counts;
+  const rows = [
+    ["Interpretation", meta.query_interpretation],
+    ["Filters", JSON.stringify(meta.filters_applied)],
+    rc && ["Records", `${rc.fetched} fetched of ${rc.total_matching} matching · ${rc.count_method}${rc.truncated ? " · truncated" : ""}`],
+    meta.grouping && ["Grouping", `${meta.grouping.group_by ?? "-"}${meta.grouping.split_by ? " × " + meta.grouping.split_by : ""}${meta.grouping.multi_valued ? " (multi-valued)" : ""}`],
+    meta.binning && ["Binning", `${meta.binning.method}, ${meta.binning.bin_count} bins`],
+    ["Source", `${meta.source.name} API ${meta.source.api_version ?? ""} · data ${meta.source.data_timestamp ?? "?"}`],
+  ].filter(Boolean);
+  const notes = (meta.notes || []).length ? `<ul class="notes">${meta.notes.map((n) => `<li>${esc(n)}</li>`).join("")}</ul>` : "";
+  $("meta").innerHTML = `<dl class="kv">${rows.map(([k, v]) => `<dt>${esc(k)}</dt><dd>${esc(v)}</dd>`).join("")}</dl>${notes}`;
+}
+
+function showCitations(label, count, citations) {
+  if (!citations || !citations.length) {
+    $("citations").innerHTML = `<span class="hint">${esc(label)}: no supporting records.</span>`;
+    return;
+  }
+  $("citations").innerHTML = `
+    <p><b>${esc(label)}</b>: ${count} supporting trial(s), showing ${citations.length}</p>
+    <table><thead><tr><th>Trial</th><th>Field</th><th>Exact excerpt</th><th>Title</th></tr></thead><tbody>
+    ${citations.map((c) => `<tr><td><a href="${esc(c.url)}" target="_blank" rel="noopener">${esc(c.nct_id)}</a></td>
+      <td><code>${esc(c.field)}</code></td><td><code>${esc(c.excerpt)}</code></td><td>${esc(c.title)}</td></tr>`).join("")}
+    </tbody></table>`;
+}
+
+function channel(ch, extra = {}) {
+  const type = ch.type === "temporal" ? "ordinal" : ch.type; // years are integers, keep them discrete
+  return { field: ch.field, type, title: ch.label, ...extra };
+}
+
+function renderVega(viz, meta) {
+  const enc = viz.encoding;
+  const values = viz.data;
+  const tooltip = [{ field: enc.x.field, title: enc.x.label }, { field: enc.y.field, title: enc.y.label }];
+  let spec;
+  switch (viz.type) {
+    case "bar_chart": {
+      const nominal = enc.x.type === "nominal";
+      spec = nominal
+        ? { mark: "bar", encoding: { y: channel(enc.x, { sort: null }), x: channel(enc.y), tooltip } }
+        : { mark: "bar", encoding: { x: channel(enc.x, { sort: null, axis: { labelAngle: -30 } }), y: channel(enc.y), tooltip } };
+      break;
+    }
+    case "grouped_bar_chart":
+      spec = { mark: "bar", encoding: {
+        x: channel(enc.x, { sort: null, axis: { labelAngle: -30 } }), xOffset: { field: enc.series.field },
+        y: channel(enc.y), color: channel(enc.series), tooltip: [...tooltip, { field: enc.series.field, title: enc.series.label }] } };
+      break;
+    case "time_series": {
+      // Incomplete years (current / future) are drawn dashed, joined to the last complete year.
+      const first = values.find((d) => d.incomplete);
+      const cut = first ? first.year - 1 : Infinity;
+      const line = (filter, mark) => ({ transform: [{ filter }], mark: { type: "line", point: true, ...mark },
+        encoding: { x: channel(enc.x), y: channel(enc.y), tooltip: [...tooltip, { field: "incomplete" }] } });
+      spec = { layer: [
+        { mark: { type: "bar", opacity: 0.25 }, encoding: { x: channel(enc.x), y: { field: "estimated_count", type: "quantitative" },
+          tooltip: [{ field: "estimated_count", title: "Estimated start" }] } },
+        line(`datum.year <= ${cut}`, {}),
+        ...(first ? [line(`datum.year >= ${cut}`, { strokeDash: [6, 4], opacity: 0.7 })] : []),
+      ] };
+      break;
+    }
+    case "histogram": {
+      const label = (d) => `${d.bin_start}–${d.bin_end}`;
+      values.forEach((d) => (d.bin_label = label(d)));
+      spec = { mark: "bar", encoding: {
+        x: { field: "bin_label", type: "ordinal", sort: null, title: enc.x.label, axis: { labelAngle: -40 } },
+        y: channel(enc.y), tooltip: [{ field: "bin_label", title: enc.x.label }, { field: enc.y.field, title: enc.y.label }] } };
+      break;
+    }
+    case "scatter_plot": {
+      const logScale = (meta.notes || []).some((n) => n.includes("log scale"));
+      const scale = logScale ? { type: "symlog" } : {};
+      spec = { mark: { type: "point", filled: true, opacity: 0.5, size: 30 }, encoding: {
+        x: channel(enc.x, { scale }), y: channel(enc.y), tooltip: [{ field: "nct_id" }, { field: "label", title: "Title" }, ...tooltip] } };
+      break;
+    }
+  }
+  spec = {
+    $schema: "https://vega.github.io/schema/vega-lite/v5.json",
+    width: "container", height: 400, data: { values }, ...spec,
+    config: { background: null, axis: { labelColor: css("--text"), titleColor: css("--text"), gridColor: css("--border") },
+              legend: { labelColor: css("--text"), titleColor: css("--text") }, view: { stroke: null } },
+  };
+  vegaEmbed("#chart", spec, { actions: false, theme: dark ? "dark" : undefined }).then(({ view }) => {
+    view.addEventListener("click", (_, item) => {
+      const d = item && item.datum;
+      if (!d || !d.citations) return;
+      const label = d.category ? `${d.series ? d.series + " · " : ""}${d.category}` : d.year ?? d.bin_label ?? d.nct_id;
+      showCitations(label, d.citation_count ?? d.citations.length, d.citations);
+    });
+  });
+}
+
+function renderMetric(viz) {
+  const d = viz.data[0];
+  $("chart").innerHTML = `<div class="metric">${d.value.toLocaleString()}</div><p>${esc(d.label)}</p>`;
+  showCitations(d.label, d.citation_count, d.citations);
+}
+
+function renderNetwork(viz) {
+  $("chart").innerHTML = '<div id="network"></div>';
+  const palette = ["#2f6fde", "#e07b39", "#3aa676", "#a35bd6"];
+  const types = [...new Set(viz.data.nodes.map((n) => n.type))];
+  const maxW = Math.max(...viz.data.edges.map((e) => e.weight), 1);
+  const nodes = new vis.DataSet(viz.data.nodes.map((n) => ({
+    id: n.id, label: n.label, value: n.trial_count, title: `${n.label}\n${n.trial_count} trials · ${n.degree} links`,
+    color: palette[types.indexOf(n.type) % palette.length], font: { color: css("--text") },
+    shape: types.length > 1 && types.indexOf(n.type) === 0 ? "box" : "dot",
+  })));
+  const edges = new vis.DataSet(viz.data.edges.map((e, i) => ({
+    id: i, from: e.source, to: e.target, value: e.weight, title: `${e.weight} shared trials`,
+    color: { color: css("--muted"), opacity: 0.25 + 0.7 * Math.sqrt(e.weight / maxW) },
+  })));
+  const network = new vis.Network($("network"), { nodes, edges }, {
+    nodes: { scaling: { min: 8, max: 26, label: { enabled: true, min: 12, max: 16 } } },
+    edges: { scaling: { min: 1, max: 8 }, smooth: false },
+    physics: { solver: "forceAtlas2Based",
+               forceAtlas2Based: { gravitationalConstant: -80, springLength: 120, avoidOverlap: 0.8 },
+               stabilization: { iterations: 300 } },
+    interaction: { hover: true, tooltipDelay: 120 },
+  });
+  const byNode = Object.fromEntries(viz.data.nodes.map((n) => [n.id, n]));
+  network.on("click", (params) => {
+    if (params.nodes.length) {
+      const n = byNode[params.nodes[0]];
+      showCitations(`${n.label} (${n.type})`, n.citation_count, n.citations);
+    } else if (params.edges.length) {
+      const e = viz.data.edges[params.edges[0]];
+      showCitations(`${byNode[e.source].label} — ${byNode[e.target].label}`, e.citation_count, e.citations);
+    }
+  });
+}
+
+loadExamples();
+</script>
+</body>
+</html>

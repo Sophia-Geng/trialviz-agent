@@ -86,11 +86,13 @@ curl -X POST http://127.0.0.1:8000/visualize \
   -d '{"query": "How has the number of trials for this drug changed per year since 2015?", "drug_name": "Pembrolizumab"}'
 ```
 
+**Optional demo viewer:** <http://127.0.0.1:8000/demo> renders the specs in the browser, both the files in `examples/` and live questions typed into the page. Click a bar, point, node or edge to list its citations, with links to the trial records. It is a single static page (`demo/index.html`, Vega-Lite + vis-network from a CDN) that uses only the documented response schema. It doubles as a check that a frontend can render every chart type without guessing.
+
 Without `OPENAI_API_KEY` the service still runs. It uses the keyword fallback planner and says so in `meta.notes`.
 
 | Command | Purpose |
 |---|---|
-| `pytest` | Run the test suite (185 tests, offline, uses recorded real API responses) |
+| `pytest` | Run the test suite (248 tests, offline, uses recorded real API responses) |
 | `python scripts/run_examples.py` | Regenerate `examples/` through the HTTP API (needs the API key) |
 | `python scripts/run_plan_demo.py` | Run hand-written QueryPlans against the live API without the LLM |
 | `python scripts/record_fixtures.py` | Re-record `tests/fixtures/` from the live API |
@@ -146,7 +148,7 @@ Data rows always use the same keys (`category`, `series`, `trial_count`, `year`,
 |---|---|---|
 | `bar_chart` | `x` (category), `y` (trial_count) | `[{category, trial_count, citation_count, citations}]` |
 | `grouped_bar_chart` | `x`, `y`, `series` | `[{category, series, trial_count, citation_count, citations}]`. Every category × series pair is present, with 0 when empty |
-| `time_series` | `x` (year, temporal), `y` | `[{year, trial_count, estimated_count, citation_count, citations}]`, ascending, gaps filled with 0. `estimated_count` = trials whose start date is ESTIMATED (draw those years dashed) |
+| `time_series` | `x` (year, temporal), `y` | `[{year, trial_count, estimated_count, incomplete, citation_count, citations}]`, ascending, gaps filled with 0. `estimated_count` = trials whose start date is ESTIMATED (planned). `incomplete: true` marks the current and future years, whose counts will still grow: draw them dashed so a drop there is not read as a decline |
 | `network_graph` | `nodes: {id, label, group: "type", size: "trial_count"}`, `edges: {source, target, weight, directed: false}` | `{nodes: [{id, label, type, trial_count, degree, citation_count, citations}], edges: [{source, target, weight, citation_count, citations}]}` |
 | `metric` | `value` | `[{value, label, citation_count, citations}]`, exactly one row |
 | `histogram` | `x` (bin_start), `x2` (bin_end), `y` | `[{bin_start, bin_end, trial_count, citation_count, citations}]`, bins `[x, x2)`, ascending, empty bins included. `meta.binning.method` is `log` (1-2-5 edges: 0, 1, 2, 5, 10, 20, ... for long-tailed enrollment / site counts) or `linear` (nice equal widths) |
@@ -269,15 +271,21 @@ The registry has 17 dimensions, and they combine freely (e.g. `split_by` for two
 
 **2. One extension point: the dimension registry.** A dimension declares its API fields, its kind, and an extractor that returns `(normalized key, label, raw excerpt, field path)`. The prompt's dimension list is generated from the registry, so the planner can only ask for what the pipeline can execute. The few-shot plans in the prompt are real `QueryPlanLLM` objects, and tests check them against the rules. Adding a question type usually means adding one registry entry.
 
-**3. Strict drug search, measured against the website.** Plain `query.intr=pembrolizumab` applies concept expansion and returns 3005 trials (the website shows the same 3005). We spot-checked trials that are in this set but not in the strict one. In their full records, no field mentions pembrolizumab, Keytruda or MK-3475 (e.g. NCT03719105, a lymphoma chemotherapy trial). The system therefore searches drugs with `AREA[InterventionName]"x" OR AREA[InterventionMeshTerm]"x"`, which gives 2659 trials. `InterventionName` already matches registered synonyms: adding MK-3475 / Keytruda explicitly did not change the count. Condition search (`query.cond`) keeps the API's expansion (breast cancer ↔ breast neoplasms), which is the behavior we want.
+**3. Strict drug search, measured against the website.** Plain `query.intr=pembrolizumab` applies concept expansion and returns 3005 trials (the website shows the same 3005). We spot-checked trials that are in this set but not in the strict one. In their full records, no field mentions pembrolizumab, Keytruda or MK-3475 (e.g. NCT03719105, a lymphoma chemotherapy trial). The system therefore searches drugs with `AREA[InterventionName]"x" OR AREA[InterventionMeshTerm]"x"`, which gives 2659 trials. `InterventionName` already matches registered synonyms: adding MK-3475 / Keytruda explicitly did not change the count, and searching by brand name returns exactly the same trial set as the generic name (Keytruda = pembrolizumab: 2659 trials, 0 differing; Opdivo = nivolumab: 1766, 0 differing). The planner therefore copies drug names as the user wrote them and never "translates" them from memory. Condition search (`query.cond`) keeps the API's expansion (breast cancer ↔ breast neoplasms), which is the behavior we want.
 
 **4. Drug identity via MeSH, with batch-level resolution.** Registered names are inconsistent ("MK3475", "Pembrolizumab KEYTRUDA®", "Pembrolizumab 200 mg IV"). The `drug` dimension uses the API's intervention MeSH terms, so those all become one node `pembrolizumab`, and placebo never appears. Salt forms are merged (fludarabine phosphate → fludarabine). MeSH target annotations such as "CTLA-4 Antigen" are dropped. Without MeSH, cleaned names are used and combinations are split ("CBA-1535+Pembrolizumab"). Drug regimens registered under a non-drug type exist (NCT02704156 lists *"Device: Cyberknife plus Pembrolizumab and Trametinib"*). For those, the system extracts *tentative* names and keeps only the ones that match a drug confirmed elsewhere in the same batch. This recovers the drug without letting device names in.
+
+The hard part is that **MeSH terms belong to the whole trial, not to one intervention**. A trial with a drug arm and a mindfulness arm lists "Mindfulness" next to the drug. A blocklist cannot keep up with that, so a drug must be backed by evidence:
+- A MeSH term counts as a drug if it is a supplementary chemical concept (MeSH id `C…`, e.g. pembrolizumab `C582435`), if every intervention of the trial is a drug (placebo arms aside), or if a drug-type intervention's name or registered other names mention it (`otherNames` holds "MK-3475", "KEYTRUDA®").
+- A registered name without MeSH support is trusted only if it looks like a drug: a [WHO INN stem](https://www.who.int/teams/health-product-and-policy-standards/inn) (-mab, -nib, -platin, -statin, -gliflozin, ...) or a development code (HMPL-013, MK-0616). Any other name is tentative and needs confirmation elsewhere in the batch.
+
+An audit of the 10000-trial unscoped sample (example 11) shows the effect. Distinct drug keys fell from 3319 to 2051, and entries such as "test", "app", "mindfulness", "tablets", "time", "quality of life" and "experimental group" are gone from the top 300.
 
 **5. Phase is single-valued.** `["PHASE2","PHASE3"]` becomes one bar, "Phase 2/3", so phase bars sum exactly to the number of trials. The website's "Phase 3" filter instead includes Phase 2/3 trials. We checked this on Alzheimer's: website Phase 3 = our Phase 3 (317) + Phase 2/3 (68).
 
 **6. Multi-valued dimensions count each trial once per value.** A trial with 40 US sites counts once for the United States. Bars can then sum to more than the trial count, and the response says so (`meta.grouping.multi_valued` plus a note).
 
-**7. Accuracy over latency: full scans.** The API has no aggregation endpoint: `/stats/field/values` covers the whole registry and cannot be filtered. All counts are therefore computed client-side over **every** matching record (default cap 10000 per cohort, 1000 per page, only the needed `fields`). All example questions are full scans with `truncated: false`. If the cap is hit, `record_counts.truncated` is true and a note says the values come from the first N records in API order (not a random sample). Metric answers use the API's exact `totalCount` instead.
+**7. Accuracy over latency: full scans.** The API has no aggregation endpoint: `/stats/field/values` covers the whole registry and cannot be filtered. All counts are therefore computed client-side over **every** matching record (default cap 10000 per cohort, 1000 per page, only the needed `fields`). Examples 01–10 are full scans with `truncated: false`. Example 11 is an unscoped question over 180k trials and shows the truncated case. If the cap is hit, `record_counts.truncated` is true and a note says the values come from the first N records in API order (not a random sample). Metric answers use the API's exact `totalCount` instead.
 
 **8. Rate limiting and caching.** The rate limit is undocumented, but about 10 requests in 5 seconds return 429. The client therefore serializes requests (1 req/s), honors `Retry-After`, retries 429/5xx with backoff, and does not retry 4xx. API and LLM responses are cached on disk by request hash. That keeps development off the API and makes example runs reproducible.
 
@@ -299,6 +307,10 @@ All of these come from inspecting recorded real responses (`tests/fixtures/`):
 | Site-level recruiting status exists only for active trials | `recruiting_country` uses sites with `status = RECRUITING`, and falls back to the trial's overall status when no site status exists |
 | Anonymous sites ("Research Site") and placeholder officials ("Medical Director", "Pfizer CT.gov Call Center") | Filtered out of `site` / `investigator`. Investigators are limited to PIs and study chairs |
 | Inconsistent drug names, synonyms, salts, combinations, placebo | §6.4 |
+| Non-drugs inside drug data: MeSH terms from non-drug arms ("Mindfulness", "Transcranial Magnetic Stimulation"), procedures ("Biopsy", "Magnetic Resonance Imaging"), dosage forms ("Tablets"), controls registered as DRUG ("Control Group", saline), mis-typed entries ("App", "Test" as DRUG), split-name fragments ("Drug 1 and Drug 2" → "1") | Evidence-based drug identity (§6.4) plus procedure / dosage-form / fragment filters. Found by auditing the top drug keys of a 10000-trial sample, not by guessing. Salt stripping never reduces a name to a bare salt ("sodium chloride" ≠ "sodium") |
+| Conditions are free text: 10019 distinct spellings in 10000 trials ("Type 2 Diabetes" / "Diabetes Mellitus, Type 2", "Postoperative Pain" / "Pain, Postoperative", "COVID-19" / "Covid19", "Healthy" / "Healthy Volunteers" / "Healthy Participants") | `condition` uses the API's condition MeSH terms (75% of trials), so labels are MeSH headings such as "Breast Neoplasms". Without MeSH it falls back to the free text, and healthy-volunteer spellings are merged. Result: 3777 distinct values |
+| Wrong MeSH mappings in the source: ClinicalTrials.gov tags ~100 of the sampled pain / anesthesia trials with "Agnosia" (a perception disorder), mostly from "Analgesia"; no such trial names agnosia | Listed explicitly (`KNOWN_CONDITION_MISMAPS`): the term is kept only if the free text names it, otherwise it is dropped and "Analgesia" is restored. String similarity cannot detect this generically: "analgesia → agnosia" scores the same 0.62 as the valid "depression → depressive disorder" |
+| One investigator, several spellings ("Sean van Diepen, MD" / "Sean van Diepen, MD, MSc") | Grouped by the name before the first comma, without titles |
 | Intervention MeSH present for ~90% of drug-searched trials but only 50–67% of condition-searched ones | Fallback to cleaned registered names is required, not optional |
 | Cohort overlap (a trial uses both compared drugs) | Counted in each cohort, overlap size noted (174 trials for pembrolizumab vs nivolumab) |
 | Search characters that break the query syntax (`" [ ] ( )`) | Stripped. Multi-word values are quoted (`AREA[InterventionName]"trastuzumab deruxtecan"`) |
@@ -306,7 +318,7 @@ All of these come from inspecting recorded real responses (`tests/fixtures/`):
 
 ## 8. Testing and validation
 
-**Automated tests** (`pytest`, 185 tests, fully offline):
+**Automated tests** (`pytest`, 248 tests, fully offline):
 
 - **Hand-countable aggregation**: small synthetic datasets where the expected counts can be worked out by hand (phase buckets sum to the total, multi-valued dedupe, citations point to raw values, time-series gap filling, top-N truncation, grouped-bar zero fill, network weights and pruning).
 - **Real-data extraction**: every dimension runs on 500 recorded real studies (5 queries). Checks: no crashes, one count per distinct value, every value has an excerpt and a field path. Drug synonyms never form their own node, and ≥ 95% of trials matched by the strict drug search map to that drug.
@@ -326,6 +338,19 @@ All of these come from inspecting recorded real responses (`tests/fixtures/`):
 | NCT02704156 interventions | "Device: Cyberknife plus Pembrolizumab and Trametinib" | same raw value and type; resolved to `pembrolizumab` | ✅ |
 | NCT00065767 phase | Phase 2/3 | "Phase 2/3" | ✅ |
 
+**Plausibility check: networks rediscover known regimens.** The code knows nothing about diseases or treatment regimens. Still, the unscoped drug ↔ drug network ([`11_network_combinations_unscoped`](examples/11_network_combinations_unscoped.json), 10000 interventional trials started since 2021) separates into clusters that are standard regimens, with edge weights in shared trials:
+
+| Cluster in the graph | Known regimen |
+|---|---|
+| cyclophosphamide – fludarabine (27, the strongest edge) | lymphodepletion before CAR-T therapy |
+| fluorouracil – oxaliplatin (17), fluorouracil – leucovorin (14), irinotecan, capecitabine | FOLFOX / FOLFIRI (colorectal cancer) |
+| rituximab, cyclophosphamide, doxorubicin, vincristine, prednisone | R-CHOP (lymphoma) |
+| carboplatin – paclitaxel (24), carboplatin – pembrolizumab (14), pemetrexed, bevacizumab | platinum chemotherapy ± immunotherapy (lung cancer) |
+| azacitidine – venetoclax (14), cytarabine | acute myeloid leukemia |
+| propofol – dexmedetomidine, separate from the rest | anesthesia studies |
+
+Errors in drug normalization or counting would not produce clusters this clean. Inspecting this same network is also how the last non-drug leaks were found and fixed (§7: "Biopsy", "Control Group", split fragments such as "1"). Two of the examples cross-check each other as well. A live question by brand name ("Keytruda vs Opdivo") returned exactly the bars of example 03 (generic names), and the NCT ID sets are identical (§6.3).
+
 **Planner spot checks with `gpt-4.1`**: every question in [§9](#9-example-runs) produced the intended plan on the first attempt (1–2 s per plan). The structured outputs are in each example's `meta.plan`.
 
 ## 9. Example runs
@@ -344,12 +369,13 @@ All files in [`examples/`](examples/) are real outputs from `scripts/run_example
 | [`08_unsupported_question`](examples/08_unsupported_question.json) | "Is pembrolizumab safe for pregnant women?" | `visualization: null`, reason plus an answerable rephrasing |
 | [`09_histogram_enrollment`](examples/09_histogram_enrollment.json) | "What is the distribution of enrollment sizes in phase 3 breast cancer trials?" | `histogram`, 1566 trials, log bins, mode at 200–500 participants (501 trials) |
 | [`10_scatter_enrollment_duration`](examples/10_scatter_enrollment_duration.json) | "Is there a relationship between enrollment and trial duration for completed melanoma trials?" | `scatter_plot`, 1610 points (143 trials lack a value) |
+| [`11_network_combinations_unscoped`](examples/11_network_combinations_unscoped.json) | "Which drugs are most often combined in combination studies?" | `network_graph`. No entity given, so the scope guard limits the search to interventional trials since 2021. 180456 match, the first 10000 are used (`truncated: true`, noted). The clusters match known regimens (§8) |
 
 ## 10. Limitations and future work
 
 - **Large result sets.** Above `max_records`, values come from the first N records in API order. Planned improvement: per-bucket `countTotal` requests for low-cardinality dimensions (phase, status, year), which give exact counts at one request per bucket. In the longer run, a nightly bulk download indexed locally.
 - **Entity resolution.** Sponsors are not merged across spellings ("Merck Sharp & Dohme LLC" vs "Merck KGaA" are, correctly, different, but subsidiaries are not grouped). MeSH can list a drug class and a specific drug side by side (e.g. "interleukin-2" and "aldesleukin").
-- **`drug` misses about 1–3% of trials in our samples.** This happens when MeSH is present but incomplete (NCT04507906, "Nivolumab Combined with Anlotinib", is tagged only with anlotinib). Merging raw names with MeSH would bring synonym duplicates back. The fix is to map raw names onto MeSH through its synonym table. Cohort counts are not affected: they come from the API search itself.
+- **`drug` misses about 1–3% of trials in our samples.** This happens when MeSH is present but incomplete (NCT04507906, "Nivolumab Combined with Anlotinib", is tagged only with anlotinib). Merging raw names with MeSH would bring synonym duplicates back. The fix is to map raw names onto MeSH through its synonym table. The evidence rule also has a cost. An old drug without an INN stem (e.g. aspirin) that appears in a mixed trial without a matching MeSH term is only kept if another trial in the batch confirms it. MeSH can also list a class or target next to the drug ("immune checkpoint inhibitors", "interleukin-2" next to "aldesleukin"). Cohort counts are not affected: they come from the API search itself.
 - **No eligibility, outcome or result data.** These fields exist in the API but are not modeled as dimensions. Such questions are classified as unsupported.
 - **Planner evaluation.** It is checked on the example questions and unit-tested with a scripted model. A larger labeled set of tricky phrasings, with a comparison across models, would make its accuracy measurable.
 - **Single-turn only.** Ambiguous questions are resolved by the planner's best guess (visible in `meta.plan` and `query_interpretation`), not by asking a clarifying question.
