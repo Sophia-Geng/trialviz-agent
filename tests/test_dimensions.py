@@ -152,6 +152,23 @@ def test_condition_prefers_mesh_and_merges_spellings():
                     ["healthy volunteers"], ["healthy volunteers"]]
 
 
+@pytest.mark.parametrize(
+    ("fixture", "mesh_term", "spellings"),
+    [
+        ("alzheimer", "alzheimer disease", {"alzheimer's disease", "alzheimer disease", "alzheimers disease", "alzheimer's"}),
+        ("melanoma", "melanoma", {"melanoma", "malignant melanoma", "metastatic melanoma"}),
+    ],
+)
+def test_condition_mesh_merges_spellings_on_real_data(fixture, mesh_term, spellings):
+    """Trials searched by condition map onto one MeSH heading; raw spellings never form their own value."""
+    studies = load_studies(fixture)
+    values = extract_batch(studies, DimensionName.CONDITION)
+    hits = sum(mesh_term in {v.key for v in vs} for vs in values)
+    assert hits / len(studies) >= 0.8
+    raw_only = {v.key for vs in values for v in vs if "conditionsModule" in v.field_path}
+    assert not (spellings - {mesh_term}) & raw_only
+
+
 def test_condition_known_mesh_mismap_falls_back_to_free_text():
     """ClinicalTrials.gov maps 'Analgesia' to MeSH 'Agnosia' (a perception disorder)."""
     study = {

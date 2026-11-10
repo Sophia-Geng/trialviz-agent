@@ -57,6 +57,9 @@ EXAMPLES: dict[str, dict] = {
     "11_network_combinations_unscoped": {
         "query": "Which drugs are most often combined in combination studies?",
     },
+    "12_network_condition_drug": {
+        "query": "Show a network of conditions and drugs for trials sponsored by Pfizer since 2020.",
+    },
 }
 
 

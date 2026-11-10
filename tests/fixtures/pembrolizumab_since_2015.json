@@ -4,12 +4,12 @@
   "params": {
    "query.intr": "AREA[InterventionName]pembrolizumab OR AREA[InterventionMeshTerm]pembrolizumab",
    "filter.advanced": "AREA[StartDate]RANGE[2015-01-01,MAX]",
-   "fields": "NCTId|BriefTitle|Phase|StartDate|StartDateType|CompletionDate|CompletionDateType|OverallStatus|StudyType|LeadSponsorName|LeadSponsorClass|InterventionType|InterventionName|InterventionOtherName|InterventionMeshTerm|InterventionMeshId|Condition|LocationCountry|LocationStatus|LocationFacility|OverallOfficialName|OverallOfficialRole|OverallOfficialAffiliation|EnrollmentCount",
+   "fields": "NCTId|BriefTitle|Phase|StartDate|StartDateType|CompletionDate|CompletionDateType|OverallStatus|StudyType|LeadSponsorName|LeadSponsorClass|InterventionType|InterventionName|InterventionOtherName|InterventionMeshTerm|InterventionMeshId|Condition|ConditionMeshTerm|LocationCountry|LocationStatus|LocationFacility|OverallOfficialName|OverallOfficialRole|OverallOfficialAffiliation|EnrollmentCount",
    "pageSize": 100,
    "countTotal": "true"
   }
  },
- "retrieved_at": "2026-11-10T16:55:11.887425+00:00",
+ "retrieved_at": "2026-11-10T17:21:52.151134+00:00",
  "pages": [
   {
    "totalCount": 2600,
@@ -149,6 +149,25 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Leukemia, Myeloid, Acute"
+        },
+        {
+         "term": "Ovarian Neoplasms"
+        },
+        {
+         "term": "Colorectal Neoplasms"
+        },
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Small Cell Lung Carcinoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -235,6 +254,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Adenocarcinoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -359,6 +385,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Prostatic Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -447,6 +480,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -1394,6 +1434,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Endometrial Neoplasms"
+        },
+        {
+         "term": "Parkinson Disease 4, Autosomal Dominant Lewy Body"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -2728,6 +2778,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinosarcoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -2907,6 +2964,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Merkel Cell"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -3048,6 +3112,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -3362,6 +3433,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Diabetes Mellitus, Insulin-Dependent, 12"
+        },
+        {
+         "term": "Parkinson Disease 4, Autosomal Dominant Lewy Body"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -3508,6 +3589,37 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Pancreatic Neoplasms"
+        },
+        {
+         "term": "Liver Neoplasms"
+        },
+        {
+         "term": "Mesothelioma"
+        },
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Stomach Neoplasms"
+        },
+        {
+         "term": "Esophageal Neoplasms"
+        },
+        {
+         "term": "Nasopharyngeal Neoplasms"
+        },
+        {
+         "term": "Kidney Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -3582,6 +3694,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Sarcoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -3670,6 +3789,22 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        },
+        {
+         "term": "Neoplasm Metastasis"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -3750,6 +3885,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Transitional Cell"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -4670,6 +4812,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Parkinson Disease 4, Autosomal Dominant Lewy Body"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5025,6 +5174,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5764,6 +5920,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Lung Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5851,6 +6014,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Thyroid Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5933,6 +6103,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cholangiocarcinoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6073,6 +6250,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Glioma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6237,6 +6421,49 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Head and Neck Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Squamous Cell"
+        },
+        {
+         "term": "Lymphoma"
+        },
+        {
+         "term": "Pancreatic Neoplasms"
+        },
+        {
+         "term": "Liver Neoplasms"
+        },
+        {
+         "term": "Colonic Neoplasms"
+        },
+        {
+         "term": "Lung Neoplasms"
+        },
+        {
+         "term": "Bile Duct Neoplasms"
+        },
+        {
+         "term": "Sarcoma"
+        },
+        {
+         "term": "Neoplasms"
+        },
+        {
+         "term": "Diabetes Mellitus, Insulin-Dependent, 12"
+        },
+        {
+         "term": "Carcinoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6332,6 +6559,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Lung Diseases, Interstitial"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6440,6 +6674,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6542,6 +6783,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6635,6 +6883,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Esophageal Squamous Cell Carcinoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6853,6 +7108,73 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Uterine Cervical Neoplasms"
+        },
+        {
+         "term": "Pancreatic Neoplasms"
+        },
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Hepatocellular"
+        },
+        {
+         "term": "Carcinoma, Transitional Cell"
+        },
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        },
+        {
+         "term": "Nasopharyngeal Carcinoma"
+        },
+        {
+         "term": "Carcinoma, Renal Cell"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Small Cell Lung Carcinoma"
+        },
+        {
+         "term": "Prostatic Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Ovarian Epithelial"
+        },
+        {
+         "term": "Fallopian Tube Neoplasms"
+        },
+        {
+         "term": "Cholangiocarcinoma"
+        },
+        {
+         "term": "Anus Neoplasms"
+        },
+        {
+         "term": "Colorectal Neoplasms"
+        },
+        {
+         "term": "Endometrial Neoplasms"
+        },
+        {
+         "term": "Liver Neoplasms"
+        },
+        {
+         "term": "Stomach Neoplasms"
+        },
+        {
+         "term": "Diabetes Mellitus, Insulin-Dependent, 12"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -7020,6 +7342,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Leukoplakia"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -7122,6 +7451,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Ovarian Epithelial"
+        },
+        {
+         "term": "Ovarian Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -7224,6 +7563,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Neoplasm Metastasis"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -7339,6 +7688,34 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Sarcoma, Synovial"
+        },
+        {
+         "term": "Liposarcoma, Myxoid"
+        },
+        {
+         "term": "Colorectal Neoplasms"
+        },
+        {
+         "term": "Osteosarcoma"
+        },
+        {
+         "term": "Sarcoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -7432,6 +7809,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Colorectal Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -8974,6 +9358,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Parkinson Disease 4, Autosomal Dominant Lewy Body"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -9060,6 +9454,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Melanoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -9142,6 +9543,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Neoplasm Metastasis"
+        },
+        {
+         "term": "Endometrial Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -9248,6 +9659,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Neoplasm, Residual"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -9462,6 +9883,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nasopharyngeal Carcinoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -9635,6 +10063,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -9731,6 +10166,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -9841,6 +10283,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Biliary Tract Neoplasms"
+        },
+        {
+         "term": "Cholangiocarcinoma"
+        },
+        {
+         "term": "Gallbladder Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -9915,6 +10370,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Parkinson Disease 4, Autosomal Dominant Lewy Body"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10017,6 +10482,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Adenocarcinoma Of Esophagus"
+        },
+        {
+         "term": "Esophageal Squamous Cell Carcinoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10091,6 +10566,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nasopharyngeal Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10255,6 +10737,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Squamous Cell"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10721,6 +11210,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Parkinson Disease 4, Autosomal Dominant Lewy Body"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10829,6 +11328,22 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Immunoblastic Lymphadenopathy"
+        },
+        {
+         "term": "Enteropathy-Associated T-Cell Lymphoma"
+        },
+        {
+         "term": "Lymphoma, T-Cell"
+        },
+        {
+         "term": "Subcutaneous panniculitis-like T-cell lymphoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -11273,6 +11788,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -11805,6 +12333,25 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Transitional Cell"
+        },
+        {
+         "term": "Urinary Bladder Neoplasms"
+        },
+        {
+         "term": "Urologic Neoplasms"
+        },
+        {
+         "term": "Ureteral Neoplasms"
+        },
+        {
+         "term": "Urethral Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -11891,6 +12438,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Parkinson Disease 4, Autosomal Dominant Lewy Body"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -12118,6 +12672,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        },
+        {
+         "term": "Parkinson Disease 4, Autosomal Dominant Lewy Body"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -12294,6 +12858,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -12452,6 +13023,28 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Ovarian Neoplasms"
+        },
+        {
+         "term": "Head and Neck Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Carcinoma, Renal Cell"
+        },
+        {
+         "term": "Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -12552,6 +13145,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -12637,7 +13237,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -12747,6 +13355,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Uterine Cervical Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -12864,6 +13479,25 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Lymphoma, Large-Cell, Anaplastic"
+        },
+        {
+         "term": "Immunoblastic Lymphadenopathy"
+        },
+        {
+         "term": "Mycosis Fungoides"
+        },
+        {
+         "term": "Lymphoma, T-Cell, Cutaneous"
+        },
+        {
+         "term": "Lymphoma, T-Cell"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -12958,6 +13592,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -13256,6 +13897,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Transitional Cell"
+        },
+        {
+         "term": "Urinary Bladder Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -13489,6 +14140,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Urinary Bladder Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -15105,6 +15763,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Lung Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -15215,6 +15883,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Adenocarcinoma Of Esophagus"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -15298,6 +15973,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Lung Neoplasms"
+        },
+        {
+         "term": "Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -15380,6 +16065,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Melanoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -17200,6 +17892,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Endometrial Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -17307,6 +18006,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nasopharyngeal Carcinoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -17399,6 +18105,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Fallopian Tube Neoplasms"
+        },
+        {
+         "term": "Ovarian Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -17548,6 +18264,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Fallopian Tube Neoplasms"
+        },
+        {
+         "term": "Ovarian Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -17903,6 +18629,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Head and Neck Neoplasms"
+        },
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -17997,6 +18733,34 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Urinary Bladder Neoplasms"
+        },
+        {
+         "term": "Colorectal Neoplasms"
+        },
+        {
+         "term": "Stomach Neoplasms"
+        },
+        {
+         "term": "Ovarian Neoplasms"
+        },
+        {
+         "term": "Neoplasms"
+        },
+        {
+         "term": "Adenocarcinoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -18165,6 +18929,22 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Ovarian Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Hepatocellular"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Urinary Bladder Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -18332,6 +19112,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        },
+        {
+         "term": "Laryngeal Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -18619,6 +19409,25 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Transitional Cell"
+        },
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        },
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -18905,6 +19714,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -19013,6 +19829,58 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Neoplasms, Germ Cell and Embryonal"
+        },
+        {
+         "term": "Retinoblastoma"
+        },
+        {
+         "term": "Hepatoblastoma"
+        },
+        {
+         "term": "Wilms Tumor"
+        },
+        {
+         "term": "Rhabdoid Tumor"
+        },
+        {
+         "term": "Carcinoma"
+        },
+        {
+         "term": "Osteosarcoma"
+        },
+        {
+         "term": "Sarcoma, Ewing"
+        },
+        {
+         "term": "Rhabdomyosarcoma"
+        },
+        {
+         "term": "Sarcoma, Synovial"
+        },
+        {
+         "term": "Sarcoma, Clear Cell"
+        },
+        {
+         "term": "Neurofibrosarcoma"
+        },
+        {
+         "term": "Desmoplastic Small Round Cell Tumor"
+        },
+        {
+         "term": "Sarcoma"
+        },
+        {
+         "term": "Neuroblastoma"
+        },
+        {
+         "term": "Melanoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -19195,6 +20063,22 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Hodgkin Disease"
+        },
+        {
+         "term": "Lymphoma, Non-Hodgkin"
+        },
+        {
+         "term": "Lymphoma, B-Cell"
+        },
+        {
+         "term": "Parkinson Disease 4, Autosomal Dominant Lewy Body"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -19284,6 +20168,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Hematologic Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -19366,6 +20257,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Neuroendocrine"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -19453,6 +20351,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -19574,6 +20482,28 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Neoplasm Metastasis"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Small Cell Lung Carcinoma"
+        },
+        {
+         "term": "Mesothelioma"
+        },
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Head and Neck Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -19715,6 +20645,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Biliary Tract Neoplasms"
+        },
+        {
+         "term": "Pancreatic Neoplasms"
+        },
+        {
+         "term": "Cholangiocarcinoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -19835,6 +20778,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Colonic Neoplasms"
+        },
+        {
+         "term": "Microsatellite Instability"
+        },
+        {
+         "term": "Turcot syndrome"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -19922,6 +20878,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -20014,6 +20980,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Melanoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -20813,6 +21786,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Urinary Bladder Neoplasms"
+        },
+        {
+         "term": "Parkinson Disease 4, Autosomal Dominant Lewy Body"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -20901,6 +21884,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -21269,6 +22259,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Colonic Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -21367,6 +22364,37 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        },
+        {
+         "term": "Mouth Neoplasms"
+        },
+        {
+         "term": "Oropharyngeal Neoplasms"
+        },
+        {
+         "term": "Laryngeal Neoplasms"
+        },
+        {
+         "term": "Hypopharyngeal Neoplasms"
+        },
+        {
+         "term": "Nasopharyngeal Neoplasms"
+        },
+        {
+         "term": "Head and Neck Neoplasms"
+        },
+        {
+         "term": "Recurrence"
+        },
+        {
+         "term": "Neoplasm Metastasis"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -21618,6 +22646,40 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Urinary Bladder Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Transitional Cell"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        },
+        {
+         "term": "Head and Neck Neoplasms"
+        },
+        {
+         "term": "Esophageal Neoplasms"
+        },
+        {
+         "term": "Esophageal Squamous Cell Carcinoma"
+        },
+        {
+         "term": "Adenocarcinoma Of Esophagus"
+        },
+        {
+         "term": "Pancreatic Neoplasms"
+        },
+        {
+         "term": "Adenocarcinoma of Lung"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -21712,6 +22774,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Esophageal Squamous Cell Carcinoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -22044,6 +23113,25 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Endometrial Neoplasms"
+        },
+        {
+         "term": "Lung Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Small Cell Lung Carcinoma"
+        },
+        {
+         "term": "Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {

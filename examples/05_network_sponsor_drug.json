@@ -647,7 +647,7 @@
                 "url": "https://clinicaltrials.gov/study/NCT03820986"
               }
             ],
-            "id": "lead_sponsor:merck sharp & dohme llc",
+            "id": "lead_sponsor:merck sharp & dohme",
             "label": "Merck Sharp & Dohme LLC",
             "type": "lead_sponsor",
             "trial_count": 36,
@@ -1629,7 +1629,7 @@
                 "url": "https://clinicaltrials.gov/study/NCT04700072"
               }
             ],
-            "source": "lead_sponsor:merck sharp & dohme llc",
+            "source": "lead_sponsor:merck sharp & dohme",
             "target": "drug:pembrolizumab",
             "weight": 27
           },
@@ -3328,7 +3328,7 @@
                 "url": "https://clinicaltrials.gov/study/NCT00831545"
               }
             ],
-            "source": "lead_sponsor:merck sharp & dohme llc",
+            "source": "lead_sponsor:merck sharp & dohme",
             "target": "drug:temozolomide",
             "weight": 4
           },
@@ -3605,7 +3605,7 @@
                 "url": "https://clinicaltrials.gov/study/NCT01866319"
               }
             ],
-            "source": "lead_sponsor:merck sharp & dohme llc",
+            "source": "lead_sponsor:merck sharp & dohme",
             "target": "drug:ipilimumab",
             "weight": 2
           },
@@ -3760,8 +3760,8 @@
       },
       "notes": [
         "For readability each entity keeps its 3 strongest links (61 of 85 links among the shown entities).",
-        "2643 edges supported by fewer than 2 trials were removed.",
-        "Showing the 30 most connected of 416 entities.",
+        "2635 edges supported by fewer than 2 trials were removed.",
+        "Showing the 30 most connected of 418 entities.",
         "Edge weight = number of distinct trials in which both entities appear (2486 trials contributed at least one edge)."
       ],
       "source": {

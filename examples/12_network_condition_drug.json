@@ -1,0 +1,2964 @@
+{
+  "request": {
+    "query": "Show a network of conditions and drugs for trials sponsored by Pfizer since 2020."
+  },
+  "status_code": 200,
+  "response": {
+    "visualization": {
+      "title": "Condition ↔ Drug network: Pfizer · 2020+",
+      "type": "network_graph",
+      "encoding": {
+        "nodes": {
+          "id": "id",
+          "label": "label",
+          "group": "type",
+          "size": "trial_count"
+        },
+        "edges": {
+          "source": "source",
+          "target": "target",
+          "weight": "weight",
+          "directed": false
+        }
+      },
+      "data": {
+        "nodes": [
+          {
+            "citation_count": 139,
+            "citations": [
+              {
+                "nct_id": "NCT03794154",
+                "field": "protocolSection.conditionsModule.conditions[0]",
+                "excerpt": "Healthy",
+                "title": "A Study Of Duloxetine Hydrochloride Hard Gelatinous Capsule Compared To Cymbalta Under Fed Conditions",
+                "url": "https://clinicaltrials.gov/study/NCT03794154"
+              },
+              {
+                "nct_id": "NCT07636018",
+                "field": "protocolSection.conditionsModule.conditions[0]",
+                "excerpt": "Healthy Adults",
+                "title": "A Study to Learn if the Study Medicine Called Fluconazole Changes How the Other Body Processes the Study Medicine PF-07248144",
+                "url": "https://clinicaltrials.gov/study/NCT07636018"
+              },
+              {
+                "nct_id": "NCT06821750",
+                "field": "protocolSection.conditionsModule.conditions[0]",
+                "excerpt": "Healthy",
+                "title": "A Study to Learn How Different Amounts of the Study Medicine Called PF-07314470 Are Tolerated and Act in the Body in Healthy Adults",
+                "url": "https://clinicaltrials.gov/study/NCT06821750"
+              },
+              {
+                "nct_id": "NCT04323124",
+                "field": "protocolSection.conditionsModule.conditions[0]",
+                "excerpt": "Healthy",
+                "title": "Study of Single and Multiple Ascending Doses of PF-07059013 in Healthy Adult Participants",
+                "url": "https://clinicaltrials.gov/study/NCT04323124"
+              },
+              {
+                "nct_id": "NCT07578636",
+                "field": "protocolSection.conditionsModule.conditions[0]",
+                "excerpt": "Healthy Male Volunteers",
+                "title": "A Study to Understand What the Body Does to the Study Medicine Called PF-07799544 When Taken by Healthy Adults",
+                "url": "https://clinicaltrials.gov/study/NCT07578636"
+              }
+            ],
+            "id": "condition:healthy volunteers",
+            "label": "Healthy volunteers",
+            "type": "condition",
+            "trial_count": 139,
+            "degree": 1
+          },
+          {
+            "citation_count": 54,
+            "citations": [
+              {
+                "nct_id": "NCT05834348",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung",
+                "title": "A Study to Learn About the Effectiveness of Cancer Medicines in Patients With Metastatic Non-small Cell Lung Cancer in Norway.",
+                "url": "https://clinicaltrials.gov/study/NCT05834348"
+              },
+              {
+                "nct_id": "NCT04609566",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung",
+                "title": "Brentuximab Vedotin With Pembrolizumab in Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04609566"
+              },
+              {
+                "nct_id": "NCT07903415",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung",
+                "title": "A Study to Learn About the Study Medicine Called PF-08098488 in People With Advanced Solid Tumors.",
+                "url": "https://clinicaltrials.gov/study/NCT07903415"
+              },
+              {
+                "nct_id": "NCT05546476",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung",
+                "title": "Study of the Efficacy and Safety of Ponsegromab in Patients With Cancer, Cachexia and Elevated GDF-15",
+                "url": "https://clinicaltrials.gov/study/NCT05546476"
+              },
+              {
+                "nct_id": "NCT07090499",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung",
+                "title": "A Study to Learn About the Study Medicine Called PF-08046876 in People With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07090499"
+              }
+            ],
+            "id": "condition:carcinoma, non-small-cell lung",
+            "label": "Carcinoma, Non-Small-Cell Lung",
+            "type": "condition",
+            "trial_count": 54,
+            "degree": 10
+          },
+          {
+            "citation_count": 52,
+            "citations": [
+              {
+                "nct_id": "NCT06307457",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Breast Neoplasms",
+                "title": "A Study of HR+/HER2- Metastatic Breast Cancer Patients Treated With Palbociclib Together With an Aromatase Inhibitor From 2017 to 2023 in Denmark.",
+                "url": "https://clinicaltrials.gov/study/NCT06307457"
+              },
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Breast Neoplasms",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT05141708",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Breast Neoplasms",
+                "title": "Treatment Patterns and Clinical Outcomes Among Talazoparib-Treated Adults With HER2-Negative mBC With gBRCA1/2m",
+                "url": "https://clinicaltrials.gov/study/NCT05141708"
+              },
+              {
+                "nct_id": "NCT04735367",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Breast Neoplasms",
+                "title": "Study to Evaluate Overall Survival in Japanese Patients With HR+/HER2- Advanced Breast Cancer Treated With Palbociclib Plus Letrozole",
+                "url": "https://clinicaltrials.gov/study/NCT04735367"
+              },
+              {
+                "nct_id": "NCT04672460",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term",
+                "excerpt": "Breast Neoplasms",
+                "title": "A Bioequivalence Study Between the Proposed and Current Talazoparib Capsule Formulation and Food Effect Study for the Proposed Talazoparib Capsule Formulation in Participants With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04672460"
+              }
+            ],
+            "id": "condition:breast neoplasms",
+            "label": "Breast Neoplasms",
+            "type": "condition",
+            "trial_count": 52,
+            "degree": 2
+          },
+          {
+            "citation_count": 29,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term",
+                "excerpt": "Colorectal Neoplasms",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT05546476",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term",
+                "excerpt": "Colorectal Neoplasms",
+                "title": "Study of the Efficacy and Safety of Ponsegromab in Patients With Cancer, Cachexia and Elevated GDF-15",
+                "url": "https://clinicaltrials.gov/study/NCT05546476"
+              },
+              {
+                "nct_id": "NCT06580938",
+                "field": "derivedSection.conditionBrowseModule.meshes[5].term",
+                "excerpt": "Colorectal Neoplasms",
+                "title": "A Study to Learn About PF-07921585 Alone or With Other Anti-cancer Medicines in People With Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06580938"
+              },
+              {
+                "nct_id": "NCT05571839",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term",
+                "excerpt": "Colorectal Neoplasms",
+                "title": "A Study of PF-08046049/SGN-BB228 in Advanced Melanoma and Other Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT05571839"
+              },
+              {
+                "nct_id": "NCT04672460",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term",
+                "excerpt": "Colorectal Neoplasms",
+                "title": "A Bioequivalence Study Between the Proposed and Current Talazoparib Capsule Formulation and Food Effect Study for the Proposed Talazoparib Capsule Formulation in Participants With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04672460"
+              }
+            ],
+            "id": "condition:colorectal neoplasms",
+            "label": "Colorectal Neoplasms",
+            "type": "condition",
+            "trial_count": 29,
+            "degree": 10
+          },
+          {
+            "citation_count": 56,
+            "citations": [
+              {
+                "nct_id": "NCT05487040",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "COVID-19",
+                "title": "A Study to Measure the Amount of Study Medicine in Blood in Adult Participants With COVID-19 and Severe Kidney Disease",
+                "url": "https://clinicaltrials.gov/study/NCT05487040"
+              },
+              {
+                "nct_id": "NCT05263908",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "COVID-19",
+                "title": "A Study to Learn About PAXLOVID (a Commercial Medicine) In People With COVID-19",
+                "url": "https://clinicaltrials.gov/study/NCT05263908"
+              },
+              {
+                "nct_id": "NCT06199934",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "COVID-19",
+                "title": "Effectiveness of BNT162b2 Formulations Using State Vaccine Registry and Insurance Claims Data",
+                "url": "https://clinicaltrials.gov/study/NCT06199934"
+              },
+              {
+                "nct_id": "NCT05567952",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "COVID-19",
+                "title": "A Study to Learn About a Repeat 5-Day Treatment With the Study Medicines (Called Nirmatrelvir/Ritonavir) in People 12 Years Old or Older With Return of COVID-19 Symptoms and SARS-CoV-2 Positivity After Finishing Treatment With Nirmatrelvir/Ritonavir",
+                "url": "https://clinicaltrials.gov/study/NCT05567952"
+              },
+              {
+                "nct_id": "NCT06237049",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term",
+                "excerpt": "COVID-19",
+                "title": "A Study to Learn About a Combined COVID-19 and Influenza Shot in Healthy Adults",
+                "url": "https://clinicaltrials.gov/study/NCT06237049"
+              }
+            ],
+            "id": "condition:covid-19",
+            "label": "COVID-19",
+            "type": "condition",
+            "trial_count": 56,
+            "degree": 1
+          },
+          {
+            "citation_count": 20,
+            "citations": [
+              {
+                "nct_id": "NCT05834348",
+                "field": "derivedSection.interventionBrowseModule.meshes[15].term",
+                "excerpt": "pembrolizumab",
+                "title": "A Study to Learn About the Effectiveness of Cancer Medicines in Patients With Metastatic Non-small Cell Lung Cancer in Norway.",
+                "url": "https://clinicaltrials.gov/study/NCT05834348"
+              },
+              {
+                "nct_id": "NCT04609566",
+                "field": "derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "pembrolizumab",
+                "title": "Brentuximab Vedotin With Pembrolizumab in Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04609566"
+              },
+              {
+                "nct_id": "NCT07090499",
+                "field": "derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "pembrolizumab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08046876 in People With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07090499"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.interventionBrowseModule.meshes[8].term",
+                "excerpt": "pembrolizumab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04657991",
+                "field": "derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "pembrolizumab",
+                "title": "A Clinical Trial of Three Study Medicines (Encorafenib, Binimetinib, and Pembrolizumab) in Patients With Advanced or Metastatic Melanoma",
+                "url": "https://clinicaltrials.gov/study/NCT04657991"
+              }
+            ],
+            "id": "drug:pembrolizumab",
+            "label": "pembrolizumab",
+            "type": "drug",
+            "trial_count": 20,
+            "degree": 4
+          },
+          {
+            "citation_count": 9,
+            "citations": [
+              {
+                "nct_id": "NCT06580938",
+                "field": "protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Sasanlimab",
+                "title": "A Study to Learn About PF-07921585 Alone or With Other Anti-cancer Medicines in People With Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06580938"
+              },
+              {
+                "nct_id": "NCT06546553",
+                "field": "protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "sasanlimab",
+                "title": "A Study to Learn About How Different Amounts of the Study Medicine PF-07826390 Act in the Body of People With Cancer When Taken Alone or With Other Anti-cancer Medicines.",
+                "url": "https://clinicaltrials.gov/study/NCT06546553"
+              },
+              {
+                "nct_id": "NCT07206225",
+                "field": "protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Sasanlimab",
+                "title": "A Study to Learn About the Study Medicine PF-08052667 in People With Bladder Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT07206225"
+              },
+              {
+                "nct_id": "NCT06285097",
+                "field": "protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Sasanlimab",
+                "title": "A Study of PF-07820435 as a Single Agent and in Combination in Participants With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06285097"
+              },
+              {
+                "nct_id": "NCT06870487",
+                "field": "protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Sasanlimab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08046032 in People With Advanced Cancers",
+                "url": "https://clinicaltrials.gov/study/NCT06870487"
+              }
+            ],
+            "id": "drug:sasanlimab",
+            "label": "sasanlimab",
+            "type": "drug",
+            "trial_count": 9,
+            "degree": 4
+          },
+          {
+            "citation_count": 13,
+            "citations": [
+              {
+                "nct_id": "NCT05834348",
+                "field": "derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Bevacizumab",
+                "title": "A Study to Learn About the Effectiveness of Cancer Medicines in Patients With Metastatic Non-small Cell Lung Cancer in Norway.",
+                "url": "https://clinicaltrials.gov/study/NCT05834348"
+              },
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Bevacizumab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.interventionBrowseModule.meshes[7].term",
+                "excerpt": "Bevacizumab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.interventionBrowseModule.meshes[8].term",
+                "excerpt": "Bevacizumab",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT04126044",
+                "field": "derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Bevacizumab",
+                "title": "A SINGLE-DOSE, 2-ARM, PHARMACOKINETIC STUDY OF PF-06439535 (CN) AND EUROPEAN UNION SOURCED BEVACIZUMAB IN CHINESE HEALTHY MALE VOLUNTEERS",
+                "url": "https://clinicaltrials.gov/study/NCT04126044"
+              }
+            ],
+            "id": "drug:bevacizumab",
+            "label": "bevacizumab",
+            "type": "drug",
+            "trial_count": 13,
+            "degree": 3
+          },
+          {
+            "citation_count": 8,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term",
+                "excerpt": "Colonic Neoplasms",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term",
+                "excerpt": "Colonic Neoplasms",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term",
+                "excerpt": "Colonic Neoplasms",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT05983133",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term",
+                "excerpt": "Colonic Neoplasms",
+                "title": "A Study of PF-08046052/SGN-EGFRd2 in Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT05983133"
+              },
+              {
+                "nct_id": "NCT07897721",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term",
+                "excerpt": "Colonic Neoplasms",
+                "title": "A Study to Learn About the Study Medicine Called PF-08165784 in People With PIK3CA-Mutated Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07897721"
+              }
+            ],
+            "id": "condition:colonic neoplasms",
+            "label": "Colonic Neoplasms",
+            "type": "condition",
+            "trial_count": 8,
+            "degree": 5
+          },
+          {
+            "citation_count": 37,
+            "citations": [
+              {
+                "nct_id": "NCT07595549",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Obesity",
+                "title": "A Study to Learn About the Study Medicine Called Berobenatide (PF-08653944) in People With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07595549"
+              },
+              {
+                "nct_id": "NCT07874633",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Obesity",
+                "title": "A Study to Learn About the Study Medicine Called PF-08653944 Taken Once-Monthly Compared to Placebo in Chinese Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07874633"
+              },
+              {
+                "nct_id": "NCT06910839",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term",
+                "excerpt": "Obesity",
+                "title": "Study to Learn About How the Study Medicines Called PF-07976016 and PF-06882961 Are Taken Up by the Body, and if Either of Them Change How the Body Processes the Other Medicine in Otherwise Healthy Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT06910839"
+              },
+              {
+                "nct_id": "NCT07845500",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Obesity",
+                "title": "A Study to Learn About Switching to a Monthly Study Medicine Called Berobenatide (PF-08653944) to Help Keep Weight Off in People With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07845500"
+              },
+              {
+                "nct_id": "NCT07915609",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Obesity",
+                "title": "A Study to Learn About Berobenatide Given Once Weekly in Adults With Knee Osteoarthritis and Overweight or Obesity With or Without Type 2 Diabetes (VESPER-OA 2)",
+                "url": "https://clinicaltrials.gov/study/NCT07915609"
+              }
+            ],
+            "id": "condition:obesity",
+            "label": "Obesity",
+            "type": "condition",
+            "trial_count": 37,
+            "degree": 2
+          },
+          {
+            "citation_count": 6,
+            "citations": [
+              {
+                "nct_id": "NCT07595549",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "PF-08653944",
+                "title": "A Study to Learn About the Study Medicine Called Berobenatide (PF-08653944) in People With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07595549"
+              },
+              {
+                "nct_id": "NCT07575932",
+                "field": "protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "PF-08653944",
+                "title": "A Study of PF-08653945 and PF-08653944 in Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07575932"
+              },
+              {
+                "nct_id": "NCT07519135",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "PF-08653944",
+                "title": "A Study to Learn About the Medicine Called PF-08653944 in People With and Without Reduced Liver Function",
+                "url": "https://clinicaltrials.gov/study/NCT07519135"
+              },
+              {
+                "nct_id": "NCT07400679",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "PF-08653944",
+                "title": "A Study to Learn How the Study Medicine Called PF-08653944 is Taken up Into the Blood in Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07400679"
+              },
+              {
+                "nct_id": "NCT07845513",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "PF-08653944",
+                "title": "A Study to Learn About the Study Medicine Called PF-08653944 in Otherwise Healthy Chinese Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07845513"
+              }
+            ],
+            "id": "drug:pf-08653944",
+            "label": "pf-08653944",
+            "type": "drug",
+            "trial_count": 6,
+            "degree": 2
+          },
+          {
+            "citation_count": 19,
+            "citations": [
+              {
+                "nct_id": "NCT07903415",
+                "field": "derivedSection.conditionBrowseModule.meshes[6].term",
+                "excerpt": "Lung Neoplasms",
+                "title": "A Study to Learn About the Study Medicine Called PF-08098488 in People With Advanced Solid Tumors.",
+                "url": "https://clinicaltrials.gov/study/NCT07903415"
+              },
+              {
+                "nct_id": "NCT06580938",
+                "field": "derivedSection.conditionBrowseModule.meshes[6].term",
+                "excerpt": "Lung Neoplasms",
+                "title": "A Study to Learn About PF-07921585 Alone or With Other Anti-cancer Medicines in People With Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06580938"
+              },
+              {
+                "nct_id": "NCT04609319",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Lung Neoplasms",
+                "title": "Real World Utilization and Outcomes With Dacomitinib First Line Treatment for EGFR Mutation-positive Advanced Non Small Cell Lung Cancer Among Asian Patients - A Multi Center Chart Review",
+                "url": "https://clinicaltrials.gov/study/NCT04609319"
+              },
+              {
+                "nct_id": "NCT04585815",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term",
+                "excerpt": "Lung Neoplasms",
+                "title": "Study of Immunotherapy (Sasanlimab) in Combination With Targeted Therapies in People With Advanced Non-small Cell Lung Cancer (NSCLC) (Landscape 1011 Study)",
+                "url": "https://clinicaltrials.gov/study/NCT04585815"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[5].term",
+                "excerpt": "Lung Neoplasms",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              }
+            ],
+            "id": "condition:lung neoplasms",
+            "label": "Lung Neoplasms",
+            "type": "condition",
+            "trial_count": 19,
+            "degree": 3
+          },
+          {
+            "citation_count": 5,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term",
+                "excerpt": "Rectal Neoplasms",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term",
+                "excerpt": "Rectal Neoplasms",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT05983133",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term",
+                "excerpt": "Rectal Neoplasms",
+                "title": "A Study of PF-08046052/SGN-EGFRd2 in Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT05983133"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term",
+                "excerpt": "Rectal Neoplasms",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              },
+              {
+                "nct_id": "NCT05217446",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term",
+                "excerpt": "Rectal Neoplasms",
+                "title": "A Study of Encorafenib Plus Cetuximab Taken Together With Pembrolizumab Compared to Pembrolizumab Alone in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT05217446"
+              }
+            ],
+            "id": "condition:rectal neoplasms",
+            "label": "Rectal Neoplasms",
+            "type": "condition",
+            "trial_count": 5,
+            "degree": 3
+          },
+          {
+            "citation_count": 9,
+            "citations": [
+              {
+                "nct_id": "NCT07874633",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Berobenatide",
+                "title": "A Study to Learn About the Study Medicine Called PF-08653944 Taken Once-Monthly Compared to Placebo in Chinese Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07874633"
+              },
+              {
+                "nct_id": "NCT07915609",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Berobenatide",
+                "title": "A Study to Learn About Berobenatide Given Once Weekly in Adults With Knee Osteoarthritis and Overweight or Obesity With or Without Type 2 Diabetes (VESPER-OA 2)",
+                "url": "https://clinicaltrials.gov/study/NCT07915609"
+              },
+              {
+                "nct_id": "NCT07794774",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Berobenatide",
+                "title": "A Study to Learn About Safety and Effects of Once-monthly Treatment With Berobenatide in Adults With Obesity Disease in Japan (VESPER-JM)",
+                "url": "https://clinicaltrials.gov/study/NCT07794774"
+              },
+              {
+                "nct_id": "NCT07881757",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Berobenatide",
+                "title": "A Study to Learn About the Monthly Dosing Study Medicine Called Berobenatide in Adults With Breathing Problems During Sleep and Overweight or Obesity Who Do Not Use a Breathing Machine (PAP) (VESPER-OSA 2)",
+                "url": "https://clinicaltrials.gov/study/NCT07881757"
+              },
+              {
+                "nct_id": "NCT07794761",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Berobenatide",
+                "title": "A Study to Learn About Safety and Effects of Once-weekly Treatment With Berobenatide in Adults With Obesity Disease in Japan (VESPER-JW)",
+                "url": "https://clinicaltrials.gov/study/NCT07794761"
+              }
+            ],
+            "id": "drug:berobenatide",
+            "label": "berobenatide",
+            "type": "drug",
+            "trial_count": 9,
+            "degree": 2
+          },
+          {
+            "citation_count": 21,
+            "citations": [
+              {
+                "nct_id": "NCT06504524",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Multiple Myeloma",
+                "title": "A Study to Compare the Effects of Elranatamab (PF 06863135) Versus Standard of Care (SOC) in Patients With Multiple Myeloma (MM) in Germany and US",
+                "url": "https://clinicaltrials.gov/study/NCT06504524"
+              },
+              {
+                "nct_id": "NCT05623020",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Multiple Myeloma",
+                "title": "A Study to Learn About the Effects of the Combination of Elranatamab, Daratumumab and Lenalidomide Compared With Daratumumab, Bortezomib, Lenalidomide, and Dexamethasone in Patients With Newly Diagnosed Multiple Myeloma Who Are Not Candidates for Transplant",
+                "url": "https://clinicaltrials.gov/study/NCT05623020"
+              },
+              {
+                "nct_id": "NCT05675449",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Multiple Myeloma",
+                "title": "A Clinical Trial of Four Medicines (Elranatamab Plus Carfilzomib and Dexamethasone or Maplirpacept) in People With Relapsed Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05675449"
+              },
+              {
+                "nct_id": "NCT04798586",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term",
+                "excerpt": "Multiple Myeloma",
+                "title": "MAGNETISMM-2: Study of Elranatamab (PF-06863135) in Japanese Participants With Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT04798586"
+              },
+              {
+                "nct_id": "NCT05565391",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Multiple Myeloma",
+                "title": "A Study to Learn About the Medicine (Called Elranatamab) in People With Relapsed Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05565391"
+              }
+            ],
+            "id": "condition:multiple myeloma",
+            "label": "Multiple Myeloma",
+            "type": "condition",
+            "trial_count": 21,
+            "degree": 1
+          },
+          {
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT05834348",
+                "field": "derivedSection.interventionBrowseModule.meshes[8].term",
+                "excerpt": "Carboplatin",
+                "title": "A Study to Learn About the Effectiveness of Cancer Medicines in Patients With Metastatic Non-small Cell Lung Cancer in Norway.",
+                "url": "https://clinicaltrials.gov/study/NCT05834348"
+              },
+              {
+                "nct_id": "NCT07090499",
+                "field": "derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Carboplatin",
+                "title": "A Study to Learn About the Study Medicine Called PF-08046876 in People With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07090499"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.interventionBrowseModule.meshes[12].term",
+                "excerpt": "Carboplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04325698",
+                "field": "derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Carboplatin",
+                "title": "A BRIDGING STUDY OF PF-06439535 (CN) PLUS PACLITAXEL-CARBOPLATIN VERSUS BEVACIZUMAB PLUS PACLITAXEL-CARBOPLATIN IN NSCLC",
+                "url": "https://clinicaltrials.gov/study/NCT04325698"
+              },
+              {
+                "nct_id": "NCT04389632",
+                "field": "derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Carboplatin",
+                "title": "A Study of Sigvotatug Vedotin in Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04389632"
+              }
+            ],
+            "id": "drug:carboplatin",
+            "label": "carboplatin",
+            "type": "drug",
+            "trial_count": 7,
+            "degree": 3
+          },
+          {
+            "citation_count": 11,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Cetuximab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT05355701",
+                "field": "derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Cetuximab",
+                "title": "A Study to Learn About the Study Medicine Called PF-07799933 in People With Advanced Solid Tumors With BRAF Alterations.",
+                "url": "https://clinicaltrials.gov/study/NCT05355701"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Cetuximab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Cetuximab",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT05203172",
+                "field": "derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Cetuximab",
+                "title": "The FLOTILLA Study: Providing Continued Access to The Study Medicines Encorafenib and Binimetinib for Participants in Prior Clinical Trials",
+                "url": "https://clinicaltrials.gov/study/NCT05203172"
+              }
+            ],
+            "id": "drug:cetuximab",
+            "label": "cetuximab",
+            "type": "drug",
+            "trial_count": 11,
+            "degree": 7
+          },
+          {
+            "citation_count": 5,
+            "citations": [
+              {
+                "nct_id": "NCT07090499",
+                "field": "derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Cisplatin",
+                "title": "A Study to Learn About the Study Medicine Called PF-08046876 in People With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07090499"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.interventionBrowseModule.meshes[10].term",
+                "excerpt": "Cisplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04389632",
+                "field": "derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Cisplatin",
+                "title": "A Study of Sigvotatug Vedotin in Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04389632"
+              },
+              {
+                "nct_id": "NCT05911295",
+                "field": "derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Cisplatin",
+                "title": "Disitamab Vedotin With Pembrolizumab vs Chemotherapy in Previously Untreated Urothelial Cancer Expressing HER2",
+                "url": "https://clinicaltrials.gov/study/NCT05911295"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.interventionBrowseModule.meshes[10].term",
+                "excerpt": "Cisplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "id": "drug:cisplatin",
+            "label": "cisplatin",
+            "type": "drug",
+            "trial_count": 5,
+            "degree": 3
+          },
+          {
+            "citation_count": 13,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Fulvestrant",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06105632",
+                "field": "derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Fulvestrant",
+                "title": "A Study to Learn About the Study Medicine Called PF-07220060 in Combination With Fulvestrant in People With HR-positive, HER2-negative Advanced or Metastatic Breast Cancer Who Progressed After a Prior Line of Treatment",
+                "url": "https://clinicaltrials.gov/study/NCT06105632"
+              },
+              {
+                "nct_id": "NCT04557449",
+                "field": "derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Fulvestrant",
+                "title": "Study to Test the Safety and Tolerability of PF-07220060 in Participants With Advance Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04557449"
+              },
+              {
+                "nct_id": "NCT04916509",
+                "field": "derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Fulvestrant",
+                "title": "Treatment Patterns and Clinical Outcomes Among Patients Receiving Palbociclib Combinations for Hormone Receptor Positive (HR+)/Human Epidermal Growth Factor Receptor 2 Negative (HER2 ) Advanced/Metastatic Breast Cancer in the Arabian Gulf Region",
+                "url": "https://clinicaltrials.gov/study/NCT04916509"
+              },
+              {
+                "nct_id": "NCT05654623",
+                "field": "derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Fulvestrant",
+                "title": "A Study to Learn About a New Medicine Called Vepdegestrant (ARV-471, PF-07850327) in People Who Have Advanced Metastatic Breast Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT05654623"
+              }
+            ],
+            "id": "drug:fulvestrant",
+            "label": "fulvestrant",
+            "type": "drug",
+            "trial_count": 13,
+            "degree": 3
+          },
+          {
+            "citation_count": 22,
+            "citations": [
+              {
+                "nct_id": "NCT05487040",
+                "field": "derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "nirmatrelvir and ritonavir drug combination",
+                "title": "A Study to Measure the Amount of Study Medicine in Blood in Adult Participants With COVID-19 and Severe Kidney Disease",
+                "url": "https://clinicaltrials.gov/study/NCT05487040"
+              },
+              {
+                "nct_id": "NCT05263908",
+                "field": "derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "nirmatrelvir and ritonavir drug combination",
+                "title": "A Study to Learn About PAXLOVID (a Commercial Medicine) In People With COVID-19",
+                "url": "https://clinicaltrials.gov/study/NCT05263908"
+              },
+              {
+                "nct_id": "NCT05263895",
+                "field": "derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "nirmatrelvir and ritonavir drug combination",
+                "title": "Relative Bioavailability Study of 4 Different Formulations of PF-07321332 Relative to the Commercial Tablet Formulation",
+                "url": "https://clinicaltrials.gov/study/NCT05263895"
+              },
+              {
+                "nct_id": "NCT06016556",
+                "field": "derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "nirmatrelvir and ritonavir drug combination",
+                "title": "A Study of COVID-19 Patients Receiving Treatment With Nirmatrelvir; Ritonavir in the Kingdom of Saudi Arabia",
+                "url": "https://clinicaltrials.gov/study/NCT06016556"
+              },
+              {
+                "nct_id": "NCT05441215",
+                "field": "derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "nirmatrelvir and ritonavir drug combination",
+                "title": "A Study to Learn About the Medicine (PF-07321332 or Nirmatrelvir/Ritonavir) in Healthy Lactating Women",
+                "url": "https://clinicaltrials.gov/study/NCT05441215"
+              }
+            ],
+            "id": "drug:nirmatrelvir and ritonavir drug combination",
+            "label": "nirmatrelvir and ritonavir drug combination",
+            "type": "drug",
+            "trial_count": 22,
+            "degree": 2
+          },
+          {
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06974734",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal",
+                "title": "A Clinical Trial of PF-08046037 Alone or With Sasanlimab in Patients With Advanced or Metastatic Malignancies",
+                "url": "https://clinicaltrials.gov/study/NCT06974734"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "id": "condition:carcinoma, pancreatic ductal",
+            "label": "Carcinoma, Pancreatic Ductal",
+            "type": "condition",
+            "trial_count": 3,
+            "degree": 5
+          },
+          {
+            "citation_count": 9,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT05355701",
+                "field": "derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine Called PF-07799933 in People With Advanced Solid Tumors With BRAF Alterations.",
+                "url": "https://clinicaltrials.gov/study/NCT05355701"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Fluorouracil",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT05203172",
+                "field": "derivedSection.interventionBrowseModule.meshes[7].term",
+                "excerpt": "Fluorouracil",
+                "title": "The FLOTILLA Study: Providing Continued Access to The Study Medicines Encorafenib and Binimetinib for Participants in Prior Clinical Trials",
+                "url": "https://clinicaltrials.gov/study/NCT05203172"
+              }
+            ],
+            "id": "drug:fluorouracil",
+            "label": "fluorouracil",
+            "type": "drug",
+            "trial_count": 9,
+            "degree": 5
+          },
+          {
+            "citation_count": 9,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Leucovorin",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT05355701",
+                "field": "derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Leucovorin",
+                "title": "A Study to Learn About the Study Medicine Called PF-07799933 in People With Advanced Solid Tumors With BRAF Alterations.",
+                "url": "https://clinicaltrials.gov/study/NCT05355701"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Leucovorin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Leucovorin",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT05203172",
+                "field": "derivedSection.interventionBrowseModule.meshes[8].term",
+                "excerpt": "Leucovorin",
+                "title": "The FLOTILLA Study: Providing Continued Access to The Study Medicines Encorafenib and Binimetinib for Participants in Prior Clinical Trials",
+                "url": "https://clinicaltrials.gov/study/NCT05203172"
+              }
+            ],
+            "id": "drug:leucovorin",
+            "label": "leucovorin",
+            "type": "drug",
+            "trial_count": 9,
+            "degree": 3
+          },
+          {
+            "citation_count": 9,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT05355701",
+                "field": "derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine Called PF-07799933 in People With Advanced Solid Tumors With BRAF Alterations.",
+                "url": "https://clinicaltrials.gov/study/NCT05355701"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Oxaliplatin",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT05203172",
+                "field": "derivedSection.interventionBrowseModule.meshes[9].term",
+                "excerpt": "Oxaliplatin",
+                "title": "The FLOTILLA Study: Providing Continued Access to The Study Medicines Encorafenib and Binimetinib for Participants in Prior Clinical Trials",
+                "url": "https://clinicaltrials.gov/study/NCT05203172"
+              }
+            ],
+            "id": "drug:oxaliplatin",
+            "label": "oxaliplatin",
+            "type": "drug",
+            "trial_count": 9,
+            "degree": 5
+          },
+          {
+            "citation_count": 26,
+            "citations": [
+              {
+                "nct_id": "NCT07595549",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term",
+                "excerpt": "Overweight",
+                "title": "A Study to Learn About the Study Medicine Called Berobenatide (PF-08653944) in People With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07595549"
+              },
+              {
+                "nct_id": "NCT07874633",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term",
+                "excerpt": "Overweight",
+                "title": "A Study to Learn About the Study Medicine Called PF-08653944 Taken Once-Monthly Compared to Placebo in Chinese Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07874633"
+              },
+              {
+                "nct_id": "NCT06910839",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Overweight",
+                "title": "Study to Learn About How the Study Medicines Called PF-07976016 and PF-06882961 Are Taken Up by the Body, and if Either of Them Change How the Body Processes the Other Medicine in Otherwise Healthy Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT06910839"
+              },
+              {
+                "nct_id": "NCT07845500",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term",
+                "excerpt": "Overweight",
+                "title": "A Study to Learn About Switching to a Monthly Study Medicine Called Berobenatide (PF-08653944) to Help Keep Weight Off in People With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07845500"
+              },
+              {
+                "nct_id": "NCT07915609",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term",
+                "excerpt": "Overweight",
+                "title": "A Study to Learn About Berobenatide Given Once Weekly in Adults With Knee Osteoarthritis and Overweight or Obesity With or Without Type 2 Diabetes (VESPER-OA 2)",
+                "url": "https://clinicaltrials.gov/study/NCT07915609"
+              }
+            ],
+            "id": "condition:overweight",
+            "label": "Overweight",
+            "type": "condition",
+            "trial_count": 26,
+            "degree": 2
+          },
+          {
+            "citation_count": 19,
+            "citations": [
+              {
+                "nct_id": "NCT04609566",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Melanoma",
+                "title": "Brentuximab Vedotin With Pembrolizumab in Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04609566"
+              },
+              {
+                "nct_id": "NCT06580938",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term",
+                "excerpt": "Melanoma",
+                "title": "A Study to Learn About PF-07921585 Alone or With Other Anti-cancer Medicines in People With Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06580938"
+              },
+              {
+                "nct_id": "NCT05571839",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Melanoma",
+                "title": "A Study of PF-08046049/SGN-BB228 in Advanced Melanoma and Other Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT05571839"
+              },
+              {
+                "nct_id": "NCT04543188",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Melanoma",
+                "title": "A FIH Study of PF-07284890 in Participants With BRAF V600 Mutant Solid Tumors With and Without Brain Involvement",
+                "url": "https://clinicaltrials.gov/study/NCT04543188"
+              },
+              {
+                "nct_id": "NCT05538130",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term",
+                "excerpt": "Melanoma",
+                "title": "A Study to Learn About the Study Medicine Called PF-07799544 as Monotherapy or in Combination in People With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT05538130"
+              }
+            ],
+            "id": "condition:melanoma",
+            "label": "Melanoma",
+            "type": "condition",
+            "trial_count": 19,
+            "degree": 2
+          },
+          {
+            "citation_count": 12,
+            "citations": [
+              {
+                "nct_id": "NCT06504524",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Elranatamab",
+                "title": "A Study to Compare the Effects of Elranatamab (PF 06863135) Versus Standard of Care (SOC) in Patients With Multiple Myeloma (MM) in Germany and US",
+                "url": "https://clinicaltrials.gov/study/NCT06504524"
+              },
+              {
+                "nct_id": "NCT04798586",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Elranatamab (PF-06863135)",
+                "title": "MAGNETISMM-2: Study of Elranatamab (PF-06863135) in Japanese Participants With Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT04798586"
+              },
+              {
+                "nct_id": "NCT05565391",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Elranatamab",
+                "title": "A Study to Learn About the Medicine (Called Elranatamab) in People With Relapsed Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05565391"
+              },
+              {
+                "nct_id": "NCT05932290",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Elranatamab",
+                "title": "A Study to Learn About the Effectiveness of the Medicine Called Elranatamab in People With Relapsed Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05932290"
+              },
+              {
+                "nct_id": "NCT06581848",
+                "field": "protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Elranatamab",
+                "title": "Korean Post Marketing Surveillance for ELREXFIO (Elranatamab).",
+                "url": "https://clinicaltrials.gov/study/NCT06581848"
+              }
+            ],
+            "id": "drug:elranatamab",
+            "label": "elranatamab",
+            "type": "drug",
+            "trial_count": 12,
+            "degree": 1
+          }
+        ],
+        "edges": [
+          {
+            "citation_count": 19,
+            "citations": [
+              {
+                "nct_id": "NCT05487040",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "COVID-19 | nirmatrelvir and ritonavir drug combination",
+                "title": "A Study to Measure the Amount of Study Medicine in Blood in Adult Participants With COVID-19 and Severe Kidney Disease",
+                "url": "https://clinicaltrials.gov/study/NCT05487040"
+              },
+              {
+                "nct_id": "NCT05263908",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "COVID-19 | nirmatrelvir and ritonavir drug combination",
+                "title": "A Study to Learn About PAXLOVID (a Commercial Medicine) In People With COVID-19",
+                "url": "https://clinicaltrials.gov/study/NCT05263908"
+              },
+              {
+                "nct_id": "NCT05263895",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "COVID-19 | nirmatrelvir and ritonavir drug combination",
+                "title": "Relative Bioavailability Study of 4 Different Formulations of PF-07321332 Relative to the Commercial Tablet Formulation",
+                "url": "https://clinicaltrials.gov/study/NCT05263895"
+              },
+              {
+                "nct_id": "NCT06016556",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "COVID-19 | nirmatrelvir and ritonavir drug combination",
+                "title": "A Study of COVID-19 Patients Receiving Treatment With Nirmatrelvir; Ritonavir in the Kingdom of Saudi Arabia",
+                "url": "https://clinicaltrials.gov/study/NCT06016556"
+              },
+              {
+                "nct_id": "NCT05441215",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "COVID-19 | nirmatrelvir and ritonavir drug combination",
+                "title": "A Study to Learn About the Medicine (PF-07321332 or Nirmatrelvir/Ritonavir) in Healthy Lactating Women",
+                "url": "https://clinicaltrials.gov/study/NCT05441215"
+              }
+            ],
+            "source": "condition:covid-19",
+            "target": "drug:nirmatrelvir and ritonavir drug combination",
+            "weight": 19
+          },
+          {
+            "citation_count": 12,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Breast Neoplasms | Fulvestrant",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06105632",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Breast Neoplasms | Fulvestrant",
+                "title": "A Study to Learn About the Study Medicine Called PF-07220060 in Combination With Fulvestrant in People With HR-positive, HER2-negative Advanced or Metastatic Breast Cancer Who Progressed After a Prior Line of Treatment",
+                "url": "https://clinicaltrials.gov/study/NCT06105632"
+              },
+              {
+                "nct_id": "NCT04557449",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Breast Neoplasms | Fulvestrant",
+                "title": "Study to Test the Safety and Tolerability of PF-07220060 in Participants With Advance Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04557449"
+              },
+              {
+                "nct_id": "NCT04916509",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Breast Neoplasms | Fulvestrant",
+                "title": "Treatment Patterns and Clinical Outcomes Among Patients Receiving Palbociclib Combinations for Hormone Receptor Positive (HR+)/Human Epidermal Growth Factor Receptor 2 Negative (HER2 ) Advanced/Metastatic Breast Cancer in the Arabian Gulf Region",
+                "url": "https://clinicaltrials.gov/study/NCT04916509"
+              },
+              {
+                "nct_id": "NCT05654623",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Breast Neoplasms | Fulvestrant",
+                "title": "A Study to Learn About a New Medicine Called Vepdegestrant (ARV-471, PF-07850327) in People Who Have Advanced Metastatic Breast Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT05654623"
+              }
+            ],
+            "source": "condition:breast neoplasms",
+            "target": "drug:fulvestrant",
+            "weight": 12
+          },
+          {
+            "citation_count": 12,
+            "citations": [
+              {
+                "nct_id": "NCT06504524",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Multiple Myeloma | Elranatamab",
+                "title": "A Study to Compare the Effects of Elranatamab (PF 06863135) Versus Standard of Care (SOC) in Patients With Multiple Myeloma (MM) in Germany and US",
+                "url": "https://clinicaltrials.gov/study/NCT06504524"
+              },
+              {
+                "nct_id": "NCT04798586",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Multiple Myeloma | Elranatamab (PF-06863135)",
+                "title": "MAGNETISMM-2: Study of Elranatamab (PF-06863135) in Japanese Participants With Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT04798586"
+              },
+              {
+                "nct_id": "NCT05565391",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Multiple Myeloma | Elranatamab",
+                "title": "A Study to Learn About the Medicine (Called Elranatamab) in People With Relapsed Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05565391"
+              },
+              {
+                "nct_id": "NCT05932290",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Multiple Myeloma | Elranatamab",
+                "title": "A Study to Learn About the Effectiveness of the Medicine Called Elranatamab in People With Relapsed Refractory Multiple Myeloma",
+                "url": "https://clinicaltrials.gov/study/NCT05932290"
+              },
+              {
+                "nct_id": "NCT06581848",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Multiple Myeloma | Elranatamab",
+                "title": "Korean Post Marketing Surveillance for ELREXFIO (Elranatamab).",
+                "url": "https://clinicaltrials.gov/study/NCT06581848"
+              }
+            ],
+            "source": "condition:multiple myeloma",
+            "target": "drug:elranatamab",
+            "weight": 12
+          },
+          {
+            "citation_count": 10,
+            "citations": [
+              {
+                "nct_id": "NCT05834348",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[15].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | pembrolizumab",
+                "title": "A Study to Learn About the Effectiveness of Cancer Medicines in Patients With Metastatic Non-small Cell Lung Cancer in Norway.",
+                "url": "https://clinicaltrials.gov/study/NCT05834348"
+              },
+              {
+                "nct_id": "NCT04609566",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | pembrolizumab",
+                "title": "Brentuximab Vedotin With Pembrolizumab in Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04609566"
+              },
+              {
+                "nct_id": "NCT07090499",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | pembrolizumab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08046876 in People With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07090499"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[8].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | pembrolizumab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT05194072",
+                "field": "derivedSection.conditionBrowseModule.meshes[5].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | pembrolizumab",
+                "title": "A Study of Felmetatug Vedotin/SGN-B7H4V in Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT05194072"
+              }
+            ],
+            "source": "condition:carcinoma, non-small-cell lung",
+            "target": "drug:pembrolizumab",
+            "weight": 10
+          },
+          {
+            "citation_count": 9,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Colorectal Neoplasms | Bevacizumab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[7].term",
+                "excerpt": "Colorectal Neoplasms | Bevacizumab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[8].term",
+                "excerpt": "Colorectal Neoplasms | Bevacizumab",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT07527832",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Colorectal Neoplasms | Bevacizumab",
+                "title": "An Observational Study to Learn About the Medicine - BEVACIZUMAB BS [Pfizer] in Colorectal Cancer Patients From Japan.",
+                "url": "https://clinicaltrials.gov/study/NCT07527832"
+              },
+              {
+                "nct_id": "NCT06131840",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Colorectal Neoplasms | Bevacizumab",
+                "title": "A Study of SGN-CEACAM5C in Adults With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06131840"
+              }
+            ],
+            "source": "condition:colorectal neoplasms",
+            "target": "drug:bevacizumab",
+            "weight": 9
+          },
+          {
+            "citation_count": 8,
+            "citations": [
+              {
+                "nct_id": "NCT07874633",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Obesity | Berobenatide",
+                "title": "A Study to Learn About the Study Medicine Called PF-08653944 Taken Once-Monthly Compared to Placebo in Chinese Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07874633"
+              },
+              {
+                "nct_id": "NCT07915609",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Obesity | Berobenatide",
+                "title": "A Study to Learn About Berobenatide Given Once Weekly in Adults With Knee Osteoarthritis and Overweight or Obesity With or Without Type 2 Diabetes (VESPER-OA 2)",
+                "url": "https://clinicaltrials.gov/study/NCT07915609"
+              },
+              {
+                "nct_id": "NCT07794774",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Obesity | Berobenatide",
+                "title": "A Study to Learn About Safety and Effects of Once-monthly Treatment With Berobenatide in Adults With Obesity Disease in Japan (VESPER-JM)",
+                "url": "https://clinicaltrials.gov/study/NCT07794774"
+              },
+              {
+                "nct_id": "NCT07794761",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Obesity | Berobenatide",
+                "title": "A Study to Learn About Safety and Effects of Once-weekly Treatment With Berobenatide in Adults With Obesity Disease in Japan (VESPER-JW)",
+                "url": "https://clinicaltrials.gov/study/NCT07794761"
+              },
+              {
+                "nct_id": "NCT07823608",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Obesity | Berobenatide",
+                "title": "A Study to Learn About the Monthly Dosing Study Medicine Called Berobenatide in Adults With Breathing Problems During Sleep and Overweight or Obesity Who Use a Breathing Machine (PAP) (VESPER-OSA 1)",
+                "url": "https://clinicaltrials.gov/study/NCT07823608"
+              }
+            ],
+            "source": "condition:obesity",
+            "target": "drug:berobenatide",
+            "weight": 8
+          },
+          {
+            "citation_count": 8,
+            "citations": [
+              {
+                "nct_id": "NCT07874633",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Overweight | Berobenatide",
+                "title": "A Study to Learn About the Study Medicine Called PF-08653944 Taken Once-Monthly Compared to Placebo in Chinese Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07874633"
+              },
+              {
+                "nct_id": "NCT07915609",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Overweight | Berobenatide",
+                "title": "A Study to Learn About Berobenatide Given Once Weekly in Adults With Knee Osteoarthritis and Overweight or Obesity With or Without Type 2 Diabetes (VESPER-OA 2)",
+                "url": "https://clinicaltrials.gov/study/NCT07915609"
+              },
+              {
+                "nct_id": "NCT07794774",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Overweight | Berobenatide",
+                "title": "A Study to Learn About Safety and Effects of Once-monthly Treatment With Berobenatide in Adults With Obesity Disease in Japan (VESPER-JM)",
+                "url": "https://clinicaltrials.gov/study/NCT07794774"
+              },
+              {
+                "nct_id": "NCT07794761",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Overweight | Berobenatide",
+                "title": "A Study to Learn About Safety and Effects of Once-weekly Treatment With Berobenatide in Adults With Obesity Disease in Japan (VESPER-JW)",
+                "url": "https://clinicaltrials.gov/study/NCT07794761"
+              },
+              {
+                "nct_id": "NCT07823608",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Overweight | Berobenatide",
+                "title": "A Study to Learn About the Monthly Dosing Study Medicine Called Berobenatide in Adults With Breathing Problems During Sleep and Overweight or Obesity Who Use a Breathing Machine (PAP) (VESPER-OSA 1)",
+                "url": "https://clinicaltrials.gov/study/NCT07823608"
+              }
+            ],
+            "source": "condition:overweight",
+            "target": "drug:berobenatide",
+            "weight": 8
+          },
+          {
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Colorectal Neoplasms | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Colorectal Neoplasms | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Colorectal Neoplasms | Cetuximab",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT04800822",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Colorectal Neoplasms | Cetuximab",
+                "title": "PF-07284892 in Participants With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04800822"
+              },
+              {
+                "nct_id": "NCT05253651",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Colorectal Neoplasms | Cetuximab",
+                "title": "A Study of Tucatinib With Trastuzumab and mFOLFOX6 Versus Standard of Care Treatment in First-line HER2+ Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT05253651"
+              }
+            ],
+            "source": "condition:colorectal neoplasms",
+            "target": "drug:cetuximab",
+            "weight": 7
+          },
+          {
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Colorectal Neoplasms | Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Colorectal Neoplasms | Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Colorectal Neoplasms | Fluorouracil",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT06131840",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Colorectal Neoplasms | Fluorouracil",
+                "title": "A Study of SGN-CEACAM5C in Adults With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06131840"
+              },
+              {
+                "nct_id": "NCT05253651",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[7].term",
+                "excerpt": "Colorectal Neoplasms | Fluorouracil",
+                "title": "A Study of Tucatinib With Trastuzumab and mFOLFOX6 Versus Standard of Care Treatment in First-line HER2+ Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT05253651"
+              }
+            ],
+            "source": "condition:colorectal neoplasms",
+            "target": "drug:fluorouracil",
+            "weight": 7
+          },
+          {
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Colorectal Neoplasms | Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Colorectal Neoplasms | Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Colorectal Neoplasms | Oxaliplatin",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT06131840",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Colorectal Neoplasms | Oxaliplatin",
+                "title": "A Study of SGN-CEACAM5C in Adults With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06131840"
+              },
+              {
+                "nct_id": "NCT05253651",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Colorectal Neoplasms | Oxaliplatin",
+                "title": "A Study of Tucatinib With Trastuzumab and mFOLFOX6 Versus Standard of Care Treatment in First-line HER2+ Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT05253651"
+              }
+            ],
+            "source": "condition:colorectal neoplasms",
+            "target": "drug:oxaliplatin",
+            "weight": 7
+          },
+          {
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Colorectal Neoplasms | Leucovorin",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Colorectal Neoplasms | Leucovorin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Colorectal Neoplasms | Leucovorin",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT06131840",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Colorectal Neoplasms | Leucovorin",
+                "title": "A Study of SGN-CEACAM5C in Adults With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06131840"
+              },
+              {
+                "nct_id": "NCT05253651",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Colorectal Neoplasms | Leucovorin",
+                "title": "A Study of Tucatinib With Trastuzumab and mFOLFOX6 Versus Standard of Care Treatment in First-line HER2+ Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT05253651"
+              }
+            ],
+            "source": "condition:colorectal neoplasms",
+            "target": "drug:leucovorin",
+            "weight": 7
+          },
+          {
+            "citation_count": 7,
+            "citations": [
+              {
+                "nct_id": "NCT06580938",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Sasanlimab",
+                "title": "A Study to Learn About PF-07921585 Alone or With Other Anti-cancer Medicines in People With Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06580938"
+              },
+              {
+                "nct_id": "NCT06546553",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | sasanlimab",
+                "title": "A Study to Learn About How Different Amounts of the Study Medicine PF-07826390 Act in the Body of People With Cancer When Taken Alone or With Other Anti-cancer Medicines.",
+                "url": "https://clinicaltrials.gov/study/NCT06546553"
+              },
+              {
+                "nct_id": "NCT06285097",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Sasanlimab",
+                "title": "A Study of PF-07820435 as a Single Agent and in Combination in Participants With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06285097"
+              },
+              {
+                "nct_id": "NCT06870487",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Sasanlimab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08046032 in People With Advanced Cancers",
+                "url": "https://clinicaltrials.gov/study/NCT06870487"
+              },
+              {
+                "nct_id": "NCT06974734",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | sasanlimab",
+                "title": "A Clinical Trial of PF-08046037 Alone or With Sasanlimab in Patients With Advanced or Metastatic Malignancies",
+                "url": "https://clinicaltrials.gov/study/NCT06974734"
+              }
+            ],
+            "source": "condition:carcinoma, non-small-cell lung",
+            "target": "drug:sasanlimab",
+            "weight": 7
+          },
+          {
+            "citation_count": 6,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Colonic Neoplasms | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Colonic Neoplasms | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Colonic Neoplasms | Cetuximab",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT07897721",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Colonic Neoplasms | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08165784 in People With PIK3CA-Mutated Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07897721"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Colonic Neoplasms | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:colonic neoplasms",
+            "target": "drug:cetuximab",
+            "weight": 6
+          },
+          {
+            "citation_count": 6,
+            "citations": [
+              {
+                "nct_id": "NCT06580938",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Melanoma | Sasanlimab",
+                "title": "A Study to Learn About PF-07921585 Alone or With Other Anti-cancer Medicines in People With Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06580938"
+              },
+              {
+                "nct_id": "NCT06546553",
+                "field": "derivedSection.conditionBrowseModule.meshes[9].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Melanoma | sasanlimab",
+                "title": "A Study to Learn About How Different Amounts of the Study Medicine PF-07826390 Act in the Body of People With Cancer When Taken Alone or With Other Anti-cancer Medicines.",
+                "url": "https://clinicaltrials.gov/study/NCT06546553"
+              },
+              {
+                "nct_id": "NCT06285097",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Melanoma | Sasanlimab",
+                "title": "A Study of PF-07820435 as a Single Agent and in Combination in Participants With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06285097"
+              },
+              {
+                "nct_id": "NCT06870487",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Melanoma | Sasanlimab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08046032 in People With Advanced Cancers",
+                "url": "https://clinicaltrials.gov/study/NCT06870487"
+              },
+              {
+                "nct_id": "NCT06974734",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Melanoma | sasanlimab",
+                "title": "A Clinical Trial of PF-08046037 Alone or With Sasanlimab in Patients With Advanced or Metastatic Malignancies",
+                "url": "https://clinicaltrials.gov/study/NCT06974734"
+              }
+            ],
+            "source": "condition:melanoma",
+            "target": "drug:sasanlimab",
+            "weight": 6
+          },
+          {
+            "citation_count": 5,
+            "citations": [
+              {
+                "nct_id": "NCT05834348",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Bevacizumab",
+                "title": "A Study to Learn About the Effectiveness of Cancer Medicines in Patients With Metastatic Non-small Cell Lung Cancer in Norway.",
+                "url": "https://clinicaltrials.gov/study/NCT05834348"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[7].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Bevacizumab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06131840",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Bevacizumab",
+                "title": "A Study of SGN-CEACAM5C in Adults With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06131840"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[7].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Bevacizumab",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              },
+              {
+                "nct_id": "NCT06448364",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Bevacizumab",
+                "title": "A Study in Advanced/Metastatic Solid Tumors With the Study Medicine (PF-07329640) When Given Alone or In Combination",
+                "url": "https://clinicaltrials.gov/study/NCT06448364"
+              }
+            ],
+            "source": "condition:carcinoma, non-small-cell lung",
+            "target": "drug:bevacizumab",
+            "weight": 5
+          },
+          {
+            "citation_count": 5,
+            "citations": [
+              {
+                "nct_id": "NCT05834348",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[8].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Carboplatin",
+                "title": "A Study to Learn About the Effectiveness of Cancer Medicines in Patients With Metastatic Non-small Cell Lung Cancer in Norway.",
+                "url": "https://clinicaltrials.gov/study/NCT05834348"
+              },
+              {
+                "nct_id": "NCT07090499",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Carboplatin",
+                "title": "A Study to Learn About the Study Medicine Called PF-08046876 in People With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07090499"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[12].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Carboplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04389632",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Carboplatin",
+                "title": "A Study of Sigvotatug Vedotin in Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04389632"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[12].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Carboplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:carcinoma, non-small-cell lung",
+            "target": "drug:carboplatin",
+            "weight": 5
+          },
+          {
+            "citation_count": 5,
+            "citations": [
+              {
+                "nct_id": "NCT07595549",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Obesity | PF-08653944",
+                "title": "A Study to Learn About the Study Medicine Called Berobenatide (PF-08653944) in People With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07595549"
+              },
+              {
+                "nct_id": "NCT07575932",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Obesity | PF-08653944",
+                "title": "A Study of PF-08653945 and PF-08653944 in Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07575932"
+              },
+              {
+                "nct_id": "NCT07400679",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Obesity | PF-08653944",
+                "title": "A Study to Learn How the Study Medicine Called PF-08653944 is Taken up Into the Blood in Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07400679"
+              },
+              {
+                "nct_id": "NCT07845513",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Obesity | PF-08653944",
+                "title": "A Study to Learn About the Study Medicine Called PF-08653944 in Otherwise Healthy Chinese Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07845513"
+              },
+              {
+                "nct_id": "NCT07400653",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Obesity | PF-08653944",
+                "title": "A Study to Learn About the Study Medicine (PF-08653944) in People With Obesity or Overweight and Type 2 Diabetes (T2D)",
+                "url": "https://clinicaltrials.gov/study/NCT07400653"
+              }
+            ],
+            "source": "condition:obesity",
+            "target": "drug:pf-08653944",
+            "weight": 5
+          },
+          {
+            "citation_count": 5,
+            "citations": [
+              {
+                "nct_id": "NCT07595549",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Overweight | PF-08653944",
+                "title": "A Study to Learn About the Study Medicine Called Berobenatide (PF-08653944) in People With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07595549"
+              },
+              {
+                "nct_id": "NCT07575932",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Overweight | PF-08653944",
+                "title": "A Study of PF-08653945 and PF-08653944 in Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07575932"
+              },
+              {
+                "nct_id": "NCT07400679",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Overweight | PF-08653944",
+                "title": "A Study to Learn How the Study Medicine Called PF-08653944 is Taken up Into the Blood in Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07400679"
+              },
+              {
+                "nct_id": "NCT07845513",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Overweight | PF-08653944",
+                "title": "A Study to Learn About the Study Medicine Called PF-08653944 in Otherwise Healthy Chinese Adults With Overweight or Obesity",
+                "url": "https://clinicaltrials.gov/study/NCT07845513"
+              },
+              {
+                "nct_id": "NCT07400653",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | protocolSection.armsInterventionsModule.interventions[0].name",
+                "excerpt": "Overweight | PF-08653944",
+                "title": "A Study to Learn About the Study Medicine (PF-08653944) in People With Obesity or Overweight and Type 2 Diabetes (T2D)",
+                "url": "https://clinicaltrials.gov/study/NCT07400653"
+              }
+            ],
+            "source": "condition:overweight",
+            "target": "drug:pf-08653944",
+            "weight": 5
+          },
+          {
+            "citation_count": 5,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Colonic Neoplasms | Bevacizumab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | derivedSection.interventionBrowseModule.meshes[7].term",
+                "excerpt": "Colonic Neoplasms | Bevacizumab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[8].term",
+                "excerpt": "Colonic Neoplasms | Bevacizumab",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | derivedSection.interventionBrowseModule.meshes[7].term",
+                "excerpt": "Colonic Neoplasms | Bevacizumab",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              },
+              {
+                "nct_id": "NCT07222800",
+                "field": "derivedSection.conditionBrowseModule.meshes[11].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Colonic Neoplasms | Bevacizumab",
+                "title": "Symbiotic-GI-03: A Study to Learn About the Study Medicine Called PF-08634404 in Combination With Chemotherapy in Adult Participants With Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT07222800"
+              }
+            ],
+            "source": "condition:colonic neoplasms",
+            "target": "drug:bevacizumab",
+            "weight": 5
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Colonic Neoplasms | Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Colonic Neoplasms | Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Colonic Neoplasms | Fluorouracil",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Colonic Neoplasms | Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:colonic neoplasms",
+            "target": "drug:fluorouracil",
+            "weight": 4
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Colonic Neoplasms | Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Colonic Neoplasms | Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Colonic Neoplasms | Oxaliplatin",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Colonic Neoplasms | Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:colonic neoplasms",
+            "target": "drug:oxaliplatin",
+            "weight": 4
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Colonic Neoplasms | Leucovorin",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Colonic Neoplasms | Leucovorin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Colonic Neoplasms | Leucovorin",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Colonic Neoplasms | Leucovorin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:colonic neoplasms",
+            "target": "drug:leucovorin",
+            "weight": 4
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT07090499",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Cisplatin",
+                "title": "A Study to Learn About the Study Medicine Called PF-08046876 in People With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07090499"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[10].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Cisplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04389632",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Cisplatin",
+                "title": "A Study of Sigvotatug Vedotin in Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04389632"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[10].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Cisplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:carcinoma, non-small-cell lung",
+            "target": "drug:cisplatin",
+            "weight": 4
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT06580938",
+                "field": "derivedSection.conditionBrowseModule.meshes[5].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Colorectal Neoplasms | Sasanlimab",
+                "title": "A Study to Learn About PF-07921585 Alone or With Other Anti-cancer Medicines in People With Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06580938"
+              },
+              {
+                "nct_id": "NCT06546553",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Colorectal Neoplasms | sasanlimab",
+                "title": "A Study to Learn About How Different Amounts of the Study Medicine PF-07826390 Act in the Body of People With Cancer When Taken Alone or With Other Anti-cancer Medicines.",
+                "url": "https://clinicaltrials.gov/study/NCT06546553"
+              },
+              {
+                "nct_id": "NCT06285097",
+                "field": "derivedSection.conditionBrowseModule.meshes[6].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Colorectal Neoplasms | Sasanlimab",
+                "title": "A Study of PF-07820435 as a Single Agent and in Combination in Participants With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06285097"
+              },
+              {
+                "nct_id": "NCT05061537",
+                "field": "derivedSection.conditionBrowseModule.meshes[7].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Colorectal Neoplasms | Sasanlimab",
+                "title": "Study of PF-07263689 in Participants With Selected Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT05061537"
+              }
+            ],
+            "source": "condition:colorectal neoplasms",
+            "target": "drug:sasanlimab",
+            "weight": 4
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT05355701",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine Called PF-07799933 in People With Advanced Solid Tumors With BRAF Alterations.",
+                "url": "https://clinicaltrials.gov/study/NCT05355701"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04800822",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Cetuximab",
+                "title": "PF-07284892 in Participants With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04800822"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:carcinoma, non-small-cell lung",
+            "target": "drug:cetuximab",
+            "weight": 4
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT05355701",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine Called PF-07799933 in People With Advanced Solid Tumors With BRAF Alterations.",
+                "url": "https://clinicaltrials.gov/study/NCT05355701"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06131840",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Fluorouracil",
+                "title": "A Study of SGN-CEACAM5C in Adults With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06131840"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:carcinoma, non-small-cell lung",
+            "target": "drug:fluorouracil",
+            "weight": 4
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT05355701",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Leucovorin",
+                "title": "A Study to Learn About the Study Medicine Called PF-07799933 in People With Advanced Solid Tumors With BRAF Alterations.",
+                "url": "https://clinicaltrials.gov/study/NCT05355701"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Leucovorin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06131840",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Leucovorin",
+                "title": "A Study of SGN-CEACAM5C in Adults With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06131840"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Leucovorin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:carcinoma, non-small-cell lung",
+            "target": "drug:leucovorin",
+            "weight": 4
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT05355701",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine Called PF-07799933 in People With Advanced Solid Tumors With BRAF Alterations.",
+                "url": "https://clinicaltrials.gov/study/NCT05355701"
+              },
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06131840",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Oxaliplatin",
+                "title": "A Study of SGN-CEACAM5C in Adults With Advanced Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT06131840"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:carcinoma, non-small-cell lung",
+            "target": "drug:oxaliplatin",
+            "weight": 4
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[8].term",
+                "excerpt": "Colorectal Neoplasms | pembrolizumab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[8].term",
+                "excerpt": "Colorectal Neoplasms | pembrolizumab",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              },
+              {
+                "nct_id": "NCT05217446",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Colorectal Neoplasms | pembrolizumab",
+                "title": "A Study of Encorafenib Plus Cetuximab Taken Together With Pembrolizumab Compared to Pembrolizumab Alone in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT05217446"
+              },
+              {
+                "nct_id": "NCT04430738",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Colorectal Neoplasms | pembrolizumab",
+                "title": "Tucatinib Plus Trastuzumab and Oxaliplatin-based Chemotherapy or Pembrolizumab-containing Combinations for HER2+ Gastrointestinal Cancers",
+                "url": "https://clinicaltrials.gov/study/NCT04430738"
+              }
+            ],
+            "source": "condition:colorectal neoplasms",
+            "target": "drug:pembrolizumab",
+            "weight": 4
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Rectal Neoplasms | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Rectal Neoplasms | Cetuximab",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Rectal Neoplasms | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              },
+              {
+                "nct_id": "NCT05217446",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Rectal Neoplasms | Cetuximab",
+                "title": "A Study of Encorafenib Plus Cetuximab Taken Together With Pembrolizumab Compared to Pembrolizumab Alone in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT05217446"
+              }
+            ],
+            "source": "condition:rectal neoplasms",
+            "target": "drug:cetuximab",
+            "weight": 4
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[5].term | derivedSection.interventionBrowseModule.meshes[8].term",
+                "excerpt": "Lung Neoplasms | pembrolizumab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT07222566",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Lung Neoplasms | pembrolizumab",
+                "title": "Symbiotic-Lung-01 : A Study to Learn About the Study Medicine Called PF-08634404 in Combination With Chemotherapy in Adult Participants With Locally Advanced or Metastatic Non-Small Cell Lung Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT07222566"
+              },
+              {
+                "nct_id": "NCT06758401",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Lung Neoplasms | pembrolizumab",
+                "title": "This is a Study to Learn About How the Combination of the Study Medicines Sigvotatug Vedotin Plus Pembrolizumab Works in People With Non-small Cell Lung Cancer With High Levels of PD-L1.",
+                "url": "https://clinicaltrials.gov/study/NCT06758401"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[5].term | derivedSection.interventionBrowseModule.meshes[8].term",
+                "excerpt": "Lung Neoplasms | pembrolizumab",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:lung neoplasms",
+            "target": "drug:pembrolizumab",
+            "weight": 4
+          },
+          {
+            "citation_count": 4,
+            "citations": [
+              {
+                "nct_id": "NCT04557449",
+                "field": "derivedSection.conditionBrowseModule.meshes[2].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Fulvestrant",
+                "title": "Study to Test the Safety and Tolerability of PF-07220060 in Participants With Advance Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04557449"
+              },
+              {
+                "nct_id": "NCT04579380",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Fulvestrant",
+                "title": "Basket Study of Tucatinib and Trastuzumab in Solid Tumors With HER2 Alterations",
+                "url": "https://clinicaltrials.gov/study/NCT04579380"
+              },
+              {
+                "nct_id": "NCT05905341",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Fulvestrant",
+                "title": "Study of PF-07224826, as a Single Agent or in Combination With Endocrine Therapy in Participants With Breast Cancer and Other Advanced Solid Tumors.",
+                "url": "https://clinicaltrials.gov/study/NCT05905341"
+              },
+              {
+                "nct_id": "NCT04606446",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Carcinoma, Non-Small-Cell Lung | Fulvestrant",
+                "title": "Study of PF-07248144 in Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04606446"
+              }
+            ],
+            "source": "condition:carcinoma, non-small-cell lung",
+            "target": "drug:fulvestrant",
+            "weight": 4
+          },
+          {
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT04609566",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Melanoma | pembrolizumab",
+                "title": "Brentuximab Vedotin With Pembrolizumab in Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04609566"
+              },
+              {
+                "nct_id": "NCT04657991",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Melanoma | pembrolizumab",
+                "title": "A Clinical Trial of Three Study Medicines (Encorafenib, Binimetinib, and Pembrolizumab) in Patients With Advanced or Metastatic Melanoma",
+                "url": "https://clinicaltrials.gov/study/NCT04657991"
+              },
+              {
+                "nct_id": "NCT05926960",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Melanoma | pembrolizumab",
+                "title": "A Study Comparing 3 Study Medicines (Encorafenib, Binimetinib, Pembrolizumab) to 2 Study Medicines (Ipilimumab and Nivolumab) in Patients With Advanced Melanoma",
+                "url": "https://clinicaltrials.gov/study/NCT05926960"
+              }
+            ],
+            "source": "condition:melanoma",
+            "target": "drug:pembrolizumab",
+            "weight": 3
+          },
+          {
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Breast Neoplasms | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT07897721",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Breast Neoplasms | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08165784 in People With PIK3CA-Mutated Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07897721"
+              },
+              {
+                "nct_id": "NCT05226871",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Breast Neoplasms | Cetuximab",
+                "title": "Study for Participants Continuing From Pfizer-sponsored Palbociclib (a Study Medicine) Studies",
+                "url": "https://clinicaltrials.gov/study/NCT05226871"
+              }
+            ],
+            "source": "condition:breast neoplasms",
+            "target": "drug:cetuximab",
+            "weight": 3
+          },
+          {
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT07318805",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Colorectal Neoplasms | Fulvestrant",
+                "title": "A Study to Learn About the Study Medicine Called PF-08032562 in People With Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT07318805"
+              },
+              {
+                "nct_id": "NCT04557449",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[1].term",
+                "excerpt": "Colorectal Neoplasms | Fulvestrant",
+                "title": "Study to Test the Safety and Tolerability of PF-07220060 in Participants With Advance Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT04557449"
+              },
+              {
+                "nct_id": "NCT04579380",
+                "field": "derivedSection.conditionBrowseModule.meshes[6].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Colorectal Neoplasms | Fulvestrant",
+                "title": "Basket Study of Tucatinib and Trastuzumab in Solid Tumors With HER2 Alterations",
+                "url": "https://clinicaltrials.gov/study/NCT04579380"
+              }
+            ],
+            "source": "condition:colorectal neoplasms",
+            "target": "drug:fulvestrant",
+            "weight": 3
+          },
+          {
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT06580938",
+                "field": "derivedSection.conditionBrowseModule.meshes[6].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Lung Neoplasms | Sasanlimab",
+                "title": "A Study to Learn About PF-07921585 Alone or With Other Anti-cancer Medicines in People With Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT06580938"
+              },
+              {
+                "nct_id": "NCT06870487",
+                "field": "derivedSection.conditionBrowseModule.meshes[6].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Lung Neoplasms | Sasanlimab",
+                "title": "A Study to Learn About the Study Medicine Called PF-08046032 in People With Advanced Cancers",
+                "url": "https://clinicaltrials.gov/study/NCT06870487"
+              },
+              {
+                "nct_id": "NCT05233436",
+                "field": "derivedSection.conditionBrowseModule.meshes[4].term | protocolSection.armsInterventionsModule.interventions[1].name",
+                "excerpt": "Lung Neoplasms | Sasanlimab",
+                "title": "PF-07265028 As Single Agent And In Combination With Sasanlimab in Advanced or Metastatic Solid Tumors",
+                "url": "https://clinicaltrials.gov/study/NCT05233436"
+              }
+            ],
+            "source": "condition:lung neoplasms",
+            "target": "drug:sasanlimab",
+            "weight": 3
+          },
+          {
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Rectal Neoplasms | Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[6].term",
+                "excerpt": "Rectal Neoplasms | Fluorouracil",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Rectal Neoplasms | Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:rectal neoplasms",
+            "target": "drug:fluorouracil",
+            "weight": 3
+          },
+          {
+            "citation_count": 3,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Rectal Neoplasms | Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT04607421",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[2].term",
+                "excerpt": "Rectal Neoplasms | Oxaliplatin",
+                "title": "A Study of Encorafenib Plus Cetuximab With or Without Chemotherapy in People With Previously Untreated Metastatic Colorectal Cancer",
+                "url": "https://clinicaltrials.gov/study/NCT04607421"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[3].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Rectal Neoplasms | Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:rectal neoplasms",
+            "target": "drug:oxaliplatin",
+            "weight": 3
+          },
+          {
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:carcinoma, pancreatic ductal",
+            "target": "drug:cetuximab",
+            "weight": 2
+          },
+          {
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal | Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[4].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal | Fluorouracil",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:carcinoma, pancreatic ductal",
+            "target": "drug:fluorouracil",
+            "weight": 2
+          },
+          {
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal | Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[5].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal | Oxaliplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:carcinoma, pancreatic ductal",
+            "target": "drug:oxaliplatin",
+            "weight": 2
+          },
+          {
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[10].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal | Cisplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[10].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal | Cisplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:carcinoma, pancreatic ductal",
+            "target": "drug:cisplatin",
+            "weight": 2
+          },
+          {
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[12].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal | Carboplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[0].term | derivedSection.interventionBrowseModule.meshes[12].term",
+                "excerpt": "Carcinoma, Pancreatic Ductal | Carboplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:carcinoma, pancreatic ductal",
+            "target": "drug:carboplatin",
+            "weight": 2
+          },
+          {
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[10].term",
+                "excerpt": "Colorectal Neoplasms | Cisplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[10].term",
+                "excerpt": "Colorectal Neoplasms | Cisplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:colorectal neoplasms",
+            "target": "drug:cisplatin",
+            "weight": 2
+          },
+          {
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[12].term",
+                "excerpt": "Colorectal Neoplasms | Carboplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[1].term | derivedSection.interventionBrowseModule.meshes[12].term",
+                "excerpt": "Colorectal Neoplasms | Carboplatin",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:colorectal neoplasms",
+            "target": "drug:carboplatin",
+            "weight": 2
+          },
+          {
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT06704724",
+                "field": "derivedSection.conditionBrowseModule.meshes[5].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Lung Neoplasms | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine PF-07985045 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Change in a Gene.",
+                "url": "https://clinicaltrials.gov/study/NCT06704724"
+              },
+              {
+                "nct_id": "NCT06447662",
+                "field": "derivedSection.conditionBrowseModule.meshes[5].term | derivedSection.interventionBrowseModule.meshes[3].term",
+                "excerpt": "Lung Neoplasms | Cetuximab",
+                "title": "A Study to Learn About the Study Medicine PF-07934040 When Given Alone or With Other Anti-cancer Therapies in People With Advanced Solid Tumors That Have a Genetic Mutation.",
+                "url": "https://clinicaltrials.gov/study/NCT06447662"
+              }
+            ],
+            "source": "condition:lung neoplasms",
+            "target": "drug:cetuximab",
+            "weight": 2
+          },
+          {
+            "citation_count": 2,
+            "citations": [
+              {
+                "nct_id": "NCT04962230",
+                "field": "protocolSection.conditionsModule.conditions[0] | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Healthy Participant | nirmatrelvir and ritonavir drug combination",
+                "title": "Drug-Drug Interaction Study Assessing Effect of Carbamazepine on PF-07321332 Boosted With Ritonavir",
+                "url": "https://clinicaltrials.gov/study/NCT04962230"
+              },
+              {
+                "nct_id": "NCT04962022",
+                "field": "protocolSection.conditionsModule.conditions[0] | derivedSection.interventionBrowseModule.meshes[0].term",
+                "excerpt": "Healthy Participant | nirmatrelvir and ritonavir drug combination",
+                "title": "Drug-Drug Interaction Study Assessing Effect of Itraconazole on PF-07321332/Ritonavir in Healthy Participants",
+                "url": "https://clinicaltrials.gov/study/NCT04962022"
+              }
+            ],
+            "source": "condition:healthy volunteers",
+            "target": "drug:nirmatrelvir and ritonavir drug combination",
+            "weight": 2
+          }
+        ]
+      }
+    },
+    "meta": {
+      "answer_mode": "visualization",
+      "query_interpretation": "Network linking conditions and drugs in trials sponsored by Pfizer starting from 2020.",
+      "filters_applied": {
+        "filters": {
+          "sponsor": "Pfizer",
+          "start_year": 2020
+        },
+        "api_params": {
+          "query.lead": "Pfizer",
+          "filter.advanced": "AREA[StartDate]RANGE[2020-01-01,MAX]"
+        }
+      },
+      "plan": {
+        "answer_mode": "visualization",
+        "unsupported_reason": null,
+        "intent": "network",
+        "cohorts": [],
+        "shared_filters": {
+          "intervention": null,
+          "condition": null,
+          "sponsor": "Pfizer",
+          "country": null,
+          "status": null,
+          "phase": null,
+          "study_type": null,
+          "start_year": 2020,
+          "end_year": null
+        },
+        "group_by": null,
+        "split_by": null,
+        "measure": null,
+        "network": {
+          "source_dim": "condition",
+          "target_dim": "drug"
+        },
+        "viz_type": "network_graph",
+        "top_n": 15,
+        "interpretation": "Network linking conditions and drugs in trials sponsored by Pfizer starting from 2020.",
+        "max_records": 10000,
+        "notes": []
+      },
+      "units": {
+        "node_size": "trials",
+        "edge_weight": "shared trials"
+      },
+      "sort": {
+        "field": "weight",
+        "order": "desc"
+      },
+      "time_granularity": null,
+      "grouping": null,
+      "binning": null,
+      "geo_hint": null,
+      "record_counts": {
+        "total_matching": 871,
+        "fetched": 871,
+        "truncated": false,
+        "count_method": "full_scan"
+      },
+      "notes": [
+        "For readability each entity keeps its 3 strongest links (47 of 65 links among the shown entities).",
+        "1080 edges supported by fewer than 2 trials were removed.",
+        "Showing the 27 most connected of 252 entities.",
+        "Edge weight = number of distinct trials in which both entities appear (682 trials contributed at least one edge)."
+      ],
+      "source": {
+        "name": "clinicaltrials.gov",
+        "api": "https://clinicaltrials.gov/api/v2",
+        "api_version": "2.0.5",
+        "data_timestamp": "2026-11-10T10:00:05",
+        "retrieved_at": "2026-11-10T17:23:48.932815Z"
+      }
+    }
+  }
+}

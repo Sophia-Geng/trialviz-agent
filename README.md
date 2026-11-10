@@ -95,7 +95,7 @@ Without `OPENAI_API_KEY` the service still runs. It uses the keyword fallback pl
 
 | Command | Purpose |
 |---|---|
-| `pytest` | Run the test suite (251 tests, offline, uses recorded real API responses) |
+| `pytest` | Run the test suite (260 tests, offline, uses recorded real API responses) |
 | `python scripts/run_examples.py` | Regenerate `examples/` through the HTTP API (needs the API key) |
 | `python scripts/eval_planner.py [models...]` | Planner evaluation over 25 labeled questions, writes `docs/planner_eval.md` (needs the API key) |
 | `python scripts/run_plan_demo.py` | Run hand-written QueryPlans against the live API without the LLM |
@@ -315,6 +315,7 @@ All of these come from inspecting recorded real responses (`tests/fixtures/`):
 | Conditions are free text: 10019 distinct spellings in 10000 trials ("Type 2 Diabetes" / "Diabetes Mellitus, Type 2", "Postoperative Pain" / "Pain, Postoperative", "COVID-19" / "Covid19", "Healthy" / "Healthy Volunteers" / "Healthy Participants") | `condition` uses the API's condition MeSH terms (75% of trials), so labels are MeSH headings such as "Breast Neoplasms". Without MeSH it falls back to the free text, and healthy-volunteer spellings are merged. Result: 3777 distinct values |
 | Wrong MeSH mappings in the source: ClinicalTrials.gov tags ~100 of the sampled pain / anesthesia trials with "Agnosia" (a perception disorder), mostly from "Analgesia"; no such trial names agnosia | Listed explicitly (`KNOWN_CONDITION_MISMAPS`): the term is kept only if the free text names it, otherwise it is dropped and "Analgesia" is restored. String similarity cannot detect this generically: "analgesia → agnosia" scores the same 0.62 as the valid "depression → depressive disorder" |
 | One investigator, several spellings ("Sean van Diepen, MD" / "Sean van Diepen, MD, MSc") | Grouped by the name before the first comma, without titles |
+| Sponsor names with different legal suffixes ("Celgene" / "Celgene Corporation", "Daiichi Sankyo" / "Daiichi Sankyo Co., Ltd.") | Audited on 13782 trials: only 5 groups (6 of 4939 names), since the registry already standardizes sponsors. Grouped by name without legal-form suffix. The name itself is never fuzzy-matched, so "Merck Sharp & Dohme" and "Merck KGaA" stay apart. Subsidiaries of one group (Eisai Inc. / Eisai Co., Ltd.) are merged on purpose |
 | Intervention MeSH present for ~90% of drug-searched trials but only 50–67% of condition-searched ones | Fallback to cleaned registered names is required, not optional |
 | Cohort overlap (a trial uses both compared drugs) | Counted in each cohort, overlap size noted (174 trials for pembrolizumab vs nivolumab) |
 | Search characters that break the query syntax (`" [ ] ( )`) | Stripped. Multi-word values are quoted (`AREA[InterventionName]"trastuzumab deruxtecan"`) |
@@ -322,7 +323,7 @@ All of these come from inspecting recorded real responses (`tests/fixtures/`):
 
 ## 8. Testing and validation
 
-**Automated tests** (`pytest`, 251 tests, fully offline):
+**Automated tests** (`pytest`, 260 tests, fully offline):
 
 - **Hand-countable aggregation**: small synthetic datasets where the expected counts can be worked out by hand (phase buckets sum to the total, multi-valued dedupe, citations point to raw values, time-series gap filling, top-N truncation, grouped-bar zero fill, network weights and pruning).
 - **Real-data extraction**: every dimension runs on 500 recorded real studies (5 queries). Checks: no crashes, one count per distinct value, every value has an excerpt and a field path. Drug synonyms never form their own node, and ≥ 95% of trials matched by the strict drug search map to that drug.
@@ -384,11 +385,12 @@ All files in [`examples/`](examples/) are real outputs from `scripts/run_example
 | [`09_histogram_enrollment`](examples/09_histogram_enrollment.json) | "What is the distribution of enrollment sizes in phase 3 breast cancer trials?" | `histogram`, 1566 trials, log bins, mode at 200–500 participants (501 trials) |
 | [`10_scatter_enrollment_duration`](examples/10_scatter_enrollment_duration.json) | "Is there a relationship between enrollment and trial duration for completed melanoma trials?" | `scatter_plot`, 1610 points (143 trials lack a value) |
 | [`11_network_combinations_unscoped`](examples/11_network_combinations_unscoped.json) | "Which drugs are most often combined in combination studies?" | `network_graph`. No entity given, so the scope guard limits the search to interventional trials since 2021. 180456 match, the first 10000 are used (`truncated: true`, noted). The clusters match known regimens (§8) |
+| [`12_network_condition_drug`](examples/12_network_condition_drug.json) | "Show a network of conditions and drugs for trials sponsored by Pfizer since 2020." | `network_graph` with MeSH condition headings: COVID-19 – nirmatrelvir/ritonavir 19, Breast Neoplasms – fulvestrant 12, Multiple Myeloma – elranatamab 12, Carcinoma, Non-Small-Cell Lung – sasanlimab 7 (871 trials, full scan) |
 
 ## 10. Limitations and future work
 
 - **Large result sets.** Above `max_records`, values come from the first N records in API order. Planned improvement: per-bucket `countTotal` requests for low-cardinality dimensions (phase, status, year), which give exact counts at one request per bucket. In the longer run, a nightly bulk download indexed locally.
-- **Entity resolution.** Sponsors are not merged across spellings ("Merck Sharp & Dohme LLC" vs "Merck KGaA" are, correctly, different, but subsidiaries are not grouped). MeSH can list a drug class and a specific drug side by side (e.g. "interleukin-2" and "aldesleukin").
+- **Entity resolution.** Sponsors are merged only across legal suffixes. Differently named subsidiaries (Genentech vs Roche) are not grouped. MeSH can list a drug class and a specific drug side by side (e.g. "interleukin-2" and "aldesleukin").
 - **`drug` misses about 1–3% of trials in our samples.** This happens when MeSH is present but incomplete (NCT04507906, "Nivolumab Combined with Anlotinib", is tagged only with anlotinib). Merging raw names with MeSH would bring synonym duplicates back. The fix is to map raw names onto MeSH through its synonym table. The evidence rule also has a cost. An old drug without an INN stem (e.g. aspirin) that appears in a mixed trial without a matching MeSH term is only kept if another trial in the batch confirms it. MeSH can also list a class or target next to the drug ("immune checkpoint inhibitors", "interleukin-2" next to "aldesleukin"). Cohort counts are not affected: they come from the API search itself.
 - **No eligibility, outcome or result data.** These fields exist in the API but are not modeled as dimensions. Such questions are classified as unsupported.
 - **Planner evaluation size.** 25 labeled questions (§8) are enough to find failure classes, not to estimate accuracy precisely. A few hundred questions, ideally from real users, and repeated runs for the non-deterministic `gpt-5*` models would be the next step. Grounding only catches terms with **zero** hits. A term that is valid but too narrow (like "乳腺癌", with 3 hits) needs either the prompt rule or a comparison against expected registry volume.

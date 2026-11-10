@@ -3,12 +3,12 @@
   "path": "/studies",
   "params": {
    "query.cond": "Alzheimer's disease",
-   "fields": "NCTId|BriefTitle|Phase|StartDate|StartDateType|CompletionDate|CompletionDateType|OverallStatus|StudyType|LeadSponsorName|LeadSponsorClass|InterventionType|InterventionName|InterventionOtherName|InterventionMeshTerm|InterventionMeshId|Condition|LocationCountry|LocationStatus|LocationFacility|OverallOfficialName|OverallOfficialRole|OverallOfficialAffiliation|EnrollmentCount",
+   "fields": "NCTId|BriefTitle|Phase|StartDate|StartDateType|CompletionDate|CompletionDateType|OverallStatus|StudyType|LeadSponsorName|LeadSponsorClass|InterventionType|InterventionName|InterventionOtherName|InterventionMeshTerm|InterventionMeshId|Condition|ConditionMeshTerm|LocationCountry|LocationStatus|LocationFacility|OverallOfficialName|OverallOfficialRole|OverallOfficialAffiliation|EnrollmentCount",
    "pageSize": 100,
    "countTotal": "true"
   }
  },
- "retrieved_at": "2026-11-10T16:55:20.037721+00:00",
+ "retrieved_at": "2026-11-10T17:22:00.132204+00:00",
  "pages": [
   {
    "totalCount": 4299,
@@ -75,6 +75,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -435,7 +442,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -629,6 +647,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -702,6 +727,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -899,6 +937,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -980,7 +1025,27 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Aberrant Motor Behavior in Dementia"
+        },
+        {
+         "term": "Aggression"
+        },
+        {
+         "term": "Behavior"
+        },
+        {
+         "term": "Psychomotor Agitation"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -1049,7 +1114,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Suicide"
+        },
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -1141,6 +1217,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -1217,7 +1303,24 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Parkinson Disease"
+        },
+        {
+         "term": "Inflammation"
+        },
+        {
+         "term": "Neuroinflammatory Diseases"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -1296,7 +1399,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Lethargy"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -1367,7 +1481,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -1725,7 +1850,30 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Plaque, Amyloid"
+        },
+        {
+         "term": "Cognition Disorders"
+        },
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Pick Disease of the Brain"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -1782,7 +1930,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -1872,7 +2028,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -1944,6 +2108,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -2013,7 +2184,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Cognitive Dysfunction"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -2079,6 +2261,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Dementia"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -2178,6 +2373,25 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Dementia, Vascular"
+        },
+        {
+         "term": "Pain"
+        },
+        {
+         "term": "Psychomotor Agitation"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -2247,7 +2461,33 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Lewy Body Disease"
+        },
+        {
+         "term": "Dementia, Vascular"
+        },
+        {
+         "term": "Frontotemporal Dementia"
+        },
+        {
+         "term": "Mixed Dementias"
+        },
+        {
+         "term": "Caregiver Burden"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -4627,6 +4867,22 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Dementia, Vascular"
+        },
+        {
+         "term": "Lewy Body Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -4700,7 +4956,21 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Dementia, Vascular"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Mixed Dementias"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -4767,7 +5037,24 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Mixed Dementias"
+        },
+        {
+         "term": "Brain Injuries, Traumatic"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -4839,6 +5126,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Hypertension"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -4972,6 +5269,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cognitive Dysfunction"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5037,7 +5341,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Urinary Bladder, Overactive"
+        },
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -5093,7 +5408,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -5158,6 +5481,40 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Brain Diseases"
+        },
+        {
+         "term": "Central Nervous System Diseases"
+        },
+        {
+         "term": "Nervous System Diseases"
+        },
+        {
+         "term": "Tauopathies"
+        },
+        {
+         "term": "Neurodegenerative Diseases"
+        },
+        {
+         "term": "Neurocognitive Disorders"
+        },
+        {
+         "term": "Mental Disorders"
+        },
+        {
+         "term": "Plaque, Amyloid"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5257,6 +5614,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5484,7 +5851,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -5543,7 +5918,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -5612,6 +5995,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Lewy Body Disease"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Neuroinflammatory Diseases"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5700,7 +6096,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -5769,6 +6173,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5854,6 +6265,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5937,6 +6358,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Cognitive Dysfunction"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6009,6 +6440,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Frailty"
+        },
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6082,6 +6526,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Parkinson Disease"
+        },
+        {
+         "term": "Pick Disease of the Brain"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6150,7 +6607,24 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Neurodegenerative Diseases"
+        },
+        {
+         "term": "Gait Disorders, Neurologic"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -6213,6 +6687,22 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Frailty"
+        },
+        {
+         "term": "Caregiver Burden"
+        },
+        {
+         "term": "Anxiety Disorders"
+        },
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6286,7 +6776,24 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Lewy Body Disease"
+        },
+        {
+         "term": "Frontotemporal Dementia"
+        },
+        {
+         "term": "Multiple System Atrophy"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -6350,6 +6857,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Dementia"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6539,6 +7053,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6605,7 +7129,24 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia, Vascular"
+        },
+        {
+         "term": "Dementia"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -6692,6 +7233,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -7413,7 +7961,21 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Cognitive Dysfunction"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -7482,6 +8044,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Sleep Apnea Syndromes"
+        },
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -9713,6 +10285,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -9774,7 +10353,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -9840,6 +10430,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10071,6 +10668,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10141,7 +10745,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -10199,7 +10811,21 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Supranuclear Palsy, Progressive"
+        },
+        {
+         "term": "Parkinson Disease"
+        },
+        {
+         "term": "Shy-Drager Syndrome"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -10256,7 +10882,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -10321,6 +10955,22 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Hearing Loss"
+        },
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Communication"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10389,7 +11039,27 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Lewy Body Disease"
+        },
+        {
+         "term": "Frontotemporal Dementia"
+        },
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Parkinson Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -10444,7 +11114,21 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Aphasia, Primary Progressive"
+        },
+        {
+         "term": "Neurocognitive Disorders"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -10509,6 +11193,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Pulmonary Arterial Hypertension"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10579,7 +11270,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -10643,6 +11345,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Prediabetic State"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10715,6 +11424,31 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cognition Disorders"
+        },
+        {
+         "term": "Nervous System Diseases"
+        },
+        {
+         "term": "Mental Disorders"
+        },
+        {
+         "term": "Brain Diseases"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Memory Disorders"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10789,7 +11523,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -10856,6 +11601,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Pick Disease of the Brain"
+        },
+        {
+         "term": "Nerve Degeneration"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10933,7 +11691,21 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Nerve Degeneration"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -11000,7 +11772,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -11080,6 +11863,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -11157,6 +11953,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -11228,7 +12031,21 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Neoplasms"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Emotional Regulation"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -11301,6 +12118,22 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Deafness"
+        },
+        {
+         "term": "Sign Language"
+        },
+        {
+         "term": "Cognitive Dysfunction"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -11368,7 +12201,21 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Frontotemporal Dementia"
+        },
+        {
+         "term": "Aphasia, Primary Progressive"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -11501,6 +12348,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -11586,7 +12440,21 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Neurocognitive Disorders"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -11658,7 +12526,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Diabetes Mellitus, Type 2"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -11725,7 +12604,21 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Amyloid Neuropathies, Familial"
+        },
+        {
+         "term": "Amyloidosis"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -11802,7 +12695,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Down Syndrome"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -12516,6 +13420,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -12596,7 +13507,24 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Parkinson Disease"
+        },
+        {
+         "term": "Lewy Body Disease"
+        },
+        {
+         "term": "Mixed Dementias"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -12653,6 +13581,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -12724,7 +13662,24 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Frontotemporal Lobar Degeneration"
+        },
+        {
+         "term": "Memory Disorders"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -12789,7 +13744,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Chronic Traumatic Encephalopathy"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -12861,7 +13827,24 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Neurodegenerative Diseases"
+        },
+        {
+         "term": "Behavior"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -12922,7 +13905,21 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Depression"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -12975,7 +13972,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -13059,6 +14064,22 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cerebral Small Vessel Diseases"
+        },
+        {
+         "term": "Stroke, Lacunar"
+        },
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -13148,6 +14169,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -13223,7 +14251,24 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Anxiety Disorders"
+        },
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Psychomotor Agitation"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -13310,7 +14355,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -13376,7 +14429,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -13519,6 +14580,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -13592,6 +14660,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Gout"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -13660,7 +14735,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -13746,6 +14832,25 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Parkinson Disease"
+        },
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -13941,7 +15046,27 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Caregiver Burden"
+        },
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Psychological Well-Being"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -14008,7 +15133,24 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Caregiver Burden"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Dementia"
+        },
+        {
+         "term": "Deglutition Disorders"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -14076,6 +15218,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Alzheimer Disease"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -14187,6 +15336,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Cognitive Dysfunction"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Memory Disorders"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -14273,7 +15435,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Memory Disorders"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -14354,7 +15524,24 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Amyotrophic Lateral Sclerosis"
+        },
+        {
+         "term": "Parkinson Disease"
+        },
+        {
+         "term": "Alzheimer Disease"
+        },
+        {
+         "term": "Multiple Sclerosis"
+        }
+       ]
+      }
+     }
     }
    ],
    "nextPageToken": "ZVNj7o2Elu8o3lpyXdC5577umpOQJJxnbfah3fg"

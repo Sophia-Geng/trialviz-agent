@@ -266,6 +266,22 @@ def is_placeholder_official(name: str) -> bool:
     return bool(_PLACEHOLDER_OFFICIAL.search(name))
 
 
+_COMPANY_SUFFIX = re.compile(
+    r"[,.]?\s+(inc|llc|l\.l\.c|corp|corporation|co|company|ltd|limited|gmbh|ag|s\.?a|plc|b\.?v|n\.?v|s\.?p\.?a|"
+    r"k\.?k|pty|lp)\.?$"
+)
+
+
+def organization_key(name: str) -> str:
+    """Grouping key for sponsors: legal-form suffixes are dropped ('Celgene Corporation' = 'Celgene',
+    'Daiichi Sankyo Co., Ltd.' = 'Daiichi Sankyo'); the name itself is untouched, so 'Merck Sharp &
+    Dohme' and 'Merck KGaA' stay apart."""
+    key = text_key(name)
+    while (stripped := _COMPANY_SUFFIX.sub("", key).strip(" ,.")) != key and stripped:
+        key = stripped
+    return key
+
+
 _TITLE_PREFIX = re.compile(r"^(dr|prof|professor|mr|mrs|ms)\.?\s+", re.IGNORECASE)
 
 

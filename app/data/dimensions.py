@@ -106,12 +106,12 @@ def _enum_field(path: str, labels: dict[str, str] | None = None) -> Extractor:
     return extract
 
 
-def _text_field(path: str) -> Extractor:
+def _text_field(path: str, key: Callable[[str], str] = n.text_key) -> Extractor:
     def extract(study: dict) -> list[Extracted]:
         raw = get(study, path)
         if not raw or not raw.strip():
             return _unknown(path)
-        return [Extracted(n.text_key(raw), n.clean_label(raw), raw, path)]
+        return [Extracted(key(raw), n.clean_label(raw), raw, path)]
 
     return extract
 
@@ -347,7 +347,7 @@ DIMENSIONS: dict[DimensionName, Dimension] = {
         Dimension(D.STUDY_TYPE, K.CATEGORICAL, "Study type", "Interventional, observational or expanded access.",
                   ("StudyType",), False, _enum_field(f"{DESIGN}.studyType")),
         Dimension(D.LEAD_SPONSOR, K.CATEGORICAL, "Lead sponsor", "Lead sponsor organization name.",
-                  ("LeadSponsorName",), False, _text_field(f"{SPONSORS}.leadSponsor.name")),
+                  ("LeadSponsorName",), False, _text_field(f"{SPONSORS}.leadSponsor.name", n.organization_key)),
         Dimension(D.SPONSOR_CLASS, K.CATEGORICAL, "Sponsor category", "Lead sponsor category: industry, NIH, other...",
                   ("LeadSponsorClass",), False,
                   _enum_field(f"{SPONSORS}.leadSponsor.class", n.SPONSOR_CLASS_LABELS)),

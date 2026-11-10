@@ -194,5 +194,21 @@ def test_is_healthy(raw, expected):
     assert n.is_healthy(raw) is expected
 
 
+@pytest.mark.parametrize(
+    ("a", "b", "same"),
+    [
+        ("Celgene", "Celgene Corporation", True),
+        ("Daiichi Sankyo", "Daiichi Sankyo Co., Ltd.", True),
+        ("Eisai Inc.", "Eisai Co., Ltd.", True),
+        ("Teva Branded Pharmaceutical Products R&D LLC", "Teva Branded Pharmaceutical Products R&D, Inc.", True),
+        ("Merck Sharp & Dohme LLC", "Merck KGaA", False),
+        ("Pfizer", "Pfizer's Upjohn has merged with Mylan to form Viatris Inc.", False),
+        ("Hoffmann-La Roche", "Genentech, Inc.", False),
+    ],
+)
+def test_organization_key(a, b, same):
+    assert (n.organization_key(a) == n.organization_key(b)) is same
+
+
 def test_text_key_merges_case_and_whitespace():
     assert n.text_key("  Breast   Cancer ") == n.text_key("breast cancer")

@@ -4,12 +4,12 @@
   "params": {
    "query.cond": "breast cancer",
    "filter.overallStatus": "RECRUITING",
-   "fields": "NCTId|BriefTitle|Phase|StartDate|StartDateType|CompletionDate|CompletionDateType|OverallStatus|StudyType|LeadSponsorName|LeadSponsorClass|InterventionType|InterventionName|InterventionOtherName|InterventionMeshTerm|InterventionMeshId|Condition|LocationCountry|LocationStatus|LocationFacility|OverallOfficialName|OverallOfficialRole|OverallOfficialAffiliation|EnrollmentCount",
+   "fields": "NCTId|BriefTitle|Phase|StartDate|StartDateType|CompletionDate|CompletionDateType|OverallStatus|StudyType|LeadSponsorName|LeadSponsorClass|InterventionType|InterventionName|InterventionOtherName|InterventionMeshTerm|InterventionMeshId|Condition|ConditionMeshTerm|LocationCountry|LocationStatus|LocationFacility|OverallOfficialName|OverallOfficialRole|OverallOfficialAffiliation|EnrollmentCount",
    "pageSize": 100,
    "countTotal": "true"
   }
  },
- "retrieved_at": "2026-11-10T16:55:24.993093+00:00",
+ "retrieved_at": "2026-11-10T17:22:04.070690+00:00",
  "pages": [
   {
    "totalCount": 2451,
@@ -210,6 +210,40 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Neoplasms"
+        },
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Hereditary Sensory and Autonomic Neuropathies"
+        },
+        {
+         "term": "Neoplasms by Site"
+        },
+        {
+         "term": "Breast Diseases"
+        },
+        {
+         "term": "Endometrial Neoplasms"
+        },
+        {
+         "term": "Ovarian Neoplasms"
+        },
+        {
+         "term": "Uterine Cervical Neoplasms"
+        },
+        {
+         "term": "Head and Neck Neoplasms"
+        },
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -401,6 +435,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Cognitive Dysfunction"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -545,6 +589,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -714,6 +765,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -796,6 +854,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -862,7 +927,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Neoplastic Cells, Circulating"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -928,7 +1004,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -975,7 +1059,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Neoplasm Metastasis"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -1165,6 +1260,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -1316,6 +1418,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -1423,6 +1535,58 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Neoplasms"
+        },
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Colorectal Neoplasms"
+        },
+        {
+         "term": "Neoplasm Metastasis"
+        },
+        {
+         "term": "Ovarian Neoplasms"
+        },
+        {
+         "term": "Glioblastoma"
+        },
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Leukemia, Myeloid, Acute"
+        },
+        {
+         "term": "Lymphoma, Non-Hodgkin"
+        },
+        {
+         "term": "Multiple Myeloma"
+        },
+        {
+         "term": "Lymphoma"
+        },
+        {
+         "term": "Liver Neoplasms"
+        },
+        {
+         "term": "Prostatic Neoplasms"
+        },
+        {
+         "term": "Lymphoma, Follicular"
+        },
+        {
+         "term": "Carcinoma, Hepatocellular"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -1542,6 +1706,34 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Sarcoma, Synovial"
+        },
+        {
+         "term": "Liposarcoma, Myxoid"
+        },
+        {
+         "term": "Colorectal Neoplasms"
+        },
+        {
+         "term": "Osteosarcoma"
+        },
+        {
+         "term": "Sarcoma"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -1625,6 +1817,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Ovarian Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -3163,6 +3365,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Parkinson Disease 4, Autosomal Dominant Lewy Body"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -3285,6 +3497,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Neoplasm, Residual"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -3389,7 +3611,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Dermatitis"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -3535,6 +3768,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -3601,7 +3841,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -3660,7 +3911,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -3723,7 +3982,24 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Colonic Neoplasms"
+        },
+        {
+         "term": "Head and Neck Neoplasms"
+        },
+        {
+         "term": "Colorectal Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -3801,7 +4077,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -4355,6 +4639,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -4466,6 +4757,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -4547,6 +4845,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -4636,6 +4944,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Exanthema"
+        },
+        {
+         "term": "Diarrhea"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -4816,6 +5134,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -4905,6 +5233,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -4982,7 +5317,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -5057,7 +5400,21 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Insulin Resistance"
+        },
+        {
+         "term": "Motor Activity"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -5123,6 +5480,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5327,6 +5691,22 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Colorectal Neoplasms"
+        },
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Colonic Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5412,7 +5792,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -5465,7 +5853,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Pancreatic Neoplasms"
+        },
+        {
+         "term": "Pancreatic carcinoma, familial"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -5539,6 +5938,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Acute Lung Injury"
+        },
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5609,6 +6018,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -5757,7 +6173,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -5818,7 +6242,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -5942,6 +6374,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6038,6 +6477,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nausea"
+        },
+        {
+         "term": "Vomiting"
+        },
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6136,6 +6588,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Gastrointestinal Neoplasms"
+        },
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Lung Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6216,6 +6681,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Lymphatic Metastasis"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6294,7 +6769,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Margins of Excision"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -6579,7 +7065,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -6671,6 +7165,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Radiation Pneumonitis"
+        },
+        {
+         "term": "Radiation Fibrosis Syndrome"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6879,6 +7386,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -6939,7 +7453,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -7003,7 +7528,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -7081,6 +7614,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -7202,6 +7742,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Meningeal Carcinomatosis"
+        },
+        {
+         "term": "Lung Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -7287,7 +7840,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -7356,6 +7917,37 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Neoplasms"
+        },
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Prostatic Neoplasms"
+        },
+        {
+         "term": "Thyroid Neoplasms"
+        },
+        {
+         "term": "Colorectal Neoplasms"
+        },
+        {
+         "term": "Lymphoma"
+        },
+        {
+         "term": "Multiple Myeloma"
+        },
+        {
+         "term": "Thyroid Diseases"
+        },
+        {
+         "term": "Neoplasms, Plasma Cell"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -7439,6 +8031,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -7512,7 +8114,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Motor Activity"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -9249,6 +9862,19 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Breast Cancer Lymphedema"
+        },
+        {
+         "term": "Lymphedema"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -9435,7 +10061,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -9588,7 +10222,39 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Ovarian Neoplasms"
+        },
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Lung Neoplasms"
+        },
+        {
+         "term": "Stomach Neoplasms"
+        },
+        {
+         "term": "Endometrial Neoplasms"
+        },
+        {
+         "term": "Head and Neck Neoplasms"
+        },
+        {
+         "term": "Prostatic Neoplasms"
+        },
+        {
+         "term": "Neoplasm Metastasis"
+        },
+        {
+         "term": "Motor Activity"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -9653,7 +10319,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -9716,7 +10390,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -9810,6 +10492,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -9908,6 +10597,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10016,7 +10712,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Patient Satisfaction"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -10106,6 +10813,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10195,6 +10909,16 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Alopecia"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10261,7 +10985,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Motor Activity"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -10401,6 +11136,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -10468,7 +11210,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -10626,6 +11376,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -11011,7 +11768,48 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Urinary Bladder Neoplasms"
+        },
+        {
+         "term": "Ureteral Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Esophageal Neoplasms"
+        },
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        },
+        {
+         "term": "Carcinoma, Ovarian Epithelial"
+        },
+        {
+         "term": "Fallopian Tube Neoplasms"
+        },
+        {
+         "term": "Endometrial Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Renal Cell"
+        },
+        {
+         "term": "Rectal Neoplasms"
+        },
+        {
+         "term": "Colonic Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -11082,6 +11880,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -11158,7 +11963,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -11277,6 +12090,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -11432,7 +12252,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -11535,7 +12363,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -11683,7 +12519,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Ovarian Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -11751,6 +12598,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Disease Progression"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -12084,6 +12938,34 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Uterine Cervical Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Squamous Cell Carcinoma of Head and Neck"
+        },
+        {
+         "term": "Carcinoma, Renal Cell"
+        },
+        {
+         "term": "Carcinoma, Transitional Cell"
+        },
+        {
+         "term": "Melanoma"
+        },
+        {
+         "term": "Ovarian Neoplasms"
+        },
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -12173,7 +13055,30 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        },
+        {
+         "term": "Colonic Neoplasms"
+        },
+        {
+         "term": "Stomach Neoplasms"
+        },
+        {
+         "term": "Carcinoma, Non-Small-Cell Lung"
+        },
+        {
+         "term": "Mesothelioma"
+        },
+        {
+         "term": "Sarcoma"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -12237,7 +13142,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -12305,7 +13218,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -12362,7 +13283,18 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        },
+        {
+         "term": "Sepsis"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -12429,7 +13361,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -12531,6 +13471,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Triple Negative Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -12623,7 +13570,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -13103,7 +14058,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -13190,6 +14153,13 @@
       }
      },
      "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      },
       "interventionBrowseModule": {
        "meshes": [
         {
@@ -13265,7 +14235,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -13326,7 +14304,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Breast Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -13392,7 +14378,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Brain Neoplasms"
+        }
+       ]
+      }
+     }
     },
     {
      "protocolSection": {
@@ -13451,7 +14445,15 @@
        ]
       }
      },
-     "derivedSection": {}
+     "derivedSection": {
+      "conditionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Neoplasms"
+        }
+       ]
+      }
+     }
     }
    ],
    "nextPageToken": "ZVNj7o2Elu8o3lpyXdC5577umpOQJJxuYvGi3vwW"
