@@ -49,6 +49,11 @@ FIELDS = "|".join(
     ]
 )
 
+def drug_query(name: str) -> str:
+    """Strict drug match; plain query.intr applies concept expansion and over-matches (PLAN.md §10)."""
+    return f"AREA[InterventionName]{name} OR AREA[InterventionMeshTerm]{name}"
+
+
 # name -> (path, params, pages). One fixture per example query in PLAN.md §13,
 # plus metadata endpoints, a full single record and a multi-page sample.
 FIXTURES: dict[str, tuple[str, dict[str, str | int], int]] = {
@@ -58,7 +63,7 @@ FIXTURES: dict[str, tuple[str, dict[str, str | int], int]] = {
     "pembrolizumab_since_2015": (
         "/studies",
         {
-            "query.intr": "pembrolizumab",
+            "query.intr": drug_query("pembrolizumab"),
             "filter.advanced": "AREA[StartDate]RANGE[2015-01-01,MAX]",
             "fields": FIELDS,
             "pageSize": 100,
@@ -68,7 +73,7 @@ FIXTURES: dict[str, tuple[str, dict[str, str | int], int]] = {
     ),
     "nivolumab": (
         "/studies",
-        {"query.intr": "nivolumab", "fields": FIELDS, "pageSize": 100, "countTotal": "true"},
+        {"query.intr": drug_query("nivolumab"), "fields": FIELDS, "pageSize": 100, "countTotal": "true"},
         1,
     ),
     "alzheimer": (

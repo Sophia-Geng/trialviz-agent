@@ -2,200 +2,17 @@
  "request": {
   "path": "/studies",
   "params": {
-   "query.intr": "nivolumab",
+   "query.intr": "AREA[InterventionName]nivolumab OR AREA[InterventionMeshTerm]nivolumab",
    "fields": "NCTId|BriefTitle|Phase|StartDate|StartDateType|CompletionDate|CompletionDateType|OverallStatus|StudyType|LeadSponsorName|LeadSponsorClass|InterventionType|InterventionName|InterventionMeshTerm|Condition|LocationCountry|LocationStatus|LocationFacility|OverallOfficialName|OverallOfficialRole|OverallOfficialAffiliation|EnrollmentCount",
    "pageSize": 100,
    "countTotal": "true"
   }
  },
- "retrieved_at": "2026-11-09T23:45:38.325585+00:00",
+ "retrieved_at": "2026-11-10T00:17:58.183958+00:00",
  "pages": [
   {
-   "totalCount": 2041,
+   "totalCount": 1765,
    "studies": [
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT06561763",
-       "briefTitle": "TPC VS. GP Induced Chemotherapy Combined With Nimotuzumab and Toripalimab in the Treatment of Locally Advanced Nasopharyngeal Carcinoma"
-      },
-      "statusModule": {
-       "overallStatus": "NOT_YET_RECRUITING",
-       "startDateStruct": {
-        "date": "2024-08-20",
-        "type": "ESTIMATED"
-       },
-       "completionDateStruct": {
-        "date": "2031-08-20",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Sun Yat-sen University",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "High Risk Locally Advanced Nasopharyngeal Carcinoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE3"
-       ],
-       "enrollmentInfo": {
-        "count": 416
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Nimotuzumab,Toripalimab，Cisplatin, albumin paclitaxel, capecitabine"
-        },
-        {
-         "type": "DRUG",
-         "name": "Nimotuzumab,Toripalimab，Cisplatin, Gemcitabine"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "nimotuzumab"
-        },
-        {
-         "term": "Capecitabine"
-        },
-        {
-         "term": "Gemcitabine"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT07574047",
-       "briefTitle": "MELCHRONO: A Prospective Randomized Study Investigating Chrono-immunotherapy for Advanced Melanoma."
-      },
-      "statusModule": {
-       "overallStatus": "RECRUITING",
-       "startDateStruct": {
-        "date": "2026-10-12",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2032-06",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Swiss Cancer Institute",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Melanoma",
-        "Advanced Melanoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE2"
-       ],
-       "enrollmentInfo": {
-        "count": 108
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Immune Checkpoint Inhibitors"
-        },
-        {
-         "type": "DRUG",
-         "name": "Immune Checkpoint Inhibitors"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Berna Özdemir, MD PhD",
-         "affiliation": "Insel Gruppe AG, University Hospital Bern",
-         "role": "STUDY_CHAIR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "HFR Fribourg",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Universitätsspital Basel",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Ente Ospedaliero Cantonale (EOC)",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Inselspital, Bern",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Hôpitaux Universitaires de Genève HUG",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Centre Hospitalier Universitaire Vaudois (CHUV)",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Spital Thurgau (Kantonsspital Münserlingen und Frauenfeld)",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "HOCH Health Ostschweiz - Kantonsspital St. Gallen",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Universitätsspital Zürich USZ",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Immune Checkpoint Inhibitors"
-        }
-       ]
-      }
-     }
-    },
     {
      "protocolSection": {
       "identificationModule": {
@@ -625,73 +442,6 @@
        ]
       }
      }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT06784778",
-       "briefTitle": "Observational Study of Patients With Advanced Melanoma (Skin Cancer) to Assess if IOpener®-Melanoma Test Can Predict Response to Immunotherapy."
-      },
-      "statusModule": {
-       "overallStatus": "RECRUITING",
-       "startDateStruct": {
-        "date": "2024-07-12",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2027-07",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Pamgene International B.V.",
-        "class": "INDUSTRY"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Melanoma Metastatic",
-        "Melanoma, Skin",
-        "Melanoma Stage III or IV",
-        "Melanoma Advanced"
-       ]
-      },
-      "designModule": {
-       "studyType": "OBSERVATIONAL",
-       "enrollmentInfo": {
-        "count": 196
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DIAGNOSTIC_TEST",
-         "name": "PBMC Kinase Activity Profile"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "locations": [
-        {
-         "facility": "Universitätsklinikum Tübingen",
-         "status": "RECRUITING",
-         "country": "Germany"
-        },
-        {
-         "facility": "Heidelberg University Hospital",
-         "status": "RECRUITING",
-         "country": "Germany"
-        },
-        {
-         "facility": "LMU Klinikum",
-         "status": "RECRUITING",
-         "country": "Germany"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
     },
     {
      "protocolSection": {
@@ -8512,85 +8262,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT03402737",
-       "briefTitle": "SBRT + Immunomodulating Systemic Therapy for Inoperable, Recurrent H&N"
-      },
-      "statusModule": {
-       "overallStatus": "TERMINATED",
-       "startDateStruct": {
-        "date": "2017-07-31",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2020-12-03",
-        "type": "ACTUAL"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "University Hospital, Ghent",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Head and Neck Neoplasm"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "NA"
-       ],
-       "enrollmentInfo": {
-        "count": 6
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "RADIATION",
-         "name": "Stereotactic body radiotherapy"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Fréderic Duprez, MD, PhD",
-         "affiliation": "Gent University",
-         "role": "PRINCIPAL_INVESTIGATOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "Radiotherapy department, University Hospital Ghent",
-         "country": "Belgium"
-        },
-        {
-         "facility": "UZ Leuven",
-         "country": "Belgium"
-        },
-        {
-         "facility": "CHU Namur",
-         "country": "Belgium"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Radiosurgery"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT03336216",
        "briefTitle": "A Study of Cabiralizumab Given With Nivolumab With and Without Chemotherapy in Patients With Advanced Pancreatic Cancer"
       },
@@ -9818,73 +9489,6 @@
        ]
       }
      }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT04082988",
-       "briefTitle": "Early Response Evaluation in NSCLC Patients Treated With Immunotherapy"
-      },
-      "statusModule": {
-       "overallStatus": "TERMINATED",
-       "startDateStruct": {
-        "date": "2018-01-23",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2020-05-22",
-        "type": "ACTUAL"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "The Netherlands Cancer Institute",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "NSCLC, Stage IV"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "NA"
-       ],
-       "enrollmentInfo": {
-        "count": 9
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DIAGNOSTIC_TEST",
-         "name": "18F-FDG PET-CT"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "J de Langen, MD, PhD",
-         "affiliation": "The Netherlands Cancer Institute",
-         "role": "PRINCIPAL_INVESTIGATOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "VU medical center",
-         "country": "Netherlands"
-        },
-        {
-         "facility": "Leiden University Medical Center",
-         "country": "Netherlands"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
     },
     {
      "protocolSection": {
@@ -11284,111 +10888,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT04825873",
-       "briefTitle": "A Study to Assess Safety of Nivolumab in Routine Oncology Practice in China"
-      },
-      "statusModule": {
-       "overallStatus": "COMPLETED",
-       "startDateStruct": {
-        "date": "2021-05-28",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2023-02-13",
-        "type": "ACTUAL"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Bristol-Myers Squibb",
-        "class": "INDUSTRY"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Non-Small Cell Lung Cancer",
-        "Squamous Cell Carcinoma of Head and Neck"
-       ]
-      },
-      "designModule": {
-       "studyType": "OBSERVATIONAL",
-       "enrollmentInfo": {
-        "count": 3102
-       }
-      },
-      "armsInterventionsModule": {},
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Bristol-Myers Squibb",
-         "affiliation": "Bristol-Myers Squibb",
-         "role": "STUDY_DIRECTOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "Local Institution",
-         "country": "China"
-        },
-        {
-         "facility": "Local Institution",
-         "country": "China"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT03692442",
-       "briefTitle": "Evaluation of Efficacy and Toxicity of Nivolumab Monotherapy for Advanced Non-small Cell Lung Cancer After First-line Treatment Failure Based on Second-generation Sequencing and Liquid Chip Platform"
-      },
-      "statusModule": {
-       "overallStatus": "UNKNOWN",
-       "startDateStruct": {
-        "date": "2018-05-01",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2019-03-31",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Guangzhou Institute of Respiratory Disease",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Lung Cancer Non-small Cell Stage IV"
-       ]
-      },
-      "designModule": {
-       "studyType": "OBSERVATIONAL",
-       "enrollmentInfo": {
-        "count": 80
-       }
-      },
-      "armsInterventionsModule": {},
-      "contactsLocationsModule": {
-       "locations": [
-        {
-         "facility": "Guangzhou Institute of Respiratory Disease, The First Affiliated Hospital of Guangzhou Medical University",
-         "status": "RECRUITING",
-         "country": "China"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT03631641",
        "briefTitle": "Nivolumab in Preventing Colon Adenomas in Participants With Lynch Syndrome and a History of Partial Colectomy"
       },
@@ -12419,74 +11918,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT07114627",
-       "briefTitle": "Impact of CES1 Genotype on Capecitabine Exposure in Cancer Patients"
-      },
-      "statusModule": {
-       "overallStatus": "RECRUITING",
-       "startDateStruct": {
-        "date": "2025-02-18",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2027-06",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Erasmus Medical Center",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Solid Cancer",
-        "Gastric (Cardia, Body) Cancer",
-        "Esophageal Cancer",
-        "Colorectal Cancer (CRC)"
-       ]
-      },
-      "designModule": {
-       "studyType": "OBSERVATIONAL",
-       "enrollmentInfo": {
-        "count": 66
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Blood sampling for pharmacokinetics"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "locations": [
-        {
-         "facility": "Erasmus MC Cancer Institute",
-         "status": "RECRUITING",
-         "country": "Netherlands"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Blood Specimen Collection"
-        },
-        {
-         "term": "Pharmacokinetics"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT04503694",
        "briefTitle": "Neoadjuvant Regorafenib in Combination With Nivolumab and Short-course Radiotherapy in Stage II-III Rectal Cancer"
       },
@@ -12615,59 +12046,6 @@
        ]
       }
      }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT04794010",
-       "briefTitle": "A Study in Participants With First-Line Nivolumab Plus Ipilimumb Therapy Combined With Two Cycles of Chemotherapy for Metastatic Non-Small Cell Lung Cancer"
-      },
-      "statusModule": {
-       "overallStatus": "ACTIVE_NOT_RECRUITING",
-       "startDateStruct": {
-        "date": "2020-12-22",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2027-12-22",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Bristol-Myers Squibb",
-        "class": "INDUSTRY"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Carcinoma, Non-Small-Cell Lung"
-       ]
-      },
-      "designModule": {
-       "studyType": "OBSERVATIONAL",
-       "enrollmentInfo": {
-        "count": 825
-       }
-      },
-      "armsInterventionsModule": {},
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Bristol-Myers Squibb",
-         "affiliation": "Bristol-Myers Squibb",
-         "role": "STUDY_DIRECTOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "Local Institution - 0001",
-         "country": "Germany"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
     },
     {
      "protocolSection": {
@@ -13360,72 +12738,6 @@
       }
      },
      "derivedSection": {}
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT07786792",
-       "briefTitle": "Biomarker and Mechanism Study of Systemic Therapy in Unresectable HCC"
-      },
-      "statusModule": {
-       "overallStatus": "NOT_YET_RECRUITING",
-       "startDateStruct": {
-        "date": "2026-09-01",
-        "type": "ESTIMATED"
-       },
-       "completionDateStruct": {
-        "date": "2027-01-01",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Shanghai Zhongshan Hospital",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Hepatocellular Carcinoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "OBSERVATIONAL",
-       "enrollmentInfo": {
-        "count": 400
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Systemic therapy"
-        },
-        {
-         "type": "PROCEDURE",
-         "name": "Local therapy"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Huichuan Sun, MD",
-         "affiliation": "Fudan University",
-         "role": "PRINCIPAL_INVESTIGATOR"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Hyperthermia, Induced"
-        }
-       ]
-      }
-     }
     },
     {
      "protocolSection": {
@@ -14330,82 +13642,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT04165967",
-       "briefTitle": "Adoptive Tumor-infiltrating Lymphocyte Transfer With Nivolumab for Melanoma"
-      },
-      "statusModule": {
-       "overallStatus": "COMPLETED",
-       "startDateStruct": {
-        "date": "2020-09-17",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2023-03-30",
-        "type": "ACTUAL"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "University Hospital, Basel, Switzerland",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Advanced Melanoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE1"
-       ],
-       "enrollmentInfo": {
-        "count": 9
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Combination of TIL Transfer with anti-PD-1 Therapy and low dose IL-2"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Heinz Läubli, Prof.",
-         "affiliation": "Division of Medical Oncology and Cancer Immunology, University Hospital Basel",
-         "role": "PRINCIPAL_INVESTIGATOR"
-        },
-        {
-         "name": "Alfred Zippelius, Prof.",
-         "affiliation": "Division of Medical Oncology and Cancer Immunology, University Hospital Basel",
-         "role": "STUDY_CHAIR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "Division of Medical Oncology and Cancer Immunology, University Hospital Basel",
-         "country": "Switzerland"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Interleukin-2"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT02768558",
        "briefTitle": "Cisplatin and Etoposide Plus Radiation Followed By Nivolumab/Placebo For Locally Advanced NSCLC"
       },
@@ -14636,84 +13872,6 @@
         },
         {
          "term": "Nivolumab"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT05608148",
-       "briefTitle": "Clinical Trial of GAIA-102 for Refractory/Relapse Neuroblastomas and Other Malignant Pediatric Solid Tumors"
-      },
-      "statusModule": {
-       "overallStatus": "RECRUITING",
-       "startDateStruct": {
-        "date": "2022-10-26",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2027-08-25",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Kyushu University",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Refractory/Relapse Neuroblastoma",
-        "Pediatric Solid Tumors"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE1"
-       ],
-       "enrollmentInfo": {
-        "count": 61
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "BIOLOGICAL",
-         "name": "Biological"
-        },
-        {
-         "type": "BIOLOGICAL",
-         "name": "Biological"
-        },
-        {
-         "type": "BIOLOGICAL",
-         "name": "Biological"
-        },
-        {
-         "type": "BIOLOGICAL",
-         "name": "Biological"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "locations": [
-        {
-         "facility": "Kyushu University Hospital",
-         "status": "RECRUITING",
-         "country": "Japan"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Biological Products"
         }
        ]
       }
@@ -15093,127 +14251,6 @@
        ]
       }
      }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT02990611",
-       "briefTitle": "Observational Study of Nivolumab Monotherapy or in Combination With Ipilimumab in Participants With Advanced Melanoma and in Participants With Adjuvant Nivolumab Therapy"
-      },
-      "statusModule": {
-       "overallStatus": "COMPLETED",
-       "startDateStruct": {
-        "date": "2016-12-06",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2025-06-20",
-        "type": "ACTUAL"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Bristol-Myers Squibb",
-        "class": "INDUSTRY"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Melanoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "OBSERVATIONAL",
-       "enrollmentInfo": {
-        "count": 1087
-       }
-      },
-      "armsInterventionsModule": {},
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Bristol-Myers Squibb",
-         "affiliation": "Bristol-Myers Squibb",
-         "role": "STUDY_DIRECTOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "Local Institution - 0001",
-         "country": "Germany"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT05134948",
-       "briefTitle": "A Study to Assess Relatlimab and Nivolumab Fixed-dose Combination in Chinese Participants With Advanced Solid Tumors"
-      },
-      "statusModule": {
-       "overallStatus": "COMPLETED",
-       "startDateStruct": {
-        "date": "2021-11-30",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2025-10-24",
-        "type": "ACTUAL"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Bristol-Myers Squibb",
-        "class": "INDUSTRY"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Advanced Solid Tumors"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE1",
-        "PHASE2"
-       ],
-       "enrollmentInfo": {
-        "count": 24
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "BMS-986213"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Bristol-Myers Squibb",
-         "affiliation": "Bristol-Myers Squibb",
-         "role": "STUDY_DIRECTOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "Local Institution - 0001",
-         "country": "China"
-        },
-        {
-         "facility": "Local Institution - 0002",
-         "country": "China"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
     },
     {
      "protocolSection": {
@@ -18220,117 +17257,6 @@
        "meshes": [
         {
          "term": "Nivolumab"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT01993719",
-       "briefTitle": "Immunotherapy Using Tumor Infiltrating Lymphocytes for Patients With Metastatic Melanoma"
-      },
-      "statusModule": {
-       "overallStatus": "COMPLETED",
-       "startDateStruct": {
-        "date": "2013-12-12",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2022-07-06",
-        "type": "ACTUAL"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "National Cancer Institute (NCI)",
-        "class": "NIH"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Metastatic Melanoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE2"
-       ],
-       "enrollmentInfo": {
-        "count": 33
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Aldesleukin"
-        },
-        {
-         "type": "DRUG",
-         "name": "Fludarabine"
-        },
-        {
-         "type": "DRUG",
-         "name": "Fludarabine"
-        },
-        {
-         "type": "DRUG",
-         "name": "Cyclophosphamide"
-        },
-        {
-         "type": "DRUG",
-         "name": "Cyclophosphamide"
-        },
-        {
-         "type": "DRUG",
-         "name": "Cyclophosphamide"
-        },
-        {
-         "type": "BIOLOGICAL",
-         "name": "Young TIL"
-        },
-        {
-         "type": "DRUG",
-         "name": "Pembrolizumab"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Stephanie L Goff, M.D.",
-         "affiliation": "National Cancer Institute (NCI)",
-         "role": "PRINCIPAL_INVESTIGATOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "National Institutes of Health Clinical Center, 9000 Rockville Pike",
-         "country": "United States"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "aldesleukin"
-        },
-        {
-         "term": "fludarabine"
-        },
-        {
-         "term": "fludarabine phosphate"
-        },
-        {
-         "term": "Cyclophosphamide"
-        },
-        {
-         "term": "pembrolizumab"
         }
        ]
       }
@@ -23572,74 +22498,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT07428252",
-       "briefTitle": "Gastrointestinal Microbiome and Response to Immunotherapy in Metastatic Malignant Melanoma"
-      },
-      "statusModule": {
-       "overallStatus": "ACTIVE_NOT_RECRUITING",
-       "startDateStruct": {
-        "date": "2022-03-01",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2026-03-31",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Institute of Oncology Ljubljana",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Metastatic Malignant Melanoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "NA"
-       ],
-       "enrollmentInfo": {
-        "count": 150
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "PD-1 inhibitors"
-        },
-        {
-         "type": "DRUG",
-         "name": "PD-1 and CTLA-4 inhibitors"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "locations": [
-        {
-         "facility": "Institute of Oncology Ljubljana",
-         "country": "Slovenia"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Immune Checkpoint Inhibitors"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT04309409",
        "briefTitle": "Adjuvant Nivolumab Treatment in Stage II (IIA, IIB, IIC) High-risk Melanoma"
       },
@@ -23783,60 +22641,6 @@
        ]
       }
      }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT03891485",
-       "briefTitle": "Nivolumab in mRCC Patients: Treg Function, T-cell Access and NK Interactions to Predict and Improve Efficacy"
-      },
-      "statusModule": {
-       "overallStatus": "COMPLETED",
-       "startDateStruct": {
-        "date": "2016-12",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2023-08-30",
-        "type": "ACTUAL"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "National Cancer Institute, Naples",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "RCC",
-        "Metastatic Renal Cell Carcinoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "OBSERVATIONAL",
-       "enrollmentInfo": {
-        "count": 200
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "BIOLOGICAL",
-         "name": "Immunological and tumour characterization"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "locations": [
-        {
-         "facility": "IRCCS Istituto Nazionale Tumori di Napoli",
-         "country": "Italy"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
     },
     {
      "protocolSection": {
@@ -24089,75 +22893,6 @@
        ]
       }
      }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT06054152",
-       "briefTitle": "CX3CR1+T Cell Predict Immunotherapy Efficacy"
-      },
-      "statusModule": {
-       "overallStatus": "COMPLETED",
-       "startDateStruct": {
-        "date": "2023-04-10",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2025-06-20",
-        "type": "ACTUAL"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Shanghai Pulmonary Hospital, Shanghai, China",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Non-small Cell Lung Cancer"
-       ]
-      },
-      "designModule": {
-       "studyType": "OBSERVATIONAL",
-       "enrollmentInfo": {
-        "count": 150
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "PD-1 inhibitor based immunotherapy"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Chang Chen, MD, Ph.D.",
-         "affiliation": "Shanghai Pulmonary Hospital, Shanghai, China",
-         "role": "PRINCIPAL_INVESTIGATOR"
-        },
-        {
-         "name": "Deping Zhao, MD, Ph.D.",
-         "affiliation": "Shanghai Pulmonary Hospital, Shanghai, China",
-         "role": "PRINCIPAL_INVESTIGATOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "Hunan cancer hospital",
-         "country": "China"
-        },
-        {
-         "facility": "Shanghai Pulmonary Hospital",
-         "country": "China"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
     },
     {
      "protocolSection": {
@@ -25577,233 +24312,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT03945773",
-       "briefTitle": "Study of Cabozantinib as 2nd Line Treatment in Subjects With Locally Advanced or Metastatic Renal Cell Carcinoma (RCC) With a Clear-Cell Component Who Progressed After 1st Line Treatment With Checkpoint Inhibitors"
-      },
-      "statusModule": {
-       "overallStatus": "COMPLETED",
-       "startDateStruct": {
-        "date": "2020-01-08",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2026-02-12",
-        "type": "ACTUAL"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Ipsen",
-        "class": "INDUSTRY"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Locally Advanced or Metastatic Renal Cell Carcinoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE2"
-       ],
-       "enrollmentInfo": {
-        "count": 127
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Cabozantinib"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Ipsen Medical Director",
-         "affiliation": "Ipsen",
-         "role": "STUDY_DIRECTOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "SALK - Salzburger Landesklinik",
-         "country": "Austria"
-        },
-        {
-         "facility": "CHRU Besançon",
-         "country": "France"
-        },
-        {
-         "facility": "Centre Jean Perrin",
-         "country": "France"
-        },
-        {
-         "facility": "Centre Léon Bérard",
-         "country": "France"
-        },
-        {
-         "facility": "Institut Paoli Calmettes",
-         "country": "France"
-        },
-        {
-         "facility": "Institut de Cancérologie de Lorraine",
-         "country": "France"
-        },
-        {
-         "facility": "CHU de Nîmes - Institut de Cancérologie du Gard",
-         "country": "France"
-        },
-        {
-         "facility": "Institut Mutualiste Montsouris",
-         "country": "France"
-        },
-        {
-         "facility": "Centre Hospitalier Lyon Sud",
-         "country": "France"
-        },
-        {
-         "facility": "Institut de Cancérologie de l'Ouest",
-         "country": "France"
-        },
-        {
-         "facility": "CHU Strasbourg",
-         "country": "France"
-        },
-        {
-         "facility": "Institut Claudius Régaud",
-         "country": "France"
-        },
-        {
-         "facility": "Gustave Roussy",
-         "country": "France"
-        },
-        {
-         "facility": "Universitätsmedzin Charité",
-         "country": "Germany"
-        },
-        {
-         "facility": "University Hospital Carl Gustav Carus Dresden",
-         "country": "Germany"
-        },
-        {
-         "facility": "Universitätsklinikum Essen",
-         "country": "Germany"
-        },
-        {
-         "facility": "University Cancer Center Hamburg Eppendorf",
-         "country": "Germany"
-        },
-        {
-         "facility": "Medizinische Hochschule Hannover",
-         "country": "Germany"
-        },
-        {
-         "facility": "Klinikum Der Friedrich-Schiller-Universitaet Jena",
-         "country": "Germany"
-        },
-        {
-         "facility": "Universitätsklinikum Schleswig-Holstein",
-         "country": "Germany"
-        },
-        {
-         "facility": "Otto-von-Guericke-Universität University hospital Magdeburg",
-         "country": "Germany"
-        },
-        {
-         "facility": "University, Hospital Münster",
-         "country": "Germany"
-        },
-        {
-         "facility": "Caritas Krankenhaus St.Josef Klinik für Urologie",
-         "country": "Germany"
-        },
-        {
-         "facility": "University Hospital Tuebingen",
-         "country": "Germany"
-        },
-        {
-         "facility": "The Netherlands Cancer Institute - Oncology",
-         "country": "Netherlands"
-        },
-        {
-         "facility": "Maxima Medisch Centrum",
-         "country": "Netherlands"
-        },
-        {
-         "facility": "Leiden University Medical Center",
-         "country": "Netherlands"
-        },
-        {
-         "facility": "Universitair Medisch Centrum Utrecht",
-         "country": "Netherlands"
-        },
-        {
-         "facility": "Hospital de La Santa Creu i Sant Pau",
-         "country": "Spain"
-        },
-        {
-         "facility": "Hospital Lucus Augusti",
-         "country": "Spain"
-        },
-        {
-         "facility": "M.D. Anderson Center Madrid",
-         "country": "Spain"
-        },
-        {
-         "facility": "Hospital Universitario 12 de Octubre",
-         "country": "Spain"
-        },
-        {
-         "facility": "Universitätsspital Bern, Inselspital",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Centre Hospitalier Universitaire Vaudois",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Kantonsspital St. Gallen",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Western General Hospital - Edinburgh Cancer Centre",
-         "country": "United Kingdom"
-        },
-        {
-         "facility": "Beatson West of Scotland Cancer Centre",
-         "country": "United Kingdom"
-        },
-        {
-         "facility": "The Christie NHS Foundation Trust",
-         "country": "United Kingdom"
-        },
-        {
-         "facility": "Mount Vernon Hospital",
-         "country": "United Kingdom"
-        },
-        {
-         "facility": "Royal Cornwall Hospital (RCH) - Sunrise Centre",
-         "country": "United Kingdom"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "cabozantinib"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT07820813",
        "briefTitle": "bNAbs and Anti-PD-1 in HIV"
       },
@@ -26566,71 +25074,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT05053295",
-       "briefTitle": "Investigator-initiated Pilot Study to Investigate the Efficacy and Safety of Immuncell-LC in Combination With Nivolumab (Opdivo) in Subjects With Advanced or Recurrent Gastric Cancer"
-      },
-      "statusModule": {
-       "overallStatus": "UNKNOWN",
-       "startDateStruct": {
-        "date": "2021-07-02",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2023-09-30",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Gangnam Severance Hospital",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Relapsed or Advanced Gastric Adenocarcinoma",
-        "Gastro-esophageal Junction Cancer"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "NA"
-       ],
-       "enrollmentInfo": {
-        "count": 20
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "autologous activated T lymphocyte"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Jae Yong Cho",
-         "affiliation": "Gangnam Severance Hospital",
-         "role": "PRINCIPAL_INVESTIGATOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "Gangnam Severacen Hospital",
-         "status": "RECRUITING",
-         "country": "South Korea"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT04267146",
        "briefTitle": "Nivolumab in Combination With Temozolomide and Radiotherapy in Children and Adolescents With Newly Diagnosed High-grade Glioma"
       },
@@ -27011,9 +25454,2305 @@
        ]
       }
      }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT03712202",
+       "briefTitle": "Brentuximab Vedotin and Nivolumab in Treating Patients With Early Stage Classic Hodgkin Lymphoma"
+      },
+      "statusModule": {
+       "overallStatus": "ACTIVE_NOT_RECRUITING",
+       "startDateStruct": {
+        "date": "2018-11-28",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2027-05-21",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "City of Hope Medical Center",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Ann Arbor Stage I Hodgkin Lymphoma",
+        "Ann Arbor Stage I Mixed Cellularity Classic Hodgkin Lymphoma",
+        "Ann Arbor Stage I Nodular Sclerosis Classic Hodgkin Lymphoma",
+        "Ann Arbor Stage IA Hodgkin Lymphoma",
+        "Ann Arbor Stage IB Hodgkin Lymphoma",
+        "Ann Arbor Stage II Hodgkin Lymphoma",
+        "Ann Arbor Stage IIA Hodgkin Lymphoma",
+        "Ann Arbor Stage IIB Hodgkin Lymphoma",
+        "Classic Hodgkin Lymphoma",
+        "Lymphocyte-Rich Classic Hodgkin Lymphoma",
+        "Ann Arbor Stage I Lymphocyte-Depleted Classic HL",
+        "Ann Arbor Stage II Lymphocyte-Depleted Classic HL",
+        "Ann Arbor Stage II Mixed Cellularity Classic HL",
+        "Ann Arbor Stage II Nodular Sclerosis Classic HL"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 159
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Bleomycin"
+        },
+        {
+         "type": "DRUG",
+         "name": "Brentuximab Vedotin"
+        },
+        {
+         "type": "DRUG",
+         "name": "Dacarbazine"
+        },
+        {
+         "type": "DRUG",
+         "name": "Doxorubicin"
+        },
+        {
+         "type": "BIOLOGICAL",
+         "name": "Nivolumab"
+        },
+        {
+         "type": "OTHER",
+         "name": "Quality-of-Life Assessment"
+        },
+        {
+         "type": "DRUG",
+         "name": "Vinblastine"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Alex F Herrera",
+         "affiliation": "City of Hope Medical Center",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "University of Alabama at Birmingham Cancer Center",
+         "country": "United States"
+        },
+        {
+         "facility": "City of Hope Medical Center",
+         "country": "United States"
+        },
+        {
+         "facility": "University of California San Diego",
+         "country": "United States"
+        },
+        {
+         "facility": "Emory University Hospital/Winship Cancer Institute",
+         "country": "United States"
+        },
+        {
+         "facility": "Northwestern University",
+         "country": "United States"
+        },
+        {
+         "facility": "University of Chicago Comprehensive Cancer Center",
+         "country": "United States"
+        },
+        {
+         "facility": "Beth Israel Deaconess Medical Center",
+         "country": "United States"
+        },
+        {
+         "facility": "Dana-Farber Cancer Institute",
+         "country": "United States"
+        },
+        {
+         "facility": "Massachusetts General Hospital",
+         "country": "United States"
+        },
+        {
+         "facility": "Hackensack University Medical Center",
+         "country": "United States"
+        },
+        {
+         "facility": "NYP/Weill Cornell Medical Center",
+         "country": "United States"
+        },
+        {
+         "facility": "Cleveland Clinic Taussig Cancer Institute, Case Comprehensive Cancer Center",
+         "country": "United States"
+        },
+        {
+         "facility": "Ohio State University Comprehensive Cancer Center",
+         "country": "United States"
+        },
+        {
+         "facility": "University of Pennsylvania/Abramson Cancer Center",
+         "country": "United States"
+        },
+        {
+         "facility": "Sarah Cannon Cancer Center",
+         "country": "United States"
+        },
+        {
+         "facility": "M D Anderson Cancer Center",
+         "country": "United States"
+        },
+        {
+         "facility": "Huntsman Cancer Institute/University of Utah",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Bleomycin"
+        },
+        {
+         "term": "Brentuximab Vedotin"
+        },
+        {
+         "term": "Dacarbazine"
+        },
+        {
+         "term": "Doxorubicin"
+        },
+        {
+         "term": "Nivolumab"
+        },
+        {
+         "term": "Vinblastine"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04895709",
+       "briefTitle": "A Study of BMS-986340 as Monotherapy and as Combination Therapy in Participants With Advanced Solid Tumors"
+      },
+      "statusModule": {
+       "overallStatus": "RECRUITING",
+       "startDateStruct": {
+        "date": "2021-05-27",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2031-08-31",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Bristol-Myers Squibb",
+        "class": "INDUSTRY"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Cervical Cancer",
+        "Gastric/Gastroesophageal Junction Adenocarcinoma",
+        "Microsatellite Stable Colorectal Cancer",
+        "Non-Small-Cell Lung Cancer",
+        "Squamous Cell Carcinoma of Head and Neck",
+        "Carcinoma, Renal Cell",
+        "Urothelial Carcinoma",
+        "Pancreatic Adenocarcinoma",
+        "Melanoma",
+        "Ovarian Neoplasms",
+        "Triple Negative Breast Neoplasms"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 1109
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "BMS-986340"
+        },
+        {
+         "type": "DRUG",
+         "name": "BMS-936558-01"
+        },
+        {
+         "type": "DRUG",
+         "name": "Docetaxel"
+        },
+        {
+         "type": "DRUG",
+         "name": "Pumitamig"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Bristol-Myers Squibb",
+         "affiliation": "Bristol-Myers Squibb",
+         "role": "STUDY_DIRECTOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Community Cancer Institute",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "USC/Norris Comprehensive Cancer Center",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "Hoag Memorial Hospital Presbyterian",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "University of Iowa",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "John Theurer Cancer Center",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "Local Institution - 0006",
+         "status": "COMPLETED",
+         "country": "United States"
+        },
+        {
+         "facility": "Local Institution - 0002",
+         "status": "COMPLETED",
+         "country": "United States"
+        },
+        {
+         "facility": "Providence Cancer Center Oncology and Hematology Care- Eastside",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "Local Institution - 0063",
+         "status": "WITHDRAWN",
+         "country": "United States"
+        },
+        {
+         "facility": "Vanderbilt University Medical Center",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "Houston Methodist Hospital",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "Blacktown Hospital",
+         "status": "RECRUITING",
+         "country": "Australia"
+        },
+        {
+         "facility": "Liverpool Hospital",
+         "status": "RECRUITING",
+         "country": "Australia"
+        },
+        {
+         "facility": "Princess Alexandra Hospital",
+         "status": "RECRUITING",
+         "country": "Australia"
+        },
+        {
+         "facility": "Cabrini Hospital - Malvern",
+         "status": "RECRUITING",
+         "country": "Australia"
+        },
+        {
+         "facility": "St Vincent's Hospital",
+         "status": "RECRUITING",
+         "country": "Australia"
+        },
+        {
+         "facility": "One Clinical Research",
+         "status": "RECRUITING",
+         "country": "Australia"
+        },
+        {
+         "facility": "Cross Cancer Institute",
+         "status": "RECRUITING",
+         "country": "Canada"
+        },
+        {
+         "facility": "Local Institution - 0030",
+         "status": "COMPLETED",
+         "country": "Canada"
+        },
+        {
+         "facility": "Hamilton Health Sciences-Juravinski Cancer Centre",
+         "status": "RECRUITING",
+         "country": "Canada"
+        },
+        {
+         "facility": "Local Institution - 0009",
+         "status": "COMPLETED",
+         "country": "Canada"
+        },
+        {
+         "facility": "Centre Hospitalier de luniversite de Montreal",
+         "status": "RECRUITING",
+         "country": "Canada"
+        },
+        {
+         "facility": "Local Institution - 0016",
+         "status": "COMPLETED",
+         "country": "Canada"
+        },
+        {
+         "facility": "Local Institution - 0044",
+         "status": "COMPLETED",
+         "country": "Germany"
+        },
+        {
+         "facility": "Universitaetsklinikum Carl Gustav Carus Dresden-University Cancer Center Early Clinical Trial Unit",
+         "status": "RECRUITING",
+         "country": "Germany"
+        },
+        {
+         "facility": "Universitaetsklinikum Essen",
+         "status": "RECRUITING",
+         "country": "Germany"
+        },
+        {
+         "facility": "Universitatsklinikum Frankfurt",
+         "status": "RECRUITING",
+         "country": "Germany"
+        },
+        {
+         "facility": "Universitaetsklinikum Wuerzburg",
+         "status": "RECRUITING",
+         "country": "Germany"
+        },
+        {
+         "facility": "Rabin Medical Center",
+         "status": "RECRUITING",
+         "country": "Israel"
+        },
+        {
+         "facility": "Local Institution - 0035",
+         "status": "WITHDRAWN",
+         "country": "Israel"
+        },
+        {
+         "facility": "Sheba Medical Center",
+         "status": "RECRUITING",
+         "country": "Israel"
+        },
+        {
+         "facility": "Rambam Health Care Campus",
+         "status": "RECRUITING",
+         "country": "Israel"
+        },
+        {
+         "facility": "Sourasky Medical Center",
+         "status": "RECRUITING",
+         "country": "Israel"
+        },
+        {
+         "facility": "Humanitas",
+         "status": "RECRUITING",
+         "country": "Italy"
+        },
+        {
+         "facility": "Istituto di Candiolo IRCCS - Fondazione del Piemonte per l'Oncologia",
+         "status": "RECRUITING",
+         "country": "Italy"
+        },
+        {
+         "facility": "Fondazione IRCCS Istituto Nazionale dei Tumori-Struttura Complessa Oncologia Medica 1",
+         "status": "RECRUITING",
+         "country": "Italy"
+        },
+        {
+         "facility": "Istituto Nazionale Tumori IRCCS Fondazione Pascale",
+         "status": "RECRUITING",
+         "country": "Italy"
+        },
+        {
+         "facility": "Fondazione Policlinico Universitario Agostino Gemelli IRCCS - Università Cattolica del Sacro Cuore",
+         "status": "RECRUITING",
+         "country": "Italy"
+        },
+        {
+         "facility": "ospedale le scotte-U.O.C. Immunoterapia Oncologica",
+         "status": "RECRUITING",
+         "country": "Italy"
+        },
+        {
+         "facility": "National Cancer Center Hospital East",
+         "status": "RECRUITING",
+         "country": "Japan"
+        },
+        {
+         "facility": "Hospital Universitario Virgen de la Victoria",
+         "status": "RECRUITING",
+         "country": "Spain"
+        },
+        {
+         "facility": "Institut Catalan d Oncologia (ICO) - Badalona",
+         "status": "RECRUITING",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital Universitari Vall d'Hebron",
+         "status": "RECRUITING",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital Universitario 12 de Octubre",
+         "status": "RECRUITING",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital Universitario Fundación Jiménez Díaz-START Madrid-FJD",
+         "status": "RECRUITING",
+         "country": "Spain"
+        },
+        {
+         "facility": "Centro Integral Oncologico Clara Campal-Hospital HM Universitario Sanchinarro-START Madrid-CIOCC",
+         "status": "RECRUITING",
+         "country": "Spain"
+        },
+        {
+         "facility": "Clinica Universidad de Navarra-oNCOLOGY",
+         "status": "RECRUITING",
+         "country": "Spain"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        },
+        {
+         "term": "Docetaxel"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT06361563",
+       "briefTitle": "Real-World Use of Adjuvant Nivolumab in Patients With Upper Gastrointestinal Cancer in Canada"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2023-09-05",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2024-01-25",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Bristol-Myers Squibb",
+        "class": "INDUSTRY"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Upper Gastrointestinal Cancer"
+       ]
+      },
+      "designModule": {
+       "studyType": "OBSERVATIONAL",
+       "enrollmentInfo": {
+        "count": 250
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Bristol-Myers Squibb",
+         "affiliation": "Bristol-Myers Squibb",
+         "role": "STUDY_DIRECTOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Bayshore Specialty Rx Ltd.",
+         "country": "Canada"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT05715216",
+       "briefTitle": "EON: A Single-arm Phase II Study of Etigilimab (OMP-313M32) in Combination With Checkpoint Inhibition (Nivolumab) in Patients With Platinum-resistant, Recurrent Epithelial Ovarian Cancer"
+      },
+      "statusModule": {
+       "overallStatus": "ACTIVE_NOT_RECRUITING",
+       "startDateStruct": {
+        "date": "2021-10-01",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2027-02-08",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "M.D. Anderson Cancer Center",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Ovarian Cancer"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 23
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        },
+        {
+         "type": "DRUG",
+         "name": "Etigilimab"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Shannon Westin, MD",
+         "affiliation": "M.D. Anderson Cancer Center",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "M D Anderson Cancer Center",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04758949",
+       "briefTitle": "FL-101 in Surgically Resectable Non-Small Cell Lung Cancer"
+      },
+      "statusModule": {
+       "overallStatus": "WITHDRAWN",
+       "startDateStruct": {
+        "date": "2021-08-25",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2021-12-22",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Flame Biosciences",
+        "class": "INDUSTRY"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Non-Small Cell Lung Cancer"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 0
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "FL-101"
+        },
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        },
+        {
+         "type": "DRUG",
+         "name": "Placebo"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Cassandra Choe-Juliak, MD",
+         "affiliation": "Flame Biosciences",
+         "role": "STUDY_DIRECTOR"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04047706",
+       "briefTitle": "Nivolumab, BMS-986205, and Radiation Therapy With or Without Temozolomide in Treating Patients With Newly Diagnosed Glioblastoma"
+      },
+      "statusModule": {
+       "overallStatus": "ACTIVE_NOT_RECRUITING",
+       "startDateStruct": {
+        "date": "2019-08-13",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2027-06-01",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Northwestern University",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Glioblastoma"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE1"
+       ],
+       "enrollmentInfo": {
+        "count": 18
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "IDO1 Inhibitor BMS-986205 25mg"
+        },
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        },
+        {
+         "type": "RADIATION",
+         "name": "Radiation Therapy"
+        },
+        {
+         "type": "DRUG",
+         "name": "Temozolomide"
+        },
+        {
+         "type": "DRUG",
+         "name": "IDO1 Inhibitor BMS-986205 50 mg"
+        },
+        {
+         "type": "DRUG",
+         "name": "IDO1 Inhibitor BMS-986205 100 mg"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Rimas V Lukas, MD",
+         "affiliation": "Northwestern University",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Northwestern University",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "linrodostat"
+        },
+        {
+         "term": "Nivolumab"
+        },
+        {
+         "term": "Radiotherapy"
+        },
+        {
+         "term": "Radiation"
+        },
+        {
+         "term": "Temozolomide"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT02329847",
+       "briefTitle": "A Study to Evaluate Safety, Pharmacokinetics, Pharmacodynamics and Preliminary Efficacy of the Combination of Ibrutinib With Nivolumab in Participants With Hematologic Malignancies"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2015-03-11",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2022-02-09",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Janssen Research & Development, LLC",
+        "class": "INDUSTRY"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Hematologic Neoplasms"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 144
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Ibrutinib"
+        },
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Janssen Research & Development, LLC Clinical Trial",
+         "affiliation": "Janssen Research & Development, LLC",
+         "role": "STUDY_DIRECTOR"
+        }
+       ],
+       "locations": [
+        {
+         "country": "United States"
+        },
+        {
+         "country": "Australia"
+        },
+        {
+         "country": "Australia"
+        },
+        {
+         "country": "Australia"
+        },
+        {
+         "country": "Israel"
+        },
+        {
+         "country": "Israel"
+        },
+        {
+         "country": "Israel"
+        },
+        {
+         "country": "Israel"
+        },
+        {
+         "country": "Poland"
+        },
+        {
+         "country": "Poland"
+        },
+        {
+         "country": "Poland"
+        },
+        {
+         "country": "Poland"
+        },
+        {
+         "country": "Spain"
+        },
+        {
+         "country": "Spain"
+        },
+        {
+         "country": "Spain"
+        },
+        {
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "country": "Turkey (Türkiye)"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "ibrutinib"
+        },
+        {
+         "term": "Nivolumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04413838",
+       "briefTitle": "Efficiency and Security of NIVOLUMAB Therapy in Obese Individuals With COVID-19(COrona VIrus Disease) Infection"
+      },
+      "statusModule": {
+       "overallStatus": "UNKNOWN",
+       "startDateStruct": {
+        "date": "2020-06-15",
+        "type": "ESTIMATED"
+       },
+       "completionDateStruct": {
+        "date": "2021-09-15",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Hospices Civils de Lyon",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Obesity, COVID-19 Infection"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 120
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "NIVOLUMAB"
+        },
+        {
+         "type": "OTHER",
+         "name": "Routine standard of care"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "locations": [
+        {
+         "facility": "Hôpital Lyon Sud Service Endocrinologie, Diabète et Nutrition",
+         "country": "France"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04401774",
+       "briefTitle": "Nivolumab Maintenance in Newly Diagnosed PCNSL With Persistent CSF Circulating Tumor DNA After Completion of First-Line Chemotherapy"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2020-05-22",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2026-01-22",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Memorial Sloan Kettering Cancer Center",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Primary Central Nervous System Lymphoma (PCNSL)"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 14
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Christian Grommes, MD",
+         "affiliation": "Memorial Sloan Kettering Cancer Center",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Memorial Sloan Kettering Basking Ridge (Limited Protocol Activities)",
+         "country": "United States"
+        },
+        {
+         "facility": "Memorial Sloan Kettering Monmouth (Limited Protocol Activities)",
+         "country": "United States"
+        },
+        {
+         "facility": "Memorial Sloan Kettering Bergen (Limited Protocol Activities)",
+         "country": "United States"
+        },
+        {
+         "facility": "Memorial Sloan Kettering Commack (Limited Protocol Activities)",
+         "country": "United States"
+        },
+        {
+         "facility": "Memorial Sloan Kettering Westchester (Limited Protocol Activities)",
+         "country": "United States"
+        },
+        {
+         "facility": "Memorial Sloan Kettering Cancer Center (All Protocol Activities)",
+         "country": "United States"
+        },
+        {
+         "facility": "Memorial Sloan Kettering Nassau (Limited protocol activities)",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT03013335",
+       "briefTitle": "Nivolumab in Patients With Metastatic Renal Cell Carcinoma Who Have Progresses During or After Prior Systemic Anti-angiogenic Regimen"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2016-01"
+       },
+       "completionDateStruct": {
+        "date": "2021-06-30",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "UNICANCER",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Metastatic Renal Cell Carcinoma"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 730
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Bernard ESCUDIER",
+         "affiliation": "Gustave Roussy, Cancer Campus, Grand Paris",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        },
+        {
+         "name": "Laurence ALBIGES",
+         "affiliation": "Gustave Roussy, Cancer Campus, Grand Paris",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Centre Francois Baclesse",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Georges-Francois Leclerc",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Leon Berard",
+         "country": "France"
+        },
+        {
+         "facility": "Institut Paoli-Calmettes",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Antoine Lacassagne",
+         "country": "France"
+        },
+        {
+         "facility": "Institut de Cancerologie de Lorraine",
+         "country": "France"
+        },
+        {
+         "facility": "Gustave Roussy Cancer Campus Grand Paris",
+         "country": "France"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT03630640",
+       "briefTitle": "Neoadjuvant and Adjuvant Nivolumab in HCC Patients Treated by Electroporation"
+      },
+      "statusModule": {
+       "overallStatus": "TERMINATED",
+       "startDateStruct": {
+        "date": "2018-10-11",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2023-08-19",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Assistance Publique - Hôpitaux de Paris",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Hepatocellular Carcinoma"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 43
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Nivolumab Injection [Opdivo]"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Pierre NAHON, MD,PhD",
+         "affiliation": "APHP-Hôpital Jean Verdier",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Hôpital Jean Verdier",
+         "country": "France"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        },
+        {
+         "term": "Electroporation"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT05112549",
+       "briefTitle": "Intrathecal Application of PD1 Antibody in Metastatic Solid Tumors With Leptomeningeal Disease (IT-PD1/ NOA 26)"
+      },
+      "statusModule": {
+       "overallStatus": "RECRUITING",
+       "startDateStruct": {
+        "date": "2021-10-12",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2027-09-30",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "University Hospital Tuebingen",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Leptomeningeal Disease"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE1"
+       ],
+       "enrollmentInfo": {
+        "count": 46
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Nivolumab [Opdivo]"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Ghazaleh Tabatabai, Prof.Dr.",
+         "affiliation": "University Hospital Tuebingen",
+         "role": "STUDY_DIRECTOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Universitätsklinikum Bonn",
+         "status": "RECRUITING",
+         "country": "Germany"
+        },
+        {
+         "facility": "University Hospital Freiburg, Neurosurgery",
+         "status": "RECRUITING",
+         "country": "Germany"
+        },
+        {
+         "facility": "University Hospital Heidelberg, Neurooncology",
+         "status": "NOT_YET_RECRUITING",
+         "country": "Germany"
+        },
+        {
+         "facility": "SLK-Kliniken Heilbronn GmbH Klinik",
+         "status": "RECRUITING",
+         "country": "Germany"
+        },
+        {
+         "facility": "University Hospital Mannheim, Neurology Clinic",
+         "status": "RECRUITING",
+         "country": "Germany"
+        },
+        {
+         "facility": "Klinikum rechts der Isar/Technische Universität München",
+         "status": "RECRUITING",
+         "country": "Germany"
+        },
+        {
+         "facility": "Katharinenhospital Stuttgart",
+         "status": "RECRUITING",
+         "country": "Germany"
+        },
+        {
+         "facility": "University Hospital Tübingen, Neurooncology",
+         "status": "RECRUITING",
+         "country": "Germany"
+        },
+        {
+         "facility": "University Hospital Ulm, ECTU - Early Clinical Trail Unit",
+         "status": "RECRUITING",
+         "country": "Germany"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04024878",
+       "briefTitle": "NeoVax With Nivolumab in Patients With Ovarian Cancer"
+      },
+      "statusModule": {
+       "overallStatus": "ACTIVE_NOT_RECRUITING",
+       "startDateStruct": {
+        "date": "2020-11-20",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2029-04-30",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Dana-Farber Cancer Institute",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Ovarian Cancer"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE1"
+       ],
+       "enrollmentInfo": {
+        "count": 22
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        },
+        {
+         "type": "BIOLOGICAL",
+         "name": "NeoVax"
+        },
+        {
+         "type": "PROCEDURE",
+         "name": "Core Needle Biopsy"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Panagiotis Konstantinopoulos, MD",
+         "affiliation": "Dana-Farber Cancer Institute",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Dana Farber Cancer Institute",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        },
+        {
+         "term": "Biopsy, Large-Core Needle"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT03134118",
+       "briefTitle": "Nivolumab in Patients With Type B3 Thymoma and Thymic Carcinoma (NIVOTHYM)"
+      },
+      "statusModule": {
+       "overallStatus": "ACTIVE_NOT_RECRUITING",
+       "startDateStruct": {
+        "date": "2018-04-11",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2027-12",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "European Organisation for Research and Treatment of Cancer - EORTC",
+        "class": "NETWORK"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Thymoma Type B3",
+        "Thymic Carcinoma"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 55
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Nicolas Girard",
+         "affiliation": "Institut Curie, Paris, France",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        },
+        {
+         "name": "Solange Peters",
+         "affiliation": "University of Lausanne Hospitals",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Institut Jules Bordet",
+         "country": "Belgium"
+        },
+        {
+         "facility": "Universitair Ziekenhuis Antwerpen (UZA)",
+         "country": "Belgium"
+        },
+        {
+         "facility": "CHU de Brest",
+         "country": "France"
+        },
+        {
+         "facility": "CHU de Lyon - Hopital Louis Pradel",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Francois Baclesse",
+         "country": "France"
+        },
+        {
+         "facility": "CHU de Grenoble - La Tronche - Hôpital A. Michallon",
+         "country": "France"
+        },
+        {
+         "facility": "Assistance Publique - Hopitaux de Marseille - Hopital Nord (APHM)",
+         "country": "France"
+        },
+        {
+         "facility": "Institut Curie- Hopital de Paris",
+         "country": "France"
+        },
+        {
+         "facility": "CHU Toulouse - Hopital Larrey",
+         "country": "France"
+        },
+        {
+         "facility": "Gustave Roussy",
+         "country": "France"
+        },
+        {
+         "facility": "The Netherlands Cancer Institute-Antoni Van Leeuwenhoekziekenhuis",
+         "country": "Netherlands"
+        },
+        {
+         "facility": "Academisch Ziekenhuis Maastricht",
+         "country": "Netherlands"
+        },
+        {
+         "facility": "Erasmus MC",
+         "country": "Netherlands"
+        },
+        {
+         "facility": "Vall d'Hebron Institut d'Oncologia",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital Universitario 12 De Octubre",
+         "country": "Spain"
+        },
+        {
+         "facility": "UniversitaetsSpital Zurich",
+         "country": "Switzerland"
+        },
+        {
+         "facility": "NHS Greater Glasgow and Clyde - Beatson West of Scotland Cancer Centre - Gartnavel General Hospital",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "Royal Marsden Hospital - Chelsea, London",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "Royal Marsden Hospital - Sutton, Surrey",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "The Christie NHS Foundation Trust",
+         "country": "United Kingdom"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04050085",
+       "briefTitle": "SD-101, Nivolumab, and Radiation Therapy in Treating Patients With Chemotherapy-Refractory Metastatic Pancreatic Cancer"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2019-08-15",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2022-05-14",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "University of California, Davis",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Metastatic Pancreatic Adenocarcinoma",
+        "Refractory Pancreatic Adenocarcinoma",
+        "Stage IV Pancreatic Cancer AJCC v8"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE1"
+       ],
+       "enrollmentInfo": {
+        "count": 6
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "BIOLOGICAL",
+         "name": "Nivolumab"
+        },
+        {
+         "type": "RADIATION",
+         "name": "Radiation Therapy"
+        },
+        {
+         "type": "DRUG",
+         "name": "TLR9 Agonist SD-101"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Edward J Kim, MD, PhD",
+         "affiliation": "University of California, Davis",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "University of California Davis Comprehensive Cancer Center",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        },
+        {
+         "term": "Radiotherapy"
+        },
+        {
+         "term": "Radiation"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT07210632",
+       "briefTitle": "Window Trial of Fluorescently Labeled Nivolumab-IRDye800 (Nivo800) in High Grade Glioma (HGG)"
+      },
+      "statusModule": {
+       "overallStatus": "RECRUITING",
+       "startDateStruct": {
+        "date": "2026-03-27",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2031-03-30",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Eben Rosenthal",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Brain Cancer",
+        "HGG",
+        "Glioma",
+        "High Grade Glioma",
+        "High Grade Gliomas",
+        "High Grade Glioma (III or IV)",
+        "High Grade Glioma (HGG) of the Brain With BRAF Aberration"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "EARLY_PHASE1"
+       ],
+       "enrollmentInfo": {
+        "count": 38
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        },
+        {
+         "type": "DRUG",
+         "name": "Nivolumab-IRDye800"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Patrick Kelly, MD",
+         "affiliation": "Vanderbilt University Medical Center",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Vanderbilt University Medical Center",
+         "status": "RECRUITING",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT03149159",
+       "briefTitle": "Investigator-Initiated Trial of Combined Ipilimumab, Nivolumab and Stereotactic Radiation in Patients With Metastatic Clear-Cell RCC (ccRCC) Who Have Failed Treatment With Single-Agent Nivolumab"
+      },
+      "statusModule": {
+       "overallStatus": "WITHDRAWN",
+       "startDateStruct": {
+        "date": "2018-04-01",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2018-04-01",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Medical University of South Carolina",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Clear Cell Renal Cell Carcinoma",
+        "Metastatic Renal Cell Carcinoma"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 0
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        },
+        {
+         "type": "DRUG",
+         "name": "Ipilimumab"
+        },
+        {
+         "type": "RADIATION",
+         "name": "Steriotactic radiation therapy"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Michael Lilly, MD",
+         "affiliation": "Medical University of South Carolina",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Medical University of South Carolina",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        },
+        {
+         "term": "Ipilimumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT05041062",
+       "briefTitle": "A Study of Immunotherapy Drugs Nivolumab and Ipilimumab in Patients w/Resectable Malignant Peritoneal Mesothelioma"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2021-12-01",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2023-04-13",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "University of Chicago",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Mesothelioma",
+        "Peritoneal Mesothelioma"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 2
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        },
+        {
+         "type": "DRUG",
+         "name": "Ipilimumab"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Kiran Turaga, MD",
+         "affiliation": "University of Chicago",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "The University of Chicago",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        },
+        {
+         "term": "Ipilimumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04702880",
+       "briefTitle": "A Study of BMS-986012 in Combination With Carboplatin, Etoposide, and Nivolumab as First-line Therapy in Extensive-stage Small Cell Lung Cancer"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2021-03-17",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2025-11-28",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Bristol-Myers Squibb",
+        "class": "INDUSTRY"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Extensive-stage Small Cell Lung Cancer"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 135
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "BIOLOGICAL",
+         "name": "BMS-986012"
+        },
+        {
+         "type": "DRUG",
+         "name": "Carboplatin"
+        },
+        {
+         "type": "DRUG",
+         "name": "Etoposide"
+        },
+        {
+         "type": "BIOLOGICAL",
+         "name": "Nivolumab"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Bristol-Myers Squibb",
+         "affiliation": "Bristol-Myers Squibb",
+         "role": "STUDY_DIRECTOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Local Institution - 0075",
+         "country": "United States"
+        },
+        {
+         "facility": "Local Institution - 0022",
+         "country": "United States"
+        },
+        {
+         "facility": "Local Institution - 0002",
+         "country": "United States"
+        },
+        {
+         "facility": "Local Institution - 0060",
+         "country": "United States"
+        },
+        {
+         "facility": "Local Institution",
+         "country": "United States"
+        },
+        {
+         "facility": "Local Institution - 0067",
+         "country": "United States"
+        },
+        {
+         "facility": "Local Institution - 0081",
+         "country": "United States"
+        },
+        {
+         "facility": "Local Institution",
+         "country": "United States"
+        },
+        {
+         "facility": "Local Institution - 0003",
+         "country": "Australia"
+        },
+        {
+         "facility": "Local Institution - 0023",
+         "country": "Australia"
+        },
+        {
+         "facility": "Local Institution - 0001",
+         "country": "Australia"
+        },
+        {
+         "facility": "Local Institution - 0004",
+         "country": "Australia"
+        },
+        {
+         "facility": "Local Institution - 0051",
+         "country": "Belgium"
+        },
+        {
+         "facility": "Local Institution - 0034",
+         "country": "Belgium"
+        },
+        {
+         "facility": "Local Institution - 0050",
+         "country": "Belgium"
+        },
+        {
+         "facility": "Local Institution - 0012",
+         "country": "Canada"
+        },
+        {
+         "facility": "Local Institution - 0064",
+         "country": "Canada"
+        },
+        {
+         "facility": "Local Institution - 0045",
+         "country": "Greece"
+        },
+        {
+         "facility": "Local Institution - 0036",
+         "country": "Greece"
+        },
+        {
+         "facility": "Local Institution - 0038",
+         "country": "Greece"
+        },
+        {
+         "facility": "Local Institution - 0030",
+         "country": "Italy"
+        },
+        {
+         "facility": "Local Institution - 0031",
+         "country": "Italy"
+        },
+        {
+         "facility": "Local Institution - 0029",
+         "country": "Italy"
+        },
+        {
+         "facility": "Local Institution - 0073",
+         "country": "Japan"
+        },
+        {
+         "facility": "Local Institution - 0070",
+         "country": "Japan"
+        },
+        {
+         "facility": "Local Institution - 0069",
+         "country": "Japan"
+        },
+        {
+         "facility": "Local Institution - 0077",
+         "country": "Japan"
+        },
+        {
+         "facility": "Local Institution - 0039",
+         "country": "Netherlands"
+        },
+        {
+         "facility": "Local Institution - 0066",
+         "country": "Netherlands"
+        },
+        {
+         "facility": "Local Institution - 0040",
+         "country": "Netherlands"
+        },
+        {
+         "facility": "Local Institution - 0049",
+         "country": "Poland"
+        },
+        {
+         "facility": "Local Institution - 0048",
+         "country": "Poland"
+        },
+        {
+         "facility": "Local Institution - 0043",
+         "country": "Romania"
+        },
+        {
+         "facility": "Local Institution - 0042",
+         "country": "Romania"
+        },
+        {
+         "facility": "Local Institution - 0041",
+         "country": "Romania"
+        },
+        {
+         "facility": "Local Institution - 0007",
+         "country": "Spain"
+        },
+        {
+         "facility": "Local Institution - 0021",
+         "country": "Spain"
+        },
+        {
+         "facility": "Local Institution - 0005",
+         "country": "Spain"
+        },
+        {
+         "facility": "Local Institution - 0006",
+         "country": "Spain"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Carboplatin"
+        },
+        {
+         "term": "Etoposide"
+        },
+        {
+         "term": "Nivolumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT05435053",
+       "briefTitle": "Irreversible Electroporation + Nivolumab for Patients With Metastatic Pancreatic Cancer"
+      },
+      "statusModule": {
+       "overallStatus": "TERMINATED",
+       "startDateStruct": {
+        "date": "2022-09-08",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2023-08-30",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Ismail Gögenur",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Pancreas Cancer"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 9
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Nivolumab"
+        },
+        {
+         "type": "DEVICE",
+         "name": "Irreversible electroporation (IRE)"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Ismail Gögenur, Professor",
+         "affiliation": "Zealand University Hospital",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Zealand University Hospital",
+         "country": "Denmark"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Nivolumab"
+        },
+        {
+         "term": "Electroporation"
+        }
+       ]
+      }
+     }
     }
    ],
-   "nextPageToken": "ZVNj7o2Elu8o3lpyBYqp6rLumpOQJJxtZ_Cj1fYW"
+   "nextPageToken": "ZVNj7o2Elu8o3lpyBYqp6rLumpOQJJxtbfWl2vIW"
   }
  ]
 }

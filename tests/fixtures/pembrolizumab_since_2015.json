@@ -2,17 +2,17 @@
  "request": {
   "path": "/studies",
   "params": {
-   "query.intr": "pembrolizumab",
+   "query.intr": "AREA[InterventionName]pembrolizumab OR AREA[InterventionMeshTerm]pembrolizumab",
    "filter.advanced": "AREA[StartDate]RANGE[2015-01-01,MAX]",
    "fields": "NCTId|BriefTitle|Phase|StartDate|StartDateType|CompletionDate|CompletionDateType|OverallStatus|StudyType|LeadSponsorName|LeadSponsorClass|InterventionType|InterventionName|InterventionMeshTerm|Condition|LocationCountry|LocationStatus|LocationFacility|OverallOfficialName|OverallOfficialRole|OverallOfficialAffiliation|EnrollmentCount",
    "pageSize": 100,
    "countTotal": "true"
   }
  },
- "retrieved_at": "2026-11-09T23:45:37.088054+00:00",
+ "retrieved_at": "2026-11-10T00:17:54.113248+00:00",
  "pages": [
   {
-   "totalCount": 2938,
+   "totalCount": 2599,
    "studies": [
     {
      "protocolSection": {
@@ -974,123 +974,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT07574047",
-       "briefTitle": "MELCHRONO: A Prospective Randomized Study Investigating Chrono-immunotherapy for Advanced Melanoma."
-      },
-      "statusModule": {
-       "overallStatus": "RECRUITING",
-       "startDateStruct": {
-        "date": "2026-10-12",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2032-06",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Swiss Cancer Institute",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Melanoma",
-        "Advanced Melanoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE2"
-       ],
-       "enrollmentInfo": {
-        "count": 108
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Immune Checkpoint Inhibitors"
-        },
-        {
-         "type": "DRUG",
-         "name": "Immune Checkpoint Inhibitors"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Berna Özdemir, MD PhD",
-         "affiliation": "Insel Gruppe AG, University Hospital Bern",
-         "role": "STUDY_CHAIR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "HFR Fribourg",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Universitätsspital Basel",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Ente Ospedaliero Cantonale (EOC)",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Inselspital, Bern",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Hôpitaux Universitaires de Genève HUG",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Centre Hospitalier Universitaire Vaudois (CHUV)",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Spital Thurgau (Kantonsspital Münserlingen und Frauenfeld)",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "HOCH Health Ostschweiz - Kantonsspital St. Gallen",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        },
-        {
-         "facility": "Universitätsspital Zürich USZ",
-         "status": "RECRUITING",
-         "country": "Switzerland"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Immune Checkpoint Inhibitors"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT05280314",
        "briefTitle": "Phase II Trial of Neoadjuvant and Adjuvant IO102-IO103 and Pembrolizumab KEYTRUDA® in Patients With Resectable Tumors"
       },
@@ -1298,73 +1181,6 @@
        ]
       }
      }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT06784778",
-       "briefTitle": "Observational Study of Patients With Advanced Melanoma (Skin Cancer) to Assess if IOpener®-Melanoma Test Can Predict Response to Immunotherapy."
-      },
-      "statusModule": {
-       "overallStatus": "RECRUITING",
-       "startDateStruct": {
-        "date": "2024-07-12",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2027-07",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Pamgene International B.V.",
-        "class": "INDUSTRY"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Melanoma Metastatic",
-        "Melanoma, Skin",
-        "Melanoma Stage III or IV",
-        "Melanoma Advanced"
-       ]
-      },
-      "designModule": {
-       "studyType": "OBSERVATIONAL",
-       "enrollmentInfo": {
-        "count": 196
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DIAGNOSTIC_TEST",
-         "name": "PBMC Kinase Activity Profile"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "locations": [
-        {
-         "facility": "Universitätsklinikum Tübingen",
-         "status": "RECRUITING",
-         "country": "Germany"
-        },
-        {
-         "facility": "Heidelberg University Hospital",
-         "status": "RECRUITING",
-         "country": "Germany"
-        },
-        {
-         "facility": "LMU Klinikum",
-         "status": "RECRUITING",
-         "country": "Germany"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
     },
     {
      "protocolSection": {
@@ -3774,77 +3590,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT05385900",
-       "briefTitle": "Immune Combined Targeted and Chemotherapy in Perioperative Treatment of Locally Advanced Gastric Cancer"
-      },
-      "statusModule": {
-       "overallStatus": "UNKNOWN",
-       "startDateStruct": {
-        "date": "2022-06-30",
-        "type": "ESTIMATED"
-       },
-       "completionDateStruct": {
-        "date": "2024-06-30",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Xijing Hospital",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Gastric Cancer"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "NA"
-       ],
-       "enrollmentInfo": {
-        "count": 57
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Penpulimab combination with anlotinib and chemotherapy"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Liu Hong",
-         "affiliation": "Air Force Military Medical University, China",
-         "role": "STUDY_CHAIR"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "anlotinib"
-        },
-        {
-         "term": "Drug Therapy"
-        },
-        {
-         "term": "Oxaliplatin"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT04152863",
        "briefTitle": "Efficacy, Safety, and Tolerability of Gebasaxturev (V937) Administered Intravenously or Intratumorally With Pembrolizumab (MK-3475) Versus Pembrolizumab Alone in Participants With Advanced/Metastatic Melanoma (V937-011)"
       },
@@ -4548,90 +4293,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT04909034",
-       "briefTitle": "A Randomized, Placebo Controlled Study to Evaluate the Safety and Potential Efficacy of MS-20 in Combination with Pembrolizumab for the Treatment of Non-Small-Cell Lung Cancer"
-      },
-      "statusModule": {
-       "overallStatus": "COMPLETED",
-       "startDateStruct": {
-        "date": "2021-08-20",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2024-11-30",
-        "type": "ACTUAL"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Microbio Co Ltd",
-        "class": "INDUSTRY"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "NSCLC Stage IIIB~IV"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "NA"
-       ],
-       "enrollmentInfo": {
-        "count": 15
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "MS-20"
-        },
-        {
-         "type": "DRUG",
-         "name": "Placebo"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "locations": [
-        {
-         "facility": "Kaohsiung Medical University Chung-Ho Memorial Hospital",
-         "country": "Taiwan"
-        },
-        {
-         "facility": "E-Da Hospital",
-         "country": "Taiwan"
-        },
-        {
-         "facility": "Kaohsiung Chang Gung Memorial Hospital",
-         "country": "Taiwan"
-        },
-        {
-         "facility": "Taipei Medical University Hospital",
-         "country": "Taiwan"
-        },
-        {
-         "facility": "Taipei Municipal Wanfang Hospital",
-         "country": "Taiwan"
-        },
-        {
-         "facility": "Ministry of Health and Welfare Shuang-Ho Hospital",
-         "country": "Taiwan"
-        },
-        {
-         "facility": "Chang Gung Memorial Hospital Linkou Branch",
-         "country": "Taiwan"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT03556228",
        "briefTitle": "VMD-928 Monotherapy and in Combination With Pembrolizumab to Treat TrkA Overexpression Driven Solid Tumors or Lymphoma"
       },
@@ -4791,165 +4452,6 @@
         },
         {
          "term": "Combined Modality Therapy"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT03719105",
-       "briefTitle": "Chemoimmunotherapy and Allogeneic Stem Cell Transplant for NK T-cell Leukemia/Lymphoma"
-      },
-      "statusModule": {
-       "overallStatus": "RECRUITING",
-       "startDateStruct": {
-        "date": "2019-03-01",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2028-12-31",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "New York Medical College",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "NK-Cell Lymphoma",
-        "NK-Cell Leukemia",
-        "Peripheral T Cell Lymphoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "EARLY_PHASE1"
-       ],
-       "enrollmentInfo": {
-        "count": 40
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Methotrexate"
-        },
-        {
-         "type": "DRUG",
-         "name": "pralatraxate,"
-        },
-        {
-         "type": "DRUG",
-         "name": "Ifosfamide"
-        },
-        {
-         "type": "DRUG",
-         "name": "Dexamethasone"
-        },
-        {
-         "type": "DRUG",
-         "name": "Etoposide"
-        },
-        {
-         "type": "DRUG",
-         "name": "calaspargase pegol"
-        },
-        {
-         "type": "DRUG",
-         "name": "cyclophosphamide"
-        },
-        {
-         "type": "DRUG",
-         "name": "Doxorubicin"
-        },
-        {
-         "type": "DRUG",
-         "name": "Prednisone"
-        },
-        {
-         "type": "DRUG",
-         "name": "Brentuximab Vedotin"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Mitchell Cairo, MD",
-         "affiliation": "New York Medical College",
-         "role": "STUDY_DIRECTOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "University of Alabama",
-         "status": "RECRUITING",
-         "country": "United States"
-        },
-        {
-         "facility": "Children's Hospital Orange County",
-         "status": "RECRUITING",
-         "country": "United States"
-        },
-        {
-         "facility": "University of California San Francisco",
-         "status": "RECRUITING",
-         "country": "United States"
-        },
-        {
-         "facility": "Helen De Vos",
-         "status": "RECRUITING",
-         "country": "United States"
-        },
-        {
-         "facility": "New York Medical College",
-         "status": "RECRUITING",
-         "country": "United States"
-        },
-        {
-         "facility": "Nationwide Children's Hospital",
-         "status": "RECRUITING",
-         "country": "United States"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Methotrexate"
-        },
-        {
-         "term": "Ifosfamide"
-        },
-        {
-         "term": "Dexamethasone"
-        },
-        {
-         "term": "Etoposide"
-        },
-        {
-         "term": "calaspargase pegol"
-        },
-        {
-         "term": "Cyclophosphamide"
-        },
-        {
-         "term": "Doxorubicin"
-        },
-        {
-         "term": "Prednisone"
-        },
-        {
-         "term": "Brentuximab Vedotin"
         }
        ]
       }
@@ -5193,82 +4695,6 @@
         },
         {
          "term": "anlotinib"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT05105100",
-       "briefTitle": "Peripheral T Cell Determinants of Response and Resistance to Pembrolizumab in Melanoma"
-      },
-      "statusModule": {
-       "overallStatus": "COMPLETED",
-       "startDateStruct": {
-        "date": "2021-10-29",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2025-09-15",
-        "type": "ACTUAL"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "University of California, San Francisco",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Melanoma",
-        "Advanced Melanoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "OBSERVATIONAL",
-       "enrollmentInfo": {
-        "count": 25
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "PROCEDURE",
-         "name": "Biopsy"
-        },
-        {
-         "type": "PROCEDURE",
-         "name": "Biospecimen Collection"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Adil Daud, MD",
-         "affiliation": "University of California, San Francisco",
-         "role": "PRINCIPAL_INVESTIGATOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "University of California, San Francisco",
-         "country": "United States"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Biopsy"
-        },
-        {
-         "term": "Specimen Handling"
         }
        ]
       }
@@ -7434,79 +6860,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT07417501",
-       "briefTitle": "Lenvatinib Plus PD-1 Inhibitor for Advanced Solid Tumors With 11q13 Amplification"
-      },
-      "statusModule": {
-       "overallStatus": "RECRUITING",
-       "startDateStruct": {
-        "date": "2026-05-07",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2029-03-01",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Tongji Hospital",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Solid Tumors"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE2"
-       ],
-       "enrollmentInfo": {
-        "count": 60
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Lenvatinib plus PD-1 Inhibitor"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "locations": [
-        {
-         "facility": "Tongji Hospital",
-         "status": "NOT_YET_RECRUITING",
-         "country": "China"
-        },
-        {
-         "facility": "Tongji Hospital",
-         "status": "RECRUITING",
-         "country": "China"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "lenvatinib"
-        },
-        {
-         "term": "Immune Checkpoint Inhibitors"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT07739966",
        "briefTitle": "A Study of DS-3939a in Participants With Solid Tumors"
       },
@@ -9252,69 +8605,6 @@
        ]
       }
      }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT04373642",
-       "briefTitle": "\"QUAD SHOT\" Radiotherapy With Pembrolizumab in Patients With Recurrent Head & Neck Cancer"
-      },
-      "statusModule": {
-       "overallStatus": "ACTIVE_NOT_RECRUITING",
-       "startDateStruct": {
-        "date": "2020-12-23",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2026-10",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "University of Oklahoma",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Head and Neck Cancer"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE2"
-       ],
-       "enrollmentInfo": {
-        "count": 30
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Pebrolizumab + QUADSHOT Radiotherapy"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Christina Henson, MD",
-         "affiliation": "University of Oklahoma",
-         "role": "PRINCIPAL_INVESTIGATOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "Stephenson Cancer Center",
-         "country": "United States"
-        }
-       ]
-      }
-     },
-     "derivedSection": {}
     },
     {
      "protocolSection": {
@@ -12056,77 +11346,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT06550453",
-       "briefTitle": "Safety and Efficacy of Pembrolizumab in Combination with Bevacizumab + CapeOX in the Neoadjuvant Treatment of RAS-mutated, BRAF Wild-type, Microsatellite-stabilized, Locally Advanced Colorectal Cancer"
-      },
-      "statusModule": {
-       "overallStatus": "UNKNOWN",
-       "startDateStruct": {
-        "date": "2024-09-01",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2026-01-15",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "yangjianjun",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Locally Advanced Colorectal Cancer"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE4"
-       ],
-       "enrollmentInfo": {
-        "count": 20
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Pabolizumab+ bevacizumab and CapeOX (bevacizumab + oxaliplatin + capecitabine)"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "locations": [
-        {
-         "facility": "the First Affliated Hospital (Xijing Hospital),the First Affiliated Hospital of Air Force Military Medical University",
-         "status": "RECRUITING",
-         "country": "China"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Bevacizumab"
-        },
-        {
-         "term": "Oxaliplatin"
-        },
-        {
-         "term": "Capecitabine"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT04677361",
        "briefTitle": "Feasibility Study on Expandion of MILs From NSCLC and SCLC Patients and Infusion With Pembrolizumab"
       },
@@ -14243,176 +13462,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT04282044",
-       "briefTitle": "Study of CRX100 as Monotherapy and in Combination With Pembrolizumab in Patients With Advanced Solid Malignancies"
-      },
-      "statusModule": {
-       "overallStatus": "UNKNOWN",
-       "startDateStruct": {
-        "date": "2021-01-08",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2026-10",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "BioEclipse Therapeutics",
-        "class": "INDUSTRY"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Solid Tumor, Adult",
-        "Triple Negative Breast Cancer",
-        "Colorectal Cancer",
-        "Hepatocellular Carcinoma",
-        "Osteosarcoma",
-        "Epithelial Ovarian Cancer",
-        "Gastric Cancer",
-        "Non-small Cell Lung Cancer",
-        "Malignant Melanoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE1"
-       ],
-       "enrollmentInfo": {
-        "count": 60
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "BIOLOGICAL",
-         "name": "CRX100 suspension for infusion"
-        },
-        {
-         "type": "COMBINATION_PRODUCT",
-         "name": "Fludarabine"
-        },
-        {
-         "type": "COMBINATION_PRODUCT",
-         "name": "Cyclophosphamide"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Oliver Dorigo, MD",
-         "affiliation": "Stanford University",
-         "role": "PRINCIPAL_INVESTIGATOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "HonorHealth Research Institute",
-         "status": "RECRUITING",
-         "country": "United States"
-        },
-        {
-         "facility": "UC San Diego Moores Cancer Center",
-         "status": "RECRUITING",
-         "country": "United States"
-        },
-        {
-         "facility": "Stanford University",
-         "status": "RECRUITING",
-         "country": "United States"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "fludarabine"
-        },
-        {
-         "term": "Cyclophosphamide"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT07403136",
-       "briefTitle": "Becotatug Vedotin ± Anti-PD-1 in Pretreated Advanced ESCC"
-      },
-      "statusModule": {
-       "overallStatus": "RECRUITING",
-       "startDateStruct": {
-        "date": "2026-04-30",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2029-01-31",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Fudan University",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Esophageal Squamous Cell Carcinoma"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE2"
-       ],
-       "enrollmentInfo": {
-        "count": 104
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Vebrekotuzumab"
-        },
-        {
-         "type": "DRUG",
-         "name": "PD-1 antibody"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "locations": [
-        {
-         "facility": "Fudan University Shanghai Cancer Center",
-         "status": "RECRUITING",
-         "country": "China"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "spartalizumab"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT02318771",
        "briefTitle": "Radiation Therapy and MK-3475 for Patients With Recurrent/Metastatic Head and Neck Cancer, Renal Cell Cancer, Melanoma, and Lung Cancer"
       },
@@ -14494,79 +13543,6 @@
         },
         {
          "term": "pembrolizumab"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
-       "nctId": "NCT03591276",
-       "briefTitle": "Phase 1b Study of Pegylated Liposomal Doxorubicin and Pembrolizumab in Endocrine-resistant Breast Cancer"
-      },
-      "statusModule": {
-       "overallStatus": "RECRUITING",
-       "startDateStruct": {
-        "date": "2019-04-18",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2021-06-15",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "Shaare Zedek Medical Center",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Metastatic Breast Cancer"
-       ]
-      },
-      "designModule": {
-       "studyType": "INTERVENTIONAL",
-       "phases": [
-        "PHASE1",
-        "PHASE2"
-       ],
-       "enrollmentInfo": {
-        "count": 15
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "DRUG",
-         "name": "Chemotherapy Drugs, Cancer"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "overallOfficials": [
-        {
-         "name": "Alberto A Gabizon, MD, PhD",
-         "affiliation": "Shaare Zedek MC",
-         "role": "PRINCIPAL_INVESTIGATOR"
-        }
-       ],
-       "locations": [
-        {
-         "facility": "Shaare Zedek Medical Center",
-         "status": "RECRUITING",
-         "country": "Israel"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Antineoplastic Agents"
         }
        ]
       }
@@ -16299,81 +15275,6 @@
     {
      "protocolSection": {
       "identificationModule": {
-       "nctId": "NCT06632106",
-       "briefTitle": "HAIC in Combination with Immune Checkpoint Inhibitors and Tyrosine Kinase Inhibitors for Advanced HCC"
-      },
-      "statusModule": {
-       "overallStatus": "UNKNOWN",
-       "startDateStruct": {
-        "date": "2024-08-16",
-        "type": "ACTUAL"
-       },
-       "completionDateStruct": {
-        "date": "2025-05-30",
-        "type": "ESTIMATED"
-       }
-      },
-      "sponsorCollaboratorsModule": {
-       "leadSponsor": {
-        "name": "First Hospital of China Medical University",
-        "class": "OTHER"
-       }
-      },
-      "conditionsModule": {
-       "conditions": [
-        "Hepatic Arterial Infusion Chemotherapy",
-        "Tyrosine Kinase Inhibitor",
-        "Immune Checkpoint Inhibitors",
-        "Hepatocellular Carcinoma (HCC)"
-       ]
-      },
-      "designModule": {
-       "studyType": "OBSERVATIONAL",
-       "enrollmentInfo": {
-        "count": 97
-       }
-      },
-      "armsInterventionsModule": {
-       "interventions": [
-        {
-         "type": "PROCEDURE",
-         "name": "hepatic artery infusion chemotherapy"
-        },
-        {
-         "type": "DRUG",
-         "name": "Tyrosine kinase inhibitor (TKIs)"
-        },
-        {
-         "type": "DRUG",
-         "name": "Immune Checkpoint Inhibitors"
-        }
-       ]
-      },
-      "contactsLocationsModule": {
-       "locations": [
-        {
-         "facility": "The first hospital of China medical university",
-         "country": "China"
-        }
-       ]
-      }
-     },
-     "derivedSection": {
-      "interventionBrowseModule": {
-       "meshes": [
-        {
-         "term": "Tyrosine Kinase Inhibitors"
-        },
-        {
-         "term": "Immune Checkpoint Inhibitors"
-        }
-       ]
-      }
-     }
-    },
-    {
-     "protocolSection": {
-      "identificationModule": {
        "nctId": "NCT07015333",
        "briefTitle": "Case Review of Patients With Betel Nut-induced Oral Cancer Treated With Pembrolizumab and Cetuximab"
       },
@@ -16700,9 +15601,2976 @@
        ]
       }
      }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04452214",
+       "briefTitle": "A Study of the Safety and Tolerance of CAN04 and Pembrolizumab in Combination With and Without Carboplatin and Pemetrexed in Subjects With Solid Tumors"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2020-09-24",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2023-06-28",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Cantargia AB",
+        "class": "INDUSTRY"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Carcinoma, Non-Small-Cell Lung",
+        "Urothelial Carcinoma",
+        "Malignant Melanoma",
+        "Head and Neck Squamous Cell Carcinoma"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE1"
+       ],
+       "enrollmentInfo": {
+        "count": 19
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "CAN04"
+        },
+        {
+         "type": "DRUG",
+         "name": "Pembrolizumab"
+        },
+        {
+         "type": "DRUG",
+         "name": "Carboplatin"
+        },
+        {
+         "type": "DRUG",
+         "name": "Pemetrexed"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Ignacio Garcia-Ribas, MD, PhD",
+         "affiliation": "Cantargia AB",
+         "role": "STUDY_DIRECTOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "University of Colorado Cancer Center",
+         "country": "United States"
+        },
+        {
+         "facility": "Florida Cancer Specialists & Research Institute",
+         "country": "United States"
+        },
+        {
+         "facility": "Hospital of The University of Pennsylvania",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "pembrolizumab"
+        },
+        {
+         "term": "Carboplatin"
+        },
+        {
+         "term": "Pemetrexed"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT02703714",
+       "briefTitle": "Pembrolizumab and GM-CSF in Biliary Cancer"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2016-05-06",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2020-12-31",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Robin Kate Kelley",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Biliary Cancer"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 42
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Pembrolizumab"
+        },
+        {
+         "type": "DRUG",
+         "name": "Sargramostim"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "R. Kate Kelley, M.D.",
+         "affiliation": "University of California, San Francisco",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "University of California San Francisco",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "pembrolizumab"
+        },
+        {
+         "term": "sargramostim"
+        },
+        {
+         "term": "Granulocyte-Macrophage Colony-Stimulating Factor"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT03225547",
+       "briefTitle": "Study of Pembrolizumab and Mifepristone in Patients With Advanced HER2-negative Breast Cancer"
+      },
+      "statusModule": {
+       "overallStatus": "TERMINATED",
+       "startDateStruct": {
+        "date": "2018-02-12",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2025-09-30",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "University of Chicago",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Triple Negative Breast Neoplasms",
+        "Breast Cancer"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 24
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Pembrolizumab"
+        },
+        {
+         "type": "DRUG",
+         "name": "Mifepristone"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Rita Nanda, MD",
+         "affiliation": "University of Chicago",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "University of Chicago",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "pembrolizumab"
+        },
+        {
+         "term": "Mifepristone"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT05998447",
+       "briefTitle": "GEN-001 Plus Pembrolizumab for Patients With Advanced Refractory Biliary Tract Cancer"
+      },
+      "statusModule": {
+       "overallStatus": "TERMINATED",
+       "startDateStruct": {
+        "date": "2023-09-18",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2024-11-26",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Genome & Company",
+        "class": "INDUSTRY"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Biliary Tract Cancer"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 10
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "GEN-001"
+        },
+        {
+         "type": "DRUG",
+         "name": "Pembrolizumab"
+        },
+        {
+         "type": "DRUG",
+         "name": "mFOLFOX"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "locations": [
+        {
+         "facility": "Seoul National University Hospital",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Severance Hospital",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Asan Medical Center",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Samsung Medical Center.",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Korea University Guro Hospital",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Ajou University Medical Center",
+         "country": "South Korea"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "pembrolizumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT03302234",
+       "briefTitle": "Study of Pembrolizumab Given With Ipilimumab or Placebo in Participants With Untreated Metastatic Non-Small Cell Lung Cancer (NSCLC) (MK-3475-598/KEYNOTE-598)"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2017-12-14",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2022-09-07",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Merck Sharp & Dohme LLC",
+        "class": "INDUSTRY"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Carcinoma, Non-Small-Cell Lung"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE3"
+       ],
+       "enrollmentInfo": {
+        "count": 568
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "BIOLOGICAL",
+         "name": "Pembrolizumab"
+        },
+        {
+         "type": "BIOLOGICAL",
+         "name": "Ipilimumab"
+        },
+        {
+         "type": "OTHER",
+         "name": "Placebo"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Medical Director",
+         "affiliation": "Merck Sharp & Dohme LLC",
+         "role": "STUDY_DIRECTOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Mayo Clinic Cancer Center ( Site 0007)",
+         "country": "United States"
+        },
+        {
+         "facility": "Disney Family Cancer Center ( Site 0035)",
+         "country": "United States"
+        },
+        {
+         "facility": "Pacific Cancer Care ( Site 0001)",
+         "country": "United States"
+        },
+        {
+         "facility": "John Wayne Cancer Institute ( Site 0021)",
+         "country": "United States"
+        },
+        {
+         "facility": "Florida Hospital Cancer Institute ( Site 0009)",
+         "country": "United States"
+        },
+        {
+         "facility": "Mercy Health-Paducah Medical Oncology and Hematology ( Site 0018)",
+         "country": "United States"
+        },
+        {
+         "facility": "New England Cancer Specialists ( Site 0019)",
+         "country": "United States"
+        },
+        {
+         "facility": "Boston Medical Center ( Site 0025)",
+         "country": "United States"
+        },
+        {
+         "facility": "Lahey Hospital & Medical Center ( Site 0020)",
+         "country": "United States"
+        },
+        {
+         "facility": "Holy Name Medical Center ( Site 0022)",
+         "country": "United States"
+        },
+        {
+         "facility": "Icahn School of Medicine at Mount Sinai ( Site 0034)",
+         "country": "United States"
+        },
+        {
+         "facility": "The Ohio State University Wexner Medical Center ( Site 0016)",
+         "country": "United States"
+        },
+        {
+         "facility": "Mid Ohio Oncology/Hematology Inc. ( Site 0003)",
+         "country": "United States"
+        },
+        {
+         "facility": "Providence Cancer Institute, Franz Clinic - Eastside ( Site 0031)",
+         "country": "United States"
+        },
+        {
+         "facility": "Greenville Health System ( Site 8010)",
+         "country": "United States"
+        },
+        {
+         "facility": "University of Tennessee Erlanger Oncology & Hematology ( Site 0026)",
+         "country": "United States"
+        },
+        {
+         "facility": "Tennessee Cancer Specialists ( Site 0017)",
+         "country": "United States"
+        },
+        {
+         "facility": "Texas Oncology-Arlington South ( Site 8006)",
+         "country": "United States"
+        },
+        {
+         "facility": "Texas Oncology-Methodist Dallas Cancer Center ( Site 8000)",
+         "country": "United States"
+        },
+        {
+         "facility": "Texas Oncology-Flower Mound ( Site 8007)",
+         "country": "United States"
+        },
+        {
+         "facility": "Texas Oncology-Longview Cancer Center ( Site 8009)",
+         "country": "United States"
+        },
+        {
+         "facility": "Northwest Cancer Specialists, P.C. ( Site 8001)",
+         "country": "United States"
+        },
+        {
+         "facility": "Virginia Mason Memorial- North Star Lodge Cancer Center ( Site 0033)",
+         "country": "United States"
+        },
+        {
+         "facility": "University of Wisconsin Carbone Cancer Center ( Site 0004)",
+         "country": "United States"
+        },
+        {
+         "facility": "Medical College of Wisconsin Clinical Cancer Center ( Site 0027)",
+         "country": "United States"
+        },
+        {
+         "facility": "Centro de Investigaciones Clinicas - Clinica Viedma ( Site 0202)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Sanatorio Parque ( Site 0201)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Hospital Aleman ( Site 0208)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Hospital Privado Centro Medico Cordoba ( Site 0206)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Centro Oncologico Riojano Integral ( Site 0203)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Sanatorio Britanico ( Site 0205)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Instituto de Oncologia de Rosario ( Site 0200)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Centro Medico San Roque ( Site 0207)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Mater Cancer Care Centre ( Site 2102)",
+         "country": "Australia"
+        },
+        {
+         "facility": "Fiona Stanley Hospital ( Site 2105)",
+         "country": "Australia"
+        },
+        {
+         "facility": "Chris OBrien Lifehouse ( Site 2100)",
+         "country": "Australia"
+        },
+        {
+         "facility": "The Townsville Hospital ( Site 2103)",
+         "country": "Australia"
+        },
+        {
+         "facility": "St Vincents Hospital Melbourne ( Site 2101)",
+         "country": "Australia"
+        },
+        {
+         "facility": "Inst de Medicina Integral Professor Fernando Figueira- IMIP ( Site 0302)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "Hospital Nossa Senhora da Conceicao ( Site 0306)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "Clinica de Hematologia e Oncologia Viver Ltda ( Site 0305)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "Instituto do Cancer de Sao Paulo - ICESP ( Site 0300)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "Hospital Alemao Oswaldo Cruz ( Site 0311)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "Escola Paulista de Medicina - UNIFESP ( Site 0304)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "Fundacao Pio XII - Hospital de Cancer de Barretos ( Site 0312)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "CEPON Centro de Pesquisa Oncológicas ( Site 0307)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "Hospital do Servidor Publico do Estado ( Site 0308)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "Tom Baker Cancer Centre ( Site 0119)",
+         "country": "Canada"
+        },
+        {
+         "facility": "CancerCare Manitoba ( Site 0106)",
+         "country": "Canada"
+        },
+        {
+         "facility": "CIUSSS du Saguenay-Lac-St-Jean ( Site 0115)",
+         "country": "Canada"
+        },
+        {
+         "facility": "CISSS de la Monteregie-Centre ( Site 0100)",
+         "country": "Canada"
+        },
+        {
+         "facility": "CISSS-CA Hotel-Dieu de Levis ( Site 0108)",
+         "country": "Canada"
+        },
+        {
+         "facility": "CIUSSS Ouest de l'Ile - St-Mary's Hospital ( Site 0107)",
+         "country": "Canada"
+        },
+        {
+         "facility": "St-Jerome Medical Research Inc ( Site 0113)",
+         "country": "Canada"
+        },
+        {
+         "facility": "Clinica Universidad Catolica del Maule ( Site 0413)",
+         "country": "Chile"
+        },
+        {
+         "facility": "Soc. Prosalud Montes y Orlandi Ltda (Orlandi Oncologia) ( Site 0401)",
+         "country": "Chile"
+        },
+        {
+         "facility": "Pontificia Universidad Catolica de Chile ( Site 0404)",
+         "country": "Chile"
+        },
+        {
+         "facility": "Instituto Nacional del Cancer ( Site 0406)",
+         "country": "Chile"
+        },
+        {
+         "facility": "Hospital Clinico Vina del Mar ( Site 0400)",
+         "country": "Chile"
+        },
+        {
+         "facility": "Hospital Pablo Tobon Uribe ( Site 0505)",
+         "country": "Colombia"
+        },
+        {
+         "facility": "Centro de Investigacion Clinica del Country ( Site 0500)",
+         "country": "Colombia"
+        },
+        {
+         "facility": "Clinica Colsanitas S.A. Sede Clinica Universitaria Colombia ( Site 0506)",
+         "country": "Colombia"
+        },
+        {
+         "facility": "Oncomedica S.A. ( Site 0502)",
+         "country": "Colombia"
+        },
+        {
+         "facility": "Instituto Cancerologico de Narino Ltda ( Site 0504)",
+         "country": "Colombia"
+        },
+        {
+         "facility": "Hopital Nord du Marseille ( Site 0808)",
+         "country": "France"
+        },
+        {
+         "facility": "Institut Bergonie ( Site 0803)",
+         "country": "France"
+        },
+        {
+         "facility": "CHU de Brest. Hopital Morvan ( Site 0800)",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hopitalier Intercommunal Creteil ( Site 0802)",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier Le Mans ( Site 0804)",
+         "country": "France"
+        },
+        {
+         "facility": "C.H.R.U de Lille - Hopital Calmette ( Site 0805)",
+         "country": "France"
+        },
+        {
+         "facility": "Hopital Tenon ( Site 0810)",
+         "country": "France"
+        },
+        {
+         "facility": "Nouvel Hopital Civil ( Site 0809)",
+         "country": "France"
+        },
+        {
+         "facility": "CHU de Toulouse - Hopital Larrey ( Site 0801)",
+         "country": "France"
+        },
+        {
+         "facility": "Evangelische Lungenklinik Berlin ( Site 0903)",
+         "country": "Germany"
+        },
+        {
+         "facility": "Vivantes Klinikum Spandau ( Site 0910)",
+         "country": "Germany"
+        },
+        {
+         "facility": "HELIOS Klinikum Emil von Behring ( Site 0905)",
+         "country": "Germany"
+        },
+        {
+         "facility": "SRH Waldklinikum Gera GmbH ( Site 0907)",
+         "country": "Germany"
+        },
+        {
+         "facility": "LungenClinic Grosshansdorf GmbH ( Site 0908)",
+         "country": "Germany"
+        },
+        {
+         "facility": "Universitaetsklinikum Heidelberg ( Site 0900)",
+         "country": "Germany"
+        },
+        {
+         "facility": "Universitaetsklinikum Leipzig ( Site 0919)",
+         "country": "Germany"
+        },
+        {
+         "facility": "Universitaetsklinikum Schleswig Holstein. ( Site 0918)",
+         "country": "Germany"
+        },
+        {
+         "facility": "Orszagos Koranyi TBC es Pulmonologiai Intezet ( Site 1502)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "Orszagos Koranyi TBC es Pulmonologiai Intezet ( Site 1506)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "Orszagos Onkologiai Intezet ( Site 1509)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "Debreceni Egyetem Klinikai Kozpont ( Site 1511)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "Veszprem Megyei Tudogyogyintezet ( Site 1503)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "Petz Aladar Megyei Oktato Korhaz ( Site 1505)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "Bekes Megyei Pandy Kalman Korhaz. ( Site 1507)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "Fejer Megyei Szent Gyorgy Egyetemi Oktato Korhaz ( Site 1504)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "Jasz Nagykun Szolnok Megyei Hetenyi Geza Korhaz Rendelointezet ( Site 1501)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "Beaumont Hospital ( Site 1312)",
+         "country": "Ireland"
+        },
+        {
+         "facility": "St James Hospital ( Site 1401)",
+         "country": "Ireland"
+        },
+        {
+         "facility": "University Hospital Limerick ( Site 1403)",
+         "country": "Ireland"
+        },
+        {
+         "facility": "IRCCS Casa Sollievo della Sofferenza ( Site 1009)",
+         "country": "Italy"
+        },
+        {
+         "facility": "Humanitas Research Hospital ( Site 1004)",
+         "country": "Italy"
+        },
+        {
+         "facility": "Ospedale Mater Salutis ( Site 1005)",
+         "country": "Italy"
+        },
+        {
+         "facility": "ASST Spedali Civili ( Site 1001)",
+         "country": "Italy"
+        },
+        {
+         "facility": "Istituto Europeo di Oncologia ( Site 1007)",
+         "country": "Italy"
+        },
+        {
+         "facility": "Ospedale San Gerardo ASST Monza ( Site 1002)",
+         "country": "Italy"
+        },
+        {
+         "facility": "AORN dei Colli Plesso Monaldi ( Site 1003)",
+         "country": "Italy"
+        },
+        {
+         "facility": "Ospedale Santa Maria della Misericordia ( Site 1008)",
+         "country": "Italy"
+        },
+        {
+         "facility": "Pauls Stradins Clinical University Hospital ( Site 1100)",
+         "country": "Latvia"
+        },
+        {
+         "facility": "Riga East Clinical University Hospital ( Site 1111)",
+         "country": "Latvia"
+        },
+        {
+         "facility": "Hospital Civil de Guadalajara Fray Antonio Alcalde ( Site 0603)",
+         "country": "Mexico"
+        },
+        {
+         "facility": "Avix Investigacion Clinica S.C. ( Site 0600)",
+         "country": "Mexico"
+        },
+        {
+         "facility": "Medical Care and Research S.A. de C.V. ( Site 0602)",
+         "country": "Mexico"
+        },
+        {
+         "facility": "Grupo Medico Camino SC ( Site 0607)",
+         "country": "Mexico"
+        },
+        {
+         "facility": "Medica Sur S.A.B de C.V. ( Site 0608)",
+         "country": "Mexico"
+        },
+        {
+         "facility": "Oncologica de Puebla SA de CV ( Site 0606)",
+         "country": "Mexico"
+        },
+        {
+         "facility": "Hospital Nacional Guillermo Almenara Irigoyen ( Site 0705)",
+         "country": "Peru"
+        },
+        {
+         "facility": "Centro Especializado de Enfermedades Neoplasicas SRL-CEEN SRL ( Site 0710)",
+         "country": "Peru"
+        },
+        {
+         "facility": "Instituto Regional de Enfermedades Neoplasicas del Sur IRENSUR ( Site 0704)",
+         "country": "Peru"
+        },
+        {
+         "facility": "Clinica Internacional Sede San Borja ( Site 0701)",
+         "country": "Peru"
+        },
+        {
+         "facility": "Hospital Nacional Cayetano Heredia ( Site 0706)",
+         "country": "Peru"
+        },
+        {
+         "facility": "Clinica Peruano Americana S.A. ( Site 0703)",
+         "country": "Peru"
+        },
+        {
+         "facility": "Dolnoslaskie Centrum Onkologii. ( Site 1616)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Szpital Wojewodzki w Koszalinie im. Mikolaja Kopernika ( Site 1614)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Powiatowe Centrum Zdrowia w Brzezinach ( Site 1615)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Centrum Onkologii im. Prof. Franciszka Lukaszczyka ( Site 1609)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Przychodnia Lekarska Komed ( Site 1602)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Samodzielny Publiczny Zespol Gruzlicy i Chorob Pluc ( Site 1607)",
+         "country": "Poland"
+        },
+        {
+         "facility": "MED-POLONIA Sp. z o.o. ( Site 1605)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Centrum Onkologii-Instytut im. Marii Skłodowskiej-Curie ( Site 1600)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Universitas Annex National Hospital ( Site 1800)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Clinton Onclogy Clinic ( Site 1804)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Wilgers Oncology Centre ( Site 1808)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Vincent Pallotti Hospital ( Site 1811)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "University of Stellenbosch and Tygerberg Hospital ( Site 1810)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Dr G.A. Landers Specialist Oncologist ( Site 1803)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Charlotte Maxeke Johannesburg Academic Hospital ( Site 1806)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Sandton Oncology Medical Group PTY LTD ( Site 1807)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "GVI Oncology Clinical Research Centre ( Site 1802)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Seoul National University Hospital ( Site 2303)",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Severance Hospital Yonsei University Health System ( Site 2300)",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Asan Medical Center ( Site 2302)",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Samsung Medical Center ( Site 2301)",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Hospital Germans Trias i Pujol ( Site 1207)",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital Duran i Reynals ( Site 1201)",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital San Pedro de Alcantara ( Site 1208)",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital Universitario Insular de Gran Canaria ( Site 1203)",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital Universitari Vall d Hebron ( Site 1211)",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital Fundacion Jimenez Diaz - Clin. Concepcion ( Site 1209)",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital Universitario Virgen del Rocio ( Site 1200)",
+         "country": "Spain"
+        },
+        {
+         "facility": "Changhua Christian Hospital ( Site 2406)",
+         "country": "Taiwan"
+        },
+        {
+         "facility": "Chang Gung Medical Foundation - Kaohsiung ( Site 2404)",
+         "country": "Taiwan"
+        },
+        {
+         "facility": "China Medical University Hospital ( Site 2403)",
+         "country": "Taiwan"
+        },
+        {
+         "facility": "National Cheng Kung University Hospital ( Site 2401)",
+         "country": "Taiwan"
+        },
+        {
+         "facility": "National Taiwan University Hospital ( Site 2400)",
+         "country": "Taiwan"
+        },
+        {
+         "facility": "Mackay Memorial Hospital ( Site 2405)",
+         "country": "Taiwan"
+        },
+        {
+         "facility": "Chang Gung Memorial Hospital - Linkou Branch ( Site 2402)",
+         "country": "Taiwan"
+        },
+        {
+         "facility": "Ramathibodi Hospital. ( Site 2563)",
+         "country": "Thailand"
+        },
+        {
+         "facility": "Bangkok Hospital Chiangmai ( Site 2560)",
+         "country": "Thailand"
+        },
+        {
+         "facility": "Chulalongkorn Hospital ( Site 2561)",
+         "country": "Thailand"
+        },
+        {
+         "facility": "Pramongkutklao Hospital ( Site 2564)",
+         "country": "Thailand"
+        },
+        {
+         "facility": "Siriraj Hospital ( Site 2562)",
+         "country": "Thailand"
+        },
+        {
+         "facility": "Khon Kaen University ( Site 2565)",
+         "country": "Thailand"
+        },
+        {
+         "facility": "Acibadem Adana Hastanesi ( Site 1904)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Hacettepe Universitesi Tip Fakultesi Hastanesi ( Site 1908)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Uludag Universitesi Tip Fakultesi ( Site 1914)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Ankara Sehir Hastanesi ( Site 1903)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Trakya Uni. Tip Fakultesi ( Site 1911)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Istanbul Universitesi Cerrahpasa Tip Fakultesi ( Site 1906)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Marmara Universitesi Pendik Egitim ve Arastirma Hastanesi ( Site 1912)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Ege Universitesi Tip Fakultesi Hastanesi ( Site 1901)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Medical Park Izmir Hospital ( Site 1900)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Kocaeli Universitesi Tip Fakultesi ( Site 1909)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Inonu Universitesi Tip Fakultesi ( Site 1907)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Karadeniz Teknik Universitesi ( Site 1910)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "MI Kryviy Rih Center of Dnipropetrovsk Regional Council ( Site 2005)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "Cherkasy Regional Hospital ( Site 2020)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "Regional Clinical Onco Dispensary_ State Medical University ( Site 2012)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "Dnipropetrovsk City Multidiscipline Clinical Hosp.4 of DRC ( Site 2000)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "MI Prykarpatskyi Clinical Oncology Centrum ( Site 2009)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "PP PPC Acinus Medical and Diagnostic Centre ( Site 2002)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "National Cancer Institute of the MoH of Ukraine ( Site 2015)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "Kyiv City Clinical Oncological Center ( Site 2014)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "Lviv State Oncology Regional Treatment and Diagnostic Center ( Site 2003)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "MI Odessa Regional Oncological Centre ( Site 2004)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "Royal Cornwall Hospital ( Site 1325)",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "The Royal Marsden NHS Foundation Trust. ( Site 1326)",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "Belfast City Hospital ( Site 1302)",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "Royal Free NHS Foundation Trust ( Site 1324)",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "St. Georges University Hospital NHS Foundation Trust ( Site 1321)",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "The Royal Marsden NHS Foundation Trust.. ( Site 1327)",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "The Christie NHS Foundation Trust ( Site 1301)",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "Mount Vernon Cancer Centre ( Site 1307)",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "Royal Wolverhampton Hospitals NHS Trust ( Site 1323)",
+         "country": "United Kingdom"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "pembrolizumab"
+        },
+        {
+         "term": "Ipilimumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT03650764",
+       "briefTitle": "Ramucirumab + Pembrolizumab in Patients With Recurrent/Metastatic Head and Neck Squamous Cell Carcinoma"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2019-05-29",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2026-05-11",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Washington University School of Medicine",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Head and Neck Squamous Cell Carcinoma"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE1",
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 43
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Ramucirumab"
+        },
+        {
+         "type": "DRUG",
+         "name": "Pembrolizumab"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Douglas R Adkins, M.D.",
+         "affiliation": "Washington University School of Medicine",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Washington University School of Medicine",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "Ramucirumab"
+        },
+        {
+         "term": "pembrolizumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04938609",
+       "briefTitle": "Neoadjuvant Immunoradiotherapy in Head & Neck Cancer (NIRT 2-HNC)"
+      },
+      "statusModule": {
+       "overallStatus": "ACTIVE_NOT_RECRUITING",
+       "startDateStruct": {
+        "date": "2022-01-11",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2031-01-11",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Providence Health & Services",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Head and Neck Cancer",
+        "Head and Neck Squamous Cell Carcinoma"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 28
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Pembrolizumab"
+        },
+        {
+         "type": "RADIATION",
+         "name": "Stereotactic Body Radiation Therapy (5 days)"
+        },
+        {
+         "type": "PROCEDURE",
+         "name": "Surgical Resection"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "R. Bryan Bell, MD, DDS, FACS",
+         "affiliation": "Providence Health & Services",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "University of San Diego",
+         "country": "United States"
+        },
+        {
+         "facility": "Portland Providence Medical Center",
+         "country": "United States"
+        },
+        {
+         "facility": "Providence St. Vincent Medical Center",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "pembrolizumab"
+        },
+        {
+         "term": "Radiosurgery"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT05692999",
+       "briefTitle": "Maintenance Pembrolizumab at Usual or Low doSE in Non-squamous Lung Cancer: a Non-inferiority Study"
+      },
+      "statusModule": {
+       "overallStatus": "RECRUITING",
+       "startDateStruct": {
+        "date": "2023-03-20",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2029-01",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Gustave Roussy, Cancer Campus, Grand Paris",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Metastatic Non-squamous Lung Cancer"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE3"
+       ],
+       "enrollmentInfo": {
+        "count": 1166
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Pembrolizumab 200 mg Q6W"
+        },
+        {
+         "type": "DRUG",
+         "name": "Pemetrexed 500 mg/m^2 Q3W"
+        },
+        {
+         "type": "DRUG",
+         "name": "Pembrolizumab 200 mg Q3W or 400 mg Q6W"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Benjamin BESSE",
+         "affiliation": "Gustave Roussy, Cancer Campus, Grand Paris",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "CHU UCL Namur - Site Sainte Elisabeth",
+         "status": "RECRUITING",
+         "country": "Belgium"
+        },
+        {
+         "facility": "Centre Hospitalier de Carcassonne",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Clinique Sainte Anne - Strasbourg",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Institut de Cancérologie Strasbourg Europe (ICANS)",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Hôpital Européen de Marseille",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Groupe Hospitalier La Rochelle",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier Régional Universitaire de Brest (Hôpital Morvan)",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier des Pays de Morlaix",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Groupe Hospitalier de la Région de Mulhouse et Sud Alsace",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier de Bigorre",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Hôpital Foch",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier de Béziers",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "CHU Rennes",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier de Saint-Malo",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier Régional Universitaire de Tours",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier Universitaire - La Réunion - Site Felix Guyon",
+         "status": "NOT_YET_RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier Universitaire - La Réunion - Site Sud",
+         "status": "NOT_YET_RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier Régional d'Orléans - NHO",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Hospices Civils de Lyon - Hôpital Louis Pradel",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier de Cholet",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier Intercommunal de Compiègne-Noyon",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "CHU St-Etienne",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier de la Côte Basque",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier Intercommunal Créteil",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Hôpital d'Instruction des Armées Bégin",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Institut Gustave Roussy",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Hospitalier d'Auxerre",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Hôpital Pitié-Salpêtrière - APHP",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Hôpital Cochin - APHP",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Hôpital Tenon - APHP",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "Hôpital Paris Saint-Joseph",
+         "status": "RECRUITING",
+         "country": "France"
+        },
+        {
+         "facility": "H. Santa Creu i Sant Pau",
+         "status": "RECRUITING",
+         "country": "Spain"
+        },
+        {
+         "facility": "Vall d'Hebron Institute of Oncology (VHIO)",
+         "status": "RECRUITING",
+         "country": "Spain"
+        },
+        {
+         "facility": "H. Clinico San Carlos",
+         "status": "RECRUITING",
+         "country": "Spain"
+        },
+        {
+         "facility": "HU. 12 de Octubre",
+         "status": "RECRUITING",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital Virgen de la Victoria",
+         "status": "RECRUITING",
+         "country": "Spain"
+        },
+        {
+         "facility": "H.Virgen del Rocio",
+         "status": "RECRUITING",
+         "country": "Spain"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "pembrolizumab"
+        },
+        {
+         "term": "Pemetrexed"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT04685499",
+       "briefTitle": "Phase 2 Study of OBP-301 (Telomelysin™) in Combination With Pembrolizumab and SBRT in Patients With HNSCC With Inoperable, Recurrent or Progressive Disease"
+      },
+      "statusModule": {
+       "overallStatus": "TERMINATED",
+       "startDateStruct": {
+        "date": "2021-05-03",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2022-06-03",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Weill Medical College of Cornell University",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Head and Neck Squamous Cell Carcinoma With Inoperable Recurrent or Progressive Disease"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 1
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "OBP-301"
+        },
+        {
+         "type": "DRUG",
+         "name": "Pembrolizumab"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Doru Paul, MD",
+         "affiliation": "Weill Medical College of Cornell University",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Weill Cornell Medicine",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "pembrolizumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT06545331",
+       "briefTitle": "Study of XB010 in Subjects With Solid Tumors"
+      },
+      "statusModule": {
+       "overallStatus": "RECRUITING",
+       "startDateStruct": {
+        "date": "2024-08-06",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2027-10-20",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Exelixis",
+        "class": "INDUSTRY"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Locally Advanced or Metastatic Solid Tumors",
+        "Esophageal Squamous Cell Cancer",
+        "Head and Neck Squamous Cell Cancer",
+        "NSCLC (Non-small Cell Lung Cancer)",
+        "Hormone-receptor-positive Breast Cancer",
+        "Triple Negative Breast Cancer (TNBC)"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE1"
+       ],
+       "enrollmentInfo": {
+        "count": 396
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "XB010"
+        },
+        {
+         "type": "DRUG",
+         "name": "Pembrolizumab"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Study Director",
+         "affiliation": "Exelixis",
+         "role": "STUDY_DIRECTOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "City of Hope Orange County Lennar Foundation Cancer Center",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "UCLA Department of Medicine - Hematology/Oncology",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "Georgetown University Medical Center",
+         "status": "COMPLETED",
+         "country": "United States"
+        },
+        {
+         "facility": "Sarah Cannon Research Institute at Florida Cancer Specialists",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "Winship Cancer Institute",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "University of Chicago Medical Center",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "Siteman Cancer Center",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "Montefiore Medical Center - Montefiore Medical Park",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "Carolina BioOncology Institute",
+         "status": "COMPLETED",
+         "country": "United States"
+        },
+        {
+         "facility": "Stephenson Cancer Center",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "SCRI Oncology Partners",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "NEXT Austin",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "Baylor University Medical Center",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "University of Texas MD Anderson Cancer Center",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "Inova Schar Cancer",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "NEXT Virginia",
+         "status": "RECRUITING",
+         "country": "United States"
+        },
+        {
+         "facility": "University Hospitals of Leicester NHS Trust",
+         "status": "RECRUITING",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "Sarah Cannon Research Institute London",
+         "status": "RECRUITING",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "University College London Hospitals NHS Foundation Trust",
+         "status": "RECRUITING",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "The Christie NHS Foundation Trust",
+         "status": "RECRUITING",
+         "country": "United Kingdom"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "pembrolizumab"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT06004336",
+       "briefTitle": "A Randomized Trial of Maintenance Systemic Therapy After Radiation for Oligometastatic Renal Cell Carcinoma (ASTROs)"
+      },
+      "statusModule": {
+       "overallStatus": "RECRUITING",
+       "startDateStruct": {
+        "date": "2023-10-31",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2029-01-01",
+        "type": "ESTIMATED"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "M.D. Anderson Cancer Center",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Oligometastatic Renal Cell Carcinoma"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 144
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DRUG",
+         "name": "Pembrolizumab"
+        },
+        {
+         "type": "RADIATION",
+         "name": "Radiation therapy"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Chad Tang, MD",
+         "affiliation": "M.D. Anderson Cancer Center",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "M D Anderson Cancer Center",
+         "status": "RECRUITING",
+         "country": "United States"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "pembrolizumab"
+        },
+        {
+         "term": "Radiotherapy"
+        }
+       ]
+      }
+     }
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT02704156",
+       "briefTitle": "SBRT Plus Pembrolizumab and Trametinib for Pancreatic Cancer"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2016-10",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2020-12",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Changhai Hospital",
+        "class": "OTHER"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Pancreatic Cancer"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE2"
+       ],
+       "enrollmentInfo": {
+        "count": 170
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "DEVICE",
+         "name": "Cyberknife plus Pembrolizumab and Trametinib"
+        },
+        {
+         "type": "DEVICE",
+         "name": "Cyberknife plus Gemcitabine"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Huo Jun Zhang, MD., PH.D",
+         "affiliation": "Changhai Hospital",
+         "role": "PRINCIPAL_INVESTIGATOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "Changhai hospital",
+         "country": "China"
+        }
+       ]
+      }
+     },
+     "derivedSection": {}
+    },
+    {
+     "protocolSection": {
+      "identificationModule": {
+       "nctId": "NCT03675737",
+       "briefTitle": "Pembrolizumab (MK-3475) Plus Chemotherapy Versus Placebo Plus Chemotherapy in Participants Gastric or Gastroesophageal Junction (GEJ) Adenocarcinoma (MK-3475-859/KEYNOTE-859)"
+      },
+      "statusModule": {
+       "overallStatus": "COMPLETED",
+       "startDateStruct": {
+        "date": "2018-11-08",
+        "type": "ACTUAL"
+       },
+       "completionDateStruct": {
+        "date": "2025-03-03",
+        "type": "ACTUAL"
+       }
+      },
+      "sponsorCollaboratorsModule": {
+       "leadSponsor": {
+        "name": "Merck Sharp & Dohme LLC",
+        "class": "INDUSTRY"
+       }
+      },
+      "conditionsModule": {
+       "conditions": [
+        "Stomach Neoplasms"
+       ]
+      },
+      "designModule": {
+       "studyType": "INTERVENTIONAL",
+       "phases": [
+        "PHASE3"
+       ],
+       "enrollmentInfo": {
+        "count": 1579
+       }
+      },
+      "armsInterventionsModule": {
+       "interventions": [
+        {
+         "type": "BIOLOGICAL",
+         "name": "Pembrolizumab"
+        },
+        {
+         "type": "DRUG",
+         "name": "Cisplatin"
+        },
+        {
+         "type": "DRUG",
+         "name": "5-fluorouracil"
+        },
+        {
+         "type": "DRUG",
+         "name": "oxaliplatin"
+        },
+        {
+         "type": "DRUG",
+         "name": "capecitabine"
+        },
+        {
+         "type": "DRUG",
+         "name": "Placebo for Pembrolizumab"
+        }
+       ]
+      },
+      "contactsLocationsModule": {
+       "overallOfficials": [
+        {
+         "name": "Medical Director",
+         "affiliation": "Merck Sharp & Dohme LLC",
+         "role": "STUDY_DIRECTOR"
+        }
+       ],
+       "locations": [
+        {
+         "facility": "UCLA Hematology/Oncology - Westwood (Building 200 Suite 120) ( Site 0124)",
+         "country": "United States"
+        },
+        {
+         "facility": "UC Irvine Health/Division of Hematology Oncology, Dept of Medicine ( Site 0128)",
+         "country": "United States"
+        },
+        {
+         "facility": "University of Miami, Sylvester Comprehensive Cancer Center ( Site 0113)",
+         "country": "United States"
+        },
+        {
+         "facility": "Greater Baltimore Medical Center ( Site 0102)",
+         "country": "United States"
+        },
+        {
+         "facility": "Minnesota Oncology Hematology, PA ( Site 8000)",
+         "country": "United States"
+        },
+        {
+         "facility": "University of Rochester ( Site 0122)",
+         "country": "United States"
+        },
+        {
+         "facility": "Cancer Treatment Centers of America - Philadelphia ( Site 0112)",
+         "country": "United States"
+        },
+        {
+         "facility": "Allegheny General Hospital ( Site 0118)",
+         "country": "United States"
+        },
+        {
+         "facility": "Oncology & Hematology Assoc. SW Virginia, Inc., DBA Blue Ridge Cancer Care ( Site 8001)",
+         "country": "United States"
+        },
+        {
+         "facility": "Wenatchee Valley Clinic [Wenatchee, WA] ( Site 0116)",
+         "country": "United States"
+        },
+        {
+         "facility": "Instituto Medico Alexander Fleming ( Site 0307)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Instituto de Investigaciones Metabolicas ( Site 0312)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Fundacion Favaloro - Hospital Universitario ( Site 0302)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Centro Oncologico Riojano Integral ( Site 0313)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Instituto San Marcos ( Site 0311)",
+         "country": "Argentina"
+        },
+        {
+         "facility": "Liverpool Hospital ( Site 2301)",
+         "country": "Australia"
+        },
+        {
+         "facility": "Southern Medical Day Care Centre ( Site 2303)",
+         "country": "Australia"
+        },
+        {
+         "facility": "Box Hill Hospital ( Site 2300)",
+         "country": "Australia"
+        },
+        {
+         "facility": "Instituto do Cancer do Ceara ( Site 0407)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "CIONC - Centro Integrado de Oncologia de Curitiba ( Site 0405)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "Hospital de Caridade de Ijui ( Site 0402)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "Hospital Nossa Senhora da Conceicao ( Site 0403)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "CEPON - Centro de Pesquisas Oncologicas ( Site 0400)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "Instituto Nacional do Cancer Jose Alencar Gomes da Silva INCA ( Site 0401)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "IBCC - Instituto Brasileiro de Controle do Cancer ( Site 0404)",
+         "country": "Brazil"
+        },
+        {
+         "facility": "BC Cancer - Abbotsford ( Site 0206)",
+         "country": "Canada"
+        },
+        {
+         "facility": "Sunnybrook Research Institute ( Site 0202)",
+         "country": "Canada"
+        },
+        {
+         "facility": "Princess Margaret Cancer Centre ( Site 0203)",
+         "country": "Canada"
+        },
+        {
+         "facility": "McGill University Health Centre ( Site 0208)",
+         "country": "Canada"
+        },
+        {
+         "facility": "Instituto Clinico Oncologico del Sur ( Site 0500)",
+         "country": "Chile"
+        },
+        {
+         "facility": "Fundacion Arturo Lopez Perez FALP ( Site 0501)",
+         "country": "Chile"
+        },
+        {
+         "facility": "Sociedad Oncovida S.A. ( Site 0508)",
+         "country": "Chile"
+        },
+        {
+         "facility": "Pontificia Universidad Catolica de Chile ( Site 0502)",
+         "country": "Chile"
+        },
+        {
+         "facility": "Cancer Hospital Chinese Academy of Medical Sciences ( Site 2421)",
+         "country": "China"
+        },
+        {
+         "facility": "Peking Union Medical College Hospital ( Site 2425)",
+         "country": "China"
+        },
+        {
+         "facility": "Fujian Medical University Union Hospital ( Site 2410)",
+         "country": "China"
+        },
+        {
+         "facility": "Fujian Provincial Cancer Hospital ( Site 2414)",
+         "country": "China"
+        },
+        {
+         "facility": "900 Hospital of the Joint ( Site 2418)",
+         "country": "China"
+        },
+        {
+         "facility": "The First Affiliated Hospital of Xiamen University ( Site 2430)",
+         "country": "China"
+        },
+        {
+         "facility": "Zhongshan Hospital Xiamen University ( Site 2447)",
+         "country": "China"
+        },
+        {
+         "facility": "Guangdong General Hospital ( Site 2431)",
+         "country": "China"
+        },
+        {
+         "facility": "Peking University Shenzhen Hospital ( Site 2442)",
+         "country": "China"
+        },
+        {
+         "facility": "Fourth Hospital Of Hebei Medical University ( Site 2436)",
+         "country": "China"
+        },
+        {
+         "facility": "Harbin Medical University Cancer Hospital ( Site 2401)",
+         "country": "China"
+        },
+        {
+         "facility": "Henan Cancer Hospital ( Site 2415)",
+         "country": "China"
+        },
+        {
+         "facility": "Hubei Cancer Hospital ( Site 2434)",
+         "country": "China"
+        },
+        {
+         "facility": "Xiangya Hospital Central-South University ( Site 2419)",
+         "country": "China"
+        },
+        {
+         "facility": "Hunan Cancer Hospital ( Site 2439)",
+         "country": "China"
+        },
+        {
+         "facility": "Changzhou Cancer Hospital-Changzhou Fourth Peoples Hospital ( Site 2441)",
+         "country": "China"
+        },
+        {
+         "facility": "The 81st Hospital of PLA ( Site 2413)",
+         "country": "China"
+        },
+        {
+         "facility": "Jiangsu Cancer Hospital ( Site 2432)",
+         "country": "China"
+        },
+        {
+         "facility": "Yancheng First People s Hospital ( Site 2426)",
+         "country": "China"
+        },
+        {
+         "facility": "The First Affiliated Hospital of Nanchang University ( Site 2440)",
+         "country": "China"
+        },
+        {
+         "facility": "The First Hospital of Jilin University ( Site 2416)",
+         "country": "China"
+        },
+        {
+         "facility": "The Affiliated Hospital of Qingdao University ( Site 2405)",
+         "country": "China"
+        },
+        {
+         "facility": "Shanghai East Hospital ( Site 2403)",
+         "country": "China"
+        },
+        {
+         "facility": "Zhongshan Hospital affiliated to Fudan University ( Site 2407)",
+         "country": "China"
+        },
+        {
+         "facility": "1st Affil hosp of Med College of Xi'an Jiaotong University ( Site 2428)",
+         "country": "China"
+        },
+        {
+         "facility": "Cancer Hospital Affiliated to Xinjiang Medical University ( Site 2420)",
+         "country": "China"
+        },
+        {
+         "facility": "Zhejiang Provincial People's Hospital ( Site 2446)",
+         "country": "China"
+        },
+        {
+         "facility": "Sir Run Run Show Hospital ( Site 2427)",
+         "country": "China"
+        },
+        {
+         "facility": "Zhejiang Cancer Hospital ( Site 2417)",
+         "country": "China"
+        },
+        {
+         "facility": "Instituto Nacional de Cancerologia E.S.E ( Site 0605)",
+         "country": "Colombia"
+        },
+        {
+         "facility": "Sociedad de Oncología Y Hematología del Cesar S.A.S. ( Site 0608)",
+         "country": "Colombia"
+        },
+        {
+         "facility": "Oncomedica S.A. ( Site 0606)",
+         "country": "Colombia"
+        },
+        {
+         "facility": "Centro Medico Imbanaco de Cali S.A ( Site 0604)",
+         "country": "Colombia"
+        },
+        {
+         "facility": "CIMCA Centro de Investigacion y Manejo del Cancer ( Site 3001)",
+         "country": "Costa Rica"
+        },
+        {
+         "facility": "Policlinico San Bosco ( Site 3002)",
+         "country": "Costa Rica"
+        },
+        {
+         "facility": "ICIMED - Instituto de Investigacion en Ciencias Medicas ( Site 3000)",
+         "country": "Costa Rica"
+        },
+        {
+         "facility": "FN Ostrava ( Site 3105)",
+         "country": "Czechia"
+        },
+        {
+         "facility": "Fakultni nemocnice Plzen ( Site 3102)",
+         "country": "Czechia"
+        },
+        {
+         "facility": "Masarykuv onkologicky ustav ( Site 3103)",
+         "country": "Czechia"
+        },
+        {
+         "facility": "Nemocnice AGEL Novy Jicin a.s. ( Site 3104)",
+         "country": "Czechia"
+        },
+        {
+         "facility": "Fakultni nemocnice Olomouc ( Site 3100)",
+         "country": "Czechia"
+        },
+        {
+         "facility": "Fakultni Thomayerova nemocnice ( Site 3101)",
+         "country": "Czechia"
+        },
+        {
+         "facility": "Rigshospitalet ( Site 3202)",
+         "country": "Denmark"
+        },
+        {
+         "facility": "Aalborg University Hospital ( Site 3204)",
+         "country": "Denmark"
+        },
+        {
+         "facility": "Odense Universitets Hospital ( Site 3201)",
+         "country": "Denmark"
+        },
+        {
+         "facility": "CHU de Rouen ( Site 1006)",
+         "country": "France"
+        },
+        {
+         "facility": "CHU-Jean Minjoz ( Site 1002)",
+         "country": "France"
+        },
+        {
+         "facility": "C.H.R.U. de Brest - Hopital Morvan ( Site 1007)",
+         "country": "France"
+        },
+        {
+         "facility": "Centre Oscar Lambret ( Site 1003)",
+         "country": "France"
+        },
+        {
+         "facility": "Institut de Cancerologie de l Ouest Centre Rene Gauducheau ( Site 1004)",
+         "country": "France"
+        },
+        {
+         "facility": "Institut Gustave Roussy ( Site 1000)",
+         "country": "France"
+        },
+        {
+         "facility": "CHU Hopital Saint Antoine ( Site 1001)",
+         "country": "France"
+        },
+        {
+         "facility": "SLK-Kliniken Heilbronn ( Site 1104)",
+         "country": "Germany"
+        },
+        {
+         "facility": "Universitaetsklinikum Leipzig ( Site 1114)",
+         "country": "Germany"
+        },
+        {
+         "facility": "Charite Universitaetsmedizin Berlin ( Site 1101)",
+         "country": "Germany"
+        },
+        {
+         "facility": "Facharztzentrum Eppendorf ( Site 1121)",
+         "country": "Germany"
+        },
+        {
+         "facility": "Asklepios Klinik Altona ( Site 1100)",
+         "country": "Germany"
+        },
+        {
+         "facility": "Celan SA ( Site 0705)",
+         "country": "Guatemala"
+        },
+        {
+         "facility": "Oncomedica ( Site 0702)",
+         "country": "Guatemala"
+        },
+        {
+         "facility": "Grupo Angeles SA ( Site 0701)",
+         "country": "Guatemala"
+        },
+        {
+         "facility": "MEDI-K CAYALA ( Site 0704)",
+         "country": "Guatemala"
+        },
+        {
+         "facility": "Centro Regional de Sub Especialidades Medicas SA ( Site 0703)",
+         "country": "Guatemala"
+        },
+        {
+         "facility": "Prince of Wales Hospital ( Site 2503)",
+         "country": "Hong Kong"
+        },
+        {
+         "facility": "Princess Margaret Hospital. ( Site 2502)",
+         "country": "Hong Kong"
+        },
+        {
+         "facility": "Queen Mary Hospital ( Site 2501)",
+         "country": "Hong Kong"
+        },
+        {
+         "facility": "Bacs-Kiskun Megyei Korhaz ( Site 3306)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "Jasz-Nagykun-Szolnok Megyei Hetenyi Gyula Korhaz-Rendelointezet ( Site 3302)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "Semmelweis Egyetem.. ( Site 3305)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "Orszagos Onkologiai Intezet ( Site 3303)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "University of Debrecen Medical Center Clinic of Oncology ( Site 3300)",
+         "country": "Hungary"
+        },
+        {
+         "facility": "St. James s Hospital ( Site 1200)",
+         "country": "Ireland"
+        },
+        {
+         "facility": "Beaumont Hospital ( Site 2101)",
+         "country": "Ireland"
+        },
+        {
+         "facility": "Tallaght University Hospital ( Site 1202)",
+         "country": "Ireland"
+        },
+        {
+         "facility": "Hadassah Ein Karem Jerusalem ( Site 1301)",
+         "country": "Israel"
+        },
+        {
+         "facility": "Chaim Sheba Medical Center ( Site 1304)",
+         "country": "Israel"
+        },
+        {
+         "facility": "Edith Wolfson Medical Center ( Site 1307)",
+         "country": "Israel"
+        },
+        {
+         "facility": "Sourasky Medical Center ( Site 1306)",
+         "country": "Israel"
+        },
+        {
+         "facility": "Soroka University Medical Center ( Site 1305)",
+         "country": "Israel"
+        },
+        {
+         "facility": "Rambam Medical Center ( Site 1303)",
+         "country": "Israel"
+        },
+        {
+         "facility": "Meir Medical Center ( Site 1308)",
+         "country": "Israel"
+        },
+        {
+         "facility": "Rabin Medical Center ( Site 1302)",
+         "country": "Israel"
+        },
+        {
+         "facility": "Istituto Europeo di Oncologia ( Site 1411)",
+         "country": "Italy"
+        },
+        {
+         "facility": "Istituto Nazionale dei Tumori Fondazione IRCSS ( Site 1402)",
+         "country": "Italy"
+        },
+        {
+         "facility": "Istituto Oncologico Veneto ( Site 1412)",
+         "country": "Italy"
+        },
+        {
+         "facility": "Azienda Ospedaliera San Camillo Forlanini ( Site 1413)",
+         "country": "Italy"
+        },
+        {
+         "facility": "Aichi Cancer Center Hospital ( Site 2619)",
+         "country": "Japan"
+        },
+        {
+         "facility": "National Cancer Center Hospital East ( Site 2617)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Hyogo Cancer Center ( Site 2604)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Kobe City Medical Center General Hospital ( Site 2603)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Ibaraki Prefectural Central Hospital ( Site 2610)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Kagawa University Hospital ( Site 2615)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Kitasato University Hospital ( Site 2618)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Kanagawa Cancer Center ( Site 2614)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Kansai Medical University Hospital ( Site 2608)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Kindai University Hospital ( Site 2616)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Osaka University Hospital ( Site 2600)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Saitama Cancer Center ( Site 2601)",
+         "country": "Japan"
+        },
+        {
+         "facility": "National Hospital Organization Kyushu Cancer Center ( Site 2612)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Hiroshima City Hiroshima Citizens Hospital ( Site 2611)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Kumamoto University Hospital ( Site 2602)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Niigata Cancer Center Hospital ( Site 2613)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Osaka International Cancer Institute ( Site 2607)",
+         "country": "Japan"
+        },
+        {
+         "facility": "National Cancer Center Hospital ( Site 2606)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Tokyo Metropolitan Komagome Hospital ( Site 2605)",
+         "country": "Japan"
+        },
+        {
+         "facility": "The Cancer Institute Hospital of JFCR ( Site 2609)",
+         "country": "Japan"
+        },
+        {
+         "facility": "Hospital Civil de Guadalajara Fray Antonio Alcalde ( Site 0808)",
+         "country": "Mexico"
+        },
+        {
+         "facility": "Christus Muguerza Clinica Vidriera ( Site 0802)",
+         "country": "Mexico"
+        },
+        {
+         "facility": "Instituto Nacional de Cancerologia. ( Site 0804)",
+         "country": "Mexico"
+        },
+        {
+         "facility": "Instituto Nacional de Ciencias Medicas y Nutricion Salvador Zubiran ( Site 0806)",
+         "country": "Mexico"
+        },
+        {
+         "facility": "Medical Care and Research S.A. de C.V. ( Site 0809)",
+         "country": "Mexico"
+        },
+        {
+         "facility": "Auckland City Hospital ( Site 2700)",
+         "country": "New Zealand"
+        },
+        {
+         "facility": "Clinica Ricardo Palma Instituto de Oncologia y Radioterapia ( Site 0908)",
+         "country": "Peru"
+        },
+        {
+         "facility": "Instituto Nacional de Enfermedades Neoplasicas ( Site 0901)",
+         "country": "Peru"
+        },
+        {
+         "facility": "Hospital Nacional Arzobispo Loayza ( Site 0902)",
+         "country": "Peru"
+        },
+        {
+         "facility": "Clinica San Gabriel ( Site 0907)",
+         "country": "Peru"
+        },
+        {
+         "facility": "Przychodnia Lekarska Komed ( Site 1514)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Szpital Uniwersytecki w Krakowie ( Site 1503)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Uniwersytecki Szpital Kliniczny im. Jana Mikulicza-Radeckiego ( Site 1506)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Dolnoslaskie Centrum Onkologii we Wroclawiu ( Site 1504)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Magodent Szpital Elblaska ( Site 1509)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Narodowy Instytut Onkologii im. Marii Sklodowskiej-Curie - Panstwowy Instytut Badawczy w Warszawie (",
+         "country": "Poland"
+        },
+        {
+         "facility": "Regionalny Szpital Specjalistyczny im Wl. Bieganskiego w Grudziadzu ( Site 1505)",
+         "country": "Poland"
+        },
+        {
+         "facility": "Chelyabinsk Regional Clinical Oncology Dispensary-Chemotherapy ( Site 1608)",
+         "country": "Russia"
+        },
+        {
+         "facility": "SBHI Leningrad Regional Clinical Hospital ( Site 1616)",
+         "country": "Russia"
+        },
+        {
+         "facility": "Blokhin National Medical Oncology ( Site 1604)",
+         "country": "Russia"
+        },
+        {
+         "facility": "Central Clinical Hospital with Polyclinic ( Site 1614)",
+         "country": "Russia"
+        },
+        {
+         "facility": "SBHI Samara Regional Clinical Oncology Dispensary ( Site 1609)",
+         "country": "Russia"
+        },
+        {
+         "facility": "City Clinical Oncology Center ( Site 1603)",
+         "country": "Russia"
+        },
+        {
+         "facility": "Cancer Care Langenhoven Drive Oncology Centre ( Site 1708)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Universitas Annex National Hospital ( Site 1701)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Sandton Oncology Medical Group PTY LTD ( Site 1700)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Wits Clinical Research ( Site 1707)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Tshwane District Hospital ( Site 1702)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "The Oncology Centre Overport and Umhlanga ( Site 1705)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Cancercare Rondebosch Oncology ( Site 1709)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Groote Schuur Hospital ( Site 1706)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Outeniqua Cancercare Oncology Unit ( Site 1704)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Cape Town Oncology Trials Pty Ltd ( Site 1703)",
+         "country": "South Africa"
+        },
+        {
+         "facility": "Seoul National University Hospital ( Site 2803)",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Severance Hospital Yonsei University Health System ( Site 2800)",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Asan Medical Center ( Site 2802)",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Samsung Medical Center ( Site 2801)",
+         "country": "South Korea"
+        },
+        {
+         "facility": "Hospital General Universitario de Elche ( Site 1803)",
+         "country": "Spain"
+        },
+        {
+         "facility": "Institut Catala d Oncologia Hospital Germans Trias i Pujol ( Site 1806)",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital Universitario Marques de Valdecilla ( Site 1804)",
+         "country": "Spain"
+        },
+        {
+         "facility": "HOSPITAL UNIVERSITARIO QUIRONSALUD MADRID-ONCOLOGIA MEDICA ( Site 1805)",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital Universitario General de Asturias ( Site 1802)",
+         "country": "Spain"
+        },
+        {
+         "facility": "Hospital General Universitari Vall d Hebron ( Site 1801)",
+         "country": "Spain"
+        },
+        {
+         "facility": "Universitaetsspital Basel ( Site 1900)",
+         "country": "Switzerland"
+        },
+        {
+         "facility": "Hopitaux Universitaires de Geneve HUG ( Site 1907)",
+         "country": "Switzerland"
+        },
+        {
+         "facility": "Kantonsspital St. Gallen ( Site 1901)",
+         "country": "Switzerland"
+        },
+        {
+         "facility": "Universitaetsspital Zuerich ( Site 1902)",
+         "country": "Switzerland"
+        },
+        {
+         "facility": "Istituto Oncologica della Svizzera Italiana (IOSI) ( Site 1905)",
+         "country": "Switzerland"
+        },
+        {
+         "facility": "Kantonsspital Graubuenden ( Site 1903)",
+         "country": "Switzerland"
+        },
+        {
+         "facility": "Luzern Kantonsspital ( Site 1904)",
+         "country": "Switzerland"
+        },
+        {
+         "facility": "Chang Gung Medical Foundation. Kaohsiung Branch ( Site 2902)",
+         "country": "Taiwan"
+        },
+        {
+         "facility": "National Cheng Kung University Hospital ( Site 2901)",
+         "country": "Taiwan"
+        },
+        {
+         "facility": "National Taiwan University Hospital ( Site 2900)",
+         "country": "Taiwan"
+        },
+        {
+         "facility": "Mackay Memorial Hospital ( Site 2903)",
+         "country": "Taiwan"
+        },
+        {
+         "facility": "Adana Sehir Hastanesi ( Site 2002)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Hacettepe University Medical Faculty ( Site 2017)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Abdurrahman Yurtaslan Onkoloji Egitim ve Arastirma Hastanesi ( Site 2006)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Trakya Universitesi Tip Fakultesi ( Site 2015)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Ataturk Universitesi Tip Fakultesi Hastanesi ( Site 2000)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Istanbul Universitesi Cerrahpasa Tip Fakultesi ( Site 2001)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Dokuz Eylul Universitesi Tip Fakultesi Hastanesi ( Site 2011)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Malatya Inonu Universitesi Tip Fakultesi Hastanesi ( Site 2009)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "Sakarya Universitesi Egitim ve Arastirma Hastanesi ( Site 2012)",
+         "country": "Turkey (Türkiye)"
+        },
+        {
+         "facility": "City Clinical Hosp.4 of DCC ( Site 2201)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "MI Kryviy Rih Center of Dnipropetrovsk Regional Council ( Site 2200)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "MI Precarpathian Clinical Oncology Center ( Site 2204)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "Communal non profit enterprise Regional Clinical Oncology Center ( Site 2208)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "Clinic of National Cancer Institute ( Site 2203)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "Medical and Diagnostic Centre LLC Dobryi Prognoz ( Site 2205)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "Lviv State Oncology Regional Treatment and Diagnostic Center ( Site 2210)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "MI Odessa Regional Oncological Centre ( Site 2212)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "Medical Centre LLC Oncolife ( Site 2202)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "Kyiv City Clinical Oncology Centre ( Site 2213)",
+         "country": "Ukraine"
+        },
+        {
+         "facility": "South Devon Healthcare Foundation Trust. Torbay Hospital ( Site 1205)",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "Castle Hill Hospital ( Site 1201)",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "University College London Hospital ( Site 1211)",
+         "country": "United Kingdom"
+        },
+        {
+         "facility": "St. Georges University Hospital NHS Foundation Trust ( Site 1204)",
+         "country": "United Kingdom"
+        }
+       ]
+      }
+     },
+     "derivedSection": {
+      "interventionBrowseModule": {
+       "meshes": [
+        {
+         "term": "pembrolizumab"
+        },
+        {
+         "term": "Cisplatin"
+        },
+        {
+         "term": "Fluorouracil"
+        },
+        {
+         "term": "Oxaliplatin"
+        },
+        {
+         "term": "Capecitabine"
+        }
+       ]
+      }
+     }
     }
    ],
-   "nextPageToken": "ZVNj7o2Elu8o3lpyBYqp6rLumpOQJJxuYPSt2vUW"
+   "nextPageToken": "ZVNj7o2Elu8o3lpyBYqp6rLumpOQJJxuY_aj3PYW"
   }
  ]
 }

@@ -292,9 +292,10 @@ take_home2/
 
 **bar_chart**
 ```json
-"encoding": { "x": {"field": "phase", "type": "nominal", "label": "Phase"}, "y": {"field": "trial_count", "type": "quantitative", "label": "Trials"} },
-"data": [ { "phase": "Phase 2", "trial_count": 78, "citation_count": 78, "citations": [ ] } ]
+"encoding": { "x": {"field": "category", "type": "nominal", "label": "Phase"}, "y": {"field": "trial_count", "type": "quantitative", "label": "Trials"} },
+"data": [ { "category": "Phase 2", "trial_count": 78, "citation_count": 78, "citations": [ ] } ]
 ```
+数据行用固定 key（`category`、`series`、`trial_count`、`year`、`bin_start` …），每种图的 data 结构是静态的，前端不用按维度猜 key；维度名称和轴标题放在 `encoding.*.label`。
 
 **grouped_bar_chart**：encoding 多一个 `"series": {"field": "cohort", "type": "nominal"}`，每行 `{ "phase", "cohort", "trial_count", "citation_count", "citations" }`。
 
@@ -343,7 +344,7 @@ take_home2/
 数据源：只用官方 Data API v2（作业 §2：https://clinicaltrials.gov/data-api/api），base URL `https://clinicaltrials.gov/api/v2`，不需要 key。
 
 - 主 endpoint：`GET /studies`；辅助：`/studies/enums`（测试里校验本地 enum 与 API 一致）、`/version`（`apiVersion`、`dataTimestamp` 写进 `meta.source`）
-- 检索：`query.cond`、`query.intr`、`query.lead`（只匹配 lead sponsor）、`query.spons`（sponsor + collaborator）、`query.locn`、`query.term`
+- 检索：`query.cond`、`query.intr`（药物用 `AREA[InterventionName]X OR AREA[InterventionMeshTerm]X`，避免概念扩展误召回，见 §10）、`query.lead`（只匹配 lead sponsor）、`query.spons`（sponsor + collaborator）、`query.locn`、`query.term`
 - 过滤：
   - `filter.overallStatus=RECRUITING,COMPLETED`（逗号或竖线分隔）
   - `filter.advanced` Essie 语法，已实测：`AREA[Phase]PHASE2`、`AREA[StartDate]RANGE[2015-01-01,MAX]`、`AND` / `OR` / 括号
@@ -377,6 +378,14 @@ take_home2/
 - **国家**：用 API 的 country 字段；同一 trial 多站点同国家去重。“招募中”问题优先用站点级 `locations[].status = RECRUITING` 的国家；字段不存在时退回试验级 `overallStatus`，notes 写明口径（实测：招募中试验 100% 有站点状态，已结束的试验大多没有，所以这个退回逻辑只在少数情况触发）
 - **字段覆盖率实测**（每个 fixture 前 100 条）：phase 为空 6–24%（多为观察性研究）；干预 MeSH 在按药查询时约 90%，按疾病查询时只有 50–67% → 原始药名退回逻辑是必需的，不是可选的；overallOfficials 60–78%
 - **Sponsor**：保留原名，不做模糊合并（写进 limitations）
+- **默认药物检索会误召回**（实测）：`query.intr=pembrolizumab` 会做概念扩展，抽查的 5 条“干预里没有该药”的试验，完整记录里任何字段都没出现 pembrolizumab / Keytruda / MK-3475（例如 NCT03719105 是淋巴瘤化疗方案）。2015 年至今的计数对比：
+  - 默认 `query.intr=pembrolizumab`：2938
+  - `AREA[InterventionName]pembrolizumab`：2532（已自带同义名匹配，手动加 MK-3475 / Keytruda 结果不变）
+  - `AREA[InterventionMeshTerm]pembrolizumab`：2526
+  - **两者 OR：2599 ← 采用**
+  - 用严格写法重录 fixture 后，100/100 条都真的含该药；其中 96% 能被 `drug` 维度识别出来，剩下 4% 是 MeSH 漏标了组合方案名里的药（如 “CBA-1535+Pembrolizumab”）。这只影响网络图和药物排名里的边；对比查询的 cohort 计数由 API 检索决定，不受影响
+  - 结论：药物过滤一律用 `query.intr=AREA[InterventionName]X OR AREA[InterventionMeshTerm]X`，默认写法约 12% 的结果是误召回。README 的 design decisions 写这一条（含上面的对比数字）
+  - 疾病检索 `query.cond` 的扩展（如 breast cancer ↔ breast neoplasms）是想要的行为，保持默认，但 README 里说明口径
 - **对比查询的重叠**：同时用 Drug A 和 Drug B 的 trial 在两个 cohort 里各算一次，重叠数写进 notes
 - **缺失值**：一律进 “Unknown”，在 data 里保留，前端可以选择隐藏
 
@@ -455,7 +464,10 @@ take_home2/
 7. Data handling（第 10 节）
 8. Testing & validation（第 12 节，含网站交叉核对结果和 planner 评估表）
 9. Limitations & future work
-   - sponsor / 药名实体消歧（可接 RxNorm、MeSH）
+   - sponsor 实体消歧（同一公司多种写法不合并）；药名已用 MeSH 合并，进一步可接 RxNorm
+   - `drug` 维度的已知漏识别（实测样本约 2–4%，只影响网络图和药物排名，不影响 cohort 计数）：
+     - 干预类型登记成 DEVICE / OTHER 的药物方案会被跳过（如 NCT02704156 “Cyberknife plus Pembrolizumab and Trametinib” 登记为 DEVICE）。放宽类型过滤会引入器械、手术名，所以没做
+     - MeSH 有值但不全时，不再看原始名（如 NCT04507906 “Nivolumab Combined with Anlotinib” 只标了 anlotinib）。把原始名和 MeSH 合并会让同义名重新变成多个节点，所以没做；改进方向是用 MeSH 同义词表把原始名映射到 MeSH 再合并
    - 超大结果集：用官方全量数据下载离线建索引，替代逐页拉取
    - 高基数维度超上限时排名基于样本
    - 地图类可视化
