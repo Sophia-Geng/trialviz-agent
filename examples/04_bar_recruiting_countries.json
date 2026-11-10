@@ -1,0 +1,732 @@
+{
+  "request": {
+    "query": "Which countries have the most recruiting trials for breast cancer?"
+  },
+  "status_code": 200,
+  "response": {
+    "visualization": {
+      "title": "Trials by country (recruiting sites): breast cancer",
+      "type": "bar_chart",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "nominal",
+          "label": "Country (recruiting sites)"
+        },
+        "y": {
+          "field": "trial_count",
+          "type": "quantitative",
+          "label": "Trials"
+        }
+      },
+      "data": [
+        {
+          "citation_count": 915,
+          "citations": [
+            {
+              "nct_id": "NCT06993844",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "United States",
+              "title": "Phase 1/2 Study of ETX-636 in Participants With Advanced Solid Tumors",
+              "url": "https://clinicaltrials.gov/study/NCT06993844"
+            },
+            {
+              "nct_id": "NCT06439693",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "United States",
+              "title": "The SAPPHO Study: Sequential Therapy With Curative Intent in de Novo HER2+ Metastatic Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06439693"
+            },
+            {
+              "nct_id": "NCT06409390",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "United States",
+              "title": "Sequential Therapies Modeled on Evolutionary Dynamics for Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06409390"
+            },
+            {
+              "nct_id": "NCT07340541",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "United States",
+              "title": "Evolutionary Clinical Trial for Novel Biomarker-Driven Therapies",
+              "url": "https://clinicaltrials.gov/study/NCT07340541"
+            },
+            {
+              "nct_id": "NCT06430541",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "United States",
+              "title": "Study of Psilocybin Assisted Psychotherapy to Address Fear of Recurrence",
+              "url": "https://clinicaltrials.gov/study/NCT06430541"
+            }
+          ],
+          "category": "United States",
+          "trial_count": 915
+        },
+        {
+          "citation_count": 648,
+          "citations": [
+            {
+              "nct_id": "NCT07586215",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "China",
+              "title": "HER2-PET: Predicting T-DXd Efficacy and HER2 Heterogeneity",
+              "url": "https://clinicaltrials.gov/study/NCT07586215"
+            },
+            {
+              "nct_id": "NCT06993844",
+              "field": "protocolSection.contactsLocationsModule.locations[10].country",
+              "excerpt": "China",
+              "title": "Phase 1/2 Study of ETX-636 in Participants With Advanced Solid Tumors",
+              "url": "https://clinicaltrials.gov/study/NCT06993844"
+            },
+            {
+              "nct_id": "NCT06711055",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "China",
+              "title": "Taxane Combined Targeted Therapy for Low-risk HER2 Positive and Lymph Node Negative Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06711055"
+            },
+            {
+              "nct_id": "NCT02897700",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "China",
+              "title": "A Randomized Trial of Chemotherapy in Surgical Patients With Infiltrating Ductal Carcinoma of Breast",
+              "url": "https://clinicaltrials.gov/study/NCT02897700"
+            },
+            {
+              "nct_id": "NCT05360290",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "China",
+              "title": "CTCs in Breast Cancer After Neoadjuvant Treatment and Surgery: a Multicenter, Prospective Clinical Trial",
+              "url": "https://clinicaltrials.gov/study/NCT05360290"
+            }
+          ],
+          "category": "China",
+          "trial_count": 648
+        },
+        {
+          "citation_count": 192,
+          "citations": [
+            {
+              "nct_id": "NCT06027632",
+              "field": "protocolSection.contactsLocationsModule.locations[1].country",
+              "excerpt": "France",
+              "title": "Remotely Supervised Computerized Cognitive Stimulation to Reduce Post-chemotherapy Cognitive Difficulties in Patients Treated for Localized Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06027632"
+            },
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[119].country",
+              "excerpt": "France",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT06486883",
+              "field": "protocolSection.contactsLocationsModule.locations[7].country",
+              "excerpt": "France",
+              "title": "Safety and Efficacy of T-DXd vs. CDK4/6i-based ET as First-line Therapy of HR-positive and HER2-low/Ultralow Advanced Breast Cancer Patients Classified as Non-luminal Subtype",
+              "url": "https://clinicaltrials.gov/study/NCT06486883"
+            },
+            {
+              "nct_id": "NCT05981326",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "France",
+              "title": "Prediction in Silico of Pathological Response in a Prospective Cohort Study of Early Breast Cancer Patients",
+              "url": "https://clinicaltrials.gov/study/NCT05981326"
+            },
+            {
+              "nct_id": "NCT06380751",
+              "field": "protocolSection.contactsLocationsModule.locations[150].country",
+              "excerpt": "France",
+              "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06380751"
+            }
+          ],
+          "category": "France",
+          "trial_count": 192
+        },
+        {
+          "citation_count": 181,
+          "citations": [
+            {
+              "nct_id": "NCT05492682",
+              "field": "protocolSection.contactsLocationsModule.locations[3].country",
+              "excerpt": "Italy",
+              "title": "START: Safety and Anti-Tumor Activity of PeptiCRAd-1 in Treatment of Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT05492682"
+            },
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[151].country",
+              "excerpt": "Italy",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT06486883",
+              "field": "protocolSection.contactsLocationsModule.locations[17].country",
+              "excerpt": "Italy",
+              "title": "Safety and Efficacy of T-DXd vs. CDK4/6i-based ET as First-line Therapy of HR-positive and HER2-low/Ultralow Advanced Breast Cancer Patients Classified as Non-luminal Subtype",
+              "url": "https://clinicaltrials.gov/study/NCT06486883"
+            },
+            {
+              "nct_id": "NCT06274515",
+              "field": "protocolSection.contactsLocationsModule.locations[13].country",
+              "excerpt": "Italy",
+              "title": "A Study to Investigate Mechanisms of Resistance to Breast Cancer Therapies",
+              "url": "https://clinicaltrials.gov/study/NCT06274515"
+            },
+            {
+              "nct_id": "NCT06236373",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Italy",
+              "title": "The Unmet Needs of Cancer Survivors in Ausl IRCCS Reggio Emilia",
+              "url": "https://clinicaltrials.gov/study/NCT06236373"
+            }
+          ],
+          "category": "Italy",
+          "trial_count": 181
+        },
+        {
+          "citation_count": 151,
+          "citations": [
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[244].country",
+              "excerpt": "Spain",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT07067710",
+              "field": "protocolSection.contactsLocationsModule.locations[1].country",
+              "excerpt": "Spain",
+              "title": "The Use of Combined Motor Imagery and Action Observation to Evaluate the Influence on Functional Parameters Such as Strength, Range of Motion, Pain or Fear of Movement Among Others, in Females Breast Cancer Survivors.",
+              "url": "https://clinicaltrials.gov/study/NCT07067710"
+            },
+            {
+              "nct_id": "NCT06486883",
+              "field": "protocolSection.contactsLocationsModule.locations[45].country",
+              "excerpt": "Spain",
+              "title": "Safety and Efficacy of T-DXd vs. CDK4/6i-based ET as First-line Therapy of HR-positive and HER2-low/Ultralow Advanced Breast Cancer Patients Classified as Non-luminal Subtype",
+              "url": "https://clinicaltrials.gov/study/NCT06486883"
+            },
+            {
+              "nct_id": "NCT06274515",
+              "field": "protocolSection.contactsLocationsModule.locations[21].country",
+              "excerpt": "Spain",
+              "title": "A Study to Investigate Mechanisms of Resistance to Breast Cancer Therapies",
+              "url": "https://clinicaltrials.gov/study/NCT06274515"
+            },
+            {
+              "nct_id": "NCT06380751",
+              "field": "protocolSection.contactsLocationsModule.locations[268].country",
+              "excerpt": "Spain",
+              "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06380751"
+            }
+          ],
+          "category": "Spain",
+          "trial_count": 151
+        },
+        {
+          "citation_count": 130,
+          "citations": [
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[58].country",
+              "excerpt": "Canada",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT06633380",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Canada",
+              "title": "Alternative Physical Activity Strategies for Breast Cancer Survivors",
+              "url": "https://clinicaltrials.gov/study/NCT06633380"
+            },
+            {
+              "nct_id": "NCT03265379",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Canada",
+              "title": "Improving Quality of Life for Patients With Breast Cancer Invading the Chest Wall: A Prospective Registry For Patients Undergoing Full Thickness Chest Wall Resection",
+              "url": "https://clinicaltrials.gov/study/NCT03265379"
+            },
+            {
+              "nct_id": "NCT05417516",
+              "field": "protocolSection.contactsLocationsModule.locations[12].country",
+              "excerpt": "Canada",
+              "title": "A Randomized Trial of Five Fraction Partial Breast Irradiation (RAPID2)",
+              "url": "https://clinicaltrials.gov/study/NCT05417516"
+            },
+            {
+              "nct_id": "NCT04895709",
+              "field": "protocolSection.contactsLocationsModule.locations[17].country",
+              "excerpt": "Canada",
+              "title": "A Study of BMS-986340 as Monotherapy and as Combination Therapy in Participants With Advanced Solid Tumors",
+              "url": "https://clinicaltrials.gov/study/NCT04895709"
+            }
+          ],
+          "category": "Canada",
+          "trial_count": 130
+        },
+        {
+          "citation_count": 120,
+          "citations": [
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[238].country",
+              "excerpt": "South Korea",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT06920810",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "South Korea",
+              "title": "Viscum Album for TNBC on Adjuvant Pembrolizumab",
+              "url": "https://clinicaltrials.gov/study/NCT06920810"
+            },
+            {
+              "nct_id": "NCT06380751",
+              "field": "protocolSection.contactsLocationsModule.locations[259].country",
+              "excerpt": "South Korea",
+              "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06380751"
+            },
+            {
+              "nct_id": "NCT06729684",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "South Korea",
+              "title": "Development and Validation of a Personalized Digital Healthcare Model for Managing Side Effects in Breast Cancer Survivors",
+              "url": "https://clinicaltrials.gov/study/NCT06729684"
+            },
+            {
+              "nct_id": "NCT05896865",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "South Korea",
+              "title": "Radiotherapy Dose Adaptation Based on Tumor Biology in Patients With cN2b-N3 Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT05896865"
+            }
+          ],
+          "category": "South Korea",
+          "trial_count": 120
+        },
+        {
+          "citation_count": 103,
+          "citations": [
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[128].country",
+              "excerpt": "Germany",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT06483477",
+              "field": "protocolSection.contactsLocationsModule.locations[4].country",
+              "excerpt": "Germany",
+              "title": "Dermatitis During Adjuvant Irradiation for BREAst Cancer:",
+              "url": "https://clinicaltrials.gov/study/NCT06483477"
+            },
+            {
+              "nct_id": "NCT06486883",
+              "field": "protocolSection.contactsLocationsModule.locations[12].country",
+              "excerpt": "Germany",
+              "title": "Safety and Efficacy of T-DXd vs. CDK4/6i-based ET as First-line Therapy of HR-positive and HER2-low/Ultralow Advanced Breast Cancer Patients Classified as Non-luminal Subtype",
+              "url": "https://clinicaltrials.gov/study/NCT06486883"
+            },
+            {
+              "nct_id": "NCT06274515",
+              "field": "protocolSection.contactsLocationsModule.locations[8].country",
+              "excerpt": "Germany",
+              "title": "A Study to Investigate Mechanisms of Resistance to Breast Cancer Therapies",
+              "url": "https://clinicaltrials.gov/study/NCT06274515"
+            },
+            {
+              "nct_id": "NCT06380751",
+              "field": "protocolSection.contactsLocationsModule.locations[160].country",
+              "excerpt": "Germany",
+              "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06380751"
+            }
+          ],
+          "category": "Germany",
+          "trial_count": 103
+        },
+        {
+          "citation_count": 93,
+          "citations": [
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[277].country",
+              "excerpt": "United Kingdom",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT06486883",
+              "field": "protocolSection.contactsLocationsModule.locations[76].country",
+              "excerpt": "United Kingdom",
+              "title": "Safety and Efficacy of T-DXd vs. CDK4/6i-based ET as First-line Therapy of HR-positive and HER2-low/Ultralow Advanced Breast Cancer Patients Classified as Non-luminal Subtype",
+              "url": "https://clinicaltrials.gov/study/NCT06486883"
+            },
+            {
+              "nct_id": "NCT06728527",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "United Kingdom",
+              "title": "PARTial BREast RECONstruction With Chest Wall Perforator Flap",
+              "url": "https://clinicaltrials.gov/study/NCT06728527"
+            },
+            {
+              "nct_id": "NCT06977698",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "United Kingdom",
+              "title": "Intra-operative Detection of Positive Margins and Lymph Nodes in Breast Surgery",
+              "url": "https://clinicaltrials.gov/study/NCT06977698"
+            },
+            {
+              "nct_id": "NCT06274515",
+              "field": "protocolSection.contactsLocationsModule.locations[25].country",
+              "excerpt": "United Kingdom",
+              "title": "A Study to Investigate Mechanisms of Resistance to Breast Cancer Therapies",
+              "url": "https://clinicaltrials.gov/study/NCT06274515"
+            }
+          ],
+          "category": "United Kingdom",
+          "trial_count": 93
+        },
+        {
+          "citation_count": 89,
+          "citations": [
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[46].country",
+              "excerpt": "Australia",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT05417516",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Australia",
+              "title": "A Randomized Trial of Five Fraction Partial Breast Irradiation (RAPID2)",
+              "url": "https://clinicaltrials.gov/study/NCT05417516"
+            },
+            {
+              "nct_id": "NCT06380751",
+              "field": "protocolSection.contactsLocationsModule.locations[68].country",
+              "excerpt": "Australia",
+              "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06380751"
+            },
+            {
+              "nct_id": "NCT06756932",
+              "field": "protocolSection.contactsLocationsModule.locations[4].country",
+              "excerpt": "Australia",
+              "title": "BGB-21447 (Bcl-2 Inhibitor) Combinations for Adults With Hormone-Receptor Positive (HR+)/Human Epidermal Growth Factor Receptor 2 Negative (HER2-) Metastatic Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06756932"
+            },
+            {
+              "nct_id": "NCT04895709",
+              "field": "protocolSection.contactsLocationsModule.locations[11].country",
+              "excerpt": "Australia",
+              "title": "A Study of BMS-986340 as Monotherapy and as Combination Therapy in Participants With Advanced Solid Tumors",
+              "url": "https://clinicaltrials.gov/study/NCT04895709"
+            }
+          ],
+          "category": "Australia",
+          "trial_count": 89
+        },
+        {
+          "citation_count": 67,
+          "citations": [
+            {
+              "nct_id": "NCT03577197",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Netherlands",
+              "title": "Southeast Netherlands Advanced Metastatic Breast Cancer Registry",
+              "url": "https://clinicaltrials.gov/study/NCT03577197"
+            },
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[206].country",
+              "excerpt": "Netherlands",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT06486883",
+              "field": "protocolSection.contactsLocationsModule.locations[32].country",
+              "excerpt": "Netherlands",
+              "title": "Safety and Efficacy of T-DXd vs. CDK4/6i-based ET as First-line Therapy of HR-positive and HER2-low/Ultralow Advanced Breast Cancer Patients Classified as Non-luminal Subtype",
+              "url": "https://clinicaltrials.gov/study/NCT06486883"
+            },
+            {
+              "nct_id": "NCT07362485",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Netherlands",
+              "title": "Finding Sentinel Lymph Nodes During Mastectomy Using Indocyanine Green (INIGMA Study)",
+              "url": "https://clinicaltrials.gov/study/NCT07362485"
+            },
+            {
+              "nct_id": "NCT07641985",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Netherlands",
+              "title": "Autologous Fat Grafting for Total Breast Reconstruction in Irradiated Breast Cancer Patients",
+              "url": "https://clinicaltrials.gov/study/NCT07641985"
+            }
+          ],
+          "category": "Netherlands",
+          "trial_count": 67
+        },
+        {
+          "citation_count": 62,
+          "citations": [
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[161].country",
+              "excerpt": "Japan",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT06380751",
+              "field": "protocolSection.contactsLocationsModule.locations[212].country",
+              "excerpt": "Japan",
+              "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06380751"
+            },
+            {
+              "nct_id": "NCT04895709",
+              "field": "protocolSection.contactsLocationsModule.locations[39].country",
+              "excerpt": "Japan",
+              "title": "A Study of BMS-986340 as Monotherapy and as Combination Therapy in Participants With Advanced Solid Tumors",
+              "url": "https://clinicaltrials.gov/study/NCT04895709"
+            },
+            {
+              "nct_id": "NCT07671885",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Japan",
+              "title": "Evaluating the Response-Guided Therapy With Neoadjuvant Endocrine Therapy to Optimize Adjuvant Treatment in Premenopausal HR+/HER2- Breast Cancer (JCOG2402, Young HOPE)",
+              "url": "https://clinicaltrials.gov/study/NCT07671885"
+            },
+            {
+              "nct_id": "NCT07492641",
+              "field": "protocolSection.contactsLocationsModule.locations[153].country",
+              "excerpt": "Japan",
+              "title": "BGB-43395 Plus Letrozole Versus CDK4/6i Plus Letrozole for Patients With Advanced or Metastatic HR+/HER2- Breast Cancer Who Have Not Received Prior Treatment for Advanced or Metastatic Disease",
+              "url": "https://clinicaltrials.gov/study/NCT07492641"
+            }
+          ],
+          "category": "Japan",
+          "trial_count": 62
+        },
+        {
+          "citation_count": 60,
+          "citations": [
+            {
+              "nct_id": "NCT07563621",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Belgium",
+              "title": "Determining the Extent of the Genitourinary Syndrome of Menopause Burden in Breast Cancer Survivors",
+              "url": "https://clinicaltrials.gov/study/NCT07563621"
+            },
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[48].country",
+              "excerpt": "Belgium",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT06486883",
+              "field": "protocolSection.contactsLocationsModule.locations[3].country",
+              "excerpt": "Belgium",
+              "title": "Safety and Efficacy of T-DXd vs. CDK4/6i-based ET as First-line Therapy of HR-positive and HER2-low/Ultralow Advanced Breast Cancer Patients Classified as Non-luminal Subtype",
+              "url": "https://clinicaltrials.gov/study/NCT06486883"
+            },
+            {
+              "nct_id": "NCT06274515",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Belgium",
+              "title": "A Study to Investigate Mechanisms of Resistance to Breast Cancer Therapies",
+              "url": "https://clinicaltrials.gov/study/NCT06274515"
+            },
+            {
+              "nct_id": "NCT04690439",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Belgium",
+              "title": "Photobiomodulation Therapy for the Management of Breast Cancer-related Lymphedema",
+              "url": "https://clinicaltrials.gov/study/NCT04690439"
+            }
+          ],
+          "category": "Belgium",
+          "trial_count": 60
+        },
+        {
+          "citation_count": 56,
+          "citations": [
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[251].country",
+              "excerpt": "Taiwan",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT06380751",
+              "field": "protocolSection.contactsLocationsModule.locations[279].country",
+              "excerpt": "Taiwan",
+              "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06380751"
+            },
+            {
+              "nct_id": "NCT07465393",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Taiwan",
+              "title": "Facility-Based Multi-Modal Rehab vs. Home-Based Resistance Exercise for Quality of Life in Breast Cancer Survivors",
+              "url": "https://clinicaltrials.gov/study/NCT07465393"
+            },
+            {
+              "nct_id": "NCT05315700",
+              "field": "protocolSection.contactsLocationsModule.locations[40].country",
+              "excerpt": "Taiwan",
+              "title": "Study of ORIC-114 in Patients With Advanced Solid Tumors Harboring an EGFR or HER2 Alteration",
+              "url": "https://clinicaltrials.gov/study/NCT05315700"
+            },
+            {
+              "nct_id": "NCT07492641",
+              "field": "protocolSection.contactsLocationsModule.locations[227].country",
+              "excerpt": "Taiwan",
+              "title": "BGB-43395 Plus Letrozole Versus CDK4/6i Plus Letrozole for Patients With Advanced or Metastatic HR+/HER2- Breast Cancer Who Have Not Received Prior Treatment for Advanced or Metastatic Disease",
+              "url": "https://clinicaltrials.gov/study/NCT07492641"
+            }
+          ],
+          "category": "Taiwan",
+          "trial_count": 56
+        },
+        {
+          "citation_count": 51,
+          "citations": [
+            {
+              "nct_id": "NCT06841354",
+              "field": "protocolSection.contactsLocationsModule.locations[259].country",
+              "excerpt": "Turkey (Türkiye)",
+              "title": "A Study of Sacituzumab Tirumotecan (Sac-TMT, MK-2870) as Monotherapy and in Combination With Pembrolizumab (MK-3475) in Participants With Triple-Negative Breast Cancer (MK-2870-011/TroFuse-011)",
+              "url": "https://clinicaltrials.gov/study/NCT06841354"
+            },
+            {
+              "nct_id": "NCT06380751",
+              "field": "protocolSection.contactsLocationsModule.locations[292].country",
+              "excerpt": "Turkey (Türkiye)",
+              "title": "Saruparib (AZD5305) Plus Camizestrant or Plus Endocrine Therapy, Compared With CDK4/6 Inhibitor Plus Endocrine Therapy or Plus Camizestrant in HR-Positive, HER2-Negative (IHC 0, 1+, 2+/ ISH Non-amplified), BRCA1, BRCA2, or PALB2m Advanced Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT06380751"
+            },
+            {
+              "nct_id": "NCT06964802",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Turkey (Türkiye)",
+              "title": "The Effect of Cold Salt Water Foot Bath on the Development Of Chemotherapy-Induced Peripheral Neuropathy",
+              "url": "https://clinicaltrials.gov/study/NCT06964802"
+            },
+            {
+              "nct_id": "NCT07492641",
+              "field": "protocolSection.contactsLocationsModule.locations[231].country",
+              "excerpt": "Turkey (Türkiye)",
+              "title": "BGB-43395 Plus Letrozole Versus CDK4/6i Plus Letrozole for Patients With Advanced or Metastatic HR+/HER2- Breast Cancer Who Have Not Received Prior Treatment for Advanced or Metastatic Disease",
+              "url": "https://clinicaltrials.gov/study/NCT07492641"
+            },
+            {
+              "nct_id": "NCT07826338",
+              "field": "protocolSection.contactsLocationsModule.locations[0].country",
+              "excerpt": "Turkey (Türkiye)",
+              "title": "Artificial Intelligence-supported Mobile Application for Patients With Breast Cancer",
+              "url": "https://clinicaltrials.gov/study/NCT07826338"
+            }
+          ],
+          "category": "Turkey (Türkiye)",
+          "trial_count": 51
+        }
+      ]
+    },
+    "meta": {
+      "answer_mode": "visualization",
+      "query_interpretation": "Countries ranked by number of currently recruiting breast cancer trials.",
+      "filters_applied": {
+        "filters": {
+          "condition": "breast cancer",
+          "status": [
+            "RECRUITING"
+          ]
+        },
+        "api_params": {
+          "query.cond": "breast cancer",
+          "filter.overallStatus": "RECRUITING"
+        }
+      },
+      "plan": {
+        "answer_mode": "visualization",
+        "unsupported_reason": null,
+        "intent": "geographic",
+        "cohorts": [],
+        "shared_filters": {
+          "intervention": null,
+          "condition": "breast cancer",
+          "sponsor": null,
+          "country": null,
+          "status": [
+            "RECRUITING"
+          ],
+          "phase": null,
+          "study_type": null,
+          "start_year": null,
+          "end_year": null
+        },
+        "group_by": "recruiting_country",
+        "split_by": null,
+        "measure": null,
+        "network": null,
+        "viz_type": "bar_chart",
+        "top_n": 15,
+        "interpretation": "Countries ranked by number of currently recruiting breast cancer trials.",
+        "max_records": 10000,
+        "notes": []
+      },
+      "units": {
+        "y": "trials"
+      },
+      "sort": {
+        "field": "trial_count",
+        "order": "desc"
+      },
+      "time_granularity": null,
+      "grouping": {
+        "group_by": "recruiting_country",
+        "split_by": null,
+        "multi_valued": true
+      },
+      "binning": null,
+      "geo_hint": null,
+      "record_counts": {
+        "total_matching": 2451,
+        "fetched": 2451,
+        "truncated": false,
+        "count_method": "full_scan"
+      },
+      "notes": [
+        "Showing the top 15 of 78 country (recruiting sites) values.",
+        "A trial can have several country (recruiting sites) values and is counted once in each, so bars may sum to more than the number of trials."
+      ],
+      "source": {
+        "name": "clinicaltrials.gov",
+        "api": "https://clinicaltrials.gov/api/v2",
+        "api_version": "2.0.5",
+        "data_timestamp": "2026-11-10T10:00:05",
+        "retrieved_at": "2026-11-10T15:25:53.327963Z"
+      }
+    }
+  }
+}

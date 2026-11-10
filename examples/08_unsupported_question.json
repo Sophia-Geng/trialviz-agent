@@ -1,0 +1,57 @@
+{
+  "request": {
+    "query": "Is pembrolizumab safe for pregnant women?"
+  },
+  "status_code": 200,
+  "response": {
+    "visualization": null,
+    "meta": {
+      "answer_mode": "unsupported",
+      "query_interpretation": "Safety for pregnant women is not available from registry data.",
+      "filters_applied": {},
+      "plan": {
+        "answer_mode": "unsupported",
+        "unsupported_reason": "ClinicalTrials.gov does not provide safety or outcome data, nor does it specify eligibility for pregnancy in a way that can be reliably queried. Try: 'How many trials involve pembrolizumab?' or 'Show pembrolizumab trials by phase.'",
+        "intent": "count",
+        "cohorts": [],
+        "shared_filters": {
+          "intervention": null,
+          "condition": null,
+          "sponsor": null,
+          "country": null,
+          "status": null,
+          "phase": null,
+          "study_type": null,
+          "start_year": null,
+          "end_year": null
+        },
+        "group_by": null,
+        "split_by": null,
+        "measure": null,
+        "network": null,
+        "viz_type": null,
+        "top_n": 15,
+        "interpretation": "Safety for pregnant women is not available from registry data.",
+        "max_records": 10000,
+        "notes": []
+      },
+      "units": {},
+      "sort": null,
+      "time_granularity": null,
+      "grouping": null,
+      "binning": null,
+      "geo_hint": null,
+      "record_counts": null,
+      "notes": [
+        "ClinicalTrials.gov does not provide safety or outcome data, nor does it specify eligibility for pregnancy in a way that can be reliably queried. Try: 'How many trials involve pembrolizumab?' or 'Show pembrolizumab trials by phase.'"
+      ],
+      "source": {
+        "name": "clinicaltrials.gov",
+        "api": "https://clinicaltrials.gov/api/v2",
+        "api_version": "2.0.5",
+        "data_timestamp": "2026-11-10T10:00:05",
+        "retrieved_at": "2026-11-10T10:56:45.651389-05:00"
+      }
+    }
+  }
+}

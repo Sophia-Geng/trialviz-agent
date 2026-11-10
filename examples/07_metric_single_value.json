@@ -1,0 +1,131 @@
+{
+  "request": {
+    "query": "How many trials are currently recruiting for ALS?"
+  },
+  "status_code": 200,
+  "response": {
+    "visualization": {
+      "title": "Matching trials: amyotrophic lateral sclerosis",
+      "type": "metric",
+      "encoding": {
+        "value": {
+          "field": "value",
+          "type": "quantitative",
+          "label": "Trials"
+        }
+      },
+      "data": [
+        {
+          "citation_count": 173,
+          "citations": [
+            {
+              "nct_id": "NCT07341984",
+              "field": "protocolSection.identificationModule.briefTitle",
+              "excerpt": "A Physiotherapy Intervention Study in Patients With Amyotrophic Lateral Sclerosis (ALS)",
+              "title": "A Physiotherapy Intervention Study in Patients With Amyotrophic Lateral Sclerosis (ALS)",
+              "url": "https://clinicaltrials.gov/study/NCT07341984"
+            },
+            {
+              "nct_id": "NCT04302870",
+              "field": "protocolSection.identificationModule.briefTitle",
+              "excerpt": "Motor Neurone Disease - Systematic Multi-Arm Adaptive Randomised Trial",
+              "title": "Motor Neurone Disease - Systematic Multi-Arm Adaptive Randomised Trial",
+              "url": "https://clinicaltrials.gov/study/NCT04302870"
+            },
+            {
+              "nct_id": "NCT05744310",
+              "field": "protocolSection.identificationModule.briefTitle",
+              "excerpt": "Effects of Long Term Ventilation Support on the Quality of Life of ALS Patients and Their Families",
+              "title": "Effects of Long Term Ventilation Support on the Quality of Life of ALS Patients and Their Families",
+              "url": "https://clinicaltrials.gov/study/NCT05744310"
+            },
+            {
+              "nct_id": "NCT06819124",
+              "field": "protocolSection.identificationModule.briefTitle",
+              "excerpt": "Examining Interactions Between PALS and Caregivers",
+              "title": "Examining Interactions Between PALS and Caregivers",
+              "url": "https://clinicaltrials.gov/study/NCT06819124"
+            },
+            {
+              "nct_id": "NCT05395624",
+              "field": "protocolSection.identificationModule.briefTitle",
+              "excerpt": "Safety, PK and Biodistribution of 18F-OP-801 in Patients With ALS, AD, MS, PD and Healthy Volunteers",
+              "title": "Safety, PK and Biodistribution of 18F-OP-801 in Patients With ALS, AD, MS, PD and Healthy Volunteers",
+              "url": "https://clinicaltrials.gov/study/NCT05395624"
+            }
+          ],
+          "value": 173,
+          "label": "Number of ALS trials with overall status RECRUITING."
+        }
+      ]
+    },
+    "meta": {
+      "answer_mode": "single_value",
+      "query_interpretation": "Number of ALS trials with overall status RECRUITING.",
+      "filters_applied": {
+        "filters": {
+          "condition": "amyotrophic lateral sclerosis",
+          "status": [
+            "RECRUITING"
+          ]
+        },
+        "api_params": {
+          "query.cond": "amyotrophic lateral sclerosis",
+          "filter.overallStatus": "RECRUITING"
+        }
+      },
+      "plan": {
+        "answer_mode": "single_value",
+        "unsupported_reason": null,
+        "intent": "count",
+        "cohorts": [],
+        "shared_filters": {
+          "intervention": null,
+          "condition": "amyotrophic lateral sclerosis",
+          "sponsor": null,
+          "country": null,
+          "status": [
+            "RECRUITING"
+          ],
+          "phase": null,
+          "study_type": null,
+          "start_year": null,
+          "end_year": null
+        },
+        "group_by": null,
+        "split_by": null,
+        "measure": null,
+        "network": null,
+        "viz_type": "metric",
+        "top_n": 15,
+        "interpretation": "Number of ALS trials with overall status RECRUITING.",
+        "max_records": 10000,
+        "notes": []
+      },
+      "units": {
+        "y": "trials"
+      },
+      "sort": null,
+      "time_granularity": null,
+      "grouping": null,
+      "binning": null,
+      "geo_hint": null,
+      "record_counts": {
+        "total_matching": 173,
+        "fetched": 5,
+        "truncated": false,
+        "count_method": "api_total"
+      },
+      "notes": [
+        "Exact count reported by ClinicalTrials.gov for these filters; citations show example matching trials."
+      ],
+      "source": {
+        "name": "clinicaltrials.gov",
+        "api": "https://clinicaltrials.gov/api/v2",
+        "api_version": "2.0.5",
+        "data_timestamp": "2026-11-10T10:00:05",
+        "retrieved_at": "2026-11-10T15:56:03.690309Z"
+      }
+    }
+  }
+}

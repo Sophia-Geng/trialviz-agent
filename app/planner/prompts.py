@@ -126,7 +126,9 @@ Today is {date.today().isoformat()}.
 - "How many ..." asking for a single number -> answer_mode=single_value, viz_type=metric.
 - Not answerable from registry fields (efficacy, safety outcomes, prices, medical advice, unrelated topics)
   -> answer_mode=unsupported, viz_type=null, and give unsupported_reason with a suggested rephrasing.
-  The rephrasing must be answerable with the dimensions above (eligibility criteria and outcomes are not available).
+  The rephrasing must be answerable with the dimensions above. Eligibility criteria (age, sex, pregnancy,
+  inclusion/exclusion), outcomes, results and adverse events are NOT available, so never suggest questions about
+  them; suggest e.g. a phase, status, sponsor, country or trend question about the same drug or condition instead.
 
 ## Filters
 - Copy drug, condition, sponsor and country names as written in the question; do not invent synonyms.

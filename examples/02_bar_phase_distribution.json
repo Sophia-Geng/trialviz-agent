@@ -1,0 +1,471 @@
+{
+  "request": {
+    "query": "How are Alzheimer's disease trials distributed across phases?"
+  },
+  "status_code": 200,
+  "response": {
+    "visualization": {
+      "title": "Trials by phase: Alzheimer's disease",
+      "type": "bar_chart",
+      "encoding": {
+        "x": {
+          "field": "category",
+          "type": "ordinal",
+          "label": "Phase"
+        },
+        "y": {
+          "field": "trial_count",
+          "type": "quantitative",
+          "label": "Trials"
+        }
+      },
+      "data": [
+        {
+          "citation_count": 66,
+          "citations": [
+            {
+              "nct_id": "NCT07214974",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"EARLY_PHASE1\"]",
+              "title": "Mild Cognitive Impairment Community Screening and Early Intervention Via Stem Cell Therapy and Wearable Brain Computer Interface Device.",
+              "url": "https://clinicaltrials.gov/study/NCT07214974"
+            },
+            {
+              "nct_id": "NCT06234436",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"EARLY_PHASE1\"]",
+              "title": "Plasma Dilution and Infusion to Improve Cognition in Mild Cognitive Impairment (MCI)",
+              "url": "https://clinicaltrials.gov/study/NCT06234436"
+            },
+            {
+              "nct_id": "NCT02323217",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"EARLY_PHASE1\"]",
+              "title": "I2PETHV - Imidazoline2 Binding Site in Healthy Volunteers",
+              "url": "https://clinicaltrials.gov/study/NCT02323217"
+            },
+            {
+              "nct_id": "NCT04200911",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"EARLY_PHASE1\"]",
+              "title": "Cognition, Age, and RaPamycin Effectiveness - DownregulatIon of thE mTor Pathway",
+              "url": "https://clinicaltrials.gov/study/NCT04200911"
+            },
+            {
+              "nct_id": "NCT06181513",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"EARLY_PHASE1\"]",
+              "title": "Probiotics in Mild Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT06181513"
+            }
+          ],
+          "category": "Early Phase 1",
+          "trial_count": 66
+        },
+        {
+          "citation_count": 497,
+          "citations": [
+            {
+              "nct_id": "NCT02388152",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\"]",
+              "title": "Study to Evaluate the Safety and Tolerability of a New Drug Named Lu AF20513 in Patients With Mild Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT02388152"
+            },
+            {
+              "nct_id": "NCT04749563",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\"]",
+              "title": "Study of IGC-AD1 in Subjects With Dementia Due to Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT04749563"
+            },
+            {
+              "nct_id": "NCT03802162",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\"]",
+              "title": "A Clinical Study to Evaluate the Pharmacokinetics, Safety and Tolerability of CKD-355",
+              "url": "https://clinicaltrials.gov/study/NCT03802162"
+            },
+            {
+              "nct_id": "NCT00621010",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\"]",
+              "title": "Safety Study of CTS21166 to Treat Alzheimer Disease",
+              "url": "https://clinicaltrials.gov/study/NCT00621010"
+            },
+            {
+              "nct_id": "NCT03112096",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\"]",
+              "title": "A Phase I [18F]THK-5351 Positron Emission Tomography Study in Healthy Subjects and Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT03112096"
+            }
+          ],
+          "category": "Phase 1",
+          "trial_count": 497
+        },
+        {
+          "citation_count": 110,
+          "citations": [
+            {
+              "nct_id": "NCT04639050",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\", \"PHASE2\"]",
+              "title": "Brainshuttle AD: A Multiple Ascending Dose Study to Investigate the Safety, Tolerability, Pharmacokinetics, and Pharmacodynamics of RO7126209 Following Intravenous Infusion in Participants With Prodromal or Mild to Moderate Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT04639050"
+            },
+            {
+              "nct_id": "NCT05395624",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\", \"PHASE2\"]",
+              "title": "Safety, PK and Biodistribution of 18F-OP-801 in Patients With ALS, AD, MS, PD and Healthy Volunteers",
+              "url": "https://clinicaltrials.gov/study/NCT05395624"
+            },
+            {
+              "nct_id": "NCT03865017",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\", \"PHASE2\"]",
+              "title": "A Safety and Tolerability Study of GB301",
+              "url": "https://clinicaltrials.gov/study/NCT03865017"
+            },
+            {
+              "nct_id": "NCT04840992",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\", \"PHASE2\"]",
+              "title": "Phase I/II Clinical Trial of Recombinant Novel Coronavirus (COVID-19) Vaccine (Adenovirus Type 5 Vector) for Inhalation",
+              "url": "https://clinicaltrials.gov/study/NCT04840992"
+            },
+            {
+              "nct_id": "NCT05363293",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE1\", \"PHASE2\"]",
+              "title": "Multiple Ascending Dose Safety, Tolerability, PK Study of AL001 in Alzheimer's Disease Patients & Healthy Adult Subjects",
+              "url": "https://clinicaltrials.gov/study/NCT05363293"
+            }
+          ],
+          "category": "Phase 1/2",
+          "trial_count": 110
+        },
+        {
+          "citation_count": 600,
+          "citations": [
+            {
+              "nct_id": "NCT07094516",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\"]",
+              "title": "A Clinical Trial to Learn About the Effects of VHB937 in People With Early Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT07094516"
+            },
+            {
+              "nct_id": "NCT00948909",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\"]",
+              "title": "Efficacy and Safety Study for Subjects With Mild-to-Moderate Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT00948909"
+            },
+            {
+              "nct_id": "NCT06781333",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\"]",
+              "title": "Human Mesenchymal Stem Cells (hMSC) in Behavioral Problems Due to Alzheimer's Disease.",
+              "url": "https://clinicaltrials.gov/study/NCT06781333"
+            },
+            {
+              "nct_id": "NCT03702816",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\"]",
+              "title": "The Relationship Between Neuropsychological Testing and MRI, PET and COBRE - Project 1: AIM 2 (GE-180)",
+              "url": "https://clinicaltrials.gov/study/NCT03702816"
+            },
+            {
+              "nct_id": "NCT01885806",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\"]",
+              "title": "Repetitive Transcranial Magnetic Stimulation for Apathy Treatment in Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT01885806"
+            }
+          ],
+          "category": "Phase 2",
+          "trial_count": 600
+        },
+        {
+          "citation_count": 68,
+          "citations": [
+            {
+              "nct_id": "NCT00065767",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\", \"PHASE3\"]",
+              "title": "Cognitive and Neurophysiological Effects of Raloxifene in Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT00065767"
+            },
+            {
+              "nct_id": "NCT04623242",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\", \"PHASE3\"]",
+              "title": "Dominantly Inherited Alzheimer Network Trial: An Opportunity to Prevent Dementia. A Study of Potential Disease Modifying Treatments in Individuals at Risk for or With a Type of Early Onset Alzheimer's Disease Caused by a Genetic Mutation.",
+              "url": "https://clinicaltrials.gov/study/NCT04623242"
+            },
+            {
+              "nct_id": "NCT03451591",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\", \"PHASE3\"]",
+              "title": "LACunar Intervention (LACI-2) Trial-2",
+              "url": "https://clinicaltrials.gov/study/NCT03451591"
+            },
+            {
+              "nct_id": "NCT03226522",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\", \"PHASE3\"]",
+              "title": "Addressing Dementia Via Agitation-Centered Evaluation",
+              "url": "https://clinicaltrials.gov/study/NCT03226522"
+            },
+            {
+              "nct_id": "NCT07422311",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE2\", \"PHASE3\"]",
+              "title": "To Evaluate the Efficacy, Safety, and Tolerability of Dronabinol Oral Solution for Agitation in Patients With Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT07422311"
+            }
+          ],
+          "category": "Phase 2/3",
+          "trial_count": 68
+        },
+        {
+          "citation_count": 317,
+          "citations": [
+            {
+              "nct_id": "NCT00857233",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE3\"]",
+              "title": "Safety and Tolerability of Memantine in Moderate to Severe Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT00857233"
+            },
+            {
+              "nct_id": "NCT02353949",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE3\"]",
+              "title": "Investigating the Clinical Consequences of Flutemetamol-PET-scanning",
+              "url": "https://clinicaltrials.gov/study/NCT02353949"
+            },
+            {
+              "nct_id": "NCT05980949",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE3\"]",
+              "title": "Open-Label Extension Study to Assess the Long-Term Safety and Tolerability of KarXT in Subjects With Psychosis Associated With Alzheimer's Disease (ADEPT-3)",
+              "url": "https://clinicaltrials.gov/study/NCT05980949"
+            },
+            {
+              "nct_id": "NCT02293915",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE3\"]",
+              "title": "An Efficacy and Safety Study of Sodium Oligo-mannurarate (GV-971) Capsule for the Treatment of Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT02293915"
+            },
+            {
+              "nct_id": "NCT06976203",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE3\"]",
+              "title": "A Study to Evaluate the Efficacy and Safety of KarXT + KarX-EC for Cognitive Impairment in Alzheimer's Disease (MINDSET 2)",
+              "url": "https://clinicaltrials.gov/study/NCT06976203"
+            }
+          ],
+          "category": "Phase 3",
+          "trial_count": 317
+        },
+        {
+          "citation_count": 142,
+          "citations": [
+            {
+              "nct_id": "NCT01478633",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE4\"]",
+              "title": "Evaluation of Efficacy and Safety of Galantamine in Patients With Dementia of Alzheimer's Type Who Failed to Benefit From Donepezil",
+              "url": "https://clinicaltrials.gov/study/NCT01478633"
+            },
+            {
+              "nct_id": "NCT00385684",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE4\"]",
+              "title": "Low-Dose Opiate Therapy for Discomfort in Dementia (L-DOT)",
+              "url": "https://clinicaltrials.gov/study/NCT00385684"
+            },
+            {
+              "nct_id": "NCT00980785",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE4\"]",
+              "title": "Studying the Effects of Antihypertensives on Individuals at Risk for Alzheimer's",
+              "url": "https://clinicaltrials.gov/study/NCT00980785"
+            },
+            {
+              "nct_id": "NCT03954613",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE4\"]",
+              "title": "Evaluation of the Contribution of Regular Cognitive Exercises to Treatment in Patients With Alzheimer's Disease",
+              "url": "https://clinicaltrials.gov/study/NCT03954613"
+            },
+            {
+              "nct_id": "NCT00245206",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"PHASE4\"]",
+              "title": "Side Effects of Newer Antipsychotics in Older Adults",
+              "url": "https://clinicaltrials.gov/study/NCT00245206"
+            }
+          ],
+          "category": "Phase 4",
+          "trial_count": 142
+        },
+        {
+          "citation_count": 1578,
+          "citations": [
+            {
+              "nct_id": "NCT06338904",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"NA\"]",
+              "title": "Brief Problem-solving Intervention in Different Formats for the Prevention of Suicide in Adults Over 50",
+              "url": "https://clinicaltrials.gov/study/NCT06338904"
+            },
+            {
+              "nct_id": "NCT03046121",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"NA\"]",
+              "title": "A Family-centered Intervention for Acutely-ill Persons With Dementia",
+              "url": "https://clinicaltrials.gov/study/NCT03046121"
+            },
+            {
+              "nct_id": "NCT01834716",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"NA\"]",
+              "title": "Exercise in Asymptomatic Pre-Alzheimer's Disease Pilot Study",
+              "url": "https://clinicaltrials.gov/study/NCT01834716"
+            },
+            {
+              "nct_id": "NCT06640452",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"NA\"]",
+              "title": "RECOVERYFUN: An Integrated VR-based Tele-rehabilitation Platform to Support RECOVERY and Maintenance of FUNctional Abilities Among Seniors",
+              "url": "https://clinicaltrials.gov/study/NCT06640452"
+            },
+            {
+              "nct_id": "NCT04082611",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "[\"NA\"]",
+              "title": "The PREVENTION Trial: Precision Recommendations to Optimize Neurocognition",
+              "url": "https://clinicaltrials.gov/study/NCT04082611"
+            }
+          ],
+          "category": "Not Applicable",
+          "trial_count": 1578
+        },
+        {
+          "citation_count": 921,
+          "citations": [
+            {
+              "nct_id": "NCT02854033",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "(field not present in API response)",
+              "title": "Alzheimer's Disease Neuroimaging Initiative 3",
+              "url": "https://clinicaltrials.gov/study/NCT02854033"
+            },
+            {
+              "nct_id": "NCT05175664",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "(field not present in API response)",
+              "title": "Novel Diagnostic and Disease Stage Biomarkers in AD",
+              "url": "https://clinicaltrials.gov/study/NCT05175664"
+            },
+            {
+              "nct_id": "NCT05967390",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "(field not present in API response)",
+              "title": "Localized Analysis of Normalized Distance From Scalp to Cortex and Personalized Evaluation (LANDSCAPE)",
+              "url": "https://clinicaltrials.gov/study/NCT05967390"
+            },
+            {
+              "nct_id": "NCT04265482",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "(field not present in API response)",
+              "title": "Community-based Cohort of Functional Decline in Subjective Cognitive Complaint Elderly",
+              "url": "https://clinicaltrials.gov/study/NCT04265482"
+            },
+            {
+              "nct_id": "NCT04844060",
+              "field": "protocolSection.designModule.phases",
+              "excerpt": "(field not present in API response)",
+              "title": "Cerebro Spinal Fluid Collection (CSF)",
+              "url": "https://clinicaltrials.gov/study/NCT04844060"
+            }
+          ],
+          "category": "Unknown",
+          "trial_count": 921
+        }
+      ]
+    },
+    "meta": {
+      "answer_mode": "visualization",
+      "query_interpretation": "Alzheimer's disease trials counted by phase.",
+      "filters_applied": {
+        "filters": {
+          "condition": "Alzheimer's disease"
+        },
+        "api_params": {
+          "query.cond": "Alzheimer's disease"
+        }
+      },
+      "plan": {
+        "answer_mode": "visualization",
+        "unsupported_reason": null,
+        "intent": "distribution",
+        "cohorts": [],
+        "shared_filters": {
+          "intervention": null,
+          "condition": "Alzheimer's disease",
+          "sponsor": null,
+          "country": null,
+          "status": null,
+          "phase": null,
+          "study_type": null,
+          "start_year": null,
+          "end_year": null
+        },
+        "group_by": "phase",
+        "split_by": null,
+        "measure": null,
+        "network": null,
+        "viz_type": "bar_chart",
+        "top_n": 15,
+        "interpretation": "Alzheimer's disease trials counted by phase.",
+        "max_records": 10000,
+        "notes": []
+      },
+      "units": {
+        "y": "trials"
+      },
+      "sort": {
+        "field": "category",
+        "order": "asc"
+      },
+      "time_granularity": null,
+      "grouping": {
+        "group_by": "phase",
+        "split_by": null,
+        "multi_valued": false
+      },
+      "binning": null,
+      "geo_hint": null,
+      "record_counts": {
+        "total_matching": 4299,
+        "fetched": 4299,
+        "truncated": false,
+        "count_method": "full_scan"
+      },
+      "notes": [],
+      "source": {
+        "name": "clinicaltrials.gov",
+        "api": "https://clinicaltrials.gov/api/v2",
+        "api_version": "2.0.5",
+        "data_timestamp": "2026-11-10T10:00:05",
+        "retrieved_at": "2026-11-10T15:25:43.467622Z"
+      }
+    }
+  }
+}
