@@ -35,16 +35,19 @@ app = FastAPI(
 )
 
 
-def _make_planner() -> Planner:
+def _make_planner(ctgov: CtgovClient) -> Planner:
+    def count_trials(params: dict[str, str]) -> int:
+        return ctgov.count(params)[0]
+
     try:
-        return Planner(OpenAIPlanner())
+        return Planner(OpenAIPlanner(), count_trials)
     except PlannerError as exc:
         log.warning("Starting without LLM planner: %s", exc)
         return Planner(None)
 
 
 app.state.ctgov = CtgovClient()
-app.state.planner = _make_planner()
+app.state.planner = _make_planner(app.state.ctgov)
 
 
 def _error(status: int, code: str, message: str, details: list | None = None) -> JSONResponse:

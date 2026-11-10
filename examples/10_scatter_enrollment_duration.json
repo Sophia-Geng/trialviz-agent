@@ -35444,7 +35444,7 @@
     },
     "meta": {
       "answer_mode": "visualization",
-      "query_interpretation": "One point per completed melanoma trial: enrollment vs trial duration in months.",
+      "query_interpretation": "One point per completed melanoma trial: enrollment vs months from start to completion.",
       "filters_applied": {
         "filters": {
           "condition": "melanoma",
@@ -35484,7 +35484,7 @@
         "network": null,
         "viz_type": "scatter_plot",
         "top_n": 15,
-        "interpretation": "One point per completed melanoma trial: enrollment vs trial duration in months.",
+        "interpretation": "One point per completed melanoma trial: enrollment vs months from start to completion.",
         "max_records": 10000,
         "notes": []
       },

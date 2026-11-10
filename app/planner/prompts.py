@@ -138,6 +138,9 @@ Today is {date.today().isoformat()}.
 
 ## Filters
 - Copy drug, condition, sponsor and country names as written in the question; do not invent synonyms.
+  Exception: the registry is in English, so if the question is in another language, write these names in
+  English (e.g. 乳腺癌 -> breast cancer). This is translation, not substitution: never swap a brand for a generic
+  name or one drug for another. interpretation is always in English.
 - Put filters shared by all cohorts in shared_filters; use cohorts only for comparisons (2-4 items).
 - Only set status / phase / years / study_type when the question asks for them.
 - top_n only when the question implies a limit ("top 10"); otherwise null.

@@ -65,6 +65,47 @@ def test_no_llm_configured_uses_fallback_and_scope_guard():
     assert any("limited to" in n for n in plan.notes)
 
 
+TYPO = _plan(intent="trend", viz_type="time_series", group_by="start_year",
+             shared_filters=_f(intervention="pembrolizmab"), interpretation="x")
+FIXED = _plan(intent="trend", viz_type="time_series", group_by="start_year",
+              shared_filters=_f(intervention="pembrolizumab"), interpretation="x")
+
+
+def _counter(hits: dict[str, int]):
+    """Fake API count: number of trials for a single-term search."""
+    calls = []
+
+    def count(params):
+        calls.append(params)
+        return next((n for term, n in hits.items() if term in str(params)), 0)
+
+    count.calls = calls
+    return count
+
+
+def test_zero_hit_term_is_corrected_and_verified():
+    llm = ScriptedLLM(TYPO, FIXED)
+    plan = Planner(llm, _counter({"pembrolizumab": 2659})).plan(VisualizeRequest(query="pembrolizmab trials per year"))
+    assert plan.shared_filters.intervention == "pembrolizumab"
+    assert "match no trials: intervention 'pembrolizmab'" in llm.calls[1][-1]["content"]
+    assert any("'pembrolizmab' -> 'pembrolizumab'" in n for n in plan.notes)
+
+
+def test_correction_rejected_when_api_does_not_confirm_it():
+    still_wrong = _plan(intent="trend", viz_type="time_series", group_by="start_year",
+                        shared_filters=_f(intervention="pembrolizumabb"), interpretation="x")
+    plan = Planner(ScriptedLLM(TYPO, still_wrong), _counter({})).plan(VisualizeRequest(query="q"))
+    assert plan.shared_filters.intervention == "pembrolizmab"  # original kept, user told to check spelling
+    assert any("match no trials" in n and "Check the spelling" in n for n in plan.notes)
+
+
+def test_grounding_skipped_when_all_terms_hit():
+    llm = ScriptedLLM(GOOD)
+    counter = _counter({"melanoma": 3782})
+    Planner(llm, counter).plan(VisualizeRequest(query="melanoma phases"))
+    assert len(llm.calls) == 1 and len(counter.calls) == 1
+
+
 def test_explicit_viz_type_that_cannot_work_is_rejected():
     with pytest.raises(PlanRejected, match="temporal"):
         Planner(ScriptedLLM(GOOD)).plan(VisualizeRequest(query="melanoma phases", viz_type="time_series"))

@@ -654,7 +654,7 @@
     },
     "meta": {
       "answer_mode": "visualization",
-      "query_interpretation": "Countries ranked by number of currently recruiting breast cancer trials.",
+      "query_interpretation": "Countries ranked by number of currently recruiting breast cancer trials (recruiting sites).",
       "filters_applied": {
         "filters": {
           "condition": "breast cancer",
@@ -691,7 +691,7 @@
         "network": null,
         "viz_type": "bar_chart",
         "top_n": 15,
-        "interpretation": "Countries ranked by number of currently recruiting breast cancer trials.",
+        "interpretation": "Countries ranked by number of currently recruiting breast cancer trials (recruiting sites).",
         "max_records": 10000,
         "notes": []
       },

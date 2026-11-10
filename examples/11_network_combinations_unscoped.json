@@ -3671,7 +3671,7 @@
     },
     "meta": {
       "answer_mode": "visualization",
-      "query_interpretation": "Drug co-occurrence network across all trials (edges = drugs combined in the same study).",
+      "query_interpretation": "Drug co-occurrence network across all trials, showing which drugs are most often combined.",
       "filters_applied": {
         "filters": {
           "study_type": "INTERVENTIONAL",
@@ -3706,7 +3706,7 @@
         },
         "viz_type": "network_graph",
         "top_n": 15,
-        "interpretation": "Drug co-occurrence network across all trials (edges = drugs combined in the same study).",
+        "interpretation": "Drug co-occurrence network across all trials, showing which drugs are most often combined.",
         "max_records": 10000,
         "notes": [
           "No drug, condition, sponsor or country was given, so the search was limited to interventional studies and started since 2021. Add a filter for a more specific answer."

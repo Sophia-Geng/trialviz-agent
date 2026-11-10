@@ -35,6 +35,9 @@ Request ─► [1] Pydantic request validation
              │      ▲
              │      └─ business-rule violations fed back once; still invalid / LLM down ─► keyword fallback
              ▼
+          [2b] Grounding: each search term is counted on the live API; a term with 0 trials (typo) is sent
+             │     back for correction, and the correction is kept only if the API confirms it finds trials
+             ▼
           [3] Plan rules + explicit request fields override + scope guard
              │
              ├─ answer_mode = unsupported ─► visualization: null + reason
@@ -92,8 +95,9 @@ Without `OPENAI_API_KEY` the service still runs. It uses the keyword fallback pl
 
 | Command | Purpose |
 |---|---|
-| `pytest` | Run the test suite (248 tests, offline, uses recorded real API responses) |
+| `pytest` | Run the test suite (251 tests, offline, uses recorded real API responses) |
 | `python scripts/run_examples.py` | Regenerate `examples/` through the HTTP API (needs the API key) |
+| `python scripts/eval_planner.py [models...]` | Planner evaluation over 25 labeled questions, writes `docs/planner_eval.md` (needs the API key) |
 | `python scripts/run_plan_demo.py` | Run hand-written QueryPlans against the live API without the LLM |
 | `python scripts/record_fixtures.py` | Re-record `tests/fixtures/` from the live API |
 
@@ -267,7 +271,7 @@ The registry has 17 dimensions, and they combine freely (e.g. `split_by` for two
 
 ## 6. Key design decisions and tradeoffs
 
-**1. The LLM plans, code counts.** The LLM never writes a number into the output, so hallucination can only happen when the question is *interpreted*, and that step is constrained in three layers. (a) OpenAI Structured Outputs in strict mode: dimensions and chart types are enums, so the JSON always parses. (b) Business rules (`plan_rules.check`): e.g. `time_series` needs a temporal dimension, networks need two categorical endpoints, comparisons need 2–4 cohorts. Violations are sent back to the model for **one corrective retry**. (c) A keyword fallback, if the plan is still invalid or the LLM is unavailable. Both retry and fallback are reported in `meta.notes`. The final plan is returned in `meta.plan`, so the interpretation can always be audited.
+**1. The LLM plans, code counts.** The LLM never writes a number into the output, so hallucination can only happen when the question is *interpreted*, and that step is constrained in four layers. (a) OpenAI Structured Outputs in strict mode: dimensions and chart types are enums, so the JSON always parses. (b) Business rules (`plan_rules.check`): e.g. `time_series` needs a temporal dimension, networks need two categorical endpoints, comparisons need 2–4 cohorts. Violations are sent back to the model for **one corrective retry**. (c) **Grounding against the registry**: the prompt tells the model to copy names as written and never "translate" a drug from memory. A plan can still be well formed but useless, e.g. a misspelled "pembrolizmab" that matches no trial. So every search term is counted on the API (one cached request each). Only terms with zero hits are sent back for correction, and the correction is accepted only if the API confirms that fewer terms come back empty. (d) A keyword fallback, if the plan is still invalid or the LLM is unavailable. Retry, grounding corrections and fallback are all reported in `meta.notes`. The final plan is returned in `meta.plan`, so the interpretation can always be audited.
 
 **2. One extension point: the dimension registry.** A dimension declares its API fields, its kind, and an extractor that returns `(normalized key, label, raw excerpt, field path)`. The prompt's dimension list is generated from the registry, so the planner can only ask for what the pipeline can execute. The few-shot plans in the prompt are real `QueryPlanLLM` objects, and tests check them against the rules. Adding a question type usually means adding one registry entry.
 
@@ -318,7 +322,7 @@ All of these come from inspecting recorded real responses (`tests/fixtures/`):
 
 ## 8. Testing and validation
 
-**Automated tests** (`pytest`, 248 tests, fully offline):
+**Automated tests** (`pytest`, 251 tests, fully offline):
 
 - **Hand-countable aggregation**: small synthetic datasets where the expected counts can be worked out by hand (phase buckets sum to the total, multi-valued dedupe, citations point to raw values, time-series gap filling, top-N truncation, grouped-bar zero fill, network weights and pruning).
 - **Real-data extraction**: every dimension runs on 500 recorded real studies (5 queries). Checks: no crashes, one count per distinct value, every value has an excerpt and a field path. Drug synonyms never form their own node, and ≥ 95% of trials matched by the strict drug search map to that drug.
@@ -351,7 +355,17 @@ All of these come from inspecting recorded real responses (`tests/fixtures/`):
 
 Errors in drug normalization or counting would not produce clusters this clean. Inspecting this same network is also how the last non-drug leaks were found and fixed (§7: "Biopsy", "Control Group", split fragments such as "1"). Two of the examples cross-check each other as well. A live question by brand name ("Keytruda vs Opdivo") returned exactly the bars of example 03 (generic names), and the NCT ID sets are identical (§6.3).
 
-**Planner spot checks with `gpt-4.1`**: every question in [§9](#9-example-runs) produced the intended plan on the first attempt (1–2 s per plan). The structured outputs are in each example's `meta.plan`.
+**Planner evaluation** ([`docs/planner_eval.md`](docs/planner_eval.md), `python scripts/eval_planner.py`). 25 labeled questions run through the full planner for each model. They cover all appendix question types, the other chart types, the metric and unsupported answer modes, tricky phrasing (brand names, "top 5", an implicit "right now", a typo, a Chinese question, a vague "trends in ...") and an explicit `drug_name` list. A case passes only if every labeled field matches **and** every search term in the final plan finds at least one trial on the live API:
+
+| Model | Passed | Rule retry | Search-term correction | Keyword fallback | Median latency |
+|---|---|---|---|---|---|
+| `gpt-4.1` (default) | 25/25 | 0 | 1 | 0 | 1.2 s |
+| `gpt-4.1-mini` | 25/25 | 0 | 0 | 0 | 1.5 s |
+| `gpt-5.4-mini` | 25/25 | 0 | 1 | 0 | 1.3 s |
+
+The first version of this evaluation also reported 25/25, but it only checked plan structure. Checking whether the plans actually find data exposed two real failures that every model shared:
+- **Typo**: "pembrolizmab" was copied verbatim, as the prompt says, and matches 0 trials. This led to the grounding step (§6.1c): gpt-4.1 and gpt-5.4-mini now correct it after the API reports zero hits (gpt-4.1-mini corrected it on its own).
+- **Chinese question**: "乳腺癌" was copied verbatim. It matches 3 trials versus 17004 for "breast cancer", so it was never zero and grounding could not catch it. The fix is a prompt rule: entity names are written in English, as translation and never substitution. Brand names in the same evaluation ("Keytruda vs Opdivo") are still kept as written.
 
 ## 9. Example runs
 
@@ -377,7 +391,7 @@ All files in [`examples/`](examples/) are real outputs from `scripts/run_example
 - **Entity resolution.** Sponsors are not merged across spellings ("Merck Sharp & Dohme LLC" vs "Merck KGaA" are, correctly, different, but subsidiaries are not grouped). MeSH can list a drug class and a specific drug side by side (e.g. "interleukin-2" and "aldesleukin").
 - **`drug` misses about 1–3% of trials in our samples.** This happens when MeSH is present but incomplete (NCT04507906, "Nivolumab Combined with Anlotinib", is tagged only with anlotinib). Merging raw names with MeSH would bring synonym duplicates back. The fix is to map raw names onto MeSH through its synonym table. The evidence rule also has a cost. An old drug without an INN stem (e.g. aspirin) that appears in a mixed trial without a matching MeSH term is only kept if another trial in the batch confirms it. MeSH can also list a class or target next to the drug ("immune checkpoint inhibitors", "interleukin-2" next to "aldesleukin"). Cohort counts are not affected: they come from the API search itself.
 - **No eligibility, outcome or result data.** These fields exist in the API but are not modeled as dimensions. Such questions are classified as unsupported.
-- **Planner evaluation.** It is checked on the example questions and unit-tested with a scripted model. A larger labeled set of tricky phrasings, with a comparison across models, would make its accuracy measurable.
+- **Planner evaluation size.** 25 labeled questions (§8) are enough to find failure classes, not to estimate accuracy precisely. A few hundred questions, ideally from real users, and repeated runs for the non-deterministic `gpt-5*` models would be the next step. Grounding only catches terms with **zero** hits. A term that is valid but too narrow (like "乳腺癌", with 3 hits) needs either the prompt rule or a comparison against expected registry volume.
 - **Single-turn only.** Ambiguous questions are resolved by the planner's best guess (visible in `meta.plan` and `query_interpretation`), not by asking a clarifying question.
 - **Synchronous fetching.** A large comparison can take tens of seconds at 1 req/s on a cold cache. Caching makes repeated questions fast. Background jobs or streaming would help in production.
 
