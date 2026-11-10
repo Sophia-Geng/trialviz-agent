@@ -466,7 +466,7 @@ take_home2/
 9. Limitations & future work
    - sponsor 实体消歧（同一公司多种写法不合并）；药名已用 MeSH 合并，进一步可接 RxNorm
    - `drug` 维度的已知漏识别（实测样本约 2–4%，只影响网络图和药物排名，不影响 cohort 计数）：
-     - 干预类型登记成 DEVICE / OTHER 的药物方案会被跳过（如 NCT02704156 “Cyberknife plus Pembrolizumab and Trametinib” 登记为 DEVICE）。放宽类型过滤会引入器械、手术名，所以没做
+     - （已解决）干预类型登记成 DEVICE / OTHER 的药物方案（如 NCT02704156 “Cyberknife plus Pembrolizumab and Trametinib”）：拆开名字后作为“待定值”，只有能对上同一批数据里由药物类干预确认过的药名才保留（`aggregate.engine.extract_batch`），器械和手术名不会混进来。README 的 design decisions 可以写这一条
      - MeSH 有值但不全时，不再看原始名（如 NCT04507906 “Nivolumab Combined with Anlotinib” 只标了 anlotinib）。把原始名和 MeSH 合并会让同义名重新变成多个节点，所以没做；改进方向是用 MeSH 同义词表把原始名映射到 MeSH 再合并
    - 超大结果集：用官方全量数据下载离线建索引，替代逐页拉取
    - 高基数维度超上限时排名基于样本

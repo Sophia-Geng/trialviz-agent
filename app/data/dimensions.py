@@ -40,6 +40,9 @@ class Extracted:
     excerpt: str  # exact raw value from the API response
     field_path: str  # concrete path, including array index
     estimated: bool = False  # date-derived value based on an ESTIMATED date
+    # Weak evidence: kept only if it matches a non-tentative key of the same dimension
+    # elsewhere in the batch (resolved by aggregate.engine.extract_batch).
+    tentative: bool = False
 
 
 Extractor = Callable[[dict[str, Any]], list[Extracted]]
@@ -155,32 +158,40 @@ def _intervention_name(study: dict) -> list[Extracted]:
     return _dedupe(out) or _unknown(INTERVENTIONS)
 
 
-def _drug(study: dict) -> list[Extracted]:
-    """Drugs via MeSH terms (merges synonyms like MK-3475 / Keytruda), falling back to cleaned names."""
-    interventions = get(study, INTERVENTIONS) or []
-    drug_ivs = [(i, iv) for i, iv in enumerate(interventions) if iv.get("type") in DRUG_INTERVENTION_TYPES]
-    if not drug_ivs:
-        return []
-
+def _name_parts(ivs: list[tuple[int, dict]], tentative: bool) -> list[Extracted]:
+    """Registered intervention names, split on combinations like 'A+B' and cleaned."""
     out = []
-    for i, mesh in enumerate(get(study, INTERVENTION_MESH) or []):
-        term = mesh.get("term")
-        if term and n.text_key(term) not in n.MESH_NON_DRUG:
-            key = n.text_key(term)
-            out.append(Extracted(key, key, term, f"{INTERVENTION_MESH}[{i}].term"))
-    if out:
-        return _dedupe(out)
-
-    # No usable MeSH terms: fall back to registered names, splitting combinations like 'A+B'.
-    for i, iv in drug_ivs:
+    for i, iv in ivs:
         raw = iv.get("name")
         if not raw:
             continue
         for part in n.split_combination(raw):
             cleaned = n.clean_drug_name(part)
             if cleaned and not n.is_non_drug(cleaned):
-                out.append(Extracted(cleaned, cleaned, raw, f"{INTERVENTIONS}[{i}].name"))
-    return _dedupe(out)
+                out.append(Extracted(cleaned, cleaned, raw, f"{INTERVENTIONS}[{i}].name", tentative=tentative))
+    return out
+
+
+def _drug(study: dict) -> list[Extracted]:
+    """Drugs via MeSH terms (merges synonyms like MK-3475 / Keytruda), falling back to cleaned names.
+
+    Drug regimens registered under a non-drug type (e.g. DEVICE 'Cyberknife plus Pembrolizumab')
+    yield tentative values, kept only if they name a drug confirmed elsewhere in the batch.
+    """
+    interventions = get(study, INTERVENTIONS) or []
+    drug_ivs = [(i, iv) for i, iv in enumerate(interventions) if iv.get("type") in DRUG_INTERVENTION_TYPES]
+    other_ivs = [(i, iv) for i, iv in enumerate(interventions) if iv.get("type") not in DRUG_INTERVENTION_TYPES]
+
+    confirmed = []
+    if drug_ivs:
+        for i, mesh in enumerate(get(study, INTERVENTION_MESH) or []):
+            term = mesh.get("term")
+            if term and n.text_key(term) not in n.MESH_NON_DRUG:
+                key = n.text_key(term)
+                confirmed.append(Extracted(key, key, term, f"{INTERVENTION_MESH}[{i}].term"))
+        if not confirmed:
+            confirmed = _name_parts(drug_ivs, tentative=False)
+    return _dedupe(confirmed + _name_parts(other_ivs, tentative=True))
 
 
 def _condition(study: dict) -> list[Extracted]:

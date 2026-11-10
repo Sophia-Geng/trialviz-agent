@@ -1,5 +1,6 @@
 import pytest
 
+from app.aggregate.engine import extract_batch
 from app.data import dimensions as dims
 from app.data.dimensions import DIMENSIONS, MISSING_EXCERPT
 from app.data.normalize import UNKNOWN
@@ -42,7 +43,8 @@ def test_single_study_full_record():
     assert keys(DimensionName.ENROLLMENT) == [1494.0]
     assert keys(DimensionName.DURATION_MONTHS) == [79.0]
     assert keys(DimensionName.COUNTRY) == ["united states"]  # many US sites, counted once
-    assert keys(DimensionName.DRUG) == []  # only an OTHER-type intervention (palliative care)
+    # only an OTHER-type intervention (palliative care), which matches no confirmed drug
+    assert extract_batch([study], DimensionName.DRUG) == [[]]
 
 
 def test_phase_excerpt_is_raw_api_value():
@@ -76,16 +78,40 @@ def test_drug_mesh_merges_synonyms(fixture, drug, synonyms):
     """
     studies = load_studies(fixture)
     hits = 0
-    for s in studies:
-        keys = {v.key for v in DIMENSIONS[DimensionName.DRUG].extract(s)}
+    for s, values in zip(studies, extract_batch(studies, DimensionName.DRUG), strict=True):
+        keys = {v.key for v in values}
         hits += drug in keys
         assert not synonyms & keys, dims.nct_id(s)
     assert hits / len(studies) >= 0.95
 
 
+def test_non_drug_type_regimen_resolved_against_batch():
+    """NCT02704156 registers 'Cyberknife plus Pembrolizumab and Trametinib' as DEVICE."""
+
+    def trial(nid, interventions, mesh=()):
+        return {
+            "protocolSection": {
+                "identificationModule": {"nctId": nid},
+                "armsInterventionsModule": {"interventions": interventions},
+            },
+            "derivedSection": {"interventionBrowseModule": {"meshes": [{"term": t} for t in mesh]}},
+        }
+
+    batch = [
+        trial("NCT1", [{"type": "DRUG", "name": "MK-3475"}], mesh=["pembrolizumab"]),
+        trial("NCT2", [{"type": "DEVICE", "name": "Cyberknife plus Pembrolizumab and Trametinib"}]),
+        trial("NCT3", [{"type": "OTHER", "name": "Morning pembrolizumab infusions"}]),
+        trial("NCT4", [{"type": "DEVICE", "name": "Insulin pump"}]),
+    ]
+    resolved = [[(v.key, v.excerpt, v.tentative) for v in values] for values in extract_batch(batch, DimensionName.DRUG)]
+    assert resolved[1] == [("pembrolizumab", "Cyberknife plus Pembrolizumab and Trametinib", False)]
+    assert resolved[2] == [("pembrolizumab", "Morning pembrolizumab infusions", False)]
+    assert resolved[3] == []  # 'insulin pump' matches no confirmed drug, 'cyberknife'/'trametinib' never confirmed
+
+
 def test_drug_excludes_placebo_and_procedures(all_studies):
-    for study in all_studies:
-        for v in DIMENSIONS[DimensionName.DRUG].extract(study):
+    for values in extract_batch(all_studies, DimensionName.DRUG):
+        for v in values:
             assert "placebo" not in v.key
             assert v.key not in {"radiotherapy", "drug therapy", "specimen handling"}
 
@@ -102,7 +128,7 @@ def test_drug_falls_back_to_cleaned_name_without_mesh():
             }
         }
     }
-    (v,) = DIMENSIONS[DimensionName.DRUG].extract(study)
+    ((v,),) = extract_batch([study], DimensionName.DRUG)  # the DEVICE 'Pump' matches no drug
     assert (v.key, v.excerpt, v.field_path) == (
         "foo-123", "Foo-123 10 mg", "protocolSection.armsInterventionsModule.interventions[0].name",
     )
